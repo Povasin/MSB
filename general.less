@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Inter-Light";
+    font-weight: 100;
+    src: url("./fonts/Inter/Inter-ExtraLight.ttf");
+}
+@font-face {
+    font-family: "Inter-Regular";
+    font-weight: 500;
+    src: url("./fonts/Inter/Inter-Regular.ttf");
+}
+@font-face {
+    font-family: "Inter-Bold";
+    font-weight: 900;
+    src: url("./fonts/Inter/Inter-Bold.ttf");
+}
+
+@function calcFluid($f-min, $f-max, $w-min, $w-max) {
+	$k: ($f-max - $f-min)/($w-max - $w-min);
+	$b: $f-min - $k * $w-min;
+  
+	$b: $b * 1px;
+  
+	@return calc( #{$k} * 100vw + #{$b} );
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Inter-Regular", sans-serif;
+}
+
+.d-row(){
+    display: flex;
+    flex-direction: row;
+}
+
+.d-col(){
+    display: flex;
+    flex-direction: column;
+}

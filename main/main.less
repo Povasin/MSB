@@ -1,0 +1,178 @@
+@gradient: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+
+main {
+    padding: 0 100px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider {
+    width: 1030px;
+    height: 380px;
+    background-color: #0d0337;
+    overflow: hidden;
+    position: relative;
+}
+.slides {
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+}
+.slide {
+    display: flex;
+    flex-direction: row;
+    padding-left: 200px;
+    width: 25%;
+    transition: all 0.6s ease;
+
+    &__contant {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin-top: 40px;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        h2 {
+            font-family: bold-text;
+            font-size: 32px;
+            margin: 10px 0;
+            width: 90%;
+        }
+        p {
+            font-family: light-text;
+            font-size: 22px;
+            margin: 10px 0;
+            width: 90%;
+        }
+    }
+
+    &__button {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10%;
+        .more {
+            padding: 10px 20px;
+            color: white;
+            font-family: light-text;
+            font-size: 20px;
+            background: @gradient;
+            margin: auto 0;
+            text-decoration: none;
+        }
+        a:nth-child(2) {
+            margin: auto 10px;
+            padding: 20px;
+            border: 1px solid;
+            border-image-source: @gradient;
+            border-image-slice: 1;
+            //TODO: сделать теругольник с градиентом
+            // .block{
+            //     background:linear-gradient(90deg, #5134c4,#773cbc,#b856d4);
+            //     display: block;
+            //     width: 0;
+            //     height: 0;
+            //     border: 20px solid transparent;
+            //     border-left-image-source: linear-gradient(90deg, #5134c4,#773cbc,#b856d4);
+            //     border-image-slice:1;
+            // }
+        }
+    }
+
+    &__radius {
+        margin-top: 30px;
+        width: 500px;
+        height: 272px;
+        border-radius: 50%;
+        box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.25);
+        background-color: white;
+
+        .img1 {
+            width: 110%;
+            margin: -20px -30px;
+        }
+        .img2 {
+            width: 85%;
+            margin: 0 40px;
+        }
+        .img3 {
+            width: 95%;
+            margin: -20px 20px;
+        }
+        .img4 {
+            width: 93%;
+            margin: -20px 15px;
+        }
+    }
+}
+
+.navigation {
+    padding-left: 200px;
+    display: flex;
+    position: absolute;
+    bottom: 40px;
+
+    &__bar {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        border: 1px solid white;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        margin: 10px;
+    }
+}
+
+.navigation-auto {
+    padding-left: 200px;
+    display: flex;
+    position: absolute;
+    bottom: 40px;
+    left: -9px;
+}
+.navigation-auto div {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin: 10px;
+}
+.bar:first-child {
+    margin-left: 0;
+}
+
+#r1:checked ~ .s1 {
+    margin-left: 0;
+}
+#r2:checked ~ .s1 {
+    margin-left: -30%;
+}
+#r3:checked ~ .s1 {
+    margin-left: -59.7%;
+}
+#r4:checked ~ .s1 {
+    margin-left: -89.6%;
+}
+
+#r1:checked ~ .navigation-auto .auto-btn1 {
+    background: @gradient;
+}
+#r2:checked ~ .navigation-auto .auto-btn2 {
+    background: @gradient;
+}
+#r3:checked ~ .navigation-auto .auto-btn3 {
+    background: @gradient;
+}
+#r4:checked ~ .navigation-auto .auto-btn4 {
+    background: @gradient;
+}
