@@ -1,7 +1,9 @@
+//TODO: не импортируются шрифты
+
 @font-face {
     font-family: "Inter-Light";
     font-weight: 100;
-    src: url("./fonts/Inter/Inter-ExtraLight.ttf");
+    src: url("./fonts/Inter/Inter-Light.ttf");
 }
 @font-face {
     font-family: "Inter-Regular";
@@ -14,14 +16,14 @@
     src: url("./fonts/Inter/Inter-Bold.ttf");
 }
 
-@function calcFluid($f-min, $f-max, $w-min, $w-max) {
-	$k: ($f-max - $f-min)/($w-max - $w-min);
-	$b: $f-min - $k * $w-min;
+// @function calcFluid($f-min, $f-max, $w-min, $w-max) {
+// 	$k: ($f-max - $f-min)/($w-max - $w-min);
+// 	$b: $f-min - $k * $w-min;
   
-	$b: $b * 1px;
+// 	$b: $b * 1px;
   
-	@return calc( #{$k} * 100vw + #{$b} );
-}
+// 	@return calc( #{$k} * 100vw + #{$b} );
+// }
 
 body{
     padding: 0;
@@ -37,4 +39,14 @@ body{
 .d-col(){
     display: flex;
     flex-direction: column;
+}
+.more(){
+    padding: 10px 20px;
+    color: white;
+    font-family: light-text;
+    font-size: 20px;
+    background: @gradient;
+    text-decoration: none;
+    margin: 20px 0 auto auto;
+    border: none;
 }
