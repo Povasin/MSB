@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./general.css">
     <link rel="stylesheet" href="./header/header.css">
     <link rel="stylesheet" href="./main/main.css">
+    <link rel="stylesheet" href="./footer/footer.css">
 </head>
 <body>
     <header>
@@ -25,8 +26,8 @@
                <p>dir@ids76.ru</p> 
             </div>
             <div class="headerTop__log">
-                <button id="login">Войти</button>
-                <button id="register">Зарегистрироваться</button>
+                <a href="" class="login">Войти</a>
+                <a href="" class="register">Зарегистрироваться</a>
             </div>
         </div>
         <div class="services">
@@ -126,7 +127,7 @@
                     <h2>Товар месяца</h2>
                     <p class="card__arrow">→</p>
                 </div>
-                <img class="card__cubinsForDress" src="./main/cubinsForDress.webp">
+                <img class="card__img" src="./main/cubinsForDress.webp">
                 <p class="rent">Аренда</p>
                 <p class="info">бытовка раздевалка (металлическая)</p>
                 <p class="discount">9000</p>
@@ -139,7 +140,7 @@
             </a>
         </div>
         <div class="line"></div>
-        <div class="fd-row">
+        <div class="advantages-row">
             <div class="advantages">
                 <img src="./main/money.webp">
                 <h2>Аренда без залога</h2>
@@ -162,7 +163,7 @@
                 <h3>IdsStore</h2>
                 <h2>Cобери свой идеальный комплект бытовки</h2>
                 <p>мы предлагаем собрать комплект мебели и обарудывания для твоей бытовки</p>
-                <div class="content__row">
+                <div class="fd__row">
                     <a href="" class="content__Youtube"><div class="block1"></div></a>
                     <p class="content__text">Наш Youtube канал</p>
                 </div>
@@ -170,7 +171,6 @@
             <div class="choose">
                 <button class="more">выбрать формат</button>
                 <img src="./main/emptyCubins.webp">
-                <h1>IdsStore</h1>
             </div>
 
         </div>
@@ -178,83 +178,126 @@
                 <div class="content">
                     <h2>выберети мебель и оборудывание</h2>
                     <p>для создание комплекта вам нужно выбрать мебель</p>
-                    <div class="content__row">
-                        <button id="content__prev">←</button>
-                        <button id="content__next">→</button>
+                    <div class="fd__row">
+                        <button class="prev">←</button>
+                        <button class="next">→</button>
                     </div>
                 </div>
+                <div class="slider">
+                    <div class="slider-line">
+                    </div>
+                </div>
+        </div>
+        <div class="line"></div>
+        <div class="katalog">
+            <div class="fd_row">
+                <h2>Лидеры продаж</h2>
+                <button class="prev">←</button>
+                <button class="next">→</button>
+            </div>
             <div class="slider">
                 <div class="slider-line">
-                    <a href="" class="card">
-                        <div class="fd-row">
-                            <img src="./main/fiveStars.webp" alt="">
-                            <p class="card__arrow">→</p>
-                        </div>
-                        <img class="card__img" src="./main/chair.webp">
-                        <p class="info">офисный стул</p>
-                        <p class="discount">800</p>
-                        <p class="card__price">500₽</p> 
-                        <button class="card__bag">+</button>
-                    </a>
-                    <a href="" class="card">
-                        <div class="fd-row">
-                            <img src="./main/fiveStars.webp" alt="">
-                            <p class="card__arrow">→</p>
-                        </div>
-                        <img class="card__img" src="./main/table.webp">
-                        <p class="info">офисный стол</p>
-                        <p class="discount">1000</p>
-                        <p class="card__price">700₽</p> 
-                        <button class="card__bag">+</button>
-                    </a>
-                    <a href="" class="card">
-                        <div class="fd-row">
-                            <img src="./main/fiveStars.webp" alt="">
-                            <p class="card__arrow">→</p>
-                        </div>
-                        <img class="card__img" src="./main/bad.webp">
-                        <p class="info">кровать</p>
-                        <p class="discount">1500</p>
-                        <p class="card__price">1200₽</p> 
-                        <button class="card__bag">+</button>
-                    </a>
-                    <a href="" class="card">
-                        <div class="fd-row">
-                            <img src="./main/fiveStars.webp" alt="">
-                            <p class="card__arrow">→</p>
-                        </div>
-                        <img class="card__img" src="./main/chair.webp">
-                        <p class="info">офисный стул</p>
-                        <p class="discount">800</p>
-                        <p class="card__price">500₽</p> 
-                        <button class="card__bag">+</button>
-                    </a>
-                    <a href="" class="card">
-                        <div class="fd-row">
-                            <img src="./main/fiveStars.webp" alt="">
-                            <p class="card__arrow">→</p>
-                        </div>
-                        <img class="card__img" src="./main/table.webp">
-                        <p class="info">офисный стол</p>
-                        <p class="discount">1000</p>
-                        <p class="card__price">700₽</p> 
-                        <button class="card__bag">+</button>
-                    </a>
-                    <a href="" class="card">
-                        <div class="fd-row">
-                            <img src="./main/fiveStars.webp" alt="">
-                            <p class="card__arrow">→</p>
-                        </div>
-                        <img class="card__img" src="./main/bad.webp">
-                        <p class="info">кровать</p>
-                        <p class="discount">1500</p>
-                        <p class="card__price">1200₽</p> 
-                        <button class="card__bag">+</button>
-                    </a>
+                </div>
+            </div>
+            <a href="" class="more">посмотреть все бытовки</a>
+        </div>
+        <div class="line"></div>
+    </main>
+    <footer>
+        <div class="pd-300">
+            <h2>Часто задаваемые воросы</h2>
+            <div class="answer">
+                <div class="answer__block">
+                    <div class="answer__question">
+                        <div class="answer__info">i</div>
+                        <p>бытовка автономная?</p>
+                        <p class="answer__open">v</p>
+                    </div>
+                    <div class="answer__content">Нет, нужно будет подключать воду, электричество и канализацию</div>
+                </div>
+            </div>
+            <div class="answer">
+                <div class="answer__block">
+                    <div class="answer__question">
+                        <div class="answer__info">i</div>
+                        <p>Какое состояние у бытовок?</p>
+                        <p class="answer__open">v</p>
+                    </div>
+                    <div class="answer__content">Бытовки б/у, все в хорошем состояние, чистые, убранные и без посторонних запахов. По запросу перед отправкой можем отправить фото бытовки которая приедет именно к вам.</div>
+                </div>
+            </div>
+            <div class="answer">
+                <div class="answer__block">
+                    <div class="answer__question">
+                        <div class="answer__info">i</div>
+                        <p>Какое состояние у бытовок?</p>
+                        <p class="answer__open">v</p>
+                    </div>
+                    <div class="answer__content">Бытовки б/у, все в хорошем состояние, чистые, убранные и без посторонних запахов. По запросу перед отправкой можем отправить фото бытовки которая приедет именно к вам.</div>
+                </div>
+            </div>
+            <div class="answer">
+                <div class="answer__block">
+                    <div class="answer__question">
+                        <div class="answer__info">i</div>
+                        <p>Какое состояние у бытовок?</p>
+                        <p class="answer__open">v</p>
+                    </div>
+                    <div class="answer__content">Бытовки б/у, все в хорошем состояние, чистые, убранные и без посторонних запахов. По запросу перед отправкой можем отправить фото бытовки которая приедет именно к вам.</div>
                 </div>
             </div>
         </div>
-    </main>
-    <script src="./slider.js"></script>
+        <div class="basement">
+            <div class="basement__block">
+                <div class="basement__col">
+                    <h2>Новинки, акции и скидки! <br> для постояных клиентов</h2>
+                    <p>мы сами не любим спам, поэтому только самое интересное!</p>
+                </div>
+                <div class="basement__col">
+                    <h3>Кстати нас уже 1249 человек!</h3>
+                    <div class="log">
+                        <a href="" class="login">Войти</a>
+                        <a href="" class="register">Зарегистрироваться</a>
+                    </div>
+                    <h3>Присоединяйся!</h3>
+                </div>
+            </div>
+            <div class="basement__content">
+                <div class="d-col">
+                    <a href="#" class="basement__logo">
+                        <span>IdsStore</span>
+                        <span>Магазин бытовок</span>
+                    </a>
+                    <a href="" class="prava">2022 все права защищены</a>
+                    <a href="" class="prava">пользовательское соглашение</a>
+                    <a href="" class="prava">политика конфидециальности</a>
+                </div>
+                <div class="d-col">
+                    <h4>Каталог</h4>
+                    <a href="">Бытовки для проживания</a>
+                    <a href="">Бытовки раздевалки</a>
+                    <a href="">Бытовки прорабские</a>
+                    <a href="">Бытовки под склад</a>
+                    <a href="">Бытовки с душем</a>
+                </div>
+                <div class="d-col">
+                    <h4>Информация</h4>
+                    <a href="">О нас</a>
+                    <a href="">контакты</a>
+                    <a href="">услуги</a>
+                    <a href="">галерея</a>
+                    <a href="">отзывы</a>
+                </div>
+                <div class="d-col">
+                    <h4>Контакты</h4>
+                    <p>+7 (910)973-36-65</p>
+                    <p>	dir@ids76.ru</p>
+                    <p>г. ярославль, ул 2-я Тарная 2</p>
+                    <a href="" class="vk"><img src="./footer/vkontakte-5.webp"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./main.js"></script>
 </body>
 </html>

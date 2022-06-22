@@ -10,30 +10,9 @@ header {
         border-bottom: 1px solid #ececec;
 
         &__logo {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-
-            span {
-                &:nth-child(1) {
-                    background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    color: #5134c4;
-                    font-weight: 900;
-                    font-size: 27px;
-
-                }
-
-                &:nth-child(2) {
-                    font-weight: 100;
-                    color: black;
-                    font-size: 18px;
-                }
-            }
+            .general__logo;
+            color: black
         }
-
         &__search {
             .d-row;
             position: relative;
@@ -62,9 +41,7 @@ header {
         }
 
         &__contacts {
-            display: flex;
-            flex-direction: column;
-
+            .d-col;
             p {
                 font-weight: 500;
                 margin: 3px 0;
@@ -73,23 +50,13 @@ header {
         }
 
         &__log {
-            display: flex;
-            flex-direction: row;
+            .d-row;
             margin-left: auto;
-
-            #login,
-            #register {
-                padding: 10px 20px;
-                font-size: 20px;
-                text-align: center;
-                background-color: white;
-                border: 1px solid black;
-                font-weight: 500;
-                margin: auto 6px;
-                transition: 0.7s;
+            .login,
+            .register {
+                .general__log;
             }
-
-            #register {
+            .register {
                 border: 1px solid;
                 border-image-source: linear-gradient(90deg,#5134c4, #773cbc,#b856d4);
                 border-image-slice: 1;
@@ -98,8 +65,7 @@ header {
                     color: white;
                 }
             }
-
-            #login {
+            .login {
                 &:hover {
                     background-color: black;
                     color: white;
@@ -109,15 +75,12 @@ header {
     }
 
     .services {
+        z-index: 10;
         overflow:hidden ;
-        display: flex;
-        flex-direction: row;
+        .d-row;
         padding: 0 200px;
-        position: f;
         a {
-            margin-top: 40px;
-            margin-left: 40px;
-            margin-bottom: 35px;
+            margin: 40px 0 35px 40px;
             font-size: 19px;
             font-weight: 500;
             border-bottom: 2px solid #ececec;
@@ -129,11 +92,10 @@ header {
                 position: relative;
                 font-weight: 100;
                 font-size: 19px;
-                background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+                background: @gradient;
                 color: white;
                 padding: 10px 50px;
                 margin: auto 0;
-
                 img {
                     max-width: 100%;
                     max-height: 100%;
@@ -141,20 +103,17 @@ header {
                     top: 15px;
                     right: 10px;
                 }
-
                 &:hover {
                     transform: scale(1.02);
                 }
             }
 
             &:nth-child(7) {
-                display: flex;
-                flex-direction: row;
+                .d-row;
                 position: relative;
                 font-weight: 100;
                 font-size: 19px;
                 margin-left: auto;
-
                 img {
                     max-height: 100%;
                     max-width: 100%;
@@ -171,7 +130,6 @@ header {
                 margin-bottom: 40px;
             }
         }
-
         &__sum {
             position: absolute;
             top: -15px;
@@ -182,11 +140,32 @@ header {
             height: 18px;
             border-radius: 50%;
             background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
-
             p {
                 font-weight: 900;
                 margin: 2px 5px;
             }
         }
     }
+    .services__fixed{
+        border-bottom: 1px solid #ececec;
+        position: fixed;
+        width: 1250px;
+        padding: 0 300px;
+        top: 0;
+        left: 0;
+        background-color: white;
+        a{
+            margin: 20px 0 20px 40px;
+            &:nth-child(1){
+                margin: 10px 0 auto 0;
+            }
+            &:not(:first-child):hover{
+                margin: 15px 0 25px 40px;
+            }
+            &:last-child:hover{
+                margin: 15px 0 25px auto;
+            }
+        }
+    }
 }
+
