@@ -1,0 +1,212 @@
+@import "../general.scss";
+.pd-100{
+    padding: 0 calcFluid(0, 100, 1024, 1920);
+    h2{
+        font-size: calcFluid(17, 25, 320, 1920);
+        font-weight: 900;
+    }
+}
+.answer{
+    padding:0 calcFluid(5, 200, 320, 1920);
+    margin: 10px 0;
+    @extend %d-col;
+    &__block{
+        box-shadow: 4px 2px 20px rgba(0, 0, 0, 0.25); 
+        @extend %d-col;
+        padding: 6px;
+        .answer__question{
+            @extend %d-row;
+            .answer__info{
+                color: white;
+                font-size:calcFluid(22, 27, 320, 1920);
+                font-weight: 900;
+                background: $gradient;
+                padding:2px 14px;
+                margin: auto 0;
+            }
+            p{
+                font-size: calcFluid(15, 18, 320, 1920);
+                font-weight: 500;
+                margin: auto 0 auto 20px;
+                
+            }
+            .answer__open{
+                background: $gradient;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: #5134c4;
+                font-weight: 900;
+                font-size: 30px;
+                margin: 0 0 0 auto;
+                transition:0.3s ease-out;
+                cursor: pointer;
+            }
+        }
+    }
+    &__content{
+        transition:0.3s ease-out ;
+        overflow: hidden;
+        max-height: 0;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .active{
+        max-height: 100%;
+        margin: 15px 0;
+    }
+}
+
+.basement{
+    position: relative;
+    background-color: #19103C;
+    margin-top: 120px;
+    @extend %d-col;
+    padding:0 calcFluid(0, 100, 1024, 1920);;
+    &__block{
+        box-shadow: 4px 2px 20px rgba(0, 0, 0, 0.25); 
+        position: absolute;
+        width: calcFluid(320, 1125, 100, 1920);
+        top: -90px;
+        background: $gradient;
+        color: white;
+        margin: 0 calcFluid(0, 200, 320, 1920);
+        padding:  calcFluid(12, 25, 320, 1920) calcFluid(25, 100, 320, 1920);
+        @extend %d-row;
+        .basement__col{
+            @extend %d-col;
+            width: 60%;
+            h2{
+                margin: 0 0 calcFluid(10, 20, 320, 1920)  0;
+                font-size: calcFluid(17, 25, 320, 1920);
+            }
+            p{  
+                width: 90%;
+                margin: 0;
+                font-size: calcFluid(13, 20, 320, 1920);
+            }
+        }
+        .basement__col{
+            .login,
+            .register{
+                @extend %general__log;
+                background-color: white;
+                border: none;
+            }
+            .register{
+                background: #19103C;
+                color: white;
+                border: none;
+            }
+            h3{
+                font-size: calcFluid(15, 20, 320, 1920);
+                margin: 0 0 auto 0;
+            }
+            h3:last-child{
+                margin: auto 0 0 0;
+            }
+        }
+    }
+    &__content{
+        padding: 0 calcFluid(5, 200, 320, 1920);
+        margin: calcFluid(60, 120, 320, 1920)0 40px   0;
+        @extend %d-row;
+        .d-col{
+            margin: 0 calcFluid(70, 130, 1024, 1920) 0 0;
+            @extend %d-col;
+            .basement__logo{
+                @extend %d-col;
+                @extend %general__logo; 
+            }
+            .block{
+                @extend %d-col;
+                .prava{
+                    text-decoration: none;
+                    color:#586AC6;
+                    margin: 8px 0;
+                }
+            }
+            h4{
+                font-size:calcFluid(13, 18, 320, 1920) ;
+                font-weight: 900;
+                color: white;
+                margin: 0 0 20px 0;
+            }
+            a,
+            p{
+                text-decoration: none;
+                color: white;
+                margin: 7px 0;
+                font-size:calcFluid(10, 15, 320, 1920) ;
+            }
+            &:last-child{
+                margin: 0 ;
+            }
+        }  
+    
+    }
+}
+
+@media(max-width: 970px){
+    .basement{
+        &__block{
+            width: calcFluid(269.5, 690, 320, 970);
+            display: flex;
+            flex-direction: column;
+            .basement__col:nth-child(1){
+                p{display: none;}
+            }
+            .basement__col{
+                width: 100%;
+                h3{display: none;}
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+@media(max-width: 670px){
+    .basement{
+        .basement__content{
+            display: flex;
+            flex-direction: column;
+            .d-col{
+               display: flex;
+               flex-direction: row;
+                margin: 0;
+                .block{
+                    margin: 0 0 10px auto;
+                    .prava{
+                        margin: 4px 0;
+                    }
+                }
+            }
+            .d-col:nth-child(2),
+            .d-col:nth-child(3){
+                a{display: none;}
+                padding: 10px;
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                h4{
+                    margin: auto 0;
+                }
+            }
+            .d-col:last-child{
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        &__block{
+            margin: 0;
+            box-shadow: 0;
+            width: calcFluid(288, 587, 340, 670);
+            .basement__col{
+                .login,
+                .register{
+                    margin: auto 0;
+                }
+            }
+        }
+    }
+}

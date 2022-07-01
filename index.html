@@ -28,16 +28,35 @@
             <div class="headerTop__log">
                 <a href="" class="login">Войти</a>
                 <a href="" class="register">Зарегистрироваться</a>
+                <a href="" class="log"> <img src="./header/log.webp"><p>вход</p></a>
             </div>
         </div>
         <div class="services">
-            <a href="">Каталог <img src="./header/menu.webp"></a>
+            <a href="">Каталог <div class="menu"><span></span></div></a>
             <a href="">О нас</a>
             <a href="">Услуги</a>
             <a href="">Контакты</a>
             <a href="">Галерея</a>
             <a href="">Отзыввы</a>
             <a href="" ><img src="./header/bag.webp"><div class="services__sum"><p>0</p></div>Корзина</a>
+            <a href="" class="services__media"> <img  src="./header/search.webp"></a>
+            <div class="sidebar__open">
+                <span></span>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar__menu">
+                    <div class="sidebar__row">
+                        <a href="">Каталог <div class="iconMenu"><span></span></div></a>
+                        <p class="sidebar__close">X</p>
+                    </div>
+                    <a href="">О нас</a>
+                    <a href="">Услуги</a>
+                    <a href="">Контакты</a>
+                    <a href="">Галерея</a>
+                    <a href="">Отзывы</a>
+                    <a href="" ><img src="./header/bag.webp"><div class="services__sum"><p>0</p></div>Корзина</a>
+                </div>
+            </div>
         </div>
     </header>
     <main>
@@ -60,7 +79,7 @@
                             </div>
                         </div>
                         <div class="slide__radius">
-                            <img class="img1" src="./main/cubinsForLive.webp">
+                            <img src="./main/cubinsForLive.webp">
                         </div>
                     </div>
                     <div class="slide">
@@ -75,14 +94,14 @@
                             </div>
                         </div>
                         <div class="slide__radius">
-                            <img class="img2" src="./main/cubinsForwareHouse.webp">
+                            <img src="./main/cubinsForwareHouse.webp">
                         </div>
                     </div>
                     <div class="slide">
                         <div class="slide__contant">
                             <div class="slide__text">
                                 <h2>Бытовки c душем</h2>
-                                <p>лучшие бытовки только у нас</p>
+                                <p>лучшие бытовки</p>
                             </div>
                             <div class="slide__button">
                                 <a href="" class="more">подробнее</a>
@@ -90,7 +109,7 @@
                             </div>
                         </div>
                         <div class="slide__radius">
-                            <img class="img3" src="./main/cubinsForBath.webp">
+                            <img src="./main/cubinsForBath.webp">
                         </div>
                     </div>
                     <div class="slide">
@@ -105,7 +124,7 @@
                             </div>
                         </div>
                         <div class="slide__radius">
-                            <img class="img4" src="./main/cubinsForWork.webp">
+                            <img  margin: calcFluid(-20, -120, 400, 1024) 0px; src="./main/cubinsForWork.webp">
                         </div>
                     </div>
                     <div class="navigation-auto">
@@ -124,63 +143,81 @@
             </div>
             <a href="" class="card">
                 <div class="fd-row">
-                    <h2>Товар месяца</h2>
+                    <img class="stars" src="./main/fiveStars.webp" alt="">
                     <p class="card__arrow">→</p>
                 </div>
                 <img class="card__img" src="./main/cubinsForDress.webp">
                 <p class="rent">Аренда</p>
-                <p class="info">бытовка раздевалка (металлическая)</p>
-                <p class="discount">9000</p>
+                <p class="info">бытовка раздевалка</p>          
                 <div class="fd-row">
-                    <p class="card__price">7500₽</p>  
-                    <!-- TODO: почему при создании еще одного тега <a> он берет css свойства у класса card -->
-                    <!-- <a href="" class="vido"></a>  -->
+                    <div class="fd-col">
+                        <p class="discount">9000</p>
+                        <p class="card__price">8000₽</p> 
+                    </div>
                     <button class="card__bag"><img src="./main/bag-_1_-1.webp"></button>
-                </div>
+                </div> 
             </a>
         </div>
         <div class="line"></div>
-        <div class="advantages-row">
+         <div class="advantages-row">
             <div class="advantages">
                 <img src="./main/money.webp">
-                <h2>Аренда без залога</h2>
-                <p>мы предлагаем аренду бытовок и контейнеров без залога</p>
+                <div class="advantages__content">
+                    <h2>Аренда без залога</h2>
+                    <p>мы предлагаем аренду бытовок и контейнеров без залога</p>
+                </div>
             </div>
             <div class="advantages">
                 <img src="./main/discount.webp">
-                <h2>Скидка от 3х месяцев</h2>
-                <p>Особые условия сотрудничества для постоянных клиентов</p>
+                <div class="advantages__content">
+                    <h2>Скидка от 3х месяцев</h2>
+                    <p>Особые условия сотрудничества для постоянных клиентов</p>
+                </div>
             </div>
             <div class="advantages">
                 <img src="./main/services.webp">
-                <h2>Качественный сервис</h2>
-                <p>Поможем с обслуживанием товара и предоствим ремонт техники</p>
+                <div class="advantages__content">                     
+                    <h2>Качественный сервис</h2>
+                    <p>Поможем с обслуживанием товара и предоствим ремонт техники</p>
+                </div>
             </div>
-        </div>
+        </div> 
         <div class="line"></div>
         <div class="fd-row">
             <div class="content">
-                <h3>IdsStore</h2>
+                <h3>IdsStore</h3>
                 <h2>Cобери свой идеальный комплект бытовки</h2>
                 <p>мы предлагаем собрать комплект мебели и обарудывания для твоей бытовки</p>
-                <div class="fd__row">
+                <select class="choose__more">
+                    <option value="./main/emptyCubins.webp">выбрать формат</option>
+                    <option value="./main/cubinsForDress.webp">бытовка раздевалка</option>
+                    <option value="./main/cubinsForWork.webp">бытовка прорабская</option>
+                    <option value="./main/cubinsForLive.webp">бытовка для проживания </option>
+                    <option value="./main/cubinsForBath.webp"> бытовка с душем</option>
+                </select>
+                <div class="fd-row">
                     <a href="" class="content__Youtube"><div class="block1"></div></a>
-                    <p class="content__text">Наш Youtube канал</p>
+                    <a href=""> <p class="content__text">Наш Youtube канал</p></a>
                 </div>
             </div>
             <div class="choose">
-                <button class="more">выбрать формат</button>
-                <img src="./main/emptyCubins.webp">
+                <select class="choose__more">
+                    <option class="option" value="./main/emptyCubins.webp">выбрать формат</option>
+                    <option class="option" value="./main/cubinsForDress.webp">бытовка раздевалка</option>
+                    <option class="option" value="./main/cubinsForWork.webp">бытовка прорабская</option>
+                    <option class="option" value="./main/cubinsForLive.webp">бытовка для проживания </option>
+                    <option class="option" value="./main/cubinsForBath.webp"> бытовка с душем</option>
+                </select>
+              <div class="choose__img"><img src="./main/emptyCubins.webp"></div> 
             </div>
-
         </div>
         <div class="furniture">
                 <div class="content">
                     <h2>выберети мебель и оборудывание</h2>
                     <p>для создание комплекта вам нужно выбрать мебель</p>
-                    <div class="fd__row">
+                    <div class="fd-row">
                         <button class="prev">←</button>
-                        <button class="next">→</button>
+                        <button class="next next__active">→</button>
                     </div>
                 </div>
                 <div class="slider">
@@ -190,7 +227,7 @@
         </div>
         <div class="line"></div>
         <div class="katalog">
-            <div class="fd_row">
+            <div class="katalog-row">
                 <h2>Лидеры продаж</h2>
                 <button class="prev">←</button>
                 <button class="next">→</button>
@@ -204,9 +241,9 @@
         <div class="line"></div>
     </main>
     <footer>
-        <div class="pd-300">
-            <h2>Часто задаваемые воросы</h2>
+        <div class="pd-100">
             <div class="answer">
+                <h2>Часто задаваемые воросы</h2>
                 <div class="answer__block">
                     <div class="answer__question">
                         <div class="answer__info">i</div>
@@ -268,9 +305,11 @@
                         <span>IdsStore</span>
                         <span>Магазин бытовок</span>
                     </a>
-                    <a href="" class="prava">2022 все права защищены</a>
-                    <a href="" class="prava">пользовательское соглашение</a>
-                    <a href="" class="prava">политика конфидециальности</a>
+                    <div class="block">
+                        <a href="" class="prava">2022 все права защищены</a>
+                        <a href="" class="prava">пользовательское соглашение</a>
+                        <a href="" class="prava">политика конфидециальности</a>
+                    </div>
                 </div>
                 <div class="d-col">
                     <h4>Каталог</h4>
