@@ -2,18 +2,24 @@ $gradient: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
 $gray: #ececec;
 @font-face {
     font-family: "Inter-Light";
+    font-style: normal;
     font-weight: 100;
     src: url("../fonts/Inter/Inter-Light.ttf");
+    font-display: swap;
 }
 @font-face {
+    font-style: normal;
     font-family: "Inter-Regular";
     font-weight: 500;
     src: url("../fonts/Inter/Inter-Regular.ttf");
+    font-display: swap;
 }
 @font-face {
+    font-style: normal;
     font-family: "Inter-Bold";
     font-weight: 900;
     src: url("../fonts/Inter/Inter-Bold.ttf");
+    font-display: swap;
 }
 
 @function calcFluid($f-min, $f-max, $w-min, $w-max) {
@@ -29,6 +35,10 @@ body{
     padding: 0;
     margin: 0;
     font-family: "Inter-Regular", sans-serif;
+}
+%main {
+    padding: 0 calcFluid(0, 100, 1024, 1920);
+    @extend %d-col;
 }
 
 %d-row{

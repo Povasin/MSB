@@ -1,7 +1,6 @@
 @import "../general.scss";
 main {
-    padding: 0 calcFluid(0, 100, 1024, 1920);
-    @extend %d-col;
+    @extend %main;
     .line{
         width: 100%;
         margin-top: 30px;
@@ -140,7 +139,7 @@ main {
     }
     .card{
         margin: 0 calcFluid(8, 200, 320, 1920) 0 0;
-        width:calcFluid(200, 280, 1024, 1920);
+
     }
 }
 .advantages-row{
@@ -179,13 +178,13 @@ main {
     @extend %d-col;
     background-color: white;
     width: 280px;
-    padding: 0 10px 10px 10px ;
+    padding:10px;
     cursor: pointer;
     text-decoration: none;
     color: black;
     .rent{
         font-size: calcFluid(15, 20, 320, 1920);
-        color: #A9A9A9;
+        color: #58585e;
         margin: 10px 0 10px 0;
     }
     .info{
@@ -195,34 +194,38 @@ main {
     }
     &__bag{
         cursor: pointer;
-        margin: auto 0 auto auto;
+        margin: auto 0 0 auto;
         padding: calcFluid(2, 5, 700, 1920) calcFluid(15, 20, 700, 1920);
         background:$gradient;
         border: none;
     }
     .card__img{
         width: 100%;
+        margin: auto 0 0 0;
     }
     &__arrow{
-        margin:5px 0 0 auto;
+        margin:auto 0 auto auto;
         font-size: 24px;
         font-weight: 900;
     }
-    .stars{
-        margin-top: -10px;
+    .star{
+        font-size:  calcFluid(14, 20, 700, 1920);
+        font-weight: 900;
+        margin: auto 0;
     }
-    .fd-row{
+    .card__sale{
+        @extend %d-row;
         margin: auto 0 0 0;
         .fd-col{
             .discount{
                 text-decoration:line-through;
-                color: #A9A9A9;
+                color: #58585e;
                 font-size:calcFluid(15, 20, 320, 1920);
                 margin:calcFluid(0, 10, 850, 1920) 0 0 0;
             }
             .card__price{
                 font-size: calcFluid(17, 20, 320, 1920);
-                font-weight: 500;
+                font-weight: 900;
                 margin: 0;
             }
         }
@@ -274,7 +277,7 @@ main {
         }
     }
     h3{
-        opacity: 0.2;
+        color: #58585e;
         font-weight: 900;
         font-size:calcFluid(18, 25, 320, 1920);
         margin: 0;
@@ -344,7 +347,7 @@ main {
         box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.25);
         .card__img{
             width: 60%;
-            margin: 0 auto ;
+            margin:  auto auto 0 auto ;
         }
         .card__bag{
             position: absolute; 
@@ -466,7 +469,7 @@ main {
         
     }
     .card {
-        .fd-row {
+        .card__sale {
             .fd-col{
                 display: flex;
                 flex-direction: row-reverse;

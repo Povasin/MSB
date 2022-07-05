@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- придумать описание страницы -->
+    <meta name="description" content="придумать описание страницы">
     <title>IdsStore</title>
-    <link rel="stylesheet" href="./general.css">
-    <link rel="stylesheet" href="./header/header.css">
-    <link rel="stylesheet" href="./main/main.css">
-    <link rel="stylesheet" href="./footer/footer.css">
+    <link rel="stylesheet" href="./general.css" media="screen and (max-width: 1920px)">
+    <link rel="stylesheet" href="./header/header.css" media="screen and (max-width: 1920px)">
+    <link rel="stylesheet" href="./main/main.css" media="screen and (max-width: 1920px)" >
+    <link rel="stylesheet" href="./footer/footer.css"media="screen and (max-width: 1920px)">
 </head>
 <body>
     <header>
@@ -19,7 +21,7 @@
             </a>
             <div class="headerTop__search">
                 <input type="text" placeholder="Поиск" maxlength="30" id="search">
-                <img src="./header/search.webp">
+                <img src="./header/search.webp" alt="поиск">
             </div>
             <div class="headerTop__contacts">
                <p>+7(910)973-36-65</p>
@@ -28,18 +30,18 @@
             <div class="headerTop__log">
                 <a href="" class="login">Войти</a>
                 <a href="" class="register">Зарегистрироваться</a>
-                <a href="" class="log"> <img src="./header/log.webp"><p>вход</p></a>
+                <a href="" class="log"> <img src="./header/log.webp" alt="вход"><p>вход</p></a>
             </div>
         </div>
         <div class="services">
             <a href="">Каталог <div class="menu"><span></span></div></a>
             <a href="">О нас</a>
             <a href="">Услуги</a>
-            <a href="">Контакты</a>
+            <a href="./contact/contact.html">Контакты</a>
             <a href="">Галерея</a>
             <a href="">Отзыввы</a>
-            <a href="" ><img src="./header/bag.webp"><div class="services__sum"><p>0</p></div>Корзина</a>
-            <a href="" class="services__media"> <img  src="./header/search.webp"></a>
+            <a href="" ><img src="./header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
+            <a href="" class="services__media"> <img  src="./header/search.webp" alt="поиск"></a>
             <div class="sidebar__open">
                 <span></span>
             </div>
@@ -51,10 +53,10 @@
                     </div>
                     <a href="">О нас</a>
                     <a href="">Услуги</a>
-                    <a href="">Контакты</a>
+                    <a href="./contact/contact.html">Контакты</a>
                     <a href="">Галерея</a>
                     <a href="">Отзывы</a>
-                    <a href="" ><img src="./header/bag.webp"><div class="services__sum"><p>0</p></div>Корзина</a>
+                    <a href="" ><img src="./header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
                 </div>
             </div>
         </div>
@@ -79,7 +81,7 @@
                             </div>
                         </div>
                         <div class="slide__radius">
-                            <img src="./main/cubinsForLive.webp">
+                            <img src="./main/cubinsForLive.webp" alt="бытовки для проживания">
                         </div>
                     </div>
                     <div class="slide">
@@ -94,7 +96,7 @@
                             </div>
                         </div>
                         <div class="slide__radius">
-                            <img src="./main/cubinsForwareHouse.webp">
+                            <img src="./main/cubinsForwareHouse.webp" alt="бытовки под склад">
                         </div>
                     </div>
                     <div class="slide">
@@ -109,7 +111,7 @@
                             </div>
                         </div>
                         <div class="slide__radius">
-                            <img src="./main/cubinsForBath.webp">
+                            <img src="./main/cubinsForBath.webp" alt="бытовки с душем">
                         </div>
                     </div>
                     <div class="slide">
@@ -124,7 +126,7 @@
                             </div>
                         </div>
                         <div class="slide__radius">
-                            <img  margin: calcFluid(-20, -120, 400, 1024) 0px; src="./main/cubinsForWork.webp">
+                            <img src="./main/cubinsForWork.webp" alt="бытовки прорабские">
                         </div>
                     </div>
                     <div class="navigation-auto">
@@ -143,39 +145,39 @@
             </div>
             <a href="" class="card">
                 <div class="fd-row">
-                    <img class="stars" src="./main/fiveStars.webp" alt="">
+                    <p class="star">★★★★☆</p>
                     <p class="card__arrow">→</p>
                 </div>
-                <img class="card__img" src="./main/cubinsForDress.webp">
+                <img class="card__img" src="./main/cubinsForDress.webp" alt="бытовка раздевалкла">
                 <p class="rent">Аренда</p>
                 <p class="info">бытовка раздевалка</p>          
-                <div class="fd-row">
+                <div class="card__sale">
                     <div class="fd-col">
                         <p class="discount">9000</p>
                         <p class="card__price">8000₽</p> 
                     </div>
-                    <button class="card__bag"><img src="./main/bag-_1_-1.webp"></button>
+                    <button class="card__bag"><img src="./main/bag-_1_-1.webp" alt="корзина"></button>
                 </div> 
             </a>
         </div>
         <div class="line"></div>
          <div class="advantages-row">
             <div class="advantages">
-                <img src="./main/money.webp">
+                <img src="./main/money.webp" alt="аренда">
                 <div class="advantages__content">
                     <h2>Аренда без залога</h2>
                     <p>мы предлагаем аренду бытовок и контейнеров без залога</p>
                 </div>
             </div>
             <div class="advantages">
-                <img src="./main/discount.webp">
+                <img src="./main/discount.webp" alt="скидка">
                 <div class="advantages__content">
                     <h2>Скидка от 3х месяцев</h2>
                     <p>Особые условия сотрудничества для постоянных клиентов</p>
                 </div>
             </div>
             <div class="advantages">
-                <img src="./main/services.webp">
+                <img src="./main/services.webp" alt="сервис">
                 <div class="advantages__content">                     
                     <h2>Качественный сервис</h2>
                     <p>Поможем с обслуживанием товара и предоствим ремонт техники</p>
@@ -208,7 +210,7 @@
                     <option class="option" value="./main/cubinsForLive.webp">бытовка для проживания </option>
                     <option class="option" value="./main/cubinsForBath.webp"> бытовка с душем</option>
                 </select>
-              <div class="choose__img"><img src="./main/emptyCubins.webp"></div> 
+              <div class="choose__img"><img src="./main/emptyCubins.webp" alt="бытовка пустая"></div> 
             </div>
         </div>
         <div class="furniture">
@@ -301,7 +303,7 @@
             </div>
             <div class="basement__content">
                 <div class="d-col">
-                    <a href="#" class="basement__logo">
+                    <a href="./index.html" class="basement__logo">
                         <span>IdsStore</span>
                         <span>Магазин бытовок</span>
                     </a>
@@ -322,7 +324,7 @@
                 <div class="d-col">
                     <h4>Информация</h4>
                     <a href="">О нас</a>
-                    <a href="">контакты</a>
+                    <a href="./contact/contact.html">контакты</a>
                     <a href="">услуги</a>
                     <a href="">галерея</a>
                     <a href="">отзывы</a>
@@ -332,11 +334,13 @@
                     <p>+7 (910)973-36-65</p>
                     <p>	dir@ids76.ru</p>
                     <p>г. ярославль, ул 2-я Тарная 2</p>
-                    <a href="" class="vk"><img src="./footer/vkontakte-5.webp"></a>
+                    <a href=""><img src="./footer/vkontakte-5.webp" alt="Vkontakte"></a>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="./main.js"></script>
+    <script async src="./render.js"></script>
+    <script async src="./main.js"></script>
+    <script async src="./index.js"></script>
 </body>
 </html>

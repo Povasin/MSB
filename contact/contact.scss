@@ -1,0 +1,59 @@
+@import "../general.scss";
+main{
+    @extend %main;
+}
+.main_fixed{
+    margin-top: 90px
+}
+.map{
+    padding: 0 calcFluid(8, 200, 320, 1920);
+    @extend %d-col;
+    h1{
+        margin: 0 0 10px 0;
+        font-weight: 900;
+        font-size:calcFluid(17, 30, 320, 1920) ;
+    }
+    &__contact{
+        @extend %d-row;
+        position: relative;
+        .map-col{
+            margin: 0 auto 0 0;
+            @extend %d-col;
+            h2{
+                font-size: calcFluid(13, 18, 320, 1920);
+                font-weight: 500;
+                opacity: 0.4;
+            }
+            p{
+                margin: 0;
+                font-size: calcFluid(15, 20, 320, 1920);
+                font-weight: 500;
+            }
+        }
+    }
+    #map__yandex{
+        margin: 20px 0 ;
+        width: 100%;
+        height: 350px;
+    }
+    [class*="copyrights-pane"]{
+        display: none !important;
+    }
+}
+
+@media(max-width: 630px){
+    .map {
+        &__contact{
+            margin: 50px 0 0 0 ;
+            .map-col{
+                text-align: center;
+                margin: auto;
+               &:nth-child(2){
+                position: absolute;
+                top: -60px;
+                left:  calcFluid(50, 150, 320, 630);
+               }
+            }
+        }
+    }
+}
