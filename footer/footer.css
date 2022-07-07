@@ -105,6 +105,7 @@ body {
   margin: 0 0 0 auto;
   transition: 0.3s ease-out;
   cursor: pointer;
+  transform: rotate(90deg);
 }
 .answer__content {
   transition: 0.3s ease-out;

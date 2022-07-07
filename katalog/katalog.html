@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- придумать описание страницы -->
     <meta name="description" content="придумать описание страницы">
-    <title>IdsStore Контакты</title>
-    <link rel="stylesheet" href="../general.css" media="screen and (max-width: 1920px)">
-    <link rel="stylesheet" href="../header/header.css" media="screen and (max-width: 1920px)">
-    <link rel="stylesheet" href="./contact.css" media="screen and (max-width: 1920px)" >
-    <link rel="stylesheet" href="../footer/footer.css"media="screen and (max-width: 1920px)">
+    <title>IdsStore Каталог</title>
+    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="./katalog.css">
+    <link rel="stylesheet" href="../footer/footer.css">
 </head>
 <body>
     <header>
@@ -34,10 +34,10 @@
             </div>
         </div>
         <div class="services">
-            <a href="../katalog/katalog.html">Каталог <div class="menu"><span></span></div></a>
+            <a href="./katalog.html">Каталог <div class="menu"><span></span></div></a>
             <a href="">О нас</a>
             <a href="">Услуги</a>
-            <a href="./contact.html">Контакты</a>
+            <a href="../contact/contact.html">Контакты</a>
             <a href="">Галерея</a>
             <a href="">Отзыввы</a>
             <a href="" ><img src="../header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
@@ -48,12 +48,12 @@
             <div class="sidebar">
                 <div class="sidebar__menu">
                     <div class="sidebar__row">
-                        <a href="">Каталог <div class="iconMenu"><span></span></div></a>
+                        <a href="./katalog.html">Каталог <div class="iconMenu"><span></span></div></a>
                         <p class="sidebar__close">X</p>
                     </div>
                     <a href="">О нас</a>
                     <a href="">Услуги</a>
-                    <a href="./contact.html">Контакты</a>
+                    <a href="../contact/contact.html">Контакты</a>
                     <a href="">Галерея</a>
                     <a href="">Отзывы</a>
                     <a href="" ><img src="../header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
@@ -61,28 +61,51 @@
             </div>
         </div>
     </header>
-    <main>   
-        <div class="map">
-            <h1>Контакты</h2>
-            <div class="map__contact">
-                <div class="map-col">
-                    <h2>Телефон</h2>
-                    <p>+7 (910)973-36-65</p>
-                </div>
-                <div class="map-col">
-                    <h2>Адрес</h2>
-                    <p>г. ярославль, ул 2-я Тарная 2</p>
-                </div>
-                <div class="map-col">
-                    <h2>Электронная почта</h2>
-                    <p>dir@ids76.ru</p>
-                </div>
+    <main>
+        <div class="katalog">
+            <span><a href="../index.html">главная </a>/<a href="./katalog.html"> каталог</a></span>
+            <h1>Бытовки</h1>
+            <div class="katalog-row">
+                    <p>Сначала: <span>популярные</span></p>
+                    <p class="katalog__open">></p>
+                    <p class="katalog__kol">на странице: <span>6</span></p>
+                    <div class="filter__open"><img src="./filter.webp" alt="фильтры"><p>фильтры</p></div>
             </div>
-            <div id="map__yandex">
-                <script type="text/javascript" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1de37163293f4e550481d9ca14ec396e5a467508c7cd738b2b7f8c1037132ff8&amp;width=100%25&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+            <div class="katalog-row">
+                <div class="katalog__filter">
+                    <div class="katalog-row">
+                        <h2>цена</h2>
+                        <p class="filter__close">x</p>
+                    </div>
+                    <div class="katalog-row">
+                        <span> от <input type="number" maxlength="6" class="katalog__price" ></span>
+                        <span> до <input type="number" maxlength="6" class="katalog__price" ></span>
+                    </div>
+                    <input type="range" class="katalog__priceRange">
+                    <div class="katalog-col">
+                        <h2>Габариты</h2>
+                        <p> <input type="checkbox" class="katalog__Checkbox">6х2,4х2,50м</p>
+                        <p> <input type="checkbox" class="katalog__Checkbox">2,5х2,5х3,0м</p>
+                        <p> <input type="checkbox" class="katalog__Checkbox">6х2,4х2,4м</p>
+                    </div>
+                        <h2>Вместимость</h2>
+                        <div class="katalog-row">
+                            <span> от <input type="number" maxlength="6" class="katalog__price" ></span>
+                            <span> до <input type="number" maxlength="6" class="katalog__price" ></span>
+                        </div>
+                    <input type="range" class="katalog__priceRange">
+                    <div class="katalog-col">
+                        <h2>Рейтинг покупателей</h2>
+                        <p> <input type="checkbox" class="katalog__Checkbox">★★★★☆</p>
+                        <p> <input type="checkbox" class="katalog__Checkbox">★★★☆☆</p>
+                        <p> <input type="checkbox" class="katalog__Checkbox">★★☆☆☆</p>
+                        <p> <input type="checkbox" class="katalog__Checkbox">Любой</p>
+                    </div>
+                    <button id="clear">Очистить</button>
+                </div>
+                <div class="katalog__slider"></div>
             </div>
         </div>
-        
     </main>
     <footer>
         <div class="pd-100">
@@ -166,7 +189,7 @@
                 <div class="d-col">
                     <h4>Информация</h4>
                     <a href="">О нас</a>
-                    <a href="./contact.html">контакты</a>
+                    <a href="../contact/contact.html">контакты</a>
                     <a href="">услуги</a>
                     <a href="">галерея</a>
                     <a href="">отзывы</a>
@@ -182,5 +205,7 @@
         </div>
     </footer>
     <script src="../main.js"></script>
+    <script src="../render.js"></script>
+    <script src="./katalog.js"></script>
 </body>
 </html>

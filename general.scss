@@ -68,7 +68,8 @@ body{
 %slider{
     overflow: hidden;
    @extend %d-row;
-    .slider-line{
+    .katalog__slider,
+    .furniture__slider{
         position: relative;
         @extend %d-row;
         width: 200%;
@@ -133,4 +134,67 @@ body{
         margin: auto 0;
         border: 1px solid white;
     }
+}
+
+%card {
+    position: relative;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+    @extend %d-col;
+    background-color: white;
+    width: 280px;
+    padding:10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    .rent{
+        font-size: calcFluid(15, 20, 320, 1920);
+        color: #58585e;
+        margin: 10px 0 10px 0;
+    }
+    .info{
+        font-size:calcFluid(15, 20, 320, 1920);
+        font-weight: 900;
+        margin: 0;
+    }
+    .card__bag{
+        cursor: pointer;
+        margin: auto 0 0 auto;
+        padding: calcFluid(2, 5, 700, 1920) calcFluid(15, 20, 700, 1920);
+        background:$gradient;
+        border: none;
+    }
+    .card__img{
+        width: 100%;
+        margin: auto 0 0 0;
+    }
+    .fd-row{
+        @extend %d-row;
+        .card__arrow{
+            margin:auto 0 auto auto;
+            font-size: 24px;
+            font-weight: 900;
+        }
+        .star{
+            font-size:  calcFluid(14, 20, 700, 1920);
+            font-weight: 900;
+            margin: auto 0;
+        }
+    }
+    .card__sale{
+        @extend %d-row;
+        margin: auto 0 0 0;
+        .fd-col{
+            .discount{
+                text-decoration:line-through;
+                color: #58585e;
+                font-size:calcFluid(15, 20, 320, 1920);
+                margin:calcFluid(0, 10, 850, 1920) 0 0 0;
+            }
+            .card__price{
+                font-size: calcFluid(17, 20, 320, 1920);
+                font-weight: 900;
+                margin: 0;
+            }
+        }
+    }   
 }

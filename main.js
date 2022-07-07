@@ -21,10 +21,10 @@ answer__question.forEach(item=>{
         let content = item.nextElementSibling
         if (e.target.className == "answer__open") {
             if (content.classList.contains("active")) {
-                e.target.style.transform = 'rotate(' + 0 + 'deg)'
+                e.target.style.transform = 'rotate(' + 90 + 'deg)'
                 content.classList.remove("active")
             } else{
-                e.target.style.transform = 'rotate(' + 180 + 'deg)'
+                e.target.style.transform = 'rotate(' + 270 + 'deg)'
                 content.classList.add("active")
             }
         }

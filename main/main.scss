@@ -173,63 +173,7 @@ main {
     }
 }
 .card {
-    position: relative;
-    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
-    @extend %d-col;
-    background-color: white;
-    width: 280px;
-    padding:10px;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-    .rent{
-        font-size: calcFluid(15, 20, 320, 1920);
-        color: #58585e;
-        margin: 10px 0 10px 0;
-    }
-    .info{
-        font-size:calcFluid(15, 20, 320, 1920);
-        font-weight: 900;
-        margin: 0;
-    }
-    &__bag{
-        cursor: pointer;
-        margin: auto 0 0 auto;
-        padding: calcFluid(2, 5, 700, 1920) calcFluid(15, 20, 700, 1920);
-        background:$gradient;
-        border: none;
-    }
-    .card__img{
-        width: 100%;
-        margin: auto 0 0 0;
-    }
-    &__arrow{
-        margin:auto 0 auto auto;
-        font-size: 24px;
-        font-weight: 900;
-    }
-    .star{
-        font-size:  calcFluid(14, 20, 700, 1920);
-        font-weight: 900;
-        margin: auto 0;
-    }
-    .card__sale{
-        @extend %d-row;
-        margin: auto 0 0 0;
-        .fd-col{
-            .discount{
-                text-decoration:line-through;
-                color: #58585e;
-                font-size:calcFluid(15, 20, 320, 1920);
-                margin:calcFluid(0, 10, 850, 1920) 0 0 0;
-            }
-            .card__price{
-                font-size: calcFluid(17, 20, 320, 1920);
-                font-weight: 900;
-                margin: 0;
-            }
-        }
-    }   
+    @extend %card;
 }
 .choose{
     padding-right: calcFluid(8, 200, 320, 1920);
@@ -248,6 +192,7 @@ main {
         z-index: 5;
         @extend %more;        
         option{
+
             color: black;
         }
     }
@@ -473,7 +418,7 @@ main {
             .fd-col{
                 display: flex;
                 flex-direction: row-reverse;
-                margin: 10px 0;
+                margin: 10px 0 0 0;
                 .card__price{
                     margin: 0 10px 0 0;
                 }
@@ -491,7 +436,7 @@ main {
                     max-width: 90%;
                 }
             }
-            .slider-line{
+            .furniture__slider{
                 width: 300%;
             }
         }
@@ -500,7 +445,7 @@ main {
     .katalog{ 
         .slider{
             margin: 0 calcFluid(0, 30, 320, 850);
-            .slider-line{
+            .katalog__slider{
                 width: 300%;
             }
         }
@@ -578,7 +523,7 @@ main {
     .katalog{
         .slider{
             margin: 0;
-            .slider-line{
+            .katalog__slider{
                 width: 300%;
             }
         }
@@ -591,7 +536,7 @@ main {
             .card {
                 width: 400px;
             }
-            .slider-line{
+            .katalog__slider{
                 width: 600%;
             }
         }

@@ -204,12 +204,8 @@ header {
                         cursor: pointer;
                         margin: auto 0 auto auto;
                         font-size:calcFluid(22, 30, 320, 1920);
-                        font-weight: 900;
-                        background:  $gradient;
-                        -webkit-background-clip: text;
-                        background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        color: #5134c4;
+                        font-weight: 100;
+                        color: black;
                     }
                 }
                 a{  

@@ -247,12 +247,8 @@ header .services .sidebar__menu .sidebar__row .sidebar__close {
   cursor: pointer;
   margin: auto 0 auto auto;
   font-size: calc( 0.005 * 100vw + 20.4px );
-  font-weight: 900;
-  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #5134c4;
+  font-weight: 100;
+  color: black;
 }
 header .services .sidebar__menu a {
   display: flex !important;
