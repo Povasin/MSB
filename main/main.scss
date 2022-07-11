@@ -436,7 +436,7 @@ main {
                     max-width: 90%;
                 }
             }
-            .furniture__slider{
+            .slider-line{
                 width: 300%;
             }
         }
@@ -445,7 +445,7 @@ main {
     .katalog{ 
         .slider{
             margin: 0 calcFluid(0, 30, 320, 850);
-            .katalog__slider{
+            .slider-line{
                 width: 300%;
             }
         }
@@ -523,7 +523,7 @@ main {
     .katalog{
         .slider{
             margin: 0;
-            .katalog__slider{
+            .slider-line{
                 width: 300%;
             }
         }
@@ -536,7 +536,7 @@ main {
             .card {
                 width: 400px;
             }
-            .katalog__slider{
+            .slider-line{
                 width: 600%;
             }
         }

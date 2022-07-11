@@ -68,8 +68,7 @@ body{
 %slider{
     overflow: hidden;
    @extend %d-row;
-    .katalog__slider,
-    .furniture__slider{
+    .slider-line{
         position: relative;
         @extend %d-row;
         width: 200%;
@@ -149,7 +148,7 @@ body{
     .rent{
         font-size: calcFluid(15, 20, 320, 1920);
         color: #58585e;
-        margin: 10px 0 10px 0;
+        margin: auto 0 5px 0;
     }
     .info{
         font-size:calcFluid(15, 20, 320, 1920);
@@ -182,7 +181,7 @@ body{
     }
     .card__sale{
         @extend %d-row;
-        margin: auto 0 0 0;
+        margin: 10px 0 0 0;
         .fd-col{
             .discount{
                 text-decoration:line-through;

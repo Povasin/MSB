@@ -35,11 +35,10 @@
         </div>
         <div class="services">
             <a href="./katalog.html">Каталог <div class="menu"><span></span></div></a>
-            <a href="">О нас</a>
+            <a href="../aboutUs/aboutUs.html">О нас</a>
             <a href="">Услуги</a>
             <a href="../contact/contact.html">Контакты</a>
             <a href="">Галерея</a>
-            <a href="">Отзыввы</a>
             <a href="" ><img src="../header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
             <a href="" class="services__media"> <img  src="../header/search.webp" alt="поиск"></a>
             <div class="sidebar__open">
@@ -51,11 +50,10 @@
                         <a href="./katalog.html">Каталог <div class="iconMenu"><span></span></div></a>
                         <p class="sidebar__close">X</p>
                     </div>
-                    <a href="">О нас</a>
+                    <a href="../aboutUs/aboutUs.html">О нас</a>
                     <a href="">Услуги</a>
                     <a href="../contact/contact.html">Контакты</a>
                     <a href="">Галерея</a>
-                    <a href="">Отзывы</a>
                     <a href="" ><img src="../header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
                 </div>
             </div>
@@ -66,8 +64,14 @@
             <span><a href="../index.html">главная </a>/<a href="./katalog.html"> каталог</a></span>
             <h1>Бытовки</h1>
             <div class="katalog-row">
-                    <p>Сначала: <span>популярные</span></p>
-                    <p class="katalog__open">></p>
+                    <p>Сначала:
+                        <!-- можно ли как то стилизовать option -->
+                        <select name="filter" id="firstFilter">
+                            <option value="popular">популярные</option>
+                            <option value="cheap">дешевле</option>
+                            <option value="expencive">дороже</option>
+                        </select>
+                    </p>
                     <p class="katalog__kol">на странице: <span>6</span></p>
                     <div class="filter__open"><img src="./filter.webp" alt="фильтры"><p>фильтры</p></div>
             </div>
@@ -78,28 +82,39 @@
                         <p class="filter__close">x</p>
                     </div>
                     <div class="katalog-row">
-                        <span> от <input type="number" maxlength="6" class="katalog__price" ></span>
-                        <span> до <input type="number" maxlength="6" class="katalog__price" ></span>
+                        <span> от <input type="text" maxlength="4" class="katalog__price" oninput="inputValue()" onkeypress="noDigits(event)"></span>
+                        <span> до <input type="text" maxlength="4" class="katalog__price" oninput="inputValue()"onkeypress="noDigits(event)" ></span>
                     </div>
-                    <input type="range" class="katalog__priceRange">
-                    <div class="katalog-col">
+                    <div class="container">
+                        <div class="slider-track"></div>
+                        <input type="range" min="0" max="10000" value="1000" id="slider-1" oninput="slideOne()">
+                        <input type="range" min="0" max="10000" value="9000" id="slider-2" oninput="slideTwo()">
+                    </div>
+                    <div class="katalog-size">
                         <h2>Габариты</h2>
-                        <p> <input type="checkbox" class="katalog__Checkbox">6х2,4х2,50м</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox">2,5х2,5х3,0м</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox">6х2,4х2,4м</p>
+                        <div class="katalog__sizeItem">
+                            <input type="checkbox" class="katalog__Checkbox" value="6х2,4х2,50м">
+                            <label for="katalog__Checkbox">6х2,4х2,50м</label>
+                        </div>
+                        <div class="katalog__sizeItem">
+                            <input type="checkbox" class="katalog__Checkbox" value="6х2,4х2,4м">
+                            <label for="katalog__Checkbox">2,5х2,5х3,0м</label>
+                        </div>
+                        <div class="katalog__sizeItem">
+                            <input type="checkbox" class="katalog__Checkbox" value="6х2,4х2,4м">
+                            <label for="katalog__Checkbox">6х2,4х2,4м</label>
+                        </div>
                     </div>
                         <h2>Вместимость</h2>
                         <div class="katalog-row">
-                            <span> от <input type="number" maxlength="6" class="katalog__price" ></span>
-                            <span> до <input type="number" maxlength="6" class="katalog__price" ></span>
+                            <span> от <input type="text" maxlength="1" class="katalog__price" onkeypress="noDigits(event)" placeholder="1"></span>
+                            <span> до <input type="text" maxlength="2" class="katalog__price" onkeypress="noDigits(event)" placeholder="10"></span>
                         </div>
-                    <input type="range" class="katalog__priceRange">
-                    <div class="katalog-col">
+                    <div class="katalog-star">
                         <h2>Рейтинг покупателей</h2>
-                        <p> <input type="checkbox" class="katalog__Checkbox">★★★★☆</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox">★★★☆☆</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox">★★☆☆☆</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox">Любой</p>
+                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★★★☆">★★★★☆</p>
+                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★★☆☆">★★★☆☆</p>
+                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★☆☆☆">★★☆☆☆</p>
                     </div>
                     <button id="clear">Очистить</button>
                 </div>
@@ -188,11 +203,10 @@
                 </div>
                 <div class="d-col">
                     <h4>Информация</h4>
-                    <a href="">О нас</a>
+                    <a href="../aboutUs/aboutUs.html">О нас</a>
                     <a href="../contact/contact.html">контакты</a>
                     <a href="">услуги</a>
                     <a href="">галерея</a>
-                    <a href="">отзывы</a>
                 </div>
                 <div class="d-col">
                     <h4>Контакты</h4>
@@ -204,8 +218,7 @@
             </div>
         </div>
     </footer>
-    <script src="../main.js"></script>
-    <script src="../render.js"></script>
-    <script src="./katalog.js"></script>
+    <script async src="../main.js"></script>
+    <script async src="./katalog.js"></script>
 </body>
 </html>

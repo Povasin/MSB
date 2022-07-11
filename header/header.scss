@@ -124,7 +124,7 @@ header {
                 }
             }
 
-            &:nth-child(7) {
+            &:nth-child(6) {
                 @extend %d-row;
                 position: relative;
                 margin-left: auto;
@@ -261,8 +261,7 @@ header {
             a:nth-child(2),
             a:nth-child(3),
             a:nth-child(4),
-            a:nth-child(5),
-            a:nth-child(6){
+            a:nth-child(5){
                 display: none;
             }
             &__media{
@@ -307,7 +306,7 @@ header {
             a:nth-child(1){ 
                 margin: 10px 0; 
             }
-            a:nth-child(7){
+            a:nth-child(6){
                 border-bottom: none;
                 font-size: 0;
                 img{

@@ -34,7 +34,7 @@ main {
   flex-direction: row;
 }
 
-.katalog, .katalog-row .katalog__slider .card, main {
+.katalog-row .katalog__filter .katalog__size, .katalog, .katalog-row .katalog__slider .card, main {
   display: flex;
   flex-direction: column;
 }
@@ -67,7 +67,7 @@ main {
 .katalog-row .katalog__slider .card .rent {
   font-size: calc( 0.003125 * 100vw + 14px );
   color: #58585e;
-  margin: 10px 0 10px 0;
+  margin: auto 0 5px 0;
 }
 .katalog-row .katalog__slider .card .info {
   font-size: calc( 0.003125 * 100vw + 14px );
@@ -96,7 +96,7 @@ main {
   margin: auto 0;
 }
 .katalog-row .katalog__slider .card .card__sale {
-  margin: auto 0 0 0;
+  margin: 10px 0 0 0;
 }
 .katalog-row .katalog__slider .card .card__sale .fd-col .discount {
   text-decoration: line-through;
@@ -125,26 +125,33 @@ main {
 .katalog h1 {
   font-size: calc( 0.009375 * 100vw + 17px );
 }
-.katalog-row p {
+.katalog-row p, .katalog-row label {
   font-weight: 900;
   font-size: calc( 0.00375 * 100vw + 10.8px );
 }
-.katalog-row p span {
+.katalog-row p span, .katalog-row label span {
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #5134c4;
 }
-.katalog-row .katalog__open {
+.katalog-row #firstFilter {
   margin: 0;
-  font-size: calc( 0.00625 * 100vw + 18px );
+  font-size: calc( 0.00375 * 100vw + 10.8px );
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #5134c4;
-  transform: rotate(90deg);
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.katalog-row #firstFilter::after {
+  border: 0px solid #000;
 }
 .katalog-row .filter__open {
   cursor: pointer;
@@ -188,31 +195,79 @@ main {
   outline: none;
   font-size: 18px;
 }
-.katalog-row .katalog__filter input[type=range] {
-  margin: 20px 0 0 0;
-  -webkit-appearance: none !important;
-  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+.katalog-row .katalog__filter .katalog__sizeItem {
+  margin: 10px 0;
+}
+.katalog-row .katalog__filter .container {
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+.katalog-row .katalog__filter .container input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  outline: none;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  pointer-events: none;
+}
+.katalog-row .katalog__filter .container .slider-track {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+.katalog-row .katalog__filter .container input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
   height: 5px;
 }
-.katalog-row .katalog__filter input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none !important;
-  border-radius: 50%;
+.katalog-row .katalog__filter .container input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.7em;
+  width: 1.7em;
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
-  height: 15px;
-  width: 15px;
+  cursor: pointer;
+  margin-top: -9px;
+  pointer-events: auto;
+  border-radius: 50%;
 }
 .katalog-row .katalog__filter input[type=checkbox] {
   margin: auto 10px auto 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
   border: 1px solid #adb5bd;
+  cursor: pointer;
+  vertical-align: bottom;
 }
 .katalog-row .katalog__filter input[type=checkbox]:checked {
-  background-color: #5134c4;
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
 }
-.katalog-row .katalog__filter #clear {
-  margin: 0;
+.katalog-row .katalog__filter input[type=checkbox]:after {
+  content: " ";
+  position: relative;
+  left: 35%;
+  top: 10%;
+  width: 15%;
+  height: 50%;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(50deg);
+  display: none;
+}
+.katalog-row .katalog__filter input[type=checkbox]:checked:after {
+  display: block;
 }
 .katalog-row .katalog__slider {
   width: 80%;

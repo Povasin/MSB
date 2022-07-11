@@ -29,9 +29,7 @@ main {
   padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
 }
 
-.katalog .katalog-row, .furniture, .content .fd-row, .advantages-row, .fd-row .slider .slides .slide__button, .fd-row .slider .slides .slide, .fd-row, .card .card__sale, .card .fd-row, .katalog .slider .katalog__slider, .furniture .slider .katalog__slider,
-.katalog .slider .furniture__slider,
-.furniture .slider .furniture__slider, .katalog .slider, .furniture .slider {
+.katalog .katalog-row, .furniture, .content .fd-row, .advantages-row, .fd-row .slider .slides .slide__button, .fd-row .slider .slides .slide, .fd-row, .card .card__sale, .card .fd-row, .katalog .slider .slider-line, .furniture .slider .slider-line, .katalog .slider, .furniture .slider {
   display: flex;
   flex-direction: row;
 }
@@ -59,9 +57,7 @@ main {
 .katalog .slider, .furniture .slider {
   overflow: hidden;
 }
-.katalog .slider .katalog__slider, .furniture .slider .katalog__slider,
-.katalog .slider .furniture__slider,
-.furniture .slider .furniture__slider {
+.katalog .slider .slider-line, .furniture .slider .slider-line {
   position: relative;
   width: 200%;
   left: 0;
@@ -93,7 +89,7 @@ main {
 .card .rent {
   font-size: calc( 0.003125 * 100vw + 14px );
   color: #58585e;
-  margin: 10px 0 10px 0;
+  margin: auto 0 5px 0;
 }
 .card .info {
   font-size: calc( 0.003125 * 100vw + 14px );
@@ -122,7 +118,7 @@ main {
   margin: auto 0;
 }
 .card .card__sale {
-  margin: auto 0 0 0;
+  margin: 10px 0 0 0;
 }
 .card .card__sale .fd-col .discount {
   text-decoration: line-through;
@@ -543,14 +539,14 @@ main .line {
   .furniture .slider .card .card__img {
     max-width: 90%;
   }
-  .furniture .slider .furniture__slider {
+  .furniture .slider .slider-line {
     width: 300%;
   }
 
   .katalog .slider {
     margin: 0 calc( 0.0566037736 * 100vw + -18.1132075472px );
   }
-  .katalog .slider .katalog__slider {
+  .katalog .slider .slider-line {
     width: 300%;
   }
 }
@@ -633,7 +629,7 @@ main .line {
   .katalog .slider {
     margin: 0;
   }
-  .katalog .slider .katalog__slider {
+  .katalog .slider .slider-line {
     width: 300%;
   }
 }
@@ -641,7 +637,7 @@ main .line {
   .katalog .slider .card {
     width: 400px;
   }
-  .katalog .slider .katalog__slider {
+  .katalog .slider .slider-line {
     width: 600%;
   }
 
