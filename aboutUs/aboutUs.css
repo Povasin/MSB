@@ -138,7 +138,7 @@ main {
     margin: 20px 0 0 0;
   }
   .about__wrapper .about__block img {
-    content: url("./GroupMedia.webp");
+    content: url("./GroupMedia.svg");
     width: 95%;
   }
   .about__wrapper .about .about__blockAbsolute {
@@ -149,7 +149,7 @@ main {
     margin: 10px calc( 0.125 * 100vw + 10px );
   }
   .about__wrapper .about .about__blockAbsolute img:nth-child(2) {
-    content: url("./GroupMedia.webp");
+    content: url("./GroupMedia.svg");
     width: 97%;
     height: 100%;
   }

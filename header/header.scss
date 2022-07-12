@@ -134,7 +134,6 @@ header {
                     margin: 0 10px 1px 0;
                 }
             }
-
             &:not(:first-child):hover {
                 border-bottom: 2px solid;
                 border-image-source:  $gradient;
@@ -230,7 +229,7 @@ header {
     .services__fixed{
         border-bottom: 1px solid $gray;
         position: fixed;
-        width: calcFluid(300, 1300, 320, 1920);
+        width: calcFluid(300, 1320, 320, 1920);
         padding:0 calcFluid(10, 300, 320, 1920);
         top: 0;
         left: 0;
@@ -239,9 +238,9 @@ header {
             margin: 20px 0 calcFluid(10, 20, 320, 1920) 40px;
             &:not(:first-child):hover{
                 margin: 15px 0 25px 40px;
-            }
-            &:last-child:hover{
-                margin: 15px 0 25px auto;
+                &:nth-child(6){
+                    margin: 15px 0 25px auto;
+                }
             }
         }
     }
@@ -265,9 +264,10 @@ header {
                 display: none;
             }
             &__media{
+                margin: auto 20px;
                 display: block;
                 max-width: 100%;
-                max-height: 100%;
+                height: 100%;
             }
             .sidebar__open{
                 display: flex;

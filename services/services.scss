@@ -1,0 +1,132 @@
+@import "../general.scss";
+main{
+    @extend %main;
+}
+.main_fixed{
+    margin-top: 90px
+}
+
+.services__wrapper{
+    padding: 0 calcFluid(8, 200, 320, 1920);
+    @extend %d-col;
+    span a{
+        text-decoration: none;
+        color: black;
+        font-size: calcFluid(12, 20, 320, 1920);
+    }
+    h1{
+        font-size:calcFluid(20, 35, 320, 1920);
+    }
+    .services{
+        @extend %d-row;
+        flex-wrap: wrap;
+        &__item{
+            box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+            @extend %d-row;
+            width: calcFluid(207, 620, 320, 1920);
+            padding: 10px;
+            margin: 5px;
+            .services__img{
+                width: 45%;
+                margin: auto 0 0 0;
+                img{
+                    width: 100%;
+                   
+                }
+            }
+        }
+        .services__contant{
+            margin-left: 15px;
+            @extend %d-col;
+            width: 60%;
+            .star{
+                margin-left: auto;
+                font-size:  calcFluid(14, 20, 700, 1920);
+                font-weight: 900;
+            }
+            p{
+                font-size:calcFluid(16, 20, 320, 1920);
+                font-weight: 900;
+            }
+            .services__contantPrice{
+                margin: auto 0 0 0 ;
+                @extend %d-row;
+                .more{
+                    @extend %more;
+                    margin: auto auto auto 0;
+                }
+                p{
+                    margin: 10px auto auto 0;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 1250px){
+    .services__wrapper .services .services__item{
+        display: flex;
+        flex-direction: column;
+        .services__contant{
+            width: 100%;
+        }
+        .services__img{
+            width: 100%;
+            margin: 0;
+            img{
+                width: 60%;
+                margin: 0 70px;
+               
+            }
+        }
+        .star{
+            display: none;
+        }
+    }
+}
+@media(max-width: 1024px){
+   .services__wrapper .services{
+    display: flex;
+    flex-direction: column;
+        .services__item{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            .services__img{
+                width: 50%;
+                margin: auto 0 0 0;
+                img{
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+        .services__contant{
+            .services__contantPrice{
+                display: flex;
+                flex-direction: row;
+                p{
+                    margin: 10px 0 0 0;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 475px){
+    .services__wrapper .services .services__item{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        .services__contant{
+            width: 90%;
+        }
+        .services__img{
+            width: 100%;
+            margin: 0;
+            img{
+                width: 60%;
+                margin: 0 70px;
+               
+            }
+        }
+    }
+}

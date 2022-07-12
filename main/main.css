@@ -468,7 +468,6 @@ main .line {
   .fd-row .slider .slide .slide__radius img {
     margin: calc( -0.0801282051 * 100vw + 32.0512820513px ) 25px;
   }
-
   .advantages-row {
     padding: 0 calc( 0.1178977273 * 100vw + -29.7272727273px );
   }
@@ -478,7 +477,6 @@ main .line {
     display: flex;
     flex-direction: column;
   }
-
   .advantages {
     display: flex;
     flex-direction: row;
@@ -492,7 +490,6 @@ main .line {
   .advantages__content h2 {
     margin: 0 0 7px 0;
   }
-
   .choose {
     margin: 0;
   }
@@ -502,7 +499,6 @@ main .line {
   .choose img {
     width: 90%;
   }
-
   .content {
     margin: 0;
   }
@@ -520,7 +516,6 @@ main .line {
   .content .fd-row .content__text {
     display: block;
   }
-
   .card .card__sale .fd-col {
     display: flex;
     flex-direction: row-reverse;
@@ -532,7 +527,6 @@ main .line {
   .card .card__sale .fd-col .discount {
     margin: auto 0;
   }
-
   .furniture {
     margin-top: 40px;
   }
@@ -542,7 +536,6 @@ main .line {
   .furniture .slider .slider-line {
     width: 300%;
   }
-
   .katalog .slider {
     margin: 0 calc( 0.0566037736 * 100vw + -18.1132075472px );
   }
@@ -578,14 +571,12 @@ main .line {
   .fd-row .slider .slides .slide__contant h2 {
     margin: 0;
   }
-
   .content {
     width: 50%;
   }
   .content .fd-row {
     margin-top: 10px;
   }
-
   .choose {
     overflow: hidden;
     position: relative;
@@ -597,7 +588,6 @@ main .line {
     position: absolute;
     width: 100%;
   }
-
   .furniture {
     padding: 10px calc( 0.1193548387 * 100vw + -30.1935483871px );
     margin: 40px 0 0 0;
@@ -625,7 +615,6 @@ main .line {
   .furniture .slider {
     width: 98%;
   }
-
   .katalog .slider {
     margin: 0;
   }
@@ -640,14 +629,12 @@ main .line {
   .katalog .slider .slider-line {
     width: 600%;
   }
-
   .fd-row .slider {
     padding: 20px 0 20px 20px;
   }
   .fd-row .slider .slides .slide .slide__contant .slide__button {
     display: none;
   }
-
   .choose img {
     width: 140%;
   }
