@@ -9,7 +9,7 @@
     <title>IdsStore Контакты</title>
     <link rel="stylesheet" href="../general.css" media="all">
     <link rel="stylesheet" href="../header/header.css" media="all">
-    <link rel="stylesheet" href="./services.css" media="all" >
+    <link rel="stylesheet" href="./transportation.css" media="all" >
     <link rel="stylesheet" href="../footer/footer.css"media="all">
 </head>
 <body>
@@ -36,7 +36,7 @@
         <div class="services">
             <a href="../katalog/katalog.html">Каталог <div class="menu"><span></span></div></a>
             <a href="../aboutUs/aboutUs.html">О нас</a>
-            <a href="./services.html">Услуги</a>
+            <a href="../services/services.html">Услуги</a>
             <a href="../contact/contact.html">Контакты</a>
             <a href="">Галерея</a>
             <a href="" ><img src="../header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
@@ -51,7 +51,7 @@
                         <p class="sidebar__close">X</p>
                     </div>
                     <a href="../aboutUs/aboutUs.html">О нас</a>
-                    <a href="./services.html">Услуги</a>
+                    <a href="../services/services.html">Услуги</a>
                     <a href="../contact/contact.html">Контакты</a>
                     <a href="">Галерея</a>
                     <a href="" ><img src="../header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
@@ -60,64 +60,91 @@
         </div>
     </header>
     <main>   
-        <div class="services__wrapper">
-            <span><a href="../index.html">главная </a>/<a href="./services.html"> услуги</a></span>      
-            <h1>Услуги</h1>
-            <div class="services">
-                <div class="services__item">
-                    <div class="services__img">
-                        <img src="./cubinsforLive.webp" alt="">
+        <div class="transportation_wrapper">
+            <span><a href="../index.html">главная </a>/<a href="../services/services.html"> услуги</a>/<a href="./transportation.html"> перевозка бытовок и контейнеров</a></span>      
+            <div class="transportation">
+                <div class="transportation__block">
+                    <div class="slider-wrapper">
+                        <p class="prev"><</p>
+                        <div class="slider">
+                            <!-- TODO: не срабатвает trantsition -->
+                            <div class="slider-line">
+                                <img class="slider__img active" src="./transportation.webp" alt="перевозка бытовок">
+                                <img class="slider__img" src="./transportationimg2.webp" alt="перевозка бытовок">
+                                <img class="slider__img" src="./transportationimg2.webp" alt="перевозка бытовок">
+                                <img class="slider__img" src="./transportation.webp" alt="перевозка бытовок">
+                                <img class="slider__img" src="./transportationimg2.webp" alt="перевозка бытовок">
+                            </div>
+                        </div>
+                        <p class="next active">></p>
                     </div>
-                    <div class="services__contant">
+                    <div class="transportation__img">
                         <div class="star">★★★★☆</div>
-                        <p>производство и продажа бытовок</p>
-                        <div class="services__contantPrice">
-                            <a href="#" class="more">подробнее</a>
-                            <p>От 8000₽</p>
-                        </div>
+                        <img class="main__img"  src="./transportation.webp" alt="перевозка бытовок">
                     </div>
                 </div>
-                <div class="services__item">
-                    <div class="services__img">
-                        <img src="./cubins.webp" alt="бытовка б/у">
+                <div class="transportation__contant">
+                    <h1>перевозка бытовок и контейнеров</h1>
+                    <p>вместимость: <span>2 бытовок за перевозку</span></p>
+                    <p>Габариты: <span>6000х2400х2500 </span></p>
+                    <p>Внутренняя отделка: <span>ДВП, вагонка ПВХ</span></p>
+                    <p>Состояние:<span> Любое</span></p>
+                    <p class="transportation__all">Все характеристки</p>
+                    <div class="transportation__row">
+                        <p>1500₽</p> 
+                        <p>3000</p>
                     </div>
-                    <div class="services__contant">
-                        <div class="star">★★★☆☆</div>
-                        <p>выкуп бытовок б/у</p>
-                        <div class="services__contantPrice">
-                            <!--TODO: что нужно делать -->
-                            <a href="#" class="more">подробнее</a>
-                            <p>От 15000₽</p>
-                        </div>
+                    <div class="quantity_inner">		
+                        <button class="bt_minus">
+                          <p>-</p>
+                        </button>
+                        <input type="text" value="1" size="2" class="quantity" />
+                        <button class="bt_plus">
+                           <p>+</p>
+                        </button>
                     </div>
-                </div>
-                <div class="services__item">
-                    <div class="services__img">
-                        <img src="./transportiration.webp" alt="перевозка бытовок">
-                    </div>
-                    <div class="services__contant">
-                        <div class="star">★★★★★</div>
-                        <p>перевозка бытовок и контейнеров</p>
-                        <div class="services__contantPrice">
-                            <a href="../transportation/transportation.html" class="more">подробнее</a>
-                            <p>От 8000₽</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item">
-                    <div class="services__img">
-                        <img src="./cubinsForWork.webp" alt="">
-                    </div>
-                    <div class="services__contant">
-                        <div class="star">★★★★☆</div>
-                        <p>арендна бытовок</p>
-                        <div class="services__contantPrice">
-                            <a href="../katalog/katalog.html" class="more">подробнее</a>
-                            <p>От 5000₽</p>
-                        </div>
-                    </div>
+                    <button class="more">добавить услугу</button>
                 </div>
             </div>
+            <div class="transportation__info">
+                <h2>О товаре</h2>
+                <h3>описание</h3>
+                <p>Сейчас всё чаще возникает потребность в перевозке бытовок и контейнеров с различными грузами. Цели могут быть совершенно разные: переехать в другую квартиру, открытие офиса или склада в другом городе, перевозка строительных материалов и т.д. На все это требуются различные контейнерные перевозки.</p>
+                <h3>Преимущества хранения и перевозки от нашей компании:</h3>
+                <ul>
+                    <li>выгодная стоимость перевозки бытовок;</li>
+                    <li>разнообразный выбор автотранспорта под любые задачи;</li>
+                    <li>осуществляется полный контроль автотранспорта в пути;</li>
+                    <li>ежедневная отчетность от водителей о местонахождении машин;</li>
+                    <li>весь груз на 100% страхуется от рисков;</li>
+                    <li>выполняется перевозка негабаритных бытовок;</li>
+                </ul>
+            </div>
+            <div class="line"></div>
+            <div class="advantages-row">
+                <div class="advantages">
+                    <img src="./car.svg" alt="аренда">
+                    <div class="advantages__content">
+                        <h2>пропуск в центр</h2>
+                        <p>Пропуска в центр во все города на все машины</p>
+                    </div>
+                </div>
+                <div class="advantages">
+                    <img src="./discount.svg" alt="скидка">
+                    <div class="advantages__content">
+                        <h2>Скидка от 3х месяцев</h2>
+                        <p>Бонусы для постоянных заказчиков</p>
+                    </div>
+                </div>
+                <div class="advantages">
+                    <img src="./parkCars.svg" alt="сервис">
+                    <div class="advantages__content">                     
+                        <h2>парк манипуляторов</h2>
+                        <p>Собственный парк из 10 машин манипуляторов</p>
+                    </div>
+                </div>
+            </div> 
+            <div class="line"></div>
         </div>
     </main>
     <footer>
@@ -203,7 +230,7 @@
                     <h4>Информация</h4>
                     <a href="../aboutUs/aboutUs.html">О нас</a>
                     <a href="../contact/contact.html">контакты</a>
-                    <a href="./services.html">услуги</a>
+                    <a href="../services/services.html">услуги</a>
                     <a href="">галерея</a>
                 </div>
                 <div class="d-col">
@@ -216,6 +243,7 @@
             </div>
         </div>
     </footer>
+    <script src="./transportatin.js"></script>
     <script src="../main.js"></script>
 </body>
 </html>
