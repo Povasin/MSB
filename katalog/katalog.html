@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <!-- придумать описание страницы -->
     <meta name="description" content="придумать описание страницы">
     <title>IdsStore Каталог</title>
@@ -82,13 +82,13 @@
                         <p class="filter__close">x</p>
                     </div>
                     <div class="katalog-row">
-                        <span> от <input type="text" maxlength="4" class="katalog__price" oninput="inputValue()" onkeypress="noDigits(event)"></span>
-                        <span> до <input type="text" maxlength="4" class="katalog__price" oninput="inputValue()"onkeypress="noDigits(event)" ></span>
+                        <span> от <input type="text" maxlength="4" value="0" class="katalog__price" oninput="inputValue()" onkeypress="noDigits(event)"></span>
+                        <span> до <input type="text" maxlength="4" value="10000" class="katalog__price" oninput="inputValue()"onkeypress="noDigits(event)" ></span>
                     </div>
                     <div class="container">
                         <div class="slider-track"></div>
-                        <input type="range" min="0" max="10000" value="1000" id="slider-1" oninput="slideOne()">
-                        <input type="range" min="0" max="10000" value="9000" id="slider-2" oninput="slideTwo()">
+                        <input type="range" min="0" max="10000" value="0" id="slider-1">
+                        <input type="range" min="0" max="10000" value="10000" id="slider-2" oninput="slideTwo()">
                     </div>
                     <div class="katalog-size">
                         <h2>Габариты</h2>
@@ -107,8 +107,8 @@
                     </div>
                         <h2>Вместимость</h2>
                         <div class="katalog-row">
-                            <span> от <input type="text" maxlength="1" class="katalog__price" onkeypress="noDigits(event)" placeholder="1"></span>
-                            <span> до <input type="text" maxlength="2" class="katalog__price" onkeypress="noDigits(event)" placeholder="10"></span>
+                            <span> от <input type="text" maxlength="1" value="1" class="katalog__price" oninput="noDigits(event)" placeholder="1"></span>
+                            <span> до <input type="text" maxlength="2" value="10" class="katalog__price" oninput="noDigits(event)" placeholder="10"></span>
                         </div>
                     <div class="katalog-star">
                         <h2>Рейтинг покупателей</h2>
