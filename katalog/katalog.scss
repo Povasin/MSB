@@ -180,6 +180,7 @@ main{
                 width: calcFluid(75, 306, 320, 1920);
                 margin: 7px;
                 @extend %card;
+                height:  calcFluid(250, 370, 320, 1920);
             }
         }
     }

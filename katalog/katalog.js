@@ -22,27 +22,7 @@ window.addEventListener('mouseup', (e) => {
 const cubinsMass = [
     {
         href: "",
-        img: "/main/cubinsForWork.webp",
-        name: "бытовки прорабские1",
-        discount: "10000",
-        price: 9000,
-        star: "★★★★☆",
-        size: "6х2,4х2,4м",
-        content: 10
-    },
-    {
-        href: "",
-        img: "/main/cubinsForWork.webp",
-        name: "бытовки прорабские2",
-        discount: "10000",
-        price: 9000,
-        star: "★★★★★",
-        size: "6х2,4х2,4м",
-        content: 10
-    },
-    {
-        href: "",
-        img: "/main/cubinsForDress.webp",
+        img: "../main/cubinsForDress.webp",
         name: "бытовка раздевалка3",
         discount: "9000",
         price: 8000,
@@ -52,17 +32,17 @@ const cubinsMass = [
     },
     {
         href: "",
-        img: "/main/cubinsForDress.webp",
-        name: "бытовка раздевалка4",
+        img: "../main/cubinsForLive.webp",
+        name: "бытовка для проживания6",
         discount: "9000",
-        price: 8000,
-        star: "★★★★☆",
-        size: "6х2,4х2,50м",
-        content: 10
+        price: 7500,
+        star: "★★★☆☆",
+        size: "2,5х2,5х3,0м",
+        content: 8
     },
     {
         href: "",
-        img: "/main/cubinsForLive.webp",
+        img: "../main/cubinsForLive.webp",
         name: "бытовка для проживания5",
         discount: "9000",
         price: 7500,
@@ -72,13 +52,33 @@ const cubinsMass = [
     },
     {
         href: "",
-        img: "/main/cubinsForLive.webp",
-        name: "бытовка для проживания6",
+        img: "../main/cubinsForWork.webp",
+        name: "бытовки прорабские1",
+        discount: "10000",
+        price: 9000,
+        star: "★★★★☆",
+        size: "6х2,4х2,4м",
+        content: 10
+    },
+    {
+        href: "",
+        img: "../main/cubinsForWork.webp",
+        name: "бытовки прорабские2",
+        discount: "10000",
+        price: 9000,
+        star: "★★★★★",
+        size: "6х2,4х2,4м",
+        content: 10
+    },
+    {
+        href: "",
+        img: "../main/cubinsForDress.webp",
+        name: "бытовка раздевалка4",
         discount: "9000",
-        price: 7500,
-        star: "★★★☆☆",
-        size: "2,5х2,5х3,0м",
-        content: 8
+        price: 8000,
+        star: "★★★★☆",
+        size: "6х2,4х2,50м",
+        content: 10
     },
 ]
 
@@ -86,19 +86,29 @@ const starsChecked = {
     "★★★★★": false,
     "★★★★☆": false,
     "★★★☆☆": false,
-    "★★☆☆☆": false,
-    "★☆☆☆☆": false
+    "★★☆☆☆": false
+}
+const sizeChecked = {
+    "6х2,4х2,50м": false,
+    "2,5х2,5х3,0м": false,
+    "6х2,4х2,4м": false
 }
 katalogStar.addEventListener("click", (e)=>{
     if (e.target.className == "katalog__Checkbox" ) {
+        console.log(e.target.checked);
         starsChecked[e.target.value]=e.target.checked
     }
     renderKatalog(cubinsMass)
 })
-function allStarsFalse() {
+katalogSize.addEventListener("click", (e)=>{
+    if (e.target.className == "katalog__Checkbox") {
+        sizeChecked[e.target.value]=e.target.checked
+    }
+    renderKatalog(cubinsMass)
+})
+function allCheckboxFalse(object) {
     let flag = true;
-    let massStars = Object.values(starsChecked)
-    massStars.forEach(x=>{
+    Object.values(object).forEach(x=>{
         if (x) {
             flag = false
         }
@@ -115,7 +125,7 @@ function renderKatalog(mass) {
             <p class="star">${item.star}</p>
             <p class="card__arrow">→</p>
         </div>
-        <img class="card__img" src="${location.origin + item.img}" alt="${item.name}">
+        <img class="card__img" src="${item.img}" alt="${item.name}">
         <p class="rent">Аренда</p>
         <p class="info">${item.name}</p>          
         <div class="card__sale">
@@ -128,7 +138,6 @@ function renderKatalog(mass) {
     </a>`)
     });
 }
-slideTwo();
 renderKatalog(cubinsMass)
 
 document.querySelector(".filter__open").addEventListener("click", () => { katalog__filter.style.right = 0 + "%" })
@@ -152,11 +161,11 @@ function inputValue() {
 }
 function noDigits(event) {
     if ("1234567890".indexOf(event.key) == -1)
-        event.preventDefault();
+    event.preventDefault();
     renderKatalog(cubinsMass)
 }
 
-sliderOne.addEventListener("input", (e) => {
+sliderOne.addEventListener("input", () => {
     if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
         sliderOne.value = parseInt(sliderTwo.value) - minGap;
     }
@@ -164,55 +173,42 @@ sliderOne.addEventListener("input", (e) => {
     fillColor();
 })
 
-function slideTwo() {
+sliderTwo.addEventListener("input", ()=>{
     if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
         sliderTwo.value = parseInt(sliderOne.value) + minGap;
     }
     katalog__price[1].value = sliderTwo.value;
     fillColor();
-}
-function fillColor() {
+})
+fillColor();
+    function fillColor() {
     percent1 = (sliderOne.value / sliderMaxValue) * 100;
     percent2 = (sliderTwo.value / sliderMaxValue) * 100;
     sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% ,#5134c4 ${percent1}% ,#b856d4 ${percent2}%, #dadae5 ${percent2}%)`;
 }
-
-
-
 function filter(mass) {
     return mass.filter(item => {
         let trueItem = true;
         trueItem = katalog__price[0].value <= item.price && katalog__price[1].value >= item.price ? true : false
         trueItem = katalog__price[2].value <= item.content && katalog__price[3].value >= item.content ? true : false
-
-        // сортировка по звёздам
-        trueItem = starsChecked[item.star] || allStarsFalse()
-
+        trueItem = starsChecked[item.star] || allCheckboxFalse(starsChecked) ? true : false
+        trueItem = sizeChecked[item.size] || allCheckboxFalse(sizeChecked) ? true : false
         return trueItem
-        // katalogStar.addEventListener("click", (e)=>{
-        //     if (e.target.className == "katalog__Checkbox" ) {
-        //         e.target.value == item.star ? true : false         
-        //     }
-        // })
-        
-        // if (mass == []) {
-        //     katalog__slider.insertAdjacentHTML("beforeend", `<p>По вашему запросу ничего не найдено</p>`)
-        // }
-        // clear.addEventListener("click", ()=>{
-        //     katalog__price[0].value = 1000
-        //     katalog__price[1].value = 9000
-        //     sliderOne.value = katalog__price[0].value
-        //     sliderTwo.value = katalog__price[1].value
-        //     fillColor()
-        //     katalog__price[2].value = 1
-        //     katalog__price[3].value = 10
-        //     for (let i = 0; i < katalog__Checkbox.length; i++) {
-        //         katalog__Checkbox[i].checked = false
-        //     }
-        // })
     })
 }
-
+clear.addEventListener("click", ()=>{
+    katalog__price[0].value = 1000
+    katalog__price[1].value = 9000
+    sliderOne.value = katalog__price[0].value
+    sliderTwo.value = katalog__price[1].value
+    katalog__price[2].value = 1
+    katalog__price[3].value = 10
+    for (let i = 0; i < katalog__Checkbox.length; i++) {
+        katalog__Checkbox[i].checked = false
+    }
+    fillColor()
+    renderKatalog(cubinsMass)
+})
 firstFilter.addEventListener("click", () => {
     if (firstFilter.value == "cheap") {
         cubinsMass.sort(function (a, b) {
@@ -220,11 +216,14 @@ firstFilter.addEventListener("click", () => {
         });
     }
     if (firstFilter.value == "expencive") {
-        cubinsMass.sort()
+        cubinsMass.sort(function (a, b) {
+            return b.price - a.price;
+        });
     }
     if (firstFilter.value == "popular") {
         cubinsMass.sort(function (a, b) {
-            return a.name - b.name;
+            return a.content - b.content;
         });
     }
+    renderKatalog(cubinsMass)
 })

@@ -276,6 +276,7 @@ main {
 .katalog-row .katalog__slider .card {
   width: calc( 0.144375 * 100vw + 28.8px );
   margin: 7px;
+  height: calc( 0.075 * 100vw + 226px );
 }
 
 @media (max-width: 1024px) {
