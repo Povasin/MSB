@@ -31,15 +31,18 @@ main{
                 width: 25%;
                 @extend %d-col;
                 .slider{
+                 
                     @extend %slider;
                     @extend %d-col;
-                    height: calcFluid(250, 350, 1024, 1920);
+                    height: calcFluid(268, 358, 1024, 1920);
                     .slider-line{
                         @extend %d-col; 
                         width: 100%;
                         top: 0;
                         height: 300%;
                         .slider__img{
+                            width: 88%;
+                            padding: 10px 2px;
                             margin: 5px 0;
                             box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.25);
                             border: 3px solid white;
@@ -79,7 +82,16 @@ main{
                 img{
                     margin: auto;
                     width: 90%;
-                    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+                }
+                .chooseMore{
+                    margin: auto 0 0 auto;
+                    padding: calcFluid(5, 10, 320, 1920) calcFluid(10, 20, 320, 1920);
+                    border: 1px solid;
+                    border-image-source:linear-gradient(90deg, #5134c4,#773cbc,#b856d4);
+                    border-image-slice:1;
+                    background: transparent;
+                    text-decoration: none;
+                    color: black
                 }
             }
         }
@@ -151,13 +163,23 @@ main{
                .bt_minus p{
                 margin: -5px 0 0 0;
                }
-               .quantity {
-                width: 50px;
-                text-align: center;
-                font-size: calcFluid(17, 30, 320, 1920);
-                font-weight: bold;
-                color: #000;
+               .fd-col{
+                @extend %d-col;
+                .quantity {
+                    width: 50px;
+                    text-align: center;
+                    font-size: calcFluid(17, 30, 320, 1920);
+                    font-weight: bold;
+                    color: #000;
+                    margin: 0 15px;
                 }
+                p{
+                    margin: 0;
+                    font-size: 15px;
+                    text-align: center;
+                }
+               }
+
             }    
             .more{
                 @extend %more;
@@ -173,35 +195,67 @@ main{
             font-size:calcFluid(12, 18, 320, 1920) ;
         }
     }
-    .advantages-row{
-        padding:0 calcFluid(8, 200, 320, 1920);
-        @extend %d-row;
-        .advantages{
-            width: 33%;
-            margin: 20px 0 0 0;
-            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.25);
-            @extend %d-col;
-            padding: 10px;
-            &__content{
-                @extend %d-col;
-                h2{
-                    font-weight: 900;
-                    font-size: calcFluid(16, 20, 320, 1920);
-                    margin:calcFluid(10, 30, 320, 1920) 0 10px 0;
-                }
-                p{
-                    font-size: calcFluid(13, 16, 320, 1920);
-                    margin: 0;
-            
-                }
-            }
-            img{
-                width: 31%;
-            }
-            &:not(:first-child){
-                margin-left: calcFluid(15, 20, 1024, 1920);
-            }
+}
+.furniture {
+    padding:  calcFluid(8, 20, 320, 1920) 40px  calcFluid(8, 20, 320, 1920) calcFluid(8, 200, 320, 1920) ;
+    background-color: #F2F2F2;
+    @extend %d-row;
+    margin-right: calcFluid(8, 200, 320, 1920);
+    .content{
+        margin: auto 0;
+        padding: 0;
+        width: 35%;
+        p{
+            display: block;
         }
+    }
+    .card {
+        box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.25);
+        @extend %card;
+        .card__img{
+            width: 60%;
+            margin:  auto auto 0 auto ;
+        }
+        .card__bag{
+            position: absolute; 
+            bottom: -20px;
+            right: 10px;
+            border-radius: 50%;
+            padding: 5px 10px;
+            background: none;
+            border:2px solid #5134c4;
+            font-size: 20px;
+        }
+    }
+    .slider{
+        padding: 20px 0 20px 0;
+        @extend %slider;
+        width: 65%;
+    }
+    h2{
+        font-weight: 900;
+        font-size: calcFluid(13, 30, 320, 1920);
+    }
+    p{
+        font-size: calcFluid(13, 20, 850, 1920);
+        margin: 0 0 20px 0 ;
+    }
+    .prev__active,
+    .next__active{
+        @extend %sliderBtn;
+    }
+    .fd-row{
+        @extend %d-row
+    }
+    .prev, 
+    .next{
+        color: gray;
+        padding: 0px 5px 5px 5px;
+        font-size: calcFluid(25, 30, 1024, 1920);
+        margin: 20px 0 0 10px;
+    }
+    .prev{
+        margin: 20px 0 0 0;
     }
 }
 @media(max-width: 1024px){
@@ -217,7 +271,7 @@ main{
                 width: 25%;
                 margin: 10px 0 10px 10px;
                 .slider{
-                    height: calcFluid(115, 260, 320, 1024);
+                    height: calcFluid(135, 255, 320, 1024);
                 }
             }
             .transportation__img{
@@ -243,35 +297,56 @@ main{
         .transportation__info{
             width: 100%;
         }
-        .advantages-row{
-            padding: 0 calcFluid(8, 91, 320, 1024);
-        }
     }
-
 }
+
 @media(max-width: 850px){
-    .transportation_wrapper {
-        .advantages-row{
-            display: flex;
-            flex-direction: column;
-            .advantages{
-                width: 90%;
-                display: flex;
-                flex-direction: row;
-                &:not(:first-child){
-                    margin: 15px 0 0 0 ;
-                }
-                &__content{
-                    margin: auto 0 auto calcFluid(13, 20, 320, 800);
-                    h2{
-                        margin:0 0 7px 0 ;
-                    }
-                }
-                img{
-                    width: 15%;
+    .furniture {
+        margin-top: 40px;
+        .slider{
+            .card{
+                .card__img{
+                    max-width: 90%;
                 }
             }
+            .slider-line{
+                width: 300%;
+            }
         }
-
-    }   
+    }
 }
+@media(max-width: 630px){
+    .furniture{
+        padding: 10px calcFluid(8, 45, 320, 630) ;
+        margin: 40px 0 0 0;
+        display: flex;
+        flex-direction: column-reverse;
+        .content{
+            width: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            p{display: none;}
+            h2{
+                width: 100%;
+                margin: auto 0 auto 0;
+                text-align: center;
+            }
+        }
+        .card{
+            .card__img{
+                top: calcFluid(30, 0, 320, 630);
+                left: calcFluid(10, 30, 320, 630);
+                max-width: 75%;
+            }
+        }
+        .slider{
+            width: 98%;
+        }
+    }
+    .transportation_wrapper .transportation .transportation__block{
+        .slider-wrapper .slider .slider-line .slider__img{
+            width: 83%;
+        }
+    }
+}
+

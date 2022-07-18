@@ -9,7 +9,7 @@
     <title>IdsStore Контакты</title>
     <link rel="stylesheet" href="../general.css" media="all">
     <link rel="stylesheet" href="../header/header.css" media="all">
-    <link rel="stylesheet" href="./contact.css" media="all" >
+    <link rel="stylesheet" href="../cubinsfordress/cubinsfordress.css" media="all" >
     <link rel="stylesheet" href="../footer/footer.css"media="all">
 </head>
 <body>
@@ -37,7 +37,7 @@
             <a href="../katalog/katalog.html">Каталог <div class="menu"><span></span></div></a>
             <a href="../aboutUs/aboutUs.html">О нас</a>
             <a href="../services/services.html">Услуги</a>
-            <a href="./contact.html">Контакты</a>
+            <a href="../contact/contact.html">Контакты</a>
             <a href="../gallary/gallary.html">Галерея</a>
             <a href="" ><img src="../header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
             <img  class="services__media" src="../header/search.webp" alt="поиск">
@@ -52,7 +52,7 @@
                     </div>
                     <a href="../aboutUs/aboutUs.html">О нас</a>
                     <a href="../services/services.html">Услуги</a>
-                    <a href="./contact.html">Контакты</a>
+                    <a href="../contact/contact.html">Контакты</a>
                     <a href="../gallary/gallary.html">Галерея</a>
                     <a href="" ><img src="../header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
                 </div>
@@ -60,27 +60,99 @@
         </div>
     </header>
     <main>   
-        <div class="map">
-            <h1>Контакты</h2>
-            <div class="map__contact">
-                <div class="map-col">
-                    <h2>Телефон</h2>
-                    <p>+7 (910)973-36-65</p>
+        <div class="transportation_wrapper">
+            <span><a href="../index.html">главная </a>/<a href="../gallary/gallary.html"> галерея</a>/<a href="./cubinsForbath.html"> бытовка c душем</a></span>      
+            <div class="transportation">
+                <div class="transportation__block">
+                    <div class="slider-wrapper">
+                        <p class="prev"><</p>
+                        <div class="slider">
+                            <!-- TODO: не срабатвает trantsition -->
+                            <div class="slider-line">
+                                <img class="slider__img active" src="../gallary/image 30.svg" alt="бытовка с душем" style="width: 65%; margin: 0 auto;">
+                                <img class="slider__img" src="../gallary/image 30.svg" alt="бытовка с душем" style="width: 65%; margin: 5px auto;" >
+                                <img class="slider__img" src="../gallary/image 30.svg" alt="бытовка с душем" style="width: 65%; margin: 5px auto;">
+                                <img class="slider__img" src="../gallary/image 30.svg" alt="бытовка с душем" style="width: 65%; margin: 5px auto;">
+                                <img class="slider__img" src="../gallary/image 30.svg" alt="бытовка с душем" style="width: 65%; margin: 5px auto;">
+                            </div>
+                        </div>
+                        <p class="next active">></p>
+                    </div>
+                    <div class="transportation__img">
+                        <div class="star">★★★★☆</div>
+                        <img class="main__img"  src="../gallary/image 30.svg" alt="бытовка с душем">
+                        <a href="../gallary/gallary.html" class="chooseMore">выбрать формат</a>
+                    </div>
                 </div>
-                <div class="map-col">
-                    <h2>Адрес</h2>
-                    <p>г. ярославль, ул 2-я Тарная 2</p>
-                </div>
-                <div class="map-col">
-                    <h2>Электронная почта</h2>
-                    <p>dir@ids76.ru</p>
+                <div class="transportation__contant">
+                    <h1>Бытовка с тамбуром</h1>
+                    <p>вместимость: <span>8 человек</span></p>
+                    <p>Габариты: <span>6000х2400х2500 </span></p>
+                    <p>Внутренняя отделка: <span>ДВП, вагонка ПВХ</span></p>
+                    <p>Состояние:<span> Любое</span></p>
+                    <p class="transportation__all">Все характеристки</p>
+                    <div class="transportation__row">
+                        <p>1500₽</p> 
+                        <p>3000</p>
+                    </div>
+                    <div class="fd-row">
+                        <div class="quantity_inner">		
+                            <button class="bt_minus">
+                              <p>-</p>
+                            </button>
+                            <div class="fd-col">
+                                <p>количество</p>
+                                <input type="text" value="1" size="2" class="quantity" />
+                            </div>
+                            <button class="bt_plus">
+                               <p>+</p>
+                            </button>
+                        </div>
+                        <div class="quantity_inner">		
+                            <button class="bt_minus">
+                              <p>-</p>
+                            </button>
+                            <div class="fd-col">
+                                <p>месяцев</p>
+                                <input type="text" value="1" size="2" class="quantity" />
+                            </div>
+                            <button class="bt_plus">
+                                <p>+</p>
+                             </button>
+                        </div>
+                    </div>
+                    <button class="more">добавить услугу</button>
                 </div>
             </div>
-            <div id="map__yandex">
-                <script type="text/javascript" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1de37163293f4e550481d9ca14ec396e5a467508c7cd738b2b7f8c1037132ff8&amp;width=100%25&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+            <div class="transportation__info">
+                <h2>О товаре</h2>
+                <h3>описание</h3>
+                <p>Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.</p>
+                <h3>Преимущества хранения и перевозки от нашей компании:</h3>
+                <ul>
+                    <li>быстрая установка;</li>
+                    <li>окно и двери герметизированы, утепление по всему периметру;</li>
+                    <li>усиленная конструкция;</li>
+                    <li>высокая мобильность;</li>
+                    <li>долговечность;</li>
+                    <li>удобство.</li>
+                </ul>
             </div>
         </div>
-        
+        <div class="furniture">
+            <div class="content">
+                <h2>выберети мебель и оборудывание</h2>
+                <p>для создание комплекта вам нужно выбрать мебель</p>
+                <div class="fd-row">
+                    <button class="prev">←</button>
+                    <button class="next next__active">→</button>
+                </div>
+            </div>
+            <div class="slider">
+                <div class="slider-line">
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="pd-100">
@@ -159,12 +231,12 @@
                     <a href="../cubinsfordress/cubinsfordress.html">Бытовки раздевалки</a>
                     <a href="../cubinsForwork/cubinsForwork.html">Бытовки прорабские</a>
                     <a href="../cubinsForwarehouse/cubinsForwarehouse.html">Бытовки под склад</a>
-                    <a href="../cubinsForbath/cubinsForbath.html">Бытовки с душем</a>
+                    <a href="./cubinsForbath.html">Бытовки с душем</a>
                 </div>
                 <div class="d-col">
                     <h4>Информация</h4>
                     <a href="../aboutUs/aboutUs.html">О нас</a>
-                    <a href="./contact.html">контакты</a>
+                    <a href="../contact/contact.html">контакты</a>
                     <a href="../services/services.html">услуги</a>
                     <a href="../gallary/gallary.html">галерея</a>
                 </div>
@@ -179,5 +251,6 @@
         </div>
     </footer>
     <script src="../main.js"></script>
+    <script src="../sliderForcubins.js"></script>
 </body>
 </html>

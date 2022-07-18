@@ -1,0 +1,40 @@
+@import "../general.scss";
+main{
+    @extend %main;
+}
+.main_fixed{
+    margin-top: 90px
+}
+
+.gallary{
+    padding: 0 calcFluid(8, 200, 320, 1920);
+    @extend %d-col;
+    span a{
+        text-decoration: none;
+        color: black;
+        font-size: calcFluid(12, 20, 320, 1920);
+    }
+    h1{
+        font-size:calcFluid(20, 35, 320, 1920);
+    }
+    &__item{
+        @extend %d-row;
+        justify-content: center;
+        .card{
+            margin: 7px;
+            @extend %card;
+        }
+    }
+}
+@media(max-width: 730px){
+    .gallary{
+        &__item{
+            display: flex;
+            flex-direction: column;
+            .card{
+                margin: 7px auto;
+                width: 70%;                
+            }
+        }
+    }
+}

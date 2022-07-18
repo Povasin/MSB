@@ -7,7 +7,6 @@ let furnitureSlider = 0;
 let katalogSlider = 0;
 const furnitureMass= [
     {
-        href: "",
         img: "./main/chair.webp",
         name: "офисный стул",
         discount: "800",
@@ -15,7 +14,6 @@ const furnitureMass= [
         star: "★★★★☆"
     },
     {
-        href: "",
         img: "./main/table.webp",
         name: "офисный стол",
         discount: "1000",
@@ -23,7 +21,6 @@ const furnitureMass= [
         star: "★★★☆☆"
     },
     {
-        href: "",
         img: "./main/bad.webp",
         name: "кровать",
         discount: "1500",
@@ -31,7 +28,6 @@ const furnitureMass= [
         star: "★★★★★"
     },
     {
-        href: "",
         img: "./main/chair.webp",
         name: "офисный стул",
         discount: "800",
@@ -39,7 +35,6 @@ const furnitureMass= [
         star: "★★★★☆"
     },
     {
-        href: "",
         img: "./main/table.webp",
         name: "офисный стол",
         discount: "1000",
@@ -47,7 +42,6 @@ const furnitureMass= [
         star: "★★★☆☆"
     },
     {
-        href: "",
         img: "./main/bad.webp",
         name: "кровать",
         discount: "1500",
@@ -58,7 +52,7 @@ const furnitureMass= [
 
 const cubinsMass = [
     {
-        href: "",
+        href: "./cubinsfordress/cubinsfordress.html",
         img: "/main/cubinsForDress.webp",
         name: "бытовка раздевалка",
         discount: "9000",
@@ -67,8 +61,8 @@ const cubinsMass = [
         size: "6х2,4х2,50м"
     },
     {
-        href: "",
-        img: "/main/cubinsForLive.webp",
+        href: "./cubinsForlive/cubinsForlive.html",
+        img: "./main/cubinsForLive.webp",
         name: "бытовка для проживания",
         discount: "9000",
         price:"7500₽",
@@ -76,8 +70,8 @@ const cubinsMass = [
         size: "2,5х2,5х3,0м"
     },
     {
-        href: "",
-        img: "/main/cubinsForWork.webp",
+        href: "./cubinsForwork/cubinsForwork.html",
+        img: "./main/cubinsForWork.webp",
         name: "бытовки прорабские",
         discount: "10000",
         price:"9000₽",
@@ -85,26 +79,26 @@ const cubinsMass = [
         size: "6х2,4х2,4м"
     },
     {
-        href: "",
-        img: "/main/cubinsForDress.webp",
-        name: "бытовка раздевалка",
+        href: "./cubinsforbath/cubinsforbath.html",
+        img: "./main/cubinsForBath.webp",
+        name: "бытовка c душем",
         discount: "9000",
         price:"8000₽",
         star: "★★★★☆",
         size: "6х2,4х2,50м"
     },
     {
-        href: "",
-        img: "/main/cubinsForLive.webp",
-        name: "бытовка для проживания",
+        href: "./cubinsForwarehouse/cubinsForwarehouse.html",
+        img: "./main/cubinsForwareHouse.webp",
+        name: "бытовка под склад",
         discount: "9000",
         price:"7500₽",
         star: "★★★☆☆",
         size: "2,5х2,5х3,0м"
     },
     {
-        href: "",
-        img: "/main/cubinsForWork.webp",
+        href: "./cubinsForwork/cubinsForwork.html",
+        img: "./main/cubinsForWork.webp",
         name: "бытовки прорабские",
         discount: "10000",
         price:"9000₽",
@@ -116,7 +110,7 @@ const cubinsMass = [
 function render(mass, number) {
     number == 0 ?
     mass.forEach(item => {
-        sliderLine[number].insertAdjacentHTML("beforeend", ` <a href="${item.href}" class="card">
+        sliderLine[number].insertAdjacentHTML("beforeend", ` <a href="#" class="card">
         <div class="fd-row">
             <p class="star">${item.star}</p>
             <p class="card__arrow">→</p>
@@ -139,7 +133,7 @@ function render(mass, number) {
             <p class="star">${item.star}</p>
             <p class="card__arrow">→</p>
         </div>
-        <img class="card__img" src="${location.origin+item.img}" alt="${item.name}">
+        <img class="card__img" src="${item.img}" alt="${item.name}">
         <p class="rent">Аренда</p>
         <p class="info">${item.name}</p>          
         <div class="card__sale">

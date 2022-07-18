@@ -1,4 +1,3 @@
-//TODO: доделать фугкцие filter
 const katalog__filter = document.querySelector(".katalog__filter")
 const katalog__price = document.querySelectorAll(".katalog__price")
 const katalogStar = document.querySelector(".katalog-star")
@@ -21,9 +20,9 @@ window.addEventListener('mouseup', (e) => {
 
 const cubinsMass = [
     {
-        href: "",
+        href: "../cubinsfordress/cubinsfordress.html",
         img: "../main/cubinsForDress.webp",
-        name: "бытовка раздевалка3",
+        name: "бытовка раздевалка",
         discount: "9000",
         price: 8000,
         star: "★★★★☆",
@@ -31,9 +30,9 @@ const cubinsMass = [
         content: 8
     },
     {
-        href: "",
+        href: "../cubinsForlive/cubinsForlive.html",
         img: "../main/cubinsForLive.webp",
-        name: "бытовка для проживания6",
+        name: "бытовка для проживания",
         discount: "9000",
         price: 7500,
         star: "★★★☆☆",
@@ -41,9 +40,9 @@ const cubinsMass = [
         content: 8
     },
     {
-        href: "",
-        img: "../main/cubinsForLive.webp",
-        name: "бытовка для проживания5",
+        href: "../cubinsForbath/cubinsForbath.html",
+        img: "../main/cubinsForBath.webp",
+        name: "бытовка c душем",
         discount: "9000",
         price: 7500,
         star: "★★★★★",
@@ -51,9 +50,9 @@ const cubinsMass = [
         content: 9
     },
     {
-        href: "",
+        href: "../cubinsForwork/cubinsForwork.html",
         img: "../main/cubinsForWork.webp",
-        name: "бытовки прорабские1",
+        name: "бытовки прорабские",
         discount: "10000",
         price: 9000,
         star: "★★★★☆",
@@ -61,9 +60,9 @@ const cubinsMass = [
         content: 10
     },
     {
-        href: "",
-        img: "../main/cubinsForWork.webp",
-        name: "бытовки прорабские2",
+        href: "../cubinsForwarehouse/cubinsForwarehouse.html",
+        img: "../main/cubinsForwareHouse.webp",
+        name: "бытовка под склад",
         discount: "10000",
         price: 9000,
         star: "★★★★★",
@@ -71,9 +70,9 @@ const cubinsMass = [
         content: 10
     },
     {
-        href: "",
+        href: "../cubinsfordress/cubinsfordress.html",
         img: "../main/cubinsForDress.webp",
-        name: "бытовка раздевалка4",
+        name: "бытовка раздевалка",
         discount: "9000",
         price: 8000,
         star: "★★★★☆",
@@ -95,7 +94,6 @@ const sizeChecked = {
 }
 katalogStar.addEventListener("click", (e)=>{
     if (e.target.className == "katalog__Checkbox" ) {
-        console.log(e.target.checked);
         starsChecked[e.target.value]=e.target.checked
     }
     renderKatalog(cubinsMass)
@@ -137,6 +135,7 @@ function renderKatalog(mass) {
         </div> 
     </a>`)
     });
+    console.log(filterMass);
 }
 renderKatalog(cubinsMass)
 
@@ -191,8 +190,8 @@ function filter(mass) {
         let trueItem = true;
         trueItem = katalog__price[0].value <= item.price && katalog__price[1].value >= item.price ? true : false
         trueItem = katalog__price[2].value <= item.content && katalog__price[3].value >= item.content ? true : false
-        trueItem = starsChecked[item.star] || allCheckboxFalse(starsChecked) ? true : false
         trueItem = sizeChecked[item.size] || allCheckboxFalse(sizeChecked) ? true : false
+        trueItem = starsChecked[item.star] || allCheckboxFalse(starsChecked) ? true : false
         return trueItem
     })
 }
