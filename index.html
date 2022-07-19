@@ -13,7 +13,21 @@
     <link rel="stylesheet" href="./footer/footer.css" media="all">
 </head>
 <body>
-    <div class="search__innerHtml"></div>
+    <div class="search__modal">
+        <div class="search__header">
+            <input type="text" placeholder="Поиск" maxlength="30"  class="search">
+            <img src="./header/search.svg" alt="поиск">
+            <p class="search__close" >Отмена</p>
+        </div>
+        <div class="search__block">
+            <a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">Бытовки для проживания</a>
+            <a class="search__blockHref" href="./cubinsfordress/cubinsfordress.html">Бытовки раздевалки</a>
+            <a class="search__blockHref" href="./cubinsForwork/cubinsForwork.html">Бытовки прорабские</a>
+            <a class="search__blockHref" href="./cubinsForwarehouse/cubinsForwarehouse.html">Бытовки под склад</a>
+            <a class="search__blockHref" href="./cubinsForbath/cubinsForbath.html">Бытовки с душем</a>
+            <a class="search__blockHref" href="./transportation/transportation.html">Перевозка бытовок и контейнеров</a>
+        </div>
+    </div>
     <header>
         <div class="headerTop">
             <a href="./index.html" class="headerTop__logo">
@@ -21,9 +35,9 @@
                 <span>Магазин бытовок</span>
             </a>
             <div class="headerTop__search">
-                <input type="text" placeholder="Поиск" maxlength="30" id="search">
-                <img src="./header/search.webp" alt="поиск">
-                <div id="search__block">
+                <input type="text" placeholder="Поиск" maxlength="30" class="search">
+                <img src="./header/search.svg" alt="поиск">
+                <div class="search__block">
                     <a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">Бытовки для проживания</a>
                     <a class="search__blockHref" href="./cubinsfordress/cubinsfordress.html">Бытовки раздевалки</a>
                     <a class="search__blockHref" href="./cubinsForwork/cubinsForwork.html">Бытовки прорабские</a>
@@ -48,8 +62,8 @@
             <a href="./services/services.html">Услуги</a>
             <a href="./contact/contact.html">Контакты</a>
             <a href="./gallary/gallary.html">Галерея</a>
-            <a href="" ><img src="./header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
-            <img  class="services__media" src="../header/search.webp" alt="поиск">
+            <a href="" ><img src="./header/bag.svg" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
+            <img  class="services__media" src="../header/search.svg" alt="поиск">
             <div class="sidebar__open">
                 <span></span>
             </div>
@@ -63,7 +77,7 @@
                     <a href="./services/services.html">Услуги</a>
                     <a href="./contact/contact.html">Контакты</a>
                     <a href="./gallary/gallary.html">Галерея</a>
-                    <a href="" ><img src="./header/bag.webp" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
+                    <a href="" ><img src="./header/bag.svg" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
                 </div>
             </div>
         </div>
@@ -163,28 +177,28 @@
                         <p class="discount">9000</p>
                         <p class="card__price">8000₽</p> 
                     </div>
-                    <button class="card__bag"><img src="./main/bag-_1_-1.webp" alt="корзина"></button>
+                    <button class="card__bag"><img src="./main/bag.svg" alt="корзина"></button>
                 </div> 
             </a>
         </div>
         <div class="line"></div>
          <div class="advantages-row">
             <div class="advantages">
-                <img src="./main/money.webp" alt="аренда">
+                <img src="./main/money.svg" alt="аренда">
                 <div class="advantages__content">
                     <h2>Аренда без залога</h2>
                     <p>мы предлагаем аренду бытовок и контейнеров без залога</p>
                 </div>
             </div>
             <div class="advantages">
-                <img src="./main/discount.webp" alt="скидка">
+                <img src="./main/discount.svg" alt="скидка">
                 <div class="advantages__content">
                     <h2>Скидка от 3х месяцев</h2>
                     <p>Особые условия сотрудничества для постоянных клиентов</p>
                 </div>
             </div>
             <div class="advantages">
-                <img src="./main/services.webp" alt="сервис">
+                <img src="./main/services.svg" alt="сервис">
                 <div class="advantages__content">                     
                     <h2>Качественный сервис</h2>
                     <p>Поможем с обслуживанием товара и предоствим ремонт техники</p>

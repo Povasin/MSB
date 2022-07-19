@@ -131,7 +131,7 @@ function renderKatalog(mass) {
                 <p class="discount">${item.discount}</p>
                 <p class="card__price">${item.price}₽</p> 
             </div>
-            <button class="card__bag"><img src="../main/bag-_1_-1.webp" alt="корзина"></button>
+            <button class="card__bag"><img src="../main/bag.svg" alt="корзина"></button>
         </div> 
     </a>`)
     });
@@ -190,8 +190,8 @@ function filter(mass) {
         let trueItem = true;
         trueItem = katalog__price[0].value <= item.price && katalog__price[1].value >= item.price ? true : false
         trueItem = katalog__price[2].value <= item.content && katalog__price[3].value >= item.content ? true : false
-        trueItem = sizeChecked[item.size] || allCheckboxFalse(sizeChecked) ? true : false
-        trueItem = starsChecked[item.star] || allCheckboxFalse(starsChecked) ? true : false
+        // trueItem = sizeChecked[item.size] || allCheckboxFalse(sizeChecked) ? true : false
+        // trueItem = starsChecked[item.star] || allCheckboxFalse(starsChecked) ? true : false
         return trueItem
     })
 }

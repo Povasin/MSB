@@ -161,7 +161,7 @@ function render(mass, number) {
                 <p class="discount">${item.discount}</p>
                 <p class="card__price">${item.price}</p> 
             </div>
-            <button class="card__bag"><img src="../main/bag-_1_-1.webp" alt="корзина"></button>
+            <button class="card__bag"><img src="../main/bag.svg" alt="корзина"></button>
         </div> 
     </a>`)
     });

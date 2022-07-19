@@ -1,5 +1,42 @@
 @import "../general.scss";
 
+.search__modal{
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    .search__header{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        .search{
+            width: 80%;
+            margin: 20px;
+        }
+        img{
+            right: calcFluid(110, 180, 320, 1024);
+            top: 27px;
+        }
+        p{
+            margin: auto 20px auto 0px;
+            font-size: calcFluid(18, 20, 1024, 1920);
+        }
+    }
+    .search__block{
+        box-shadow: none;
+        position:static;
+        margin: 0 12px;
+        a{
+            font-size: calcFluid(17, 20, 1024, 1920);
+        }
+    }
+    @extend %search;
+
+}
+
 header {
     padding: 20px calcFluid(0, 100, 1024, 1920);
     @extend %d-col;
@@ -16,47 +53,8 @@ header {
             @extend %d-row;
             position: relative;
             margin: auto calcFluid(10, 40, 1024, 1920);
+            @extend %search;
 
-            #search {
-                box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-                border-radius: 4px;
-                border: none;
-                padding: 10px calcFluid(10, 50, 1024, 1920) 10px 4px;
-                background-color: white;
-                color: #6d6d6d;
-                font-weight: 100;
-                font-size: 20px;
-                outline: none;
-                width: calcFluid(200, 300, 1024, 1920);
-            }
-            #search__block{
-                display: none;
-                z-index: 20;
-                position: absolute;
-                @extend %d-col;
-                top: 50px;
-                width: 100%;
-                background-color: white;
-                box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-                a{
-                    text-decoration: none;
-                    color: black;
-                    font-size: calcFluid(13, 15, 1024, 1920);
-                    padding: 7px 10px;
-                    font-weight: 100;
-                    background-color: white;
-                    &:hover{
-                        background-color: #eeeeee;
-                    }
-                }
-            }
-            img {
-                position: absolute;
-                right: 10px;
-                top: 8px;
-                max-width: 100%;
-                max-height: 100%;
-            }
         }
 
         &__contacts {
