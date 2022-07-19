@@ -27,9 +27,29 @@ header {
                 font-weight: 100;
                 font-size: 20px;
                 outline: none;
-                width: calcFluid(90, 300, 1024, 1920);
+                width: calcFluid(200, 300, 1024, 1920);
             }
-
+            #search__block{
+                display: none;
+                z-index: 20;
+                position: absolute;
+                @extend %d-col;
+                top: 50px;
+                width: 100%;
+                background-color: white;
+                box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-size: calcFluid(13, 15, 1024, 1920);
+                    padding: 7px 10px;
+                    font-weight: 100;
+                    background-color: white;
+                    &:hover{
+                        background-color: #eeeeee;
+                    }
+                }
+            }
             img {
                 position: absolute;
                 right: 10px;
@@ -245,8 +265,7 @@ header {
         }
     }
 }
-
-@media(max-width: 1250px){
+@media(max-width: 1024px){
     header{
         .headerTop{
             &__search{
@@ -263,22 +282,30 @@ header {
             a:nth-child(5){
                 display: none;
             }
-            &__media{
-                margin: auto 20px;
-                display: block;
-                max-width: 100%;
-                height: 100%;
-            }
             .sidebar__open{
                 display: flex;
             }
+            .services__media{
+                display: block;
+                margin: auto 20px auto 40px;
+                img{    
+                    width: 100%;
+                }
+            }
         }
     }
-
 }
 @media(max-width: 850px){
     header{
         .headerTop{
+            .headerTop{
+                &__search{
+                    display: none;
+                }
+                &__contacts{
+                    margin-left: auto;
+                }
+            }
             .log{
                 display: flex;
             }
@@ -299,6 +326,7 @@ header {
                 }
                 img{
                   margin: auto 10px 0 auto;
+                  width: 80%;
                 }
             }
         }
@@ -309,9 +337,10 @@ header {
             a:nth-child(6){
                 border-bottom: none;
                 font-size: 0;
+                margin: auto 0 0 auto;
                 img{
-                    max-width: 100%;
-                    max-height:65%;
+                    width: 100%;
+                    margin: auto 0 17px auto;
                 }
                 .services__sum{
                     left: 20px;
@@ -320,10 +349,14 @@ header {
             .sidebar{
                 &__menu{
                     a{font-size: calcFluid(15, 19, 320, 1920); border-bottom: 2px solid $gray;}
+                    a:nth-child(6){
+                        margin: 12px 0;
+                        img{
+                            width: 23px;
+                            margin: auto 10px 2px 0 ;
+                        }
+                    }
                 }
-            }
-            .services__media{
-                margin:auto 0 auto 23px;
             }
         }
     }
