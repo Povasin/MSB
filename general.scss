@@ -68,6 +68,8 @@ body{
 %slider{
     overflow: hidden;
    @extend %d-row;
+    .furniture-line,
+    .katalog-line,
     .slider-line{
         position: relative;
         @extend %d-row;
@@ -142,7 +144,6 @@ body{
     background-color: white;
     width: 280px;
     padding:10px;
-    cursor: pointer;
     text-decoration: none;
     color: black;
     .rent{
@@ -154,6 +155,8 @@ body{
         font-size:calcFluid(15, 20, 320, 1920);
         font-weight: 900;
         margin: 0;
+        text-decoration: none;
+        color: black;
     }
     .card__bag{
         cursor: pointer;
@@ -172,6 +175,8 @@ body{
             margin:auto 0 auto auto;
             font-size: 24px;
             font-weight: 900;
+            text-decoration: none;
+            color: black;
         }
         .star{
             font-size:  calcFluid(14, 20, 700, 1920);

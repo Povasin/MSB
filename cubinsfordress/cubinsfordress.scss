@@ -138,10 +138,12 @@ main{
                 display: inline-flex;
                 border: 2px solid gray;
                 padding: 0px 16px;
-                margin: 0 auto 0 0;
+                margin: auto auto 0 0;
                 .bt_minus,
                 .bt_plus,
-                .quantity {
+                .bt_minusMonth,
+                .bt_plusMonth,
+                .quantity  {
                     padding: 0;
                     border: 0;
                     margin: 0;
@@ -154,13 +156,15 @@ main{
                         margin: 0;
                     }  
                }
-               .bt_plus p{
+               .bt_plus,
+               .bt_plusMonth{
                     background:$gradient;
                     -webkit-background-clip: text;
                     background-clip: text;
                     -webkit-text-fill-color: transparent;
                }
-               .bt_minus p{
+               .bt_minus,
+               .bt_minusMonth{
                 margin: -5px 0 0 0;
                }
                .fd-col{
@@ -247,8 +251,8 @@ main{
     .fd-row{
         @extend %d-row
     }
-    .prev, 
-    .next{
+    .prevFurniture, 
+    .nextFurniture{
         color: gray;
         padding: 0px 5px 5px 5px;
         font-size: calcFluid(25, 30, 1024, 1920);
@@ -309,7 +313,7 @@ main{
                     max-width: 90%;
                 }
             }
-            .slider-line{
+            .furniture-line{
                 width: 300%;
             }
         }

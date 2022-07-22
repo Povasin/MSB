@@ -2,7 +2,6 @@ const katalog__filter = document.querySelector(".katalog__filter")
 const katalog__price = document.querySelectorAll(".katalog__price")
 const katalogStar = document.querySelector(".katalog-star")
 const katalogSize = document.querySelector(".katalog-size")
-const katalog__slider = document.querySelector(".katalog__slider")
 const sliderOne = document.getElementById("slider-1");
 const sliderTwo = document.getElementById("slider-2");
 const sliderTrack = document.querySelector(".slider-track");
@@ -17,70 +16,6 @@ window.addEventListener('mouseup', (e) => {
         renderKatalog(cubinsMass)
     }
 })
-
-const cubinsMass = [
-    {
-        href: "../cubinsfordress/cubinsfordress.html",
-        img: "../main/cubinsForDress.webp",
-        name: "бытовка раздевалка",
-        discount: "9000",
-        price: 8000,
-        star: "★★★★☆",
-        size: "6х2,4х2,50м",
-        content: 8
-    },
-    {
-        href: "../cubinsForlive/cubinsForlive.html",
-        img: "../main/cubinsForLive.webp",
-        name: "бытовка для проживания",
-        discount: "9000",
-        price: 7500,
-        star: "★★★☆☆",
-        size: "2,5х2,5х3,0м",
-        content: 8
-    },
-    {
-        href: "../cubinsForbath/cubinsForbath.html",
-        img: "../main/cubinsForBath.webp",
-        name: "бытовка c душем",
-        discount: "9000",
-        price: 7500,
-        star: "★★★★★",
-        size: "2,5х2,5х3,0м",
-        content: 9
-    },
-    {
-        href: "../cubinsForwork/cubinsForwork.html",
-        img: "../main/cubinsForWork.webp",
-        name: "бытовки прорабские",
-        discount: "10000",
-        price: 9000,
-        star: "★★★★☆",
-        size: "6х2,4х2,4м",
-        content: 10
-    },
-    {
-        href: "../cubinsForwarehouse/cubinsForwarehouse.html",
-        img: "../main/cubinsForwareHouse.webp",
-        name: "бытовка под склад",
-        discount: "10000",
-        price: 9000,
-        star: "★★★★★",
-        size: "6х2,4х2,4м",
-        content: 10
-    },
-    {
-        href: "../cubinsfordress/cubinsfordress.html",
-        img: "../main/cubinsForDress.webp",
-        name: "бытовка раздевалка",
-        discount: "9000",
-        price: 8000,
-        star: "★★★★☆",
-        size: "6х2,4х2,50м",
-        content: 10
-    },
-]
-
 const starsChecked = {
     "★★★★★": false,
     "★★★★☆": false,
@@ -116,26 +51,25 @@ function allCheckboxFalse(object) {
 
 function renderKatalog(mass) {
     const filterMass = filter(mass)
-    katalog__slider.innerHTML = ''
+    katalogLine.innerHTML = ''
     filterMass.forEach(item => {
-        katalog__slider.insertAdjacentHTML("beforeend", ` <a href="${item.href}" class="card">
+        katalogLine.insertAdjacentHTML("beforeend", `  <div class="card">
         <div class="fd-row">
             <p class="star">${item.star}</p>
-            <p class="card__arrow">→</p>
+            <a href="${item.href}" class="card__arrow">→</a>
         </div>
-        <img class="card__img" src="${item.img}" alt="${item.name}">
+        <a href="${item.href}"><img class="card__img" src="${item.img}" alt="${item.name}"></a>
         <p class="rent">Аренда</p>
-        <p class="info">${item.name}</p>          
+        <a href="${item.href}" class="info">${item.name}</a>         
         <div class="card__sale">
             <div class="fd-col">
                 <p class="discount">${item.discount}</p>
                 <p class="card__price">${item.price}₽</p> 
             </div>
-            <button class="card__bag"><img src="../main/bag.svg" alt="корзина"></button>
+            <button class="card__bag" data-id="${item.name}"><img data-id="${item.name}" class="card__bagImg" src="../main/bag.svg" alt="корзина"></button>
         </div> 
-    </a>`)
+    </div>`)
     });
-    console.log(filterMass);
 }
 renderKatalog(cubinsMass)
 
@@ -188,16 +122,21 @@ fillColor();
 function filter(mass) {
     return mass.filter(item => {
         let trueItem = true;
-        trueItem = katalog__price[0].value <= item.price && katalog__price[1].value >= item.price ? true : false
-        trueItem = katalog__price[2].value <= item.content && katalog__price[3].value >= item.content ? true : false
-        // trueItem = sizeChecked[item.size] || allCheckboxFalse(sizeChecked) ? true : false
-        // trueItem = starsChecked[item.star] || allCheckboxFalse(starsChecked) ? true : false
+        trueItem = trueItem &&  (katalog__price[0].value <= item.price && katalog__price[1].value >= item.price ? true : false)
+        trueItem = trueItem &&  (katalog__price[2].value <= item.content && katalog__price[3].value >= item.content ? true : false)
+        if (!allCheckboxFalse(sizeChecked)) {
+            trueItem = trueItem &&  (sizeChecked[item.size] ? true : false)  
+        }
+        if (! allCheckboxFalse(starsChecked)) {
+            trueItem =  trueItem && (starsChecked[item.star] ? true : false)
+        }
         return trueItem
     })
 }
+// TODO: сделать очистку
 clear.addEventListener("click", ()=>{
     katalog__price[0].value = 1000
-    katalog__price[1].value = 9000
+    katalog__price[1].value = 10000
     sliderOne.value = katalog__price[0].value
     sliderTwo.value = katalog__price[1].value
     katalog__price[2].value = 1

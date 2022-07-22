@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- придумать описание страницы -->
     <meta name="description" content="придумать описание страницы">
-    <title>IdsStore Каталог</title>
-    <link rel="stylesheet" href="../general.css">
-    <link rel="stylesheet" href="../header/header.css">
-    <link rel="stylesheet" href="./katalog.css">
-    <link rel="stylesheet" href="../footer/footer.css">
+    <title>IdsStore Контакты</title>
+    <link rel="stylesheet" href="../general.css" media="all">
+    <link rel="stylesheet" href="../header/header.css" media="all">
+    <link rel="stylesheet" href="./bag.css" media="all" >
+    <link rel="stylesheet" href="../footer/footer.css"media="all">
 </head>
 <body>
     <div class="search__modal">
@@ -57,8 +57,8 @@
             </div>
         </div>
         <div class="services">
-            <a href="./katalog.html">Каталог <div class="menu"><span></span></div></a>
-            <a href="../aboutUs/aboutUs.html">О нас</a>
+            <a href="../katalog/katalog.html">Каталог <div class="menu"><span></span></div></a>
+            <a href="./aboutUs.html">О нас</a>
             <a href="../services/services.html">Услуги</a>
             <a href="../contact/contact.html">Контакты</a>
             <a href="../gallary/gallary.html">Галерея</a>
@@ -70,10 +70,10 @@
             <div class="sidebar">
                 <div class="sidebar__menu">
                     <div class="sidebar__row">
-                        <a href="./katalog.html">Каталог <div class="iconMenu"><span></span></div></a>
+                        <a href="../katalog/katalog.html">Каталог <div class="iconMenu"><span></span></div></a>
                         <p class="sidebar__close">X</p>
                     </div>
-                    <a href="../aboutUs/aboutUs.html">О нас</a>
+                    <a href="./aboutUs.html">О нас</a>
                     <a href="../services/services.html">Услуги</a>
                     <a href="../contact/contact.html">Контакты</a>
                     <a href="../gallary/gallary.html">Галерея</a>
@@ -82,69 +82,29 @@
             </div>
         </div>
     </header>
-    <main>
-        <div class="katalog">
-            <span><a href="../index.html">главная </a>/<a href="./katalog.html"> каталог</a></span>
-            <h1>Бытовки</h1>
-            <div class="katalog-row">
-                    <p>Сначала:
-                        <!-- можно ли как то стилизовать option -->
-                        <select name="filter" id="firstFilter">
-                            <option value="popular">популярные</option>
-                            <option value="cheap">дешевле</option>
-                            <option value="expencive">дороже</option>
-                        </select>
-                    </p>
-                    <p class="katalog__kol">на странице: <span>6</span></p>
-                    <div class="filter__open"><img src="./filter.webp" alt="фильтры"><p>фильтры</p></div>
-            </div>
-            <div class="katalog-row">
-                <div class="katalog__filter">
-                    <div class="katalog-row">
-                        <h2>цена</h2>
-                        <p class="filter__close">x</p>
-                    </div>
-                    <div class="katalog-row">
-                        <span> от <input type="text" maxlength="4" value="1000" class="katalog__price" oninput="inputValue()" onkeypress="noDigits(event)"></span>
-                        <span> до <input type="text" maxlength="4" value="10000" class="katalog__price" oninput="inputValue()"onkeypress="noDigits(event)" ></span>
-                    </div>
-                    <div class="container">
-                        <div class="slider-track"></div>
-                        <input type="range" min="0" max="10000" value="1000" id="slider-1">
-                        <input type="range" min="0" max="10000" value="10000" id="slider-2">
-                    </div>
-                    <div class="katalog-size">
-                        <h2>Габариты</h2>
-                        <div class="katalog__sizeItem">
-                            <input type="checkbox" class="katalog__Checkbox" value="6х2,4х2,50м">
-                            <label for="katalog__Checkbox">6х2,4х2,50м</label>
-                        </div>
-                        <div class="katalog__sizeItem">
-                            <input type="checkbox" class="katalog__Checkbox" value="2,5х2,5х3,0м">
-                            <label for="katalog__Checkbox">2,5х2,5х3,0м</label>
-                        </div>
-                        <div class="katalog__sizeItem">
-                            <input type="checkbox" class="katalog__Checkbox" value="6х2,4х2,4м">
-                            <label for="katalog__Checkbox">6х2,4х2,4м</label>
-                        </div>
-                    </div>
-                        <h2>Вместимость</h2>
-                        <div class="katalog-row">
-                            <span> от <input type="text" maxlength="2" value="1" class="katalog__price" oninput="noDigits(event)" placeholder="1"></span>
-                            <span> до <input type="text" maxlength="2" value="10" class="katalog__price" oninput="noDigits(event)" placeholder="10"></span>
-                        </div>
-                    <div class="katalog-star">
-                        <h2>Рейтинг покупателей</h2>
-                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★★★★">★★★★★</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★★★☆">★★★★☆</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★★☆☆">★★★☆☆</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★☆☆☆">★★☆☆☆</p>
-                    </div>
-                    <button id="clear">Очистить</button>
+    <main>   
+        <div class="bag__wrapper">
+            <span><a href="../index.html">главная </a>/<a href="./bag.html"> корзина</a></span>      
+            <h1>Корзина товаров</h1>
+            <div class="bag">
+                <div class="bag__items">
                 </div>
-                <div class="katalog-line"></div>
+                <div class="bag__price">
+                    <div class="bag__promoCode">
+                        <input type="text" placeholder="Промокод">
+                        <button>Ok</button>
+                    </div>
+                    <div class="input__price">
+                        <p>Итого</p>
+                        <span id="price"> 18800₽</span>
+                    </div>
+                    <p class="input__checkbox" > <input type="checkbox" class="katalog__Checkbox">c доставкой: <span> 26800₽</span></p>
+                    <p class="input__checkbox"> <input type="checkbox" class="katalog__Checkbox">самовызов: <span> 18800₽</span></p>
+                    <input type="tel" id="phone" placeholder="Номер телефона">
+                    <button id="order">Оформить заказ</button>
+                </div>
             </div>
-        </div>
+        </div>  
     </main>
     <footer>
         <div class="pd-100">
@@ -227,7 +187,7 @@
                 </div>
                 <div class="d-col">
                     <h4>Информация</h4>
-                    <a href="../aboutUs/aboutUs.html">О нас</a>
+                    <a href="./aboutUs.html">О нас</a>
                     <a href="../contact/contact.html">контакты</a>
                     <a href="../services/services.html">услуги</a>
                     <a href="../gallary/gallary.html">галерея</a>
@@ -242,8 +202,7 @@
             </div>
         </div>
     </footer>
-    <script async src="../main.js"></script>
-    <script async src="./katalog.js"></script>
-    <script src="../katalogMass.js"></script>
+    <script src="../main.js"></script>
+    <script src="./bag.js"></script>
 </body>
 </html>

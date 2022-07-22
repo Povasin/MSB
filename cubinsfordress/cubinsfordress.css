@@ -29,7 +29,11 @@ main {
   padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
 }
 
-.furniture .fd-row, .furniture, .transportation_wrapper .transportation__contant .transportation__row, .transportation_wrapper .transportation__block, .transportation_wrapper .transportation, .furniture .card .card__sale, .furniture .slider .slider-line, .transportation_wrapper .transportation__block .slider-wrapper .slider .slider-line, .furniture .slider, .transportation_wrapper .transportation__block .slider-wrapper .slider {
+.furniture .fd-row, .furniture, .transportation_wrapper .transportation__contant .transportation__row, .transportation_wrapper .transportation__block, .transportation_wrapper .transportation, .furniture .card .card__sale, .furniture .slider .furniture-line, .transportation_wrapper .transportation__block .slider-wrapper .slider .furniture-line,
+.furniture .slider .katalog-line,
+.transportation_wrapper .transportation__block .slider-wrapper .slider .katalog-line,
+.furniture .slider .slider-line,
+.transportation_wrapper .transportation__block .slider-wrapper .slider .slider-line, .furniture .slider, .transportation_wrapper .transportation__block .slider-wrapper .slider {
   display: flex;
   flex-direction: row;
 }
@@ -57,7 +61,11 @@ main {
 .furniture .slider, .transportation_wrapper .transportation__block .slider-wrapper .slider {
   overflow: hidden;
 }
-.furniture .slider .slider-line, .transportation_wrapper .transportation__block .slider-wrapper .slider .slider-line {
+.furniture .slider .furniture-line, .transportation_wrapper .transportation__block .slider-wrapper .slider .furniture-line,
+.furniture .slider .katalog-line,
+.transportation_wrapper .transportation__block .slider-wrapper .slider .katalog-line,
+.furniture .slider .slider-line,
+.transportation_wrapper .transportation__block .slider-wrapper .slider .slider-line {
   position: relative;
   width: 200%;
   left: 0;
@@ -82,7 +90,6 @@ main {
   background-color: white;
   width: 280px;
   padding: 10px;
-  cursor: pointer;
   text-decoration: none;
   color: black;
 }
@@ -95,6 +102,8 @@ main {
   font-size: calc( 0.003125 * 100vw + 14px );
   font-weight: 900;
   margin: 0;
+  text-decoration: none;
+  color: black;
 }
 .furniture .card .card__bag {
   cursor: pointer;
@@ -102,6 +111,14 @@ main {
   padding: calc( 0.0024590164 * 100vw + 0.2786885246px ) calc( 0.0040983607 * 100vw + 12.131147541px );
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
   border: none;
+}
+.furniture .card .bag__active {
+  background: transparent;
+  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  border-image-slice: 1;
+  background: transparent;
+  text-decoration: none;
+  color: black;
 }
 .furniture .card .card__img {
   width: 100%;
@@ -111,6 +128,8 @@ main {
   margin: auto 0 auto auto;
   font-size: 24px;
   font-weight: 900;
+  text-decoration: none;
+  color: black;
 }
 .furniture .card .fd-row .star {
   font-size: calc( 0.0049180328 * 100vw + 10.5573770492px );
@@ -261,10 +280,12 @@ main {
   display: inline-flex;
   border: 2px solid gray;
   padding: 0px 16px;
-  margin: 0 auto 0 0;
+  margin: auto auto 0 0;
 }
 .transportation_wrapper .transportation__contant .quantity_inner .bt_minus,
 .transportation_wrapper .transportation__contant .quantity_inner .bt_plus,
+.transportation_wrapper .transportation__contant .quantity_inner .bt_minusMonth,
+.transportation_wrapper .transportation__contant .quantity_inner .bt_plusMonth,
 .transportation_wrapper .transportation__contant .quantity_inner .quantity {
   padding: 0;
   border: 0;
@@ -275,18 +296,22 @@ main {
 }
 .transportation_wrapper .transportation__contant .quantity_inner .bt_minus p,
 .transportation_wrapper .transportation__contant .quantity_inner .bt_plus p,
+.transportation_wrapper .transportation__contant .quantity_inner .bt_minusMonth p,
+.transportation_wrapper .transportation__contant .quantity_inner .bt_plusMonth p,
 .transportation_wrapper .transportation__contant .quantity_inner .quantity p {
   font-weight: 500;
   font-size: 35px;
   margin: 0;
 }
-.transportation_wrapper .transportation__contant .quantity_inner .bt_plus p {
+.transportation_wrapper .transportation__contant .quantity_inner .bt_plus,
+.transportation_wrapper .transportation__contant .quantity_inner .bt_plusMonth {
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.transportation_wrapper .transportation__contant .quantity_inner .bt_minus p {
+.transportation_wrapper .transportation__contant .quantity_inner .bt_minus,
+.transportation_wrapper .transportation__contant .quantity_inner .bt_minusMonth {
   margin: -5px 0 0 0;
 }
 .transportation_wrapper .transportation__contant .quantity_inner .fd-col .quantity {
@@ -362,8 +387,8 @@ main {
   font-size: calc( 0.0065420561 * 100vw + 7.4392523364px );
   margin: 0 0 20px 0;
 }
-.furniture .prev,
-.furniture .next {
+.furniture .prevFurniture,
+.furniture .nextFurniture {
   color: gray;
   padding: 0px 5px 5px 5px;
   font-size: calc( 0.0055803571 * 100vw + 19.2857142857px );
@@ -417,7 +442,7 @@ main {
   .furniture .slider .card .card__img {
     max-width: 90%;
   }
-  .furniture .slider .slider-line {
+  .furniture .slider .furniture-line {
     width: 300%;
   }
 }

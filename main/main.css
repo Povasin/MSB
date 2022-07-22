@@ -29,7 +29,11 @@ main {
   padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
 }
 
-.katalog .katalog-row, .furniture, .content .fd-row, .advantages-row, .fd-row .slider .slides .slide__button, .fd-row .slider .slides .slide, .fd-row, .card .card__sale, .card .fd-row, .katalog .slider .slider-line, .furniture .slider .slider-line, .katalog .slider, .furniture .slider {
+.katalog .katalog-row, .furniture, .content .fd-row, .advantages-row, .fd-row .slider .slides .slide__button, .fd-row .slider .slides .slide, .fd-row, .card .card__sale, .card .fd-row, .katalog .slider .furniture-line, .furniture .slider .furniture-line,
+.katalog .slider .katalog-line,
+.furniture .slider .katalog-line,
+.katalog .slider .slider-line,
+.furniture .slider .slider-line, .katalog .slider, .furniture .slider {
   display: flex;
   flex-direction: row;
 }
@@ -57,7 +61,11 @@ main {
 .katalog .slider, .furniture .slider {
   overflow: hidden;
 }
-.katalog .slider .slider-line, .furniture .slider .slider-line {
+.katalog .slider .furniture-line, .furniture .slider .furniture-line,
+.katalog .slider .katalog-line,
+.furniture .slider .katalog-line,
+.katalog .slider .slider-line,
+.furniture .slider .slider-line {
   position: relative;
   width: 200%;
   left: 0;
@@ -82,7 +90,6 @@ main {
   background-color: white;
   width: 280px;
   padding: 10px;
-  cursor: pointer;
   text-decoration: none;
   color: black;
 }
@@ -95,6 +102,8 @@ main {
   font-size: calc( 0.003125 * 100vw + 14px );
   font-weight: 900;
   margin: 0;
+  text-decoration: none;
+  color: black;
 }
 .card .card__bag {
   cursor: pointer;
@@ -111,6 +120,8 @@ main {
   margin: auto 0 auto auto;
   font-size: 24px;
   font-weight: 900;
+  text-decoration: none;
+  color: black;
 }
 .card .fd-row .star {
   font-size: calc( 0.0049180328 * 100vw + 10.5573770492px );
@@ -368,8 +379,8 @@ main .line {
   border-left: calc( 0.0041666667 * 100vw + 9.6666666667px ) solid;
   margin: auto 0 auto calc( 0.00625 * 100vw + 3px );
 }
-.content .fd-row .prev,
-.content .fd-row .next {
+.content .fd-row .prevFurniture,
+.content .fd-row .nextFurniture {
   color: gray;
   padding: 0px 5px 5px 5px;
   font-size: calc( 0.0055803571 * 100vw + 19.2857142857px );
@@ -533,13 +544,13 @@ main .line {
   .furniture .slider .card .card__img {
     max-width: 90%;
   }
-  .furniture .slider .slider-line {
+  .furniture .slider .furniture-line {
     width: 300%;
   }
   .katalog .slider {
     margin: 0 calc( 0.0566037736 * 100vw + -18.1132075472px );
   }
-  .katalog .slider .slider-line {
+  .katalog .slider .katalog-line {
     width: 300%;
   }
 }
@@ -618,7 +629,7 @@ main .line {
   .katalog .slider {
     margin: 0;
   }
-  .katalog .slider .slider-line {
+  .katalog .slider .katalog-line {
     width: 300%;
   }
 }
@@ -626,7 +637,7 @@ main .line {
   .katalog .slider .card {
     width: 400px;
   }
-  .katalog .slider .slider-line {
+  .katalog .slider .katalog-line {
     width: 600%;
   }
   .fd-row .slider {

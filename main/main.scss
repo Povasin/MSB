@@ -263,8 +263,8 @@ main {
             @extend %sliderBtn;
         }
         
-        .prev, 
-        .next{
+        .prevFurniture, 
+        .nextFurniture{
             color: gray;
             padding: 0px 5px 5px 5px;
             font-size: calcFluid(25, 30, 1024, 1920);
@@ -436,7 +436,7 @@ main {
                     max-width: 90%;
                 }
             }
-            .slider-line{
+            .furniture-line{
                 width: 300%;
             }
         }
@@ -445,7 +445,7 @@ main {
     .katalog{ 
         .slider{
             margin: 0 calcFluid(0, 30, 320, 850);
-            .slider-line{
+            .katalog-line{
                 width: 300%;
             }
         }
@@ -523,7 +523,7 @@ main {
     .katalog{
         .slider{
             margin: 0;
-            .slider-line{
+            .katalog-line{
                 width: 300%;
             }
         }
@@ -536,7 +536,7 @@ main {
             .card {
                 width: 400px;
             }
-            .slider-line{
+            .katalog-line{
                 width: 600%;
             }
         }

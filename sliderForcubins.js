@@ -1,125 +1,67 @@
-const bt_minus = document.querySelectorAll(".bt_minus")
-const bt_plus = document.querySelectorAll(".bt_plus")
+const bt_minus = document.querySelector(".bt_minus")
+const bt_plus = document.querySelector(".bt_plus")
+const bt_minusMonth = document.querySelector(".bt_minusMonth")
+const bt_plusMonth = document.querySelector(".bt_plusMonth")
 const input = document.querySelectorAll(".quantity")
-const next= document.querySelectorAll(".next")
-const prev = document.querySelectorAll(".prev")
-const sliderLine = document.querySelectorAll(".slider-line")
+const next= document.querySelector(".next")
+const prev = document.querySelector(".prev")
+const sliderLine = document.querySelector(".slider-line")
 const sliderhtml = document.querySelector(".slider")
 const slider__img = document.querySelectorAll(".slider__img")
 const main__img = document.querySelector(".main__img")
-let furnitureSlider = 0;
+const more = document.querySelector(".more")
+const star = document.querySelector(".star")
+const h1 = document.querySelector("h1")
+const price = document.querySelector(".price")
+const discount = document.querySelector(".discount")
+const HrefForJs = document.querySelector(".HrefForJs")
 let slider = 0
-const furnitureMass= [
-    {
-        img: "../main/chair.webp",
-        name: "офисный стул",
-        discount: "800",
-        price:"500₽",
-        star: "★★★★☆"
-    },
-    {
-        img: "../main/table.webp",
-        name: "офисный стол",
-        discount: "1000",
-        price:"700₽",
-        star: "★★★☆☆"
-    },
-    {
-        img: "../main/bad.webp",
-        name: "кровать",
-        discount: "1500",
-        price:"1200₽",
-        star: "★★★★★"
-    },
-    {
-        img: "../main/chair.webp",
-        name: "офисный стул",
-        discount: "800",
-        price:"500₽",
-        star: "★★★★☆"
-    },
-    {
-        img: "../main/table.webp",
-        name: "офисный стол",
-        discount: "1000",
-        price:"700₽",
-        star: "★★★☆☆"
-    },
-    {
-        img: "../main/bad.webp",
-        name: "кровать",
-        discount: "1500",
-        price:"1200₽",
-        star: "★★★★★"
-    }
-]
-function render() {
-    furnitureMass.forEach(item => {
-        sliderLine[1].insertAdjacentHTML("beforeend", ` <a href="#" class="card">
-        <div class="fd-row">
-            <p class="star">${item.star}</p>
-            <p class="card__arrow">→</p>
-        </div>
-        <img class="card__img" src="${item.img}" alt="${item.name}">
-        <p class="rent">Аренда</p>
-        <p class="info">${item.name}</p>
-        <div class="card__sale">
-            <div class="fd-col">
-                <p class="discount">${item.discount}</p>
-                <p class="card__price">${item.price}</p> 
-            </div>
-        </div>
-        <button class="card__bag">+</button>
-    </a>`)
-    })
-}
-render()
-next[0].addEventListener('click', ()=>{
+next.addEventListener('click', ()=>{
     if (document.documentElement.clientWidth > 1024) {
         if (slider < 100 && slider >= 0) {
             slider+= 100
-            sliderLine[0].style.top = -slider + '%' 
-            next[0].classList.remove("active")
-            prev[0].classList.add("active")
+            sliderLine.style.top = -slider + '%' 
+            next.classList.remove("active")
+            prev.classList.add("active")
     
         } 
     } else {
         if (slider < 200 && slider >= 0) {
             slider+= 100
-            sliderLine[0].style.top = -slider + '%' 
-            next[0].classList.remove("active")
-            prev[0].classList.add("active")
+            sliderLine.style.top = -slider + '%' 
+            next.classList.remove("active")
+            prev.classList.add("active")
             if (slider == 200) {
-                next[0].classList.remove("active")
-                prev[0].classList.add("active")
+                next.classList.remove("active")
+                prev.classList.add("active")
             } else if (slider == 100) {
-                prev[0].classList.add("active")
-                next[0].classList.add("active")
+                prev.classList.add("active")
+                next.classList.add("active")
             }
         } 
     }
 
 })
-prev[0].addEventListener('click', ()=>{
+prev.addEventListener('click', ()=>{
     if (document.documentElement.clientWidth > 1024) {
         if (slider < 101 && slider > 0 ) {
             slider-=100
-            sliderLine[0].style.top = slider + '%' 
-            prev[0].classList.remove("active")
-            next[0].classList.add("active")
+            sliderLine.style.top = slider + '%' 
+            prev.classList.remove("active")
+            next.classList.add("active")
         }
     }  else{
         if (slider < 201 && slider > 0 ) {
             slider-=100
-            sliderLine[0].style.top = -slider + '%' 
-            prev[0].classList.remove("active")
-            next[0].classList.add("active")
+            sliderLine.style.top = -slider + '%' 
+            prev.classList.remove("active")
+            next.classList.add("active")
             if (furnitureSlider == 0) {
-                prev[0].classList.remove("prev__active")
-                next[0].classList.add("next__active")
+                prev.classList.remove("prev__active")
+                next.classList.add("next__active")
             } else if (furnitureSlider == 100) {
-                prev[0].classList.add("prev__active")
-                next[0].classList.add("next__active")
+                prev.classList.add("prev__active")
+                next.classList.add("next__active")
             }
         }
     }
@@ -133,61 +75,30 @@ sliderhtml.addEventListener("click", (e)=>{
         main__img.src = e.target.src
     }   
 })
-next[1].addEventListener('click', ()=>{
-    if (document.documentElement.clientWidth > 851) {
-        if (furnitureSlider < 100 && furnitureSlider >= 0) {
-            furnitureSlider+= 100
-            sliderLine[1].style.left = -furnitureSlider + '%' 
-            next[1].classList.remove("next__active")
-            prev[1].classList.add("prev__active")
-    
-        } 
-    } else {
-        if (furnitureSlider < 200 && furnitureSlider >= 0) {
-            furnitureSlider+= 100
-            sliderLine[1].style.left = -furnitureSlider + '%' 
-            if (furnitureSlider == 200) {
-                next[1].classList.remove("next__active")
-                prev[1].classList.add("prev__active")
-            } else if (furnitureSlider == 100) {
-                prev[1].classList.add("prev__active")
-                next[1].classList.add("next__active")
-            }
-        } 
-    }
 
-})
-prev[1].addEventListener('click', ()=>{
-    if (document.documentElement.clientWidth > 851) {
-        if (furnitureSlider < 101 && furnitureSlider > 0 ) {
-            furnitureSlider-=100
-            sliderLine[1].style.left = -furnitureSlider + '%' 
-            prev[1].classList.remove("prev__active")
-            next[1].classList.add("next__active")
-        }
-    }  else{
-        if (furnitureSlider < 201 && furnitureSlider > 0 ) {
-            furnitureSlider-=100
-            sliderLine[1].style.left = -furnitureSlider + '%' 
-            if (furnitureSlider == 0) {
-                prev[1].classList.remove("prev__active")
-                next[1].classList.add("next__active")
-            } else if (furnitureSlider == 100) {
-                prev[1].classList.add("prev__active")
-                next[1].classList.add("next__active")
-            }
-        }
-    }
-})
-bt_minus[0].addEventListener("click", ()=>{
-    input[0].value = +input[0].value - 1 < 1 ? 1 : +input[0].value - 1;
-})
-bt_plus[0].addEventListener("click", ()=>{
-    input[0].value = +input[0].value + 1;;
-})
-bt_minus[1].addEventListener("click", ()=>{
-    input[1].value = +input[1].value - 1 < 1 ? 1 : +input[1].value - 1;
-})
-bt_plus[1].addEventListener("click", ()=>{
-    input[1].value = +input[1].value + 1;;
+function bt_minusFunc(number) {
+    input[number].value = +input[number].value - 1 < 1 ? 1 : +input[number].value - 1;
+    number == 0 ?  cubinsItem.inputkol = input[number].value : cubinsItem.inputMonth = input[number].value
+}
+function bt_plusFunc(number) {
+    input[number].value = +input[number].value + 1;
+    number == 0 ?  cubinsItem.inputkol = input[number].value : cubinsItem.inputMonth = input[number].value
+}
+bt_minus.addEventListener("click", ()=>bt_minusFunc(0))
+bt_plus.addEventListener("click", ()=>bt_plusFunc(0))
+bt_minusMonth.addEventListener("click", ()=>bt_minusFunc(1))
+bt_plusMonth.addEventListener("click", ()=>bt_plusFunc(1))
+let cubinsItem = {
+    img: main__img.src,
+    name: h1.textContent,
+    discount: discount.textContent,
+    price: price.textContent,
+    href: HrefForJs.href,
+    inputkol : input[0].value,
+    inputMonth : input[1].value
+}
+let jsonMass = JSON.parse(localStorage.getItem("bagMass")) || []
+more.addEventListener("click", ()=>{
+    jsonMass.push(cubinsItem)
+    localStorage.setItem("bagMass", JSON.stringify(jsonMass));
 })

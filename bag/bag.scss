@@ -1,0 +1,300 @@
+@import "../general.scss";
+
+main {
+    @extend %main;
+}
+
+.main_fixed {
+    margin-top: 90px
+}
+
+.bag__wrapper {
+    padding: 0 calcFluid(8, 200, 320, 1920);
+    @extend %d-col;
+
+    span a {
+        text-decoration: none;
+        color: black;
+        font-size: calcFluid(12, 20, 320, 1920);
+    }
+
+    h1 {
+        font-size: calcFluid(20, 35, 320, 1920);
+    }
+    .bag {
+        @extend %d-row;
+        margin: 0 0 20px 0;
+        .bag__items::-webkit-scrollbar {
+            display: none;
+        }
+        &__items {
+            @extend %d-col;
+            overflow: scroll;
+            height: calcFluid(250, 547, 320, 1920);
+            width: 70%;
+            margin: 0 calcFluid(12, 120, 1024, 1920) 0 0;
+            .bag__clear{
+                margin:calcFluid(12, 120, 320, 1920) auto auto auto;
+                h2, p{
+                   text-align: center;
+                }
+                h2{
+                    font-size: calcFluid(17, 30, 320, 1920);
+                }
+                p{
+                    font-size: calcFluid(12, 18, 320, 1920);
+                }
+            }
+
+            .bag__block {
+                width: 95%;
+                margin: 10px 0;
+                @extend %d-row;
+                box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+                padding: 10px;
+                text-decoration: none;
+                .block__img {
+                    width: 30%;
+                    margin: auto 0;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .block__content {
+                    position: relative;
+                    margin: 0 0 0 10px;
+                    width: 70%;
+                    @extend %d-col;
+                    color: black;
+
+                    .block__close {
+                        right: 0;
+                        top: -15px;
+                        cursor: pointer;
+                        font-size: calcFluid(15, 25, 320, 1920);
+                        font-weight: 900;
+                        color: gray;
+                        position: absolute;
+                    }
+
+                    .rent {
+                        color: gray;
+                        font-weight: 500;
+                        margin: calcFluid(0, 20, 320, 1920) 0 0 0;
+                    }
+
+                    p,a {
+                        text-decoration: none;
+                        color: black;
+                        font-size: calcFluid(12, 20, 320, 1920);
+                        font-weight: 900;
+                        margin: 10px 0;
+                    }
+
+                    .block__input {
+                        margin: auto 0 0px 0;
+                        @extend %d-row;
+
+                        .quantity_inner {
+                            display: flex;
+                            flex-direction: row;
+                            border: 1px solid gray;
+                            margin: auto 10px auto 0;
+                            padding: 0 5px;
+
+                            .bt_minus,
+                            .bt_plus,
+                            .bt_minusMonth,
+                            .bt_plusMonth,
+                            .quantity {
+                                padding: 0;
+                                border: 0;
+                                margin: 0;
+                                background: transparent;
+                                cursor: pointer;
+                                outline: 0;
+                                font-weight: 500;
+                                font-size: calcFluid(20, 35, 320, 1920);
+                                margin: 0;
+                            }
+
+                            .bt_plus,
+                            .bt_plusMonth {
+                                background: $gradient;
+                                -webkit-background-clip: text;
+                                background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+                            .bt_minus,
+                            .bt_minusMonth {
+                                margin: -2px 0 0 0;
+                            }
+
+                            .fd-col {
+                                @extend %d-col;
+
+                                .quantity {
+                                    width: 50px;
+                                    text-align: center;
+                                    font-size: calcFluid(17, 25, 320, 1920);
+                                    font-weight: bold;
+                                    color: #000;
+                                    margin: 0;
+                                    width: 100%;
+                                }
+
+                                p {
+                                    margin: 0;
+                                    font-size: calcFluid(8, 13, 320, 1920);
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                        .block-col {
+                            margin: auto 0 0 auto;
+
+                            .block__price,
+                            .block__discount {
+                                margin: 5px 0 0 0;
+                            }
+
+                            .block__discount {
+                                font-size: calcFluid(10, 18, 320, 1920);
+                                text-decoration: line-through;
+                                color: gray;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bag__price {
+            height: 285px;
+            width: 24%;
+            @extend %d-col;
+
+            .bag__promoCode {
+                input {
+                    font-size: calcFluid(12, 20, 800, 1920);
+                    font-weight: 100;
+                    padding: 7px;
+                    outline: none;
+                    border: 1px solid gray;
+                }
+
+                button {
+                    background-color: #19103C;
+                    padding: 7px;
+                    font-size: calcFluid(10, 20, 320, 1920);
+                    color: white;
+                    font-weight: 100;
+                    border: none;
+                }
+            }
+
+            .input__price {
+                @extend %d-row;
+                margin: calcFluid(12, 20, 320, 1920) 0;
+                font-size: calcFluid(15, 20, 320, 1920);
+                font-weight: 900;
+
+                p {
+                    margin: 7px 5px 0 0;
+
+                }
+
+                #price {
+                    font-size: calcFluid(17, 30, 320, 1920);
+                    font-weight: 900;
+                }
+            }
+
+            span {
+                font-size: calcFluid(13, 20, 320, 1920);
+                font-weight: 900;
+            }
+
+            .input__checkbox {
+                margin: 10px 0;
+                @extend %d-row;
+                font-size: calcFluid(13, 20, 320, 1920);
+            }
+
+            input[type='checkbox'] {
+                margin: auto 10px auto 0;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                display: inline-block;
+                width: 1.5em;
+                height: 1.5em;
+                border: 1px solid #adb5bd;
+                cursor: pointer;
+                vertical-align: bottom;
+
+                &:checked {
+                    background: $gradient;
+                }
+            }
+
+            input[type="checkbox"]:after {
+                content: ' ';
+                position: relative;
+                left: 35%;
+                top: 10%;
+                width: 15%;
+                height: 50%;
+                border: solid #fff;
+                border-width: 0 3px 3px 0;
+                transform: rotate(50deg);
+                display: none;
+            }
+
+            input[type="checkbox"]:checked:after {
+                display: block;
+            }
+
+            input[type="tel"] {
+                margin: auto auto auto 0;
+                padding: 5px 10px;
+                outline: none;
+                border: 1px solid gray;
+                width: 50%;
+
+            }
+
+            #order {
+                @extend %more;
+                margin: 10px auto auto 0;
+            }
+        }
+    }
+}
+
+@media(max-width: 1060px) {
+    .bag__wrapper .bag {
+        flex-direction: column;
+
+        &__items {
+            width: 100%;
+            margin: 0 0 calcFluid(20, 50, 320, 1060) 0;
+        }
+
+        .bag__price {
+            width: 100%;
+
+            span {
+                margin: 0 0 0 auto !important;
+            }
+
+            #order {
+                width: 100%;
+            }
+        }
+    }
+
+}

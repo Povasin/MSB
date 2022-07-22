@@ -11,6 +11,8 @@ let search__blockHref = document.querySelectorAll(".search__blockHref")
 const services__media = document.querySelector(".services__media")
 const search__modal = document.querySelector(".search__modal")
 const search__close = document.querySelector(".search__close")
+// TODO: срабатывает только когда перехожу в корзину
+document.querySelector(".services__sum").innerText  = JSON.parse(localStorage.getItem("bagMass")).length
 sidebar__open.addEventListener("click",()=>{ sidebar.style.right = 0 + "%"})
 sidebar__close.addEventListener("click", ()=>{ sidebar.style.right = -50 + "%"})
 window.onscroll = function showServices() {
@@ -22,7 +24,6 @@ window.onscroll = function showServices() {
         main.classList.remove("main_fixed")
     }
 }
-
 answer__question.forEach(item=>{
     item.addEventListener("click", (e)=>{
         let content = item.nextElementSibling
@@ -60,3 +61,4 @@ services__media.addEventListener("click", ()=>{
 search__close.addEventListener("click",()=>{
     search__modal.style.display = "none"
 })
+

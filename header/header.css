@@ -256,16 +256,14 @@ header .services__sum {
   position: absolute;
   top: -15px;
   left: 15px;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   width: 18px;
   height: 18px;
   border-radius: 50%;
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
-}
-header .services__sum p {
-  font-weight: 900;
-  margin: 2px 5px;
+  text-align: center;
+  font-weight: 500;
 }
 header .services__media {
   display: none;

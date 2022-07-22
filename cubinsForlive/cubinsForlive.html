@@ -62,7 +62,7 @@
             <a href="../services/services.html">Услуги</a>
             <a href="../contact/contact.html">Контакты</a>
             <a href="../gallary/gallary.html">Галерея</a>
-            <a href="" ><img src="../header/bag.svg" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
+            <a href="../bag/bag.html" ><img src="../header/bag.svg" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
             <img  class="services__media" src="../header/search.svg" alt="поиск">
             <div class="sidebar__open">
                 <span></span>
@@ -70,14 +70,14 @@
             <div class="sidebar">
                 <div class="sidebar__menu">
                     <div class="sidebar__row">
-                        <a href="">Каталог <div class="iconMenu"><span></span></div></a>
+                        <a href="../katalog/katalog.html">Каталог <div class="iconMenu"><span></span></div></a>
                         <p class="sidebar__close">X</p>
                     </div>
                     <a href="../aboutUs/aboutUs.html">О нас</a>
                     <a href="../services/services.html">Услуги</a>
                     <a href="../contact/contact.html">Контакты</a>
                     <a href="../gallary/gallary.html">Галерея</a>
-                    <a href="" ><img src="../header/bag.svg" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
+                    <a href="../bag/bag.html" ><img src="../header/bag.svg" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
                 </div>
             </div>
         </div>
@@ -90,7 +90,6 @@
                     <div class="slider-wrapper">
                         <p class="prev"><</p>
                         <div class="slider">
-                            <!-- TODO: не срабатвает trantsition -->
                             <div class="slider-line">
                                 <img class="slider__img active" src="../main/cubinsForLive.webp" alt="бытовка с душем">
                                 <img class="slider__img" src="../main/cubinsForLive.webp" alt="бытовка с душем">
@@ -105,6 +104,7 @@
                         <div class="star">★★★★☆</div>
                         <img class="main__img"  src="../main/cubinsForLive.webp" alt="бытовка с душем">
                         <a href="../gallary/gallary.html" class="chooseMore">выбрать формат</a>
+                        <a href="../cubinsForlive/cubinsForlive.html" class="HrefForJs"></a>
                     </div>
                 </div>
                 <div class="transportation__contant">
@@ -115,8 +115,8 @@
                     <p>Состояние:<span> Любое</span></p>
                     <p class="transportation__all">Все характеристки</p>
                     <div class="transportation__row">
-                        <p>1500₽</p> 
-                        <p>3000</p>
+                        <p class="price">7500</p> 
+                        <p class="discount">8000</p>
                     </div>
                     <div class="fd-row">
                         <div class="quantity_inner">		
@@ -132,14 +132,14 @@
                             </button>
                         </div>
                         <div class="quantity_inner">		
-                            <button class="bt_minus">
+                            <button class="bt_minusMonth">
                               <p>-</p>
                             </button>
                             <div class="fd-col">
                                 <p>месяцев</p>
                                 <input type="text" value="1" size="2" class="quantity" />
                             </div>
-                            <button class="bt_plus">
+                            <button class="bt_plusMonth">
                                 <p>+</p>
                              </button>
                         </div>
@@ -172,7 +172,7 @@
                 </div>
             </div>
             <div class="slider">
-                <div class="slider-line">
+                <div class="furniture-line">
                 </div>
             </div>
         </div>
@@ -275,5 +275,6 @@
     </footer>
     <script src="../main.js"></script>
     <script src="../sliderForcubins.js"></script>
+    <script src="../furnitureMass.js"></script>
 </body>
 </html>

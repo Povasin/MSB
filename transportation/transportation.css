@@ -29,7 +29,9 @@ main {
   padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
 }
 
-.transportation_wrapper .advantages-row, .transportation_wrapper .transportation__contant .transportation__row, .transportation_wrapper .transportation__block, .transportation_wrapper .transportation, .transportation_wrapper .transportation__block .slider-wrapper .slider .slider-line, .transportation_wrapper .transportation__block .slider-wrapper .slider {
+.transportation_wrapper .advantages-row, .transportation_wrapper .transportation__contant .transportation__row, .transportation_wrapper .transportation__block, .transportation_wrapper .transportation, .transportation_wrapper .transportation__block .slider-wrapper .slider .furniture-line,
+.transportation_wrapper .transportation__block .slider-wrapper .slider .katalog-line,
+.transportation_wrapper .transportation__block .slider-wrapper .slider .slider-line, .transportation_wrapper .transportation__block .slider-wrapper .slider {
   display: flex;
   flex-direction: row;
 }
@@ -57,6 +59,8 @@ main {
 .transportation_wrapper .transportation__block .slider-wrapper .slider {
   overflow: hidden;
 }
+.transportation_wrapper .transportation__block .slider-wrapper .slider .furniture-line,
+.transportation_wrapper .transportation__block .slider-wrapper .slider .katalog-line,
 .transportation_wrapper .transportation__block .slider-wrapper .slider .slider-line {
   position: relative;
   width: 200%;

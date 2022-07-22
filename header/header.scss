@@ -164,16 +164,14 @@ header {
             position: absolute;
             top: -15px;
             left: 15px;
-            font-size: 12px;
+            font-size: 14px;
             color: white;
             width: 18px;
             height: 18px;
             border-radius: 50%;
             background: $gradient;
-            p {
-                font-weight: 900;
-                margin: 2px 5px;
-            }
+            text-align:center;
+            font-weight: 500;
         }
         &__media{
             display: none;
