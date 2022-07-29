@@ -19,6 +19,12 @@
   src: url("../fonts/Inter/Inter-Bold.ttf");
   font-display: swap;
 }
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
 body {
   padding: 0;
   margin: 0;

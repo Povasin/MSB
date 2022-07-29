@@ -2,6 +2,7 @@ const choose__img = document.querySelector(".choose__img")
 const choose__more = document.querySelectorAll(".choose__more")
 const next= document.querySelector(".next")
 const prev = document.querySelector(".prev")
+const one__card = document.querySelector(".one__card")
 let katalogSlider = 0;
 next.addEventListener("click", ()=>{
     if (document.documentElement.clientWidth > 851) {
@@ -73,23 +74,41 @@ prev.addEventListener("click", ()=>{
 })
 
 function render(mass) {
-    mass.forEach(item => {
+    mass.forEach((item, index) => {
+        if (index == 0) {
+            one__card.insertAdjacentHTML("beforeend", ` <div class="card">
+            <div class="fd-row">
+            <p class="star">${item.star}</p>
+            <a href="${item.href}" class="card__arrow">→</a>
+            </div>
+            <a href="${item.href}"><img class="card__img" src="${item.img}" alt="${item.name}"></a>
+            <p class="rent">Аренда</p>
+            <a href="${item.href}" class="info">${item.name}</a>          
+            <div class="card__sale">
+            <div class="fd-col">
+            <p class="discount">${item.discount}</p>
+            <p class="card__price">${item.price}₽</p> 
+            </div>
+            ${item.active ? `<input type="image" class="card__bag card__bagActive" data-id="${item.name}" alt="${item.name}"src="../header/bag.svg" />` :  `<input type="image"  class="card__bag" data-id="${item.name}" alt="${item.name}" src="../main/bag.svg" />` }
+            </div> 
+            </div> `)
+        }
         katalogLine.insertAdjacentHTML("beforeend", ` <div class="card">
         <div class="fd-row">
-            <p class="star">${item.star}</p>
-          <a href="${item.href}" class="card__arrow">→</a>
+        <p class="star">${item.star}</p>
+        <a href="${item.href}" class="card__arrow">→</a>
         </div>
         <a href="${item.href}"><img class="card__img" src="${item.img}" alt="${item.name}"></a>
         <p class="rent">Аренда</p>
         <a href="${item.href}" class="info">${item.name}</a>          
         <div class="card__sale">
-            <div class="fd-col">
-                <p class="discount">${item.discount}</p>
-                <p class="card__price">${item.price}₽</p> 
-            </div>
-            <button class="card__bag" data-id="${item.name}"><img data-id="${item.name}" class="card__bagImg" src="../main/bag.svg" alt="корзина"></button>
+        <div class="fd-col">
+        <p class="discount">${item.discount}</p>
+        <p class="card__price">${item.price}₽</p> 
+        </div>
+        ${item.active ? `<input type="image"  class="card__bag card__bagActive" data-id="${item.name}" alt="${item.name}" src="../header/bag.svg" />` :  `<input type="image"  class="card__bag" alt="${item.name}" data-id="${item.name}" src="../main/bag.svg" />` }
         </div> 
-    </div> `)
+        </div> `)
     });
 }
 render(cubinsMass)

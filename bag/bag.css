@@ -19,6 +19,12 @@
   src: url("../fonts/Inter/Inter-Bold.ttf");
   font-display: swap;
 }
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
 body {
   padding: 0;
   margin: 0;
@@ -29,7 +35,8 @@ main {
   padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
 }
 
-.bag__wrapper .bag .bag__price .input__checkbox, .bag__wrapper .bag .bag__price .input__price, .bag__wrapper .bag__items .bag__block .block__content .block__input, .bag__wrapper .bag__items .bag__block, .bag__wrapper .bag {
+.bag__wrapper .bag .bag__price .delivery,
+.bag__wrapper .bag .bag__price .self-call, .bag__wrapper .bag .bag__price .input__discount, .bag__wrapper .bag .bag__price .input__price, .bag__wrapper .bag__items .bag__block .block__content .block__input, .bag__wrapper .bag__items .bag__block, .bag__wrapper .bag {
   display: flex;
   flex-direction: row;
 }
@@ -101,11 +108,11 @@ main {
   text-decoration: none;
 }
 .bag__wrapper .bag__items .bag__block .block__img {
-  width: 30%;
-  margin: auto 0;
+  max-width: 30%;
+  margin: auto;
 }
 .bag__wrapper .bag__items .bag__block .block__img img {
-  width: 100%;
+  max-width: 90%;
 }
 .bag__wrapper .bag__items .bag__block .block__content {
   position: relative;
@@ -119,11 +126,11 @@ main {
   cursor: pointer;
   font-size: calc( 0.00625 * 100vw + 13px );
   font-weight: 900;
-  color: gray;
+  color: #58585e;
   position: absolute;
 }
 .bag__wrapper .bag__items .bag__block .block__content .rent {
-  color: gray;
+  color: #58585e;
   font-weight: 500;
   margin: calc( 0.0125 * 100vw + -4px ) 0 0 0;
 }
@@ -140,7 +147,7 @@ main {
 .bag__wrapper .bag__items .bag__block .block__content .block__input .quantity_inner {
   display: flex;
   flex-direction: row;
-  border: 1px solid gray;
+  border: 1px solid #58585e;
   margin: auto 10px auto 0;
   padding: 0 5px;
 }
@@ -170,6 +177,11 @@ main {
 .bag__wrapper .bag__items .bag__block .block__content .block__input .quantity_inner .bt_minusMonth {
   margin: -2px 0 0 0;
 }
+.bag__wrapper .bag__items .bag__block .block__content .block__input .quantity_inner .fd-col {
+  margin: 0;
+  font-size: calc( 0.003125 * 100vw + 7px );
+  text-align: center;
+}
 .bag__wrapper .bag__items .bag__block .block__content .block__input .quantity_inner .fd-col .quantity {
   width: 50px;
   text-align: center;
@@ -178,11 +190,6 @@ main {
   color: #000;
   margin: 0;
   width: 100%;
-}
-.bag__wrapper .bag__items .bag__block .block__content .block__input .quantity_inner .fd-col p {
-  margin: 0;
-  font-size: calc( 0.003125 * 100vw + 7px );
-  text-align: center;
 }
 .bag__wrapper .bag__items .bag__block .block__content .block__input .block-col {
   margin: auto 0 0 auto;
@@ -194,10 +201,9 @@ main {
 .bag__wrapper .bag__items .bag__block .block__content .block__input .block-col .block__discount {
   font-size: calc( 0.005 * 100vw + 8.4px );
   text-decoration: line-through;
-  color: gray;
+  color: #58585e;
 }
 .bag__wrapper .bag .bag__price {
-  height: 285px;
   width: 24%;
 }
 .bag__wrapper .bag .bag__price .bag__promoCode input {
@@ -205,7 +211,7 @@ main {
   font-weight: 100;
   padding: 7px;
   outline: none;
-  border: 1px solid gray;
+  border: 1px solid #58585e;
 }
 .bag__wrapper .bag .bag__price .bag__promoCode button {
   background-color: #19103C;
@@ -216,12 +222,12 @@ main {
   border: none;
 }
 .bag__wrapper .bag .bag__price .input__price {
-  margin: calc( 0.005 * 100vw + 10.4px ) 0;
+  margin: calc( 0.005 * 100vw + 10.4px ) 0 10px 0;
   font-size: calc( 0.003125 * 100vw + 14px );
   font-weight: 900;
 }
 .bag__wrapper .bag .bag__price .input__price p {
-  margin: 7px 5px 0 0;
+  margin: 10px 5px 0 0;
 }
 .bag__wrapper .bag .bag__price .input__price #price {
   font-size: calc( 0.008125 * 100vw + 14.4px );
@@ -231,7 +237,19 @@ main {
   font-size: calc( 0.004375 * 100vw + 11.6px );
   font-weight: 900;
 }
-.bag__wrapper .bag .bag__price .input__checkbox {
+.bag__wrapper .bag .bag__price .input__discount {
+  margin: 10px 0 calc( 0.005 * 100vw + 10.4px ) 0;
+  font-weight: 900;
+}
+.bag__wrapper .bag .bag__price .input__discount p {
+  margin: 5px 5px 0 0;
+}
+.bag__wrapper .bag .bag__price .input__discount #discount {
+  font-size: calc( 0.005625 * 100vw + 11.2px );
+  color: #f91155;
+}
+.bag__wrapper .bag .bag__price .delivery,
+.bag__wrapper .bag .bag__price .self-call {
   margin: 10px 0;
   font-size: calc( 0.004375 * 100vw + 11.6px );
 }
@@ -265,15 +283,29 @@ main {
 .bag__wrapper .bag .bag__price input[type=checkbox]:checked:after {
   display: block;
 }
-.bag__wrapper .bag .bag__price input[type=tel] {
-  margin: auto auto auto 0;
+.bag__wrapper .bag .bag__price input[type=tel],
+.bag__wrapper .bag .bag__price #adress {
+  margin: 10px auto 0 0;
   padding: 5px 10px;
   outline: none;
-  border: 1px solid gray;
-  width: 50%;
+  border: 1px solid #58585e;
+  width: 60%;
+  font-size: calc( 0.0053571429 * 100vw + 7.7142857143px );
+  font-weight: 100;
+}
+.bag__wrapper .bag .bag__price #adress,
+.bag__wrapper .bag .bag__price #map__yandex {
+  display: none;
 }
 .bag__wrapper .bag .bag__price #order {
   margin: 10px auto auto 0;
+}
+.bag__wrapper .bag .bag__price #map__yandex {
+  margin: 10px 0;
+  width: 100%;
+}
+.bag__wrapper .bag .bag__price [class*=copyrights-pane] {
+  display: none !important;
 }
 
 @media (max-width: 1060px) {
@@ -292,5 +324,8 @@ main {
   }
   .bag__wrapper .bag .bag__price #order {
     width: 100%;
+  }
+  .bag__wrapper .bag .bag__block {
+    width: 91%;
   }
 }/*# sourceMappingURL=bag.css.map */

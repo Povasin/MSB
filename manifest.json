@@ -1,0 +1,65 @@
+{   
+    "lang": "ru",
+    "short_name": "IdsStore",
+    "name": "IdsStore Магазин бытовок",
+    "description": "IdsStore- это провереный интренет-магазин бытовок, вагончиков и разной строительной техники ",
+    "start_url": "/index.html",
+    "display": "fullscreen",
+    "background_color": "white",
+    "theme_color": "white",
+    "orientation": "portrait-primary",
+    "id": "/index.html",
+    "icons": [
+      {
+        "src": "/iconPWA/logo512x512.svg",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "/iconPWA/logo256x256.svg",
+        "type": "image/svg+xml",
+        "sizes": "256x256"
+      },
+      {
+        "src": "/iconPWA/logo192x192.svg",
+        "type": "image/svg+xml",
+        "sizes": "192x192",
+        "purpose": "maskable"
+      },
+      {
+        "src": "/iconPWA/logo144x144.svg",
+        "type": "image/svg+xml",
+        "sizes": "144x144"
+      },
+      {
+        "src": "/iconPWA/logo96x96.svg",
+        "type": "image/svg+xml",
+        "sizes": "96x96"
+      },
+      {
+        "src": "/iconPWA/logo57x57.svg",
+        "type": "image/svg+xml",
+        "sizes": "57x57"
+      },
+      {
+        "src": "/iconPWA/logo48x48.svg",
+        "type": "image/svg+xml",
+        "sizes": "48x48"
+      },
+      {
+        "src": "/iconPWA/logo32x32.svg",
+        "type": "image/svg+xml",
+        "sizes": "32x32"
+      },
+      {
+        "src": "/iconPWA/logo24x24.svg",
+        "type": "image/svg+xml",
+        "sizes": "24x24"
+      },
+      {
+        "src": "/iconPWA/logo16x16.svg",
+        "type": "image/svg+xml",
+        "sizes": "16x16"
+      }
+    ]
+  }

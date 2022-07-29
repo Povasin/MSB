@@ -21,6 +21,12 @@ $gray: #ececec;
     src: url("../fonts/Inter/Inter-Bold.ttf");
     font-display: swap;
 }
+@font-face {
+    font-style: normal;
+    font-family: "fouore";
+    src: url("../fonts/fouore/Furore.otf");
+    font-display: swap;
+}
 
 @function calcFluid($f-min, $f-max, $w-min, $w-max) {
 	$k: ($f-max - $f-min)/($w-max - $w-min);
@@ -103,23 +109,13 @@ body{
 %general__logo{
     @extend %d-col;
     text-decoration: none;
-    span {
-        &:nth-child(1) {
-            background:$gradient;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: #5134c4;
-            font-weight: 900;
-            font-size:calcFluid(20, 27, 320, 1920);
-
-        }
-
-        &:nth-child(2) {
-            font-weight: 100;
-            font-size: calcFluid(13, 18, 320, 1920);
-        }
-    }
+    background:$gradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #5134c4;
+    font-family: "fouore";
+    font-size:calcFluid(30, 40, 320, 1920);
 }
 
 %iconMenu{
@@ -165,6 +161,15 @@ body{
         background:$gradient;
         border: none;
     }
+    .card__bagActive{
+        background:transparent;
+        border: 1px solid;
+        border-image-source:linear-gradient(90deg, #5134c4,#773cbc,#b856d4);
+        border-image-slice:1;
+        background: transparent;
+        text-decoration: none;
+        color: black;
+    }
     .card__img{
         width: 100%;
         margin: auto 0 0 0;
@@ -201,6 +206,29 @@ body{
             }
         }
     }   
+    .furniture__CardActive{
+        @extend %d-row;
+        border-radius: 20px;
+        width: 65%;
+        background-color: #5134c4;
+        position: absolute; 
+        bottom: -18px;
+        right: 10px;
+        .furniture__bagActive{
+            margin: auto 0 auto auto;
+            background: white !important;
+            border-radius: 50%;
+            padding: calcFluid(1, 5, 320, 1920) calcFluid(6, 10, 320, 1920);
+            border:2px solid #5134c4;
+            font-size:20px;
+        }
+        p{  
+            text-align: center;
+            margin: auto 0 auto auto;
+            color: white;
+            font-size:calcFluid(10, 16, 320, 1920) ;
+        }
+    }
 }
 %search{
     .search {

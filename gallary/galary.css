@@ -19,6 +19,12 @@
   src: url("../fonts/Inter/Inter-Bold.ttf");
   font-display: swap;
 }
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
 body {
   padding: 0;
   margin: 0;
@@ -29,7 +35,7 @@ main {
   padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
 }
 
-.gallary__item, .gallary__item .card .card__sale, .gallary__item .card .fd-row {
+.gallary__item, .gallary__item .card .furniture__CardActive, .gallary__item .card .card__sale, .gallary__item .card .fd-row {
   display: flex;
   flex-direction: row;
 }
@@ -45,7 +51,6 @@ main {
   background-color: white;
   width: 280px;
   padding: 10px;
-  cursor: pointer;
   text-decoration: none;
   color: black;
 }
@@ -58,6 +63,8 @@ main {
   font-size: calc( 0.003125 * 100vw + 14px );
   font-weight: 900;
   margin: 0;
+  text-decoration: none;
+  color: black;
 }
 .gallary__item .card .card__bag {
   cursor: pointer;
@@ -65,6 +72,15 @@ main {
   padding: calc( 0.0024590164 * 100vw + 0.2786885246px ) calc( 0.0040983607 * 100vw + 12.131147541px );
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
   border: none;
+}
+.gallary__item .card .card__bagActive {
+  background: transparent;
+  border: 1px solid;
+  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  border-image-slice: 1;
+  background: transparent;
+  text-decoration: none;
+  color: black;
 }
 .gallary__item .card .card__img {
   width: 100%;
@@ -74,6 +90,8 @@ main {
   margin: auto 0 auto auto;
   font-size: 24px;
   font-weight: 900;
+  text-decoration: none;
+  color: black;
 }
 .gallary__item .card .fd-row .star {
   font-size: calc( 0.0049180328 * 100vw + 10.5573770492px );
@@ -93,6 +111,28 @@ main {
   font-size: calc( 0.001875 * 100vw + 16.4px );
   font-weight: 900;
   margin: 0;
+}
+.gallary__item .card .furniture__CardActive {
+  border-radius: 20px;
+  width: 65%;
+  background-color: #5134c4;
+  position: absolute;
+  bottom: -18px;
+  right: 10px;
+}
+.gallary__item .card .furniture__CardActive .furniture__bagActive {
+  margin: auto 0 auto auto;
+  background: white !important;
+  border-radius: 50%;
+  padding: calc( 0.0025 * 100vw + 0.2px ) calc( 0.0025 * 100vw + 5.2px );
+  border: 2px solid #5134c4;
+  font-size: 20px;
+}
+.gallary__item .card .furniture__CardActive p {
+  text-align: center;
+  margin: auto 0 auto auto;
+  color: white;
+  font-size: calc( 0.00375 * 100vw + 8.8px );
 }
 
 .main_fixed {

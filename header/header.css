@@ -19,6 +19,12 @@
   src: url("../fonts/Inter/Inter-Bold.ttf");
   font-display: swap;
 }
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
 body {
   padding: 0;
   margin: 0;
@@ -50,19 +56,13 @@ header .headerTop__log .register {
 
 header .headerTop__logo {
   text-decoration: none;
-}
-header .headerTop__logo span:nth-child(1) {
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #5134c4;
-  font-weight: 900;
-  font-size: calc( 0.004375 * 100vw + 18.6px );
-}
-header .headerTop__logo span:nth-child(2) {
-  font-weight: 100;
-  font-size: calc( 0.003125 * 100vw + 12px );
+  font-family: "fouore";
+  font-size: calc( 0.00625 * 100vw + 28px );
 }
 
 header .services .sidebar__menu .sidebar__row a .iconMenu, header .services .sidebar__open, header .services a:nth-child(1) .menu {
@@ -210,8 +210,7 @@ header .headerTop .log img {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  max-width: 100%;
-  max-height: 100%;
+  width: 35%;
 }
 header .services {
   z-index: 10;
@@ -328,6 +327,7 @@ header .services__fixed {
   top: 0;
   left: 0;
   background-color: white;
+  z-index: 10;
 }
 header .services__fixed a {
   margin: 20px 0 calc( 0.00625 * 100vw + 8px ) 40px;
@@ -384,7 +384,7 @@ header .headerTop .register {
   }
   header .headerTop .log img {
     margin: auto 10px 0 auto;
-    width: 80%;
+    width: 60%;
   }
   header .services a:nth-child(1) {
     margin: 10px 0;

@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="white">
      <!-- придумать описание страницы -->
     <meta name="description" content="придумать описание страницы">
     <title>IdsStore-Магазин бытовок</title>
-    <link rel="stylesheet" href="./general.css" media="all">
-    <link rel="stylesheet" href="./header/header.css" media="all">
-    <link rel="stylesheet" href="./main/main.css" media="all" >
-    <link rel="stylesheet" href="./footer/footer.css" media="all">
+    <link rel="stylesheet" href="./general.css" media="screen and (min-width:320px)">
+    <link rel="stylesheet" href="./header/header.css" media="screen and (min-width:320px)">
+    <link rel="stylesheet" href="./main/main.css" media="screen and (min-width:320px)" >
+    <link rel="stylesheet" href="./footer/footer.css" media="screen and (min-width:320px)">
+    <link rel="icon" href="./faviocn.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./iconPWA/logo192x192.svg">
+    <link rel="manifest" href="./manifest.json">
 </head>
 <body>
     <div class="search__modal">
@@ -30,10 +34,7 @@
     </div>
     <header>
         <div class="headerTop">
-            <a href="./index.html" class="headerTop__logo">
-                <span>IdsStore</span>
-                <span>Магазин бытовок</span>
-            </a>
+            <a href="./index.html" class="headerTop__logo">MSB</a>
             <div class="headerTop__search">
                 <input type="text" placeholder="Поиск" maxlength="30" class="search">
                 <img src="./header/search.svg" alt="поиск">
@@ -53,7 +54,7 @@
             <div class="headerTop__log">
                 <a href="" class="login">Войти</a>
                 <a href="" class="register">Зарегистрироваться</a>
-                <a href="" class="log"> <img src="./header/log.webp" alt="вход"><p>вход</p></a>
+                <a href="" class="log"> <img src="./header/log.svg" alt="вход"><p>вход</p></a>
             </div>
         </div>
         <div class="services">
@@ -77,7 +78,7 @@
                     <a href="./services/services.html">Услуги</a>
                     <a href="./contact/contact.html">Контакты</a>
                     <a href="./gallary/gallary.html">Галерея</a>
-                    <a href="./bag/bag.html" ><img src="./header/bag.svg" alt="корзина"><div class="services__sum"><p>0</p></div>Корзина</a>
+                    <a href="./bag/bag.html" ><img src="./header/bag.svg" alt="корзина"><div class="services__sum"></div>Корзина</a>
                 </div>
             </div>
         </div>
@@ -164,22 +165,8 @@
                     <label for="r4" class="navigation__bar"></label>
                 </div>
             </div>
-            <a href="./cubinsfordress/cubinsfordress.html" class="card">
-                <div class="fd-row">
-                    <p class="star">★★★★☆</p>
-                    <p class="card__arrow">→</p>
-                </div>
-                <img class="card__img" src="./main/cubinsForDress.webp" alt="бытовка раздевалкла">
-                <p class="rent">Аренда</p>
-                <p class="info">бытовка раздевалка</p>          
-                <div class="card__sale">
-                    <div class="fd-col">
-                        <p class="discount">9000</p>
-                        <p class="card__price">8000₽</p> 
-                    </div>
-                    <button class="card__bag"><img src="./main/bag.svg" alt="корзина"></button>
-                </div> 
-            </a>
+            <div class="one__card">
+            </div>
         </div>
         <div class="line"></div>
          <div class="advantages-row">
@@ -324,10 +311,7 @@
             </div>
             <div class="basement__content">
                 <div class="d-col">
-                    <a href="./index.html" class="basement__logo">
-                        <span>IdsStore</span>
-                        <span>Магазин бытовок</span>
-                    </a>
+                    <a href="./index.html" class="basement__logo">MSB</a>
                     <div class="block">
                         <a href="#" class="prava">2022 все права защищены</a>
                         <a href="#" class="prava">пользовательское соглашение</a>
@@ -360,8 +344,8 @@
         </div>
     </footer>
     <script async src="./main.js"></script>
+    <script async src="./katalogMass.js"></script>
     <script async src="./index.js"></script>
-    <script src="./furnitureMass.js"></script>
-    <script src="./katalogMass.js"></script>
+    <script async src="./furnitureMass.js"></script>
 </body>
 </html>

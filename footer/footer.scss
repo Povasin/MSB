@@ -118,6 +118,8 @@
             .basement__logo{
                 @extend %d-col;
                 @extend %general__logo; 
+                font-size:calcFluid(30, 40, 320, 1920);
+                -webkit-text-fill-color: white;
             }
             .block{
                 @extend %d-col;

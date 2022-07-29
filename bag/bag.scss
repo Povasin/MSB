@@ -54,11 +54,10 @@ main {
                 padding: 10px;
                 text-decoration: none;
                 .block__img {
-                    width: 30%;
-                    margin: auto 0;
-
+                    max-width: 30%;
+                    margin: auto;
                     img {
-                        width: 100%;
+                        max-width: 90%;
                     }
                 }
 
@@ -75,12 +74,12 @@ main {
                         cursor: pointer;
                         font-size: calcFluid(15, 25, 320, 1920);
                         font-weight: 900;
-                        color: gray;
+                        color: #58585e;
                         position: absolute;
                     }
 
                     .rent {
-                        color: gray;
+                        color: #58585e;
                         font-weight: 500;
                         margin: calcFluid(0, 20, 320, 1920) 0 0 0;
                     }
@@ -100,7 +99,7 @@ main {
                         .quantity_inner {
                             display: flex;
                             flex-direction: row;
-                            border: 1px solid gray;
+                            border: 1px solid #58585e;
                             margin: auto 10px auto 0;
                             padding: 0 5px;
 
@@ -134,7 +133,9 @@ main {
 
                             .fd-col {
                                 @extend %d-col;
-
+                                margin: 0;
+                                font-size: calcFluid(8, 13, 320, 1920);
+                                text-align: center;
                                 .quantity {
                                     width: 50px;
                                     text-align: center;
@@ -143,16 +144,9 @@ main {
                                     color: #000;
                                     margin: 0;
                                     width: 100%;
-                                }
-
-                                p {
-                                    margin: 0;
-                                    font-size: calcFluid(8, 13, 320, 1920);
-                                    text-align: center;
-                                }
+                                }  
                             }
                         }
-
                         .block-col {
                             margin: auto 0 0 auto;
 
@@ -164,7 +158,7 @@ main {
                             .block__discount {
                                 font-size: calcFluid(10, 18, 320, 1920);
                                 text-decoration: line-through;
-                                color: gray;
+                                color: #58585e;
                             }
                         }
                     }
@@ -173,7 +167,6 @@ main {
         }
 
         .bag__price {
-            height: 285px;
             width: 24%;
             @extend %d-col;
 
@@ -183,7 +176,7 @@ main {
                     font-weight: 100;
                     padding: 7px;
                     outline: none;
-                    border: 1px solid gray;
+                    border: 1px solid #58585e;
                 }
 
                 button {
@@ -195,30 +188,34 @@ main {
                     border: none;
                 }
             }
-
             .input__price {
                 @extend %d-row;
-                margin: calcFluid(12, 20, 320, 1920) 0;
+                margin: calcFluid(12, 20, 320, 1920) 0 10px 0;
                 font-size: calcFluid(15, 20, 320, 1920);
                 font-weight: 900;
-
-                p {
-                    margin: 7px 5px 0 0;
-
-                }
-
+                p {margin: 10px 5px 0 0;}
                 #price {
                     font-size: calcFluid(17, 30, 320, 1920);
                     font-weight: 900;
-                }
+                }                
             }
-
             span {
                 font-size: calcFluid(13, 20, 320, 1920);
                 font-weight: 900;
             }
+            .input__discount{
+                margin: 10px 0 calcFluid(12, 20, 320, 1920) 0;
+                @extend %d-row;
+                font-weight: 900;
+                p {margin: 5px 5px 0 0;}
+                #discount {
+                    font-size: calcFluid(13, 22, 320, 1920);
+                    color: #f91155;
+                }
+            }
 
-            .input__checkbox {
+            .delivery,
+            .self-call {
                 margin: 10px 0;
                 @extend %d-row;
                 font-size: calcFluid(13, 20, 320, 1920);
@@ -258,18 +255,30 @@ main {
                 display: block;
             }
 
-            input[type="tel"] {
-                margin: auto auto auto 0;
+            input[type="tel"],
+            #adress {
+                margin: 10px auto 0 0;
                 padding: 5px 10px;
                 outline: none;
-                border: 1px solid gray;
-                width: 50%;
-
+                border: 1px solid #58585e;
+                width: 60%;
+                font-size: calcFluid(12, 18, 800, 1920);
+                font-weight: 100;
             }
-
+            #adress,
+            #map__yandex{
+                display: none;
+            }
             #order {
                 @extend %more;
                 margin: 10px auto auto 0;
+            }
+            #map__yandex{
+                margin: 10px 0 ;
+                width: 100%;
+            }
+            [class*="copyrights-pane"]{
+                display: none !important;
             }
         }
     }
@@ -294,6 +303,9 @@ main {
             #order {
                 width: 100%;
             }
+        }
+        .bag__block {
+            width: 91%;
         }
     }
 

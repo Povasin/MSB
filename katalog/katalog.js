@@ -9,6 +9,9 @@ const sliderMaxValue = document.getElementById("slider-1").max;
 const katalog__Checkbox = document.querySelectorAll(".katalog__Checkbox")
 const clear = document.getElementById("clear")
 const firstFilter = document.getElementById("firstFilter")
+const kolOnPage = document.getElementById("kolOnPage")
+document.querySelector(".filter__open").addEventListener("click", () => { katalog__filter.style.right = 0 + "%" })
+document.querySelector(".filter__close").addEventListener("click", () => { katalog__filter.style.right = -90 + "%" })
 let minGap = 0;
 
 window.addEventListener('mouseup', (e) => {
@@ -66,16 +69,33 @@ function renderKatalog(mass) {
                 <p class="discount">${item.discount}</p>
                 <p class="card__price">${item.price}₽</p> 
             </div>
-            <button class="card__bag" data-id="${item.name}"><img data-id="${item.name}" class="card__bagImg" src="../main/bag.svg" alt="корзина"></button>
+            ${item.active ? `<input type="image"  class="card__bag card__bagActive" data-id="${item.name}" src="../header/bag.svg"  alt="${item.name}"/>` :  `<input type="image"  class="card__bag" data-id="${item.name}" src="../main/bag.svg" alt="${item.name}" />` }
         </div> 
     </div>`)
     });
+    kolOnPage.innerText = filterMass.length
 }
 renderKatalog(cubinsMass)
-
-document.querySelector(".filter__open").addEventListener("click", () => { katalog__filter.style.right = 0 + "%" })
-document.querySelector(".filter__close").addEventListener("click", () => { katalog__filter.style.right = -50 + "%" })
-
+// TODO: понять почему не работает
+katalog__Checkbox[0].addEventListener("click", ()=>renderKatalog(cubinsForDress))
+katalog__Checkbox[1].addEventListener("click", ()=>renderKatalog(cubinsForLive))
+katalog__Checkbox[2].addEventListener("click", ()=>renderKatalog(cubinsForbath))
+katalog__Checkbox[3].addEventListener("click", ()=>renderKatalog(cubinsForWareHouse))
+katalog__Checkbox[4].addEventListener("click", ()=>renderKatalog(cubinsForWork))
+// TODO: сделать очистку
+clear.addEventListener("click", ()=>{
+    katalog__price[0].value = 1000
+    katalog__price[1].value = 10000
+    sliderOne.value = katalog__price[0].value
+    sliderTwo.value = katalog__price[1].value
+    katalog__price[2].value = 1
+    katalog__price[3].value = 10
+    for (let i = 0; i < katalog__Checkbox.length; i++) {
+        katalog__Checkbox[i].checked = false
+    }
+    fillColor()
+    renderKatalog(cubinsMass)
+})
 function inputValue() {
     if (parseInt(sliderTwo.value) >= katalog__price[0].value) {
         sliderOne.value = katalog__price[0].value
@@ -133,20 +153,7 @@ function filter(mass) {
         return trueItem
     })
 }
-// TODO: сделать очистку
-clear.addEventListener("click", ()=>{
-    katalog__price[0].value = 1000
-    katalog__price[1].value = 10000
-    sliderOne.value = katalog__price[0].value
-    sliderTwo.value = katalog__price[1].value
-    katalog__price[2].value = 1
-    katalog__price[3].value = 10
-    for (let i = 0; i < katalog__Checkbox.length; i++) {
-        katalog__Checkbox[i].checked = false
-    }
-    fillColor()
-    renderKatalog(cubinsMass)
-})
+
 firstFilter.addEventListener("click", () => {
     if (firstFilter.value == "cheap") {
         cubinsMass.sort(function (a, b) {
@@ -165,3 +172,4 @@ firstFilter.addEventListener("click", () => {
     }
     renderKatalog(cubinsMass)
 })
+

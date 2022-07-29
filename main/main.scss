@@ -296,13 +296,13 @@ main {
         }
         .card__bag{
             position: absolute; 
-            bottom: -20px;
+            bottom: -18px;
             right: 10px;
             border-radius: 50%;
-            padding: 5px 10px;
             background: none;
+            padding: calcFluid(1, 5, 320, 1920) calcFluid(6, 10, 320, 1920);
             border:2px solid #5134c4;
-            font-size: 20px;
+            font-size:20px;
         }
     }
     .slider{

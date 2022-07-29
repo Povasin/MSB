@@ -19,6 +19,12 @@
   src: url("../fonts/Inter/Inter-Bold.ttf");
   font-display: swap;
 }
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
 body {
   padding: 0;
   margin: 0;
@@ -50,19 +56,13 @@ body {
 
 .basement__content .d-col .basement__logo {
   text-decoration: none;
-}
-.basement__content .d-col .basement__logo span:nth-child(1) {
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #5134c4;
-  font-weight: 900;
-  font-size: calc( 0.004375 * 100vw + 18.6px );
-}
-.basement__content .d-col .basement__logo span:nth-child(2) {
-  font-weight: 100;
-  font-size: calc( 0.003125 * 100vw + 12px );
+  font-family: "fouore";
+  font-size: calc( 0.00625 * 100vw + 28px );
 }
 
 .pd-100 {
@@ -170,6 +170,10 @@ body {
 }
 .basement__content .d-col {
   margin: 0 calc( 0.0669642857 * 100vw + 1.4285714286px ) 0 0;
+}
+.basement__content .d-col .basement__logo {
+  font-size: calc( 0.00625 * 100vw + 28px );
+  -webkit-text-fill-color: white;
 }
 .basement__content .d-col .block .prava {
   text-decoration: none;

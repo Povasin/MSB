@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="theme-color" content="white">
     <!-- придумать описание страницы -->
     <meta name="description" content="придумать описание страницы">
     <title>IdsStore Каталог</title>
@@ -11,6 +12,9 @@
     <link rel="stylesheet" href="../header/header.css">
     <link rel="stylesheet" href="./katalog.css">
     <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="icon" href="../faviocn.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../iconPWA/logo192x192.svg">
+    <link rel="manifest" href="../manifest.json">
 </head>
 <body>
     <div class="search__modal">
@@ -30,10 +34,7 @@
     </div>
     <header>
         <div class="headerTop">
-            <a href="../index.html" class="headerTop__logo">
-                <span>IdsStore</span>
-                <span>Магазин бытовок</span>
-            </a>
+            <a href="../index.html" class="headerTop__logo">MSB</a>
             <div class="headerTop__search">
                 <input type="text" placeholder="Поиск" maxlength="30" class="search">
                 <img src="../header/search.svg" alt="поиск">
@@ -53,7 +54,7 @@
             <div class="headerTop__log">
                 <a href="" class="login">Войти</a>
                 <a href="" class="register">Зарегистрироваться</a>
-                <a href="" class="log"> <img src="../header/log.webp" alt="вход"><p>вход</p></a>
+                <a href="" class="log"> <img src="../header/log.svg" alt="вход"><p>вход</p></a>
             </div>
         </div>
         <div class="services">
@@ -95,7 +96,7 @@
                             <option value="expencive">дороже</option>
                         </select>
                     </p>
-                    <p class="katalog__kol">на странице: <span>6</span></p>
+                    <label class="katalog__kol">на странице: <span id="kolOnPage">0</span></label>
                     <div class="filter__open"><img src="./filter.webp" alt="фильтры"><p>фильтры</p></div>
             </div>
             <div class="katalog-row">
@@ -105,40 +106,39 @@
                         <p class="filter__close">x</p>
                     </div>
                     <div class="katalog-row">
-                        <span> от <input type="text" maxlength="4" value="1000" class="katalog__price" oninput="inputValue()" onkeypress="noDigits(event)"></span>
-                        <span> до <input type="text" maxlength="4" value="10000" class="katalog__price" oninput="inputValue()"onkeypress="noDigits(event)" ></span>
+                        <label class="label__price"> от <input type="text" maxlength="4" value="1000" class="katalog__price" oninput="inputValue()" onkeypress="noDigits(event)"></label>
+                        <label class="label__price"> до <input type="text" maxlength="4" value="10000" class="katalog__price" oninput="inputValue()"onkeypress="noDigits(event)" ></label>
                     </div>
                     <div class="container">
                         <div class="slider-track"></div>
-                        <input type="range" min="0" max="10000" value="1000" id="slider-1">
-                        <input type="range" min="0" max="10000" value="10000" id="slider-2">
+                        <label><input type="range" min="0" max="10000" value="1000" id="slider-1"></label>
+                        <label><input type="range" min="0" max="10000" value="10000" id="slider-2"></label>
+                    </div>
+                    <div class="katalog-name">
+                        <h2>Рейтинг покупателей</h2>
+                        <label> <input type="checkbox" class="katalog__Checkbox" value="Бытовки раздевалка">Бытовки раздевалка</label>
+                        <label> <input type="checkbox" class="katalog__Checkbox" value="Бытовки для проживания">Бытовки для проживания</label>
+                        <label> <input type="checkbox" class="katalog__Checkbox" value="Бытовки c душем">Бытовки c душем</label>
+                        <label> <input type="checkbox" class="katalog__Checkbox" value="Бытовки под склад">Бытовки под склад</label>
+                        <label> <input type="checkbox" class="katalog__Checkbox" value="Бытовки прорабские">Бытовки прорабские</label>
                     </div>
                     <div class="katalog-size">
                         <h2>Габариты</h2>
-                        <div class="katalog__sizeItem">
-                            <input type="checkbox" class="katalog__Checkbox" value="6х2,4х2,50м">
-                            <label for="katalog__Checkbox">6х2,4х2,50м</label>
-                        </div>
-                        <div class="katalog__sizeItem">
-                            <input type="checkbox" class="katalog__Checkbox" value="2,5х2,5х3,0м">
-                            <label for="katalog__Checkbox">2,5х2,5х3,0м</label>
-                        </div>
-                        <div class="katalog__sizeItem">
-                            <input type="checkbox" class="katalog__Checkbox" value="6х2,4х2,4м">
-                            <label for="katalog__Checkbox">6х2,4х2,4м</label>
-                        </div>
+                        <label><input type="checkbox" class="katalog__Checkbox" value="6х2,4х2,50м">6х2,4х2,50м</label>
+                        <label><input type="checkbox" class="katalog__Checkbox" value="2,5х2,5х3,0м">2,5х2,5х3,0м</label>
+                        <label><input type="checkbox" class="katalog__Checkbox" value="6х2,4х2,4м">6х2,4х2,4м</label>
                     </div>
                         <h2>Вместимость</h2>
                         <div class="katalog-row">
-                            <span> от <input type="text" maxlength="2" value="1" class="katalog__price" oninput="noDigits(event)" placeholder="1"></span>
-                            <span> до <input type="text" maxlength="2" value="10" class="katalog__price" oninput="noDigits(event)" placeholder="10"></span>
+                            <label class="label__price"> от <input type="text" maxlength="2" value="1" class="katalog__price" oninput="noDigits(event)" placeholder="1"></label>
+                            <label class="label__price"> до <input type="text" maxlength="2" value="10" class="katalog__price" oninput="noDigits(event)" placeholder="10"></label>
                         </div>
                     <div class="katalog-star">
                         <h2>Рейтинг покупателей</h2>
-                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★★★★">★★★★★</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★★★☆">★★★★☆</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★★☆☆">★★★☆☆</p>
-                        <p> <input type="checkbox" class="katalog__Checkbox" value="★★☆☆☆">★★☆☆☆</p>
+                        <label> <input type="checkbox" class="katalog__Checkbox" value="★★★★★">★★★★★</label>
+                        <label> <input type="checkbox" class="katalog__Checkbox" value="★★★★☆">★★★★☆</label>
+                        <label> <input type="checkbox" class="katalog__Checkbox" value="★★★☆☆">★★★☆☆</label>
+                        <label> <input type="checkbox" class="katalog__Checkbox" value="★★☆☆☆">★★☆☆☆</label>
                     </div>
                     <button id="clear">Очистить</button>
                 </div>
@@ -207,10 +207,7 @@
             </div>
             <div class="basement__content">
                 <div class="d-col">
-                    <a href="../index.html" class="basement__logo">
-                        <span>IdsStore</span>
-                        <span>Магазин бытовок</span>
-                    </a>
+                    <a href="./index.html" class="basement__logo">MSB</a>
                     <div class="block">
                         <a href="#" class="prava">2022 все права защищены</a>
                         <a href="#" class="prava">пользовательское соглашение</a>
@@ -243,7 +240,8 @@
         </div>
     </footer>
     <script async src="../main.js"></script>
+    <script async  src="../cubinsMoreMass.js"></script>
+    <script async src="../katalogMass.js"></script>
     <script async src="./katalog.js"></script>
-    <script src="../katalogMass.js"></script>
 </body>
 </html>

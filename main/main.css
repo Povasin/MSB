@@ -19,6 +19,12 @@
   src: url("../fonts/Inter/Inter-Bold.ttf");
   font-display: swap;
 }
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
 body {
   padding: 0;
   margin: 0;
@@ -29,7 +35,7 @@ main {
   padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
 }
 
-.katalog .katalog-row, .furniture, .content .fd-row, .advantages-row, .fd-row .slider .slides .slide__button, .fd-row .slider .slides .slide, .fd-row, .card .card__sale, .card .fd-row, .katalog .slider .furniture-line, .furniture .slider .furniture-line,
+.katalog .katalog-row, .furniture, .content .fd-row, .advantages-row, .fd-row .slider .slides .slide__button, .fd-row .slider .slides .slide, .fd-row, .card .furniture__CardActive, .card .card__sale, .card .fd-row, .katalog .slider .furniture-line, .furniture .slider .furniture-line,
 .katalog .slider .katalog-line,
 .furniture .slider .katalog-line,
 .katalog .slider .slider-line,
@@ -112,6 +118,15 @@ main {
   background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
   border: none;
 }
+.card .card__bagActive {
+  background: transparent;
+  border: 1px solid;
+  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  border-image-slice: 1;
+  background: transparent;
+  text-decoration: none;
+  color: black;
+}
 .card .card__img {
   width: 100%;
   margin: auto 0 0 0;
@@ -141,6 +156,28 @@ main {
   font-size: calc( 0.001875 * 100vw + 16.4px );
   font-weight: 900;
   margin: 0;
+}
+.card .furniture__CardActive {
+  border-radius: 20px;
+  width: 65%;
+  background-color: #5134c4;
+  position: absolute;
+  bottom: -18px;
+  right: 10px;
+}
+.card .furniture__CardActive .furniture__bagActive {
+  margin: auto 0 auto auto;
+  background: white !important;
+  border-radius: 50%;
+  padding: calc( 0.0025 * 100vw + 0.2px ) calc( 0.0025 * 100vw + 5.2px );
+  border: 2px solid #5134c4;
+  font-size: 20px;
+}
+.card .furniture__CardActive p {
+  text-align: center;
+  margin: auto 0 auto auto;
+  color: white;
+  font-size: calc( 0.00375 * 100vw + 8.8px );
 }
 
 main .line {
@@ -412,11 +449,11 @@ main .line {
 }
 .furniture .card .card__bag {
   position: absolute;
-  bottom: -20px;
+  bottom: -18px;
   right: 10px;
   border-radius: 50%;
-  padding: 5px 10px;
   background: none;
+  padding: calc( 0.0025 * 100vw + 0.2px ) calc( 0.0025 * 100vw + 5.2px );
   border: 2px solid #5134c4;
   font-size: 20px;
 }

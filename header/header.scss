@@ -108,9 +108,7 @@ header {
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
-                max-width: 100%;
-                max-height: 100%;
-
+                width: 35%;
             }
         }
     }
@@ -250,6 +248,7 @@ header {
         top: 0;
         left: 0;
         background-color: white;
+        z-index: 10;
         a{
             margin: 20px 0 calcFluid(10, 20, 320, 1920) 40px;
             &:not(:first-child):hover{
@@ -322,7 +321,7 @@ header {
                 }
                 img{
                   margin: auto 10px 0 auto;
-                  width: 80%;
+                  width: 60%;
                 }
             }
         }

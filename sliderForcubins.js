@@ -88,17 +88,32 @@ bt_minus.addEventListener("click", ()=>bt_minusFunc(0))
 bt_plus.addEventListener("click", ()=>bt_plusFunc(0))
 bt_minusMonth.addEventListener("click", ()=>bt_minusFunc(1))
 bt_plusMonth.addEventListener("click", ()=>bt_plusFunc(1))
-let cubinsItem = {
-    img: main__img.src,
-    name: h1.textContent,
-    discount: discount.textContent,
-    price: price.textContent,
-    href: HrefForJs.href,
-    inputkol : input[0].value,
-    inputMonth : input[1].value
-}
+let cubinsItem ={
+        img: main__img.src,
+        name: h1.textContent,
+        discount: +discount.textContent,
+        price: +price.textContent,
+        href: HrefForJs.href,
+        inputkol : input[0].value,
+        inputMonth : input[1].value,
+        active: false
+    }
+
 let jsonMass = JSON.parse(localStorage.getItem("bagMass")) || []
-more.addEventListener("click", ()=>{
-    jsonMass.push(cubinsItem)
-    localStorage.setItem("bagMass", JSON.stringify(jsonMass));
+JSON.parse(localStorage.getItem("bagMass")).forEach(item=>{
+        if (cubinsItem.name == item.name) {
+            cubinsItem.active = true
+            more.classList.add("moreActive")
+            more.innerText = "услуга добавлена"
+        }
 })
+
+if (!cubinsItem.active) {
+    more.addEventListener("click", ()=>{
+        jsonMass.push(cubinsItem)
+        localStorage.setItem("bagMass", JSON.stringify(jsonMass));
+        more.classList.add("moreActive")
+        more.innerText = "услуга добавлена"
+    })
+}
+

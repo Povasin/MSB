@@ -150,11 +150,9 @@ main{
                     background: transparent;
                     cursor: pointer;
                     outline: 0;
-                    p {
-                        font-weight: 500;
-                        font-size: 35px;
-                        margin: 0;
-                    }  
+                    font-weight: 500;
+                    font-size: 35px;
+                    margin: 0; 
                }
                .bt_plus,
                .bt_plusMonth{
@@ -169,6 +167,9 @@ main{
                }
                .fd-col{
                 @extend %d-col;
+                margin: 0;
+                font-size: 15px;
+                text-align: center;
                 .quantity {
                     width: 50px;
                     text-align: center;
@@ -177,11 +178,6 @@ main{
                     color: #000;
                     margin: 0 15px;
                 }
-                p{
-                    margin: 0;
-                    font-size: 15px;
-                    text-align: center;
-                }
                }
 
             }    
@@ -189,6 +185,15 @@ main{
                 @extend %more;
                 margin: 10px auto 0 0;
             }     
+            .moreActive{
+                background:transparent;
+                border: 1px solid;
+                border-image-source:linear-gradient(90deg, #5134c4,#773cbc,#b856d4);
+                border-image-slice:1;
+                background: transparent;
+                text-decoration: none;
+                color: black;
+            }
         }
     }
     .transportation__info{

@@ -53,8 +53,7 @@ main{
             margin: auto 0px auto auto;
             img{
                 margin: auto 10px;
-                width: 100%;
-                height: 100%;
+               max-width: 23%;
             }
         }
         .filter__close{
@@ -73,7 +72,7 @@ main{
             h2{
                 font-size: 20px;
             }
-            span{
+            .label__price{
                 width: 50%;
                 @extend %d-row;
                 padding: 6px 10px;
@@ -88,12 +87,20 @@ main{
                     font-size: 18px;
                 }
             }
-            .katalog__size{
+            .katalog-name,
+            .katalog-size,
+            .katalog-star {
                 @extend %d-col;
-                &Item{
-                    margin: 10px 0;
+                label{
+                    width: 100%;
+                    font-size: calcFluid(13, 16, 320, 1920);
+                    margin: 7px 0;
                 }
             }
+            .katalog-star{
+                label{font-size: calcFluid(15, 18, 320, 1920);}
+            }
+
             .container{
                 position: relative;
                 width: 100%;
@@ -176,11 +183,11 @@ main{
             width: 80%;
             @extend %d-row;
             flex-wrap: wrap;
+            align-content: flex-start;
             .card{
                 width: calcFluid(75, 306, 320, 1920);
                 margin: 7px;
                 @extend %card;
-                height:  calcFluid(250, 370, 320, 1920);
             }
         }
     }
@@ -192,16 +199,16 @@ main{
             z-index: 10;
             transition: all 300ms;
             top: 0;
-            right: -50%;
+            right: -70%;
             position: fixed;
-            width: 40%;
+            width: 62%;
             height: 100%;
         }
         .filter__open,
         .filter__close{
             display: flex;
         }
-        .katalog__slider{
+        .katalog-line{
             width: 100%;
             .card{
                 width:calcFluid(68, 245, 320, 1024) ;
@@ -212,7 +219,7 @@ main{
 }
 @media(max-width: 730px){
     .katalog{
-        .katalog__slider{
+        .katalog-line{
             .card{
                 width:calcFluid(110, 267, 320, 730) ;
             }
@@ -223,8 +230,12 @@ main{
 @media(max-width: 440px){
     .katalog{
         .katalog__kol{display: none;}
-        .katalog__slider{
+        .katalog-line{
             .card {
+                .card__img{
+                    margin: 0 50px;
+                    width: 70%;
+                }
                 margin: 10px 0;
                 width: 400px;
                 .card__sale {

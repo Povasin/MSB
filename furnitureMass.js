@@ -3,83 +3,115 @@ const nextFurniture = document.querySelector(".nextFurniture")
 const prevFurniture = document.querySelector(".prevFurniture")
 let furnitureSlider = 0
 const furnitureMass= [
-    {
+    {   
+        href: "#",
         img: "../main/chair.webp",
         name: "офисный стул",
         discount: 800,
         price:500,
         star: "★★★★☆",
         inputkol : 1,
-        inputMonth : 1
+        inputMonth : 1,
+        active: false
     },
-    {
+    {   
+        href: "#",
         img: "../main/table.webp",
         name: "офисный стол",
         discount: 1000,
         price:700,
         star: "★★★☆☆",
         inputkol : 1,
-        inputMonth : 1
+        inputMonth : 1,
+        active: false
     },
-    {
+    {   
+        href: "#",
         img: "../main/bad.webp",
         name: "кровать",
         discount: 1500,
         price:1200,
         star: "★★★★★",
         inputkol : 1,
-        inputMonth : 1
+        inputMonth : 1,
+        active: false
     },
-    {
+    {   
+        href: "#",
         img: "../main/chair.webp",
-        name: "офисный стул",
+        name: "вешалка",
         discount: 800,
         price:500,
         star: "★★★★☆",
         inputkol : 1,
-        inputMonth : 1
+        inputMonth : 1,
+        active: false
     },
-    {
+    {   
+        href: "#",
         img: "../main/table.webp",
-        name: "офисный стол",
+        name: "доп свет",
         discount: 1000,
         price:700,
         star: "★★★☆☆",
         inputkol : 1,
-        inputMonth : 1
+        inputMonth : 1,
+        active: false
     },
-    {
+    {   
+        href: "#",
         img: "../main/bad.webp",
-        name: "кровать",
+        name: "доп обарудывание",
         discount: 1500,
         price: 1200,
         star: "★★★★★",
         inputkol : 1,
-        inputMonth : 1
+        inputMonth : 1,
+        active: false
     }
 ]
+
 function render() {
+    furnitureLine.innerHTML = ""
     furnitureMass.forEach(item => {
-        furnitureLine.insertAdjacentHTML("beforeend", ` <a href="#" class="card">
+        furnitureLine.insertAdjacentHTML("beforeend", ` <div class="card">
         <div class="fd-row">
-            <p class="star">${item.star}</p>
-            <p class="card__arrow">→</p>
+        <p class="star">${item.star}</p>
+        <a href="${item.href}" class="card__arrow">→</a>
         </div>
         <img class="card__img" src="${item.img}" alt="${item.name}">
         <p class="rent">Аренда</p>
-        <p class="info">${item.name}</p>
+        <a href="${item.href}" class="info">${item.name}</a>         
         <div class="card__sale">
             <div class="fd-col">
                 <p class="discount">${item.discount}</p>
                 <p class="card__price">${item.price}₽</p> 
             </div>
-        </div>
-        <button class="card__bag">+</button>
-    </a>`)
+            ${item.active ? `<div class="furniture__CardActive"><p>добавлено</p> <button data-id="${item.name}" class="furniture__bagActive">+</button></div> ` :  ` <button data-id="${item.name}" class="card__bag">+</button>` }
+            </div> 
+        </div>`)
     })
 }
+// TODO: отрабатвыет после обнавление страницы
+furnitureMass.forEach((item)=>{
+    JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{
+        if (item.name == bagItem.name) {
+            item.active = true
+        }
+    })
+})
+furnitureLine.addEventListener("click", (e)=>{
+    if (e.target.className == "card__bag") {
+        const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
+        furnitureMass.forEach((tasks) =>{
+            if (tasks.name == e.target.dataset.id) {
+                JsonMass.push(tasks)
+                localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+            }
+        })
+    }
+}) 
 render()
-
 function sliderNext() {
     if (document.documentElement.clientWidth > 851) {
         if (furnitureSlider < 100 && furnitureSlider >= 0) {
@@ -123,5 +155,6 @@ function sliderPrev() {
 }
 nextFurniture.addEventListener('click', ()=>sliderNext())
 prevFurniture.addEventListener('click', ()=>sliderPrev())
+
 
 
