@@ -92,24 +92,19 @@ function render() {
         </div>`)
     })
 }
-// TODO: отрабатвыет после обнавление страницы
-furnitureMass.forEach((item)=>{
-    JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{
-        if (item.name == bagItem.name) {
-            item.active = true
-        }
-    })
-})
 furnitureLine.addEventListener("click", (e)=>{
+    console.log(1);
     if (e.target.className == "card__bag") {
         const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
         furnitureMass.forEach((tasks) =>{
             if (tasks.name == e.target.dataset.id) {
+                tasks.active = true
                 JsonMass.push(tasks)
                 localStorage.setItem("bagMass", JSON.stringify(JsonMass))
             }
         })
     }
+    render()
 }) 
 render()
 function sliderNext() {

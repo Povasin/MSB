@@ -53,7 +53,9 @@ function allCheckboxFalse(object) {
 }
 
 function renderKatalog(mass) {
+    console.log(mass);
     const filterMass = filter(mass)
+    console.log(filterMass);
     katalogLine.innerHTML = ''
     filterMass.forEach(item => {
         katalogLine.insertAdjacentHTML("beforeend", `  <div class="card">
@@ -76,7 +78,7 @@ function renderKatalog(mass) {
     kolOnPage.innerText = filterMass.length
 }
 renderKatalog(cubinsMass)
-// TODO: понять почему не работает
+// TODO: понять почему не работает (проблема в фильтрации массива)
 katalog__Checkbox[0].addEventListener("click", ()=>renderKatalog(cubinsForDress))
 katalog__Checkbox[1].addEventListener("click", ()=>renderKatalog(cubinsForLive))
 katalog__Checkbox[2].addEventListener("click", ()=>renderKatalog(cubinsForbath))

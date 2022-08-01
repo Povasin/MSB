@@ -14,6 +14,9 @@ if (!JSON.parse(localStorage.getItem("bagMass"))) {
     localStorage.setItem("bagMass", JSON.stringify(bagMass))    
 }
 function renderBag(mass) {
+    bag__items.innerHTML = ''
+    sum(mass);
+    sumDiscount(mass)
     if (mass == 0) {
         bag__items.insertAdjacentHTML("afterbegin", `<div class="bag__clear">
         <h2>ваша корзина пока пуста</h2>
@@ -69,14 +72,14 @@ function sumDiscount (mass){
 }
 sum(JSON.parse(localStorage.getItem("bagMass")))
 sumDiscount(JSON.parse(localStorage.getItem("bagMass")))
-//TODO: удаление карточки срабатвает после обнавлоение страницы
 bag__items.addEventListener("click", (e)=>{
     if (e.target.className == "block__close") {
         const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
         JsonMass.forEach((tasks, index) =>{
            if (tasks.name == e.target.dataset.id) {
-                JsonMass.splice(index , 1)
+                JsonMass.splice(index, 1)
                 localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+                console.log(JSON.parse(localStorage.getItem("bagMass")));
                 renderBag(JSON.parse(localStorage.getItem("bagMass")))
            }
        })

@@ -11,7 +11,6 @@ let search__blockHref = document.querySelectorAll(".search__blockHref")
 const services__media = document.querySelector(".services__media")
 const search__modal = document.querySelector(".search__modal")
 const search__close = document.querySelector(".search__close")
-// TODO: срабатывает только когда перехожу в корзину
 const services__sum = document.querySelectorAll(".services__sum")
 services__sum[1].innerText  = JSON.parse(localStorage.getItem("bagMass")).length
 services__sum[0].innerText  = JSON.parse(localStorage.getItem("bagMass")).length

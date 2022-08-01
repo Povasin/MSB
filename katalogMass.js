@@ -80,16 +80,21 @@ const cubinsMass = [
     },
 ]
 katalogLine.addEventListener("click", (e)=>{
+    console.log(e.target.className);
     if (e.target.className == "card__bag") {
         const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
         cubinsMass.forEach((tasks) =>{
-           if (tasks.name == e.target.dataset.id) {
-                e.target.classList.add("card__bagActive")
-                e.target.src = "../header/bag.svg"
-                JsonMass.push(tasks)
-                localStorage.setItem("bagMass", JSON.stringify(JsonMass))
-           }
-       })
+            if (tasks.name == e.target.dataset.id) {
+                    e.target.classList.add("card__bagActive")
+                    e.target.src = "../header/bag.svg"
+                    JsonMass.push(tasks)
+                    localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+            }
+        })
+        console.log(1);
+        const services__sum = document.querySelectorAll(".services__sum")
+        services__sum[1].innerText  = JsonMass.length
+        services__sum[0].innerText  = JsonMass.length
     }
 })
 
