@@ -1,13 +1,13 @@
 {   
     "lang": "ru",
-    "short_name": "IdsStore",
-    "name": "IdsStore Магазин бытовок",
-    "description": "IdsStore- это провереный интренет-магазин бытовок, вагончиков и разной строительной техники ",
+    "short_name": "MSB",
+    "name": "MSB containex",
+    "description": "MSB- это провереный интренет-магазин бытовок, вагончиков и разной строительной техники ",
     "start_url": "/index.html",
     "display": "fullscreen",
     "background_color": "white",
     "theme_color": "white",
-    "orientation": "portrait-primary",
+    "orientation": "landscape-primary",
     "id": "/index.html",
     "icons": [
       {
@@ -50,11 +50,6 @@
         "src": "/iconPWA/logo32x32.svg",
         "type": "image/svg+xml",
         "sizes": "32x32"
-      },
-      {
-        "src": "/iconPWA/logo24x24.svg",
-        "type": "image/svg+xml",
-        "sizes": "24x24"
       },
       {
         "src": "/iconPWA/logo16x16.svg",

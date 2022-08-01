@@ -1,9 +1,9 @@
 const CACHE_NAME = 'IdsStore-cache';
 const urlsToCache = [
   './main.js',
-  './header/header.css',
-  './footer/footer.css',
-  './general.css'
+  './css/header/header.css',
+  './css/footer/footer.css',
+  './css/general.css'
 ];
 
 self.addEventListener('install', (event)=>{
