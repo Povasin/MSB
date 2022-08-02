@@ -92,6 +92,14 @@ function render() {
         </div>`)
     })
 }
+
+furnitureMass.forEach((item)=>{
+    JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{
+        if (item.name == bagItem.name) {
+            item.active = true
+        }
+    })
+})
 furnitureLine.addEventListener("click", (e)=>{
     console.log(1);
     if (e.target.className == "card__bag") {
@@ -100,6 +108,8 @@ furnitureLine.addEventListener("click", (e)=>{
             if (tasks.name == e.target.dataset.id) {
                 tasks.active = true
                 JsonMass.push(tasks)
+                services__sum[1].innerText  = JsonMass.length
+                services__sum[0].innerText  = JsonMass.length
                 localStorage.setItem("bagMass", JSON.stringify(JsonMass))
             }
         })

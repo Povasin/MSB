@@ -7,6 +7,7 @@ const sliderTwo = document.getElementById("slider-2");
 const sliderTrack = document.querySelector(".slider-track");
 const sliderMaxValue = document.getElementById("slider-1").max;
 const katalog__Checkbox = document.querySelectorAll(".katalog__Checkbox")
+const katalogName = document.querySelector(".katalog-name")
 const clear = document.getElementById("clear")
 const firstFilter = document.getElementById("firstFilter")
 const kolOnPage = document.getElementById("kolOnPage")
@@ -16,7 +17,15 @@ let minGap = 0;
 
 window.addEventListener('mouseup', (e) => {
     if (e.target.id === "slider-1" || e.target.id === "slider-2") {
-        renderKatalog(cubinsMass)
+        if (!allCheckboxFalse(nameChecked)) {
+            if (nameChecked["Бытовки раздевалки"]) {renderKatalog(cubinsForDress)}
+            if (nameChecked["Бытовки для проживания"]) {renderKatalog(cubinsForLive)}
+            if (nameChecked["Бытовки c душем"]) {renderKatalog(cubinsForbath)}
+            if (nameChecked["Бытовки под склад"]) {renderKatalog(cubinsForWareHouse)}
+            if (nameChecked["Бытовки прорабские"]) {renderKatalog(cubinsForWork)}
+        } else{
+            renderKatalog(cubinsMass)
+        }
     }
 })
 const starsChecked = {
@@ -30,32 +39,41 @@ const sizeChecked = {
     "2,5х2,5х3,0м": false,
     "6х2,4х2,4м": false
 }
-katalogStar.addEventListener("click", (e)=>{
+const nameChecked ={
+    "Бытовки раздевалки": false,
+    "Бытовки для проживания": false,
+    "Бытовки c душем": false,
+    "Бытовки прорабские": false,
+    "Бытовки под склад": false,
+}
+
+function showMass(e,mass) {
     if (e.target.className == "katalog__Checkbox" ) {
-        starsChecked[e.target.value]=e.target.checked
+        mass[e.target.value]=e.target.checked
     }
-    renderKatalog(cubinsMass)
-})
-katalogSize.addEventListener("click", (e)=>{
-    if (e.target.className == "katalog__Checkbox") {
-        sizeChecked[e.target.value]=e.target.checked
+    if (!allCheckboxFalse(nameChecked)) {
+        if (nameChecked["Бытовки раздевалки"]) {renderKatalog(cubinsForDress)}
+        if (nameChecked["Бытовки для проживания"]) {renderKatalog(cubinsForLive)}
+        if (nameChecked["Бытовки c душем"]) {renderKatalog(cubinsForbath)}
+        if (nameChecked["Бытовки под склад"]) {renderKatalog(cubinsForWareHouse)}
+        if (nameChecked["Бытовки прорабские"]) {renderKatalog(cubinsForWork)}
+    } else{
+        renderKatalog(cubinsMass)
     }
-    renderKatalog(cubinsMass)
-})
+}
+katalogName.addEventListener("click", (e)=>showMass(e,nameChecked))
+katalogStar.addEventListener("click", (e)=>showMass(e,starsChecked))
+katalogSize.addEventListener("click", (e)=>showMass(e,sizeChecked))
 function allCheckboxFalse(object) {
     let flag = true;
     Object.values(object).forEach(x=>{
-        if (x) {
-            flag = false
-        }
-    })
+        if (x) {flag = false}})
     return flag
 }
 
 function renderKatalog(mass) {
-    console.log(mass);
+    mass.forEach((item)=>{JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{if (item.name == bagItem.name) {item.active = true}})})
     const filterMass = filter(mass)
-    console.log(filterMass);
     katalogLine.innerHTML = ''
     filterMass.forEach(item => {
         katalogLine.insertAdjacentHTML("beforeend", `  <div class="card">
@@ -69,7 +87,7 @@ function renderKatalog(mass) {
         <div class="card__sale">
             <div class="fd-col">
                 <p class="discount">${item.discount}</p>
-                <p class="card__price">${item.price}₽</p> 
+                <p class="card__price">От ${item.price}₽</p> 
             </div>
             ${item.active ? `<input type="image"  class="card__bag card__bagActive" data-id="${item.name}" src="../header/bag.svg"  alt="${item.name}"/>` :  `<input type="image"  class="card__bag" data-id="${item.name}" src="../main/bag.svg" alt="${item.name}" />` }
         </div> 
@@ -78,46 +96,53 @@ function renderKatalog(mass) {
     kolOnPage.innerText = filterMass.length
 }
 renderKatalog(cubinsMass)
-// TODO: понять почему не работает (проблема в фильтрации массива)
-katalog__Checkbox[0].addEventListener("click", ()=>renderKatalog(cubinsForDress))
-katalog__Checkbox[1].addEventListener("click", ()=>renderKatalog(cubinsForLive))
-katalog__Checkbox[2].addEventListener("click", ()=>renderKatalog(cubinsForbath))
-katalog__Checkbox[3].addEventListener("click", ()=>renderKatalog(cubinsForWareHouse))
-katalog__Checkbox[4].addEventListener("click", ()=>renderKatalog(cubinsForWork))
-// TODO: сделать очистку
 clear.addEventListener("click", ()=>{
     katalog__price[0].value = 1000
     katalog__price[1].value = 10000
     sliderOne.value = katalog__price[0].value
     sliderTwo.value = katalog__price[1].value
     katalog__price[2].value = 1
-    katalog__price[3].value = 10
-    for (let i = 0; i < katalog__Checkbox.length; i++) {
-        katalog__Checkbox[i].checked = false
-    }
+    katalog__price[3].value = 10  
+    for (const key in starsChecked) {starsChecked[key] = false}
+    for (const key in sizeChecked) {sizeChecked[key] = false}
+    for (const key in nameChecked) {nameChecked[key] = false}
+    for (let i = 0; i < katalog__Checkbox.length; i++) {katalog__Checkbox[i].checked = false}
     fillColor()
-    renderKatalog(cubinsMass)
+    if (!allCheckboxFalse(nameChecked)) {
+        if (nameChecked["Бытовки раздевалки"]) {renderKatalog(cubinsForDress)}
+        if (nameChecked["Бытовки для проживания"]) {renderKatalog(cubinsForLive)}
+        if (nameChecked["Бытовки c душем"]) {renderKatalog(cubinsForbath)}
+        if (nameChecked["Бытовки под склад"]) {renderKatalog(cubinsForWareHouse)}
+        if (nameChecked["Бытовки прорабские"]) {renderKatalog(cubinsForWork)}
+    } else{
+        renderKatalog(cubinsMass)
+    }
 })
 function inputValue() {
     if (parseInt(sliderTwo.value) >= katalog__price[0].value) {
         sliderOne.value = katalog__price[0].value
-        fillColor()
     } else {
         sliderOne.value = katalog__price[0].value
         sliderTwo.value = katalog__price[1].value
         katalog__price[1].value = katalog__price[0].value
-        fillColor()
     }
     if (parseInt(sliderOne.value) <= katalog__price[1].value) {
         sliderTwo.value = katalog__price[1].value
-        fillColor()
     }
-
+    fillColor()
 }
 function noDigits(event) {
     if ("1234567890".indexOf(event.key) == -1)
     event.preventDefault();
-    renderKatalog(cubinsMass)
+    if (!allCheckboxFalse(nameChecked)) {
+        if (nameChecked["Бытовки раздевалки"]) {renderKatalog(cubinsForDress)}
+        if (nameChecked["Бытовки для проживания"]) {renderKatalog(cubinsForLive)}
+        if (nameChecked["Бытовки c душем"]) {renderKatalog(cubinsForbath)}
+        if (nameChecked["Бытовки под склад"]) {renderKatalog(cubinsForWareHouse)}
+        if (nameChecked["Бытовки прорабские"]) {renderKatalog(cubinsForWork)}
+    } else{
+        renderKatalog(cubinsMass)
+    }
 }
 
 sliderOne.addEventListener("input", () => {
@@ -172,6 +197,14 @@ firstFilter.addEventListener("click", () => {
             return a.content - b.content;
         });
     }
-    renderKatalog(cubinsMass)
+    if (!allCheckboxFalse(nameChecked)) {
+        if (nameChecked["Бытовки раздевалки"]) {renderKatalog(cubinsForDress)}
+        if (nameChecked["Бытовки для проживания"]) {renderKatalog(cubinsForLive)}
+        if (nameChecked["Бытовки c душем"]) {renderKatalog(cubinsForbath)}
+        if (nameChecked["Бытовки под склад"]) {renderKatalog(cubinsForWareHouse)}
+        if (nameChecked["Бытовки прорабские"]) {renderKatalog(cubinsForWork)}
+    } else{
+        renderKatalog(cubinsMass)
+    }
 })
 

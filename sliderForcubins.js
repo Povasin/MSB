@@ -108,12 +108,16 @@ JSON.parse(localStorage.getItem("bagMass")).forEach(item=>{
         }
 })
 
-if (!cubinsItem.active) {
-    more.addEventListener("click", ()=>{
+
+more.addEventListener("click", ()=>{
+    if (!cubinsItem.active) {
         jsonMass.push(cubinsItem)
+        services__sum[1].innerText  = jsonMass.length
+        services__sum[0].innerText  = jsonMass.length
         localStorage.setItem("bagMass", JSON.stringify(jsonMass));
         more.classList.add("moreActive")
         more.innerText = "услуга добавлена"
-    })
-}
+    }
+    cubinsItem.active = true
+})
 

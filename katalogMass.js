@@ -4,7 +4,7 @@ const cubinsMass = [
         href: "../cubinsfordress/cubinsfordress.html",
         img: "../main/cubinsForDress.webp",
         name: "Бытовка раздевалка",
-        discount: "9000",
+        discount: 9000,
         price: 8000,
         star: "★★★★☆",
         size: "6х2,4х2,50м",
@@ -17,7 +17,7 @@ const cubinsMass = [
         href: "../cubinsForlive/cubinsForlive.html",
         img: "../main/cubinsForLive.webp",
         name: "Бытовка для проживания",
-        discount: "9000",
+        discount: 9000,
         price: 7500,
         star: "★★★☆☆",
         size: "2,5х2,5х3,0м",
@@ -30,7 +30,7 @@ const cubinsMass = [
         href: "../cubinsForbath/cubinsForbath.html",
         img: "../main/cubinsForBath.webp",
         name: "Бытовка c душем",
-        discount: "9000",
+        discount: 9000,
         price: 7500,
         star: "★★★★★",
         size: "2,5х2,5х3,0м",
@@ -43,7 +43,7 @@ const cubinsMass = [
         href: "../cubinsForwork/cubinsForwork.html",
         img: "../main/cubinsForWork.webp",
         name: "Бытовки прорабские",
-        discount: "10000",
+        discount: 10000,
         price: 9000,
         star: "★★★★☆",
         size: "6х2,4х2,4м",
@@ -56,7 +56,7 @@ const cubinsMass = [
         href: "../cubinsForwarehouse/cubinsForwarehouse.html",
         img: "../main/cubinsForwareHouse.webp",
         name: "Бытовка под склад",
-        discount: "10000",
+        discount: 10000,
         price: 9000,
         star: "★★★★★",
         size: "6х2,4х2,4м",
@@ -69,7 +69,7 @@ const cubinsMass = [
         href: "../cubinsfordress/cubinsfordress.html",
         img: "../main/cubinsForDress.webp",
         name: "Бытовка пост охраны",
-        discount: "9000",
+        discount: 9000,
         price: 8000,
         star: "★★★★☆",
         size: "6х2,4х2,50м",
@@ -77,24 +77,21 @@ const cubinsMass = [
         inputkol : 1,
         inputMonth : 1,
         active: false
-    },
+    },          
 ]
 katalogLine.addEventListener("click", (e)=>{
-    console.log(e.target.className);
     if (e.target.className == "card__bag") {
         const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
         cubinsMass.forEach((tasks) =>{
-            if (tasks.name == e.target.dataset.id) {
-                    e.target.classList.add("card__bagActive")
-                    e.target.src = "../header/bag.svg"
-                    JsonMass.push(tasks)
-                    localStorage.setItem("bagMass", JSON.stringify(JsonMass))
-            }
-        })
-        console.log(1);
-        const services__sum = document.querySelectorAll(".services__sum")
-        services__sum[1].innerText  = JsonMass.length
-        services__sum[0].innerText  = JsonMass.length
+           if (tasks.name == e.target.dataset.id) {
+                e.target.classList.add("card__bagActive")
+                e.target.src = "../header/bag.svg"
+                JsonMass.push(tasks)
+                services__sum[1].innerText  = JsonMass.length
+                services__sum[0].innerText  = JsonMass.length
+                localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+           }
+       })
     }
 })
 

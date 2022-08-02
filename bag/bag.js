@@ -78,8 +78,9 @@ bag__items.addEventListener("click", (e)=>{
         JsonMass.forEach((tasks, index) =>{
            if (tasks.name == e.target.dataset.id) {
                 JsonMass.splice(index, 1)
+                services__sum[1].innerText  = JsonMass.length
+                services__sum[0].innerText  = JsonMass.length
                 localStorage.setItem("bagMass", JSON.stringify(JsonMass))
-                console.log(JSON.parse(localStorage.getItem("bagMass")));
                 renderBag(JSON.parse(localStorage.getItem("bagMass")))
            }
        })
@@ -107,38 +108,38 @@ input__checkboxMap.addEventListener("click", ()=>{
 
 const bt_minus = document.querySelectorAll(".bt_minus")
 const bt_plus = document.querySelectorAll(".bt_plus")
-// function showBtnPrev(e) {
-//     const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
-//     JsonMass.forEach((tasks) =>{
-//         // TODO: e.target.dataset.id undefind
-//         console.log(e.target.dataset.id);
-//         if (tasks.inputkol == e.target.dataset.id) {
-//             e.target.dataset.id.value = +e.target.dataset.id.value - 1 < 1 ? 1 : +e.target.dataset.id.value - 1
-//             localStorage.setItem("bagMass", JSON.stringify(JsonMass))
-//             renderBag(JSON.parse(localStorage.getItem("bagMass")))
-//         }
-//     })
-// }
-// function showBtnNext(e) {
-//     const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
-//     JsonMass.forEach((tasks) =>{
-//         if (tasks.inputkol == e.target.dataset.id) {
-//             e.target.dataset.id.value = +e.target.dataset.id.value + 1
-//             localStorage.setItem("bagMass", JSON.stringify(JsonMass))
-//             renderBag(JSON.parse(localStorage.getItem("bagMass")))
-//         }
-//     })
-// }
+function showBtnPrev(e) {
+    const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
+    JsonMass.forEach((tasks) =>{
+        // TODO: e.target.dataset.id undefind
+        console.log(e.target.dataset.id);
+        if (tasks.inputkol == e.target.dataset.id) {
+            e.target.dataset.id.value = +e.target.dataset.id.value - 1 < 1 ? 1 : +e.target.dataset.id.value - 1
+            localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+            renderBag(JSON.parse(localStorage.getItem("bagMass")))
+        }
+    })
+}
+function showBtnNext(e) {
+    const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
+    JsonMass.forEach((tasks) =>{
+        if (tasks.inputkol == e.target.dataset.id) {
+            e.target.dataset.id.value = +e.target.dataset.id.value + 1
+            localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+            renderBag(JSON.parse(localStorage.getItem("bagMass")))
+        }
+    })
+}
 
-// bag__items.addEventListener("click", (e)=>{
-//     if (e.target.className =="bt_minus") {
-//         showBtnPrev(e)
-//     } else if (e.target.className =="bt_plus"){
-//         showBtnNext(e)
-//     }    
-//     if (e.target.className =="bt_minusMonth") {
-//         showBtnPrev(e)
-//     } else if (e.target.className =="bt_plusMonth"){
-//         showBtnNext(e)
-//     }
-// })
+bag__items.addEventListener("click", (e)=>{
+    if (e.target.className =="bt_minus") {
+        showBtnPrev(e)
+    } else if (e.target.className =="bt_plus"){
+        showBtnNext(e)
+    }    
+    if (e.target.className =="bt_minusMonth") {
+        showBtnPrev(e)
+    } else if (e.target.className =="bt_plusMonth"){
+        showBtnNext(e)
+    }
+})
