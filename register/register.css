@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "Inter-Light";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../fonts/Inter/Inter-Light.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "Inter-Regular";
+  font-weight: 500;
+  src: url("../../fonts/Inter/Inter-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "Inter-Bold";
+  font-weight: 900;
+  src: url("../../fonts/Inter/Inter-Bold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter-Regular", sans-serif;
+}
+
+main {
+  padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
+}
+
+.register-row, .register, main {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-row #register {
+  padding: 10px calc( 0.0208333333 * 100vw + 3.3333333333px );
+  color: white;
+  font-size: calc( 0.003125 * 100vw + 14px );
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  text-decoration: none;
+  margin: 20px 0 auto auto;
+  border: none;
+  font-weight: 100;
+  transition: 0.3s;
+}
+.register-row #register:hover {
+  transform: scale(1.02);
+}
+
+.main_fixed {
+  margin-top: 90px;
+}
+
+.register {
+  padding: 0 calc( 0.245 * 100vw + -70.4px );
+}
+.register h1 {
+  margin: 0 0 15px 0;
+  font-size: calc( 0.009375 * 100vw + 17px );
+}
+.register-row input {
+  padding: 15px 10px;
+  margin: 5px 0;
+  outline: none;
+  border: none;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  font-size: calc( 0.004375 * 100vw + 11.6px );
+}
+.register-row label {
+  font-size: calc( 0.00375 * 100vw + 8.8px );
+  margin: 20px 0;
+}
+.register-row label input[type=checkbox] {
+  margin: auto 10px auto 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid #adb5bd;
+  cursor: pointer;
+  vertical-align: bottom;
+}
+.register-row label input[type=checkbox]:checked {
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
+}
+.register-row #register {
+  margin: 10px 0;
+  text-align: center;
+}
+.register-row .error {
+  font-size: calc( 0.00375 * 100vw + 10.8px );
+  color: red;
+  margin: 10px 0 0 0;
+}/*# sourceMappingURL=register.css.map */

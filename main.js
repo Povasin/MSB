@@ -12,6 +12,10 @@ const services__media = document.querySelector(".services__media")
 const search__modal = document.querySelector(".search__modal")
 const search__close = document.querySelector(".search__close")
 const services__sum = document.querySelectorAll(".services__sum")
+const bagMass = []
+if (!JSON.parse(localStorage.getItem("bagMass"))) {
+    localStorage.setItem("bagMass", JSON.stringify(bagMass))    
+}
 services__sum[1].innerText  = JSON.parse(localStorage.getItem("bagMass")).length
 services__sum[0].innerText  = JSON.parse(localStorage.getItem("bagMass")).length
 sidebar__open.addEventListener("click",()=>{ sidebar.style.right = 0 + "%"})

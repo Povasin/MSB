@@ -4,7 +4,7 @@ const prevFurniture = document.querySelector(".prevFurniture")
 let furnitureSlider = 0
 const furnitureMass= [
     {   
-        href: "#",
+        hreF: "#",
         img: "../main/chair.webp",
         name: "офисный стул",
         discount: 800,
@@ -15,7 +15,7 @@ const furnitureMass= [
         active: false
     },
     {   
-        href: "#",
+        hreF: "#",  
         img: "../main/table.webp",
         name: "офисный стол",
         discount: 1000,
@@ -26,7 +26,7 @@ const furnitureMass= [
         active: false
     },
     {   
-        href: "#",
+        hreF: "#",
         img: "../main/bad.webp",
         name: "кровать",
         discount: 1500,
@@ -37,7 +37,7 @@ const furnitureMass= [
         active: false
     },
     {   
-        href: "#",
+        hreF: "#",
         img: "../main/chair.webp",
         name: "вешалка",
         discount: 800,
@@ -48,7 +48,7 @@ const furnitureMass= [
         active: false
     },
     {   
-        href: "#",
+        hreF: "#",
         img: "../main/table.webp",
         name: "доп свет",
         discount: 1000,
@@ -59,7 +59,7 @@ const furnitureMass= [
         active: false
     },
     {   
-        href: "#",
+        hreF: "#",
         img: "../main/bad.webp",
         name: "доп обарудывание",
         discount: 1500,
@@ -77,11 +77,11 @@ function render() {
         furnitureLine.insertAdjacentHTML("beforeend", ` <div class="card">
         <div class="fd-row">
         <p class="star">${item.star}</p>
-        <a href="${item.href}" class="card__arrow">→</a>
+        <p class="card__arrow">→</p>
         </div>
         <img class="card__img" src="${item.img}" alt="${item.name}">
         <p class="rent">Аренда</p>
-        <a href="${item.href}" class="info">${item.name}</a>         
+        <p class="info">${item.name}</p>         
         <div class="card__sale">
             <div class="fd-col">
                 <p class="discount">${item.discount}</p>
@@ -101,7 +101,6 @@ furnitureMass.forEach((item)=>{
     })
 })
 furnitureLine.addEventListener("click", (e)=>{
-    console.log(1);
     if (e.target.className == "card__bag") {
         const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
         furnitureMass.forEach((tasks) =>{

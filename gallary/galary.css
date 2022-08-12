@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Inter-Light";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../fonts/Inter/Inter-Light.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "Inter-Regular";
+  font-weight: 500;
+  src: url("../../fonts/Inter/Inter-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "Inter-Bold";
+  font-weight: 900;
+  src: url("../../fonts/Inter/Inter-Bold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter-Regular", sans-serif;
+}
+
+main {
+  padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
+}
+
+.gallary__item, .gallary__item .card .furniture__CardActive, .gallary__item .card .card__sale, .gallary__item .card .fd-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.gallary, .gallary__item .card, main {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallary__item .card {
+  position: relative;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  width: 280px;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+.gallary__item .card .rent {
+  font-size: calc( 0.003125 * 100vw + 14px );
+  color: #58585e;
+  margin: auto 0 5px 0;
+}
+.gallary__item .card .info {
+  font-size: calc( 0.003125 * 100vw + 14px );
+  font-weight: 900;
+  margin: 0;
+  text-decoration: none;
+  color: black;
+}
+.gallary__item .card .card__bag {
+  cursor: pointer;
+  margin: auto 0 0 auto;
+  padding: calc( 0.0024590164 * 100vw + 0.2786885246px ) calc( 0.0040983607 * 100vw + 12.131147541px );
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  border: none;
+}
+.gallary__item .card .card__bagActive {
+  background: transparent;
+  border: 1px solid;
+  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  border-image-slice: 1;
+  background: transparent;
+  text-decoration: none;
+  color: black;
+}
+.gallary__item .card .card__img {
+  width: 100%;
+  margin: auto 0 0 0;
+}
+.gallary__item .card .fd-row .card__arrow {
+  margin: auto 0 auto auto;
+  font-size: 24px;
+  font-weight: 900;
+  text-decoration: none;
+  color: black;
+}
+.gallary__item .card .fd-row .star {
+  font-size: calc( 0.0049180328 * 100vw + 10.5573770492px );
+  font-weight: 900;
+  margin: auto 0;
+}
+.gallary__item .card .card__sale {
+  margin: 10px 0 0 0;
+}
+.gallary__item .card .card__sale .fd-col .discount {
+  text-decoration: line-through;
+  color: #58585e;
+  font-size: calc( 0.003125 * 100vw + 14px );
+  margin: calc( 0.0093457944 * 100vw + -7.9439252336px ) 0 0 0;
+}
+.gallary__item .card .card__sale .fd-col .card__price {
+  font-size: calc( 0.001875 * 100vw + 16.4px );
+  font-weight: 900;
+  margin: 0;
+}
+.gallary__item .card .furniture__CardActive {
+  border-radius: 20px;
+  width: 65%;
+  background-color: #5134c4;
+  position: absolute;
+  bottom: -18px;
+  right: 10px;
+}
+.gallary__item .card .furniture__CardActive .furniture__bagActive {
+  margin: auto 0 auto auto;
+  background: white !important;
+  border-radius: 50%;
+  padding: calc( 0.0025 * 100vw + 0.2px ) calc( 0.0025 * 100vw + 5.2px );
+  border: 2px solid #5134c4;
+  font-size: 20px;
+}
+.gallary__item .card .furniture__CardActive p {
+  text-align: center;
+  margin: auto 0 auto auto;
+  color: white;
+  font-size: calc( 0.00375 * 100vw + 8.8px );
+}
+
+.main_fixed {
+  margin-top: 90px;
+}
+
+.gallary {
+  padding: 0 calc( 0.12 * 100vw + -30.4px );
+}
+.gallary span a {
+  text-decoration: none;
+  color: black;
+  font-size: calc( 0.005 * 100vw + 10.4px );
+}
+.gallary h1 {
+  font-size: calc( 0.009375 * 100vw + 17px );
+}
+.gallary__item {
+  justify-content: center;
+}
+.gallary__item .card {
+  margin: 7px;
+}
+
+@media (max-width: 730px) {
+  .gallary__item {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallary__item .card {
+    margin: 7px auto;
+    width: 70%;
+  }
+}/*# sourceMappingURL=galary.css.map */

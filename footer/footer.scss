@@ -88,16 +88,22 @@
             }
         }
         .basement__col{
-            .login,
-            .register{
-                @extend %general__log;
-                background-color: white;
-                border: none;
-            }
-            .register{
-                background: #19103C;
-                color: white;
-                border: none;
+            .log{
+                @extend %d-row;
+                .login,
+                .register{
+                    @extend %general__log;
+                    background-color: white;
+                    border: none;
+                }
+                .register{
+                    background: #19103C;
+                    color: white;
+                    width: 60%;
+                }
+                .login{
+                    width: 40%;
+                }
             }
             h3{
                 font-size: calcFluid(15, 20, 320, 1920);

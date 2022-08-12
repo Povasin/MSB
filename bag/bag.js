@@ -9,10 +9,6 @@ const map__yandex =document.getElementById("map__yandex")
 const adress = document.getElementById("adress")
 const selfCall = document.getElementById("self-call")
 const discount = document.getElementById("discount")
-const bagMass = []
-if (!JSON.parse(localStorage.getItem("bagMass"))) {
-    localStorage.setItem("bagMass", JSON.stringify(bagMass))    
-}
 function renderBag(mass) {
     bag__items.innerHTML = ''
     sum(mass);
@@ -31,21 +27,21 @@ function renderBag(mass) {
             <div class="block__content">
                 <p class="block__close" data-id="${item.name}">x</p>
                 <p class="rent">Аренда</p>
-                <a href="${item.href}"> ${item.name}</a>
+                <a name="NameOrder" href="${item.href}"> ${item.name}</a>
                 <div class="block__input">
                     <div class="quantity_inner">		
                         <button class="bt_minus">-</button>
-                        <label class="fd-col">количество<input type="text"  data-id="${item.inputkol}" value="${item.inputkol}" size="2" class="quantity"/></label>
+                        <label class="fd-col">количество<input type="text" name="kolOrder"  data-id="${item.inputkol}" value="${item.inputkol}" size="2" class="quantity"/></label>
                         <button class="bt_plus">+</button>
                     </div>
                     <div class="quantity_inner">		
                         <button class="bt_minusMonth">-</button>
-                        <label class="fd-col">месяцев<input type="text" data-id="${item.inputMonth}" value="${item.inputMonth}" size="2" class="quantity" /></label>
+                        <label class="fd-col">месяцев<input type="text" name="monthOrder" data-id="${item.inputMonth}" value="${item.inputMonth}" size="2" class="quantity" /></label>
                         <button class="bt_plusMonth">+</button>
                     </div>
                     <div class="block-col">
                         <p class="block__discount">${(item.inputkol*item.discount)*item.inputMonth}</p>
-                        <p class="block__price">${(item.inputkol*item.price)*item.inputMonth }₽</p>
+                        <p class="block__price" name="priceOrder">${(item.inputkol*item.price)*item.inputMonth }₽</p>
                     </div>
                 </div>
             </div>
@@ -92,6 +88,8 @@ input__checkboxAdress.addEventListener("click", ()=>{
         adress.style.display = "flex"
         map__yandex.style.display = "none"
         input__checkboxMap.checked = false
+        input__checkboxMap.required = false
+        input__checkboxAdress.required = true
     } else{
         adress.style.display = "none"
     }
@@ -101,6 +99,8 @@ input__checkboxMap.addEventListener("click", ()=>{
         adress.style.display = "none"
         map__yandex.style.display = "flex"
         input__checkboxAdress.checked = false
+        input__checkboxMap.required = true
+        input__checkboxAdress.required = false
     } else{
         map__yandex.style.display = "none"
     }
