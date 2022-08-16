@@ -88,7 +88,7 @@
             }
         }
         .basement__col{
-            .log{
+            .logFooter{
                 @extend %d-row;
                 .login,
                 .register{
@@ -103,6 +103,23 @@
                 }
                 .login{
                     width: 40%;
+                }
+                .loginUser{
+                    display: flex;
+                    margin: auto 0 ;
+                    @extend %d-row;
+                    text-decoration: none;
+                    color: rgb(255, 255, 255);
+                    font-size: calcFluid(16, 22, 320, 1920);
+                    p{
+                        margin: auto 0;
+                        width: 100%;
+                    }
+                    img{
+                        margin: auto 10px 0 0;
+                        border: 2px solid rgb(255, 255, 255);
+                        width: 29%;
+                    }
                 }
             }
             h3{

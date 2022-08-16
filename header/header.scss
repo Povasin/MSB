@@ -88,6 +88,29 @@ header {
                     color: white;
                 }
             }
+            .loginUser{
+                display: flex;
+                margin: auto 0 auto auto;
+                @extend %d-row;
+                text-decoration: none;
+                color: black;
+                font-size: calcFluid(15, 20, 320, 1920);
+                p{
+                    margin: auto 0;
+                    width: 100%;
+                }
+                img{
+                    margin: auto 10px 0 0;
+                    border: 2px solid gray;
+                    border-image-source:$gradient;
+                    border-image-slice:1;
+                    background:$gradient; 
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    width: 27%;
+                }
+            }
         }
         .log{
             display: none;
@@ -323,6 +346,9 @@ header {
                   margin: auto 10px 0 auto;
                   width: 60%;
                 }
+            }
+            .headerTop__contacts{
+                display: none;
             }
         }
         .services {

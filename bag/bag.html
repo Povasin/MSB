@@ -52,9 +52,9 @@
                <p>dir@ids76.ru</p> 
             </div>
             <div class="headerTop__log">
-                <a href="" class="login">Войти</a>
-                <a href="" class="register">Зарегистрироваться</a>
-                <a href="" class="log"> <img src="../header/log.svg" alt="вход"><p>вход</p></a>
+                <a href="../login/login.html" class="login">Войти</a>
+                <a href="../register/register.html" class="register">Зарегистрироваться</a>
+                <a href="../login/login.html" class="log"> <img src="../header/log.svg" alt="вход"><p>вход</p></a>
             </div>
         </div>
         <div class="services">
@@ -91,9 +91,10 @@
                 <div class="bag__items"></div>
                 <div class="bag__price">
                     <div class="bag__promoCode">
-                        <input type="text" placeholder="Промокод">
-                        <button>Ok</button>
+                        <input type="text" placeholder="Промокод" class="promocode">
+                        <div id="acceptPromocode">Ok</div>
                     </div>
+                    <p class="accept"></p>
                     <div class="input__price">
                         <p>Итого</p>
                         <span name="summPriceOrder" id="price">0</span>
@@ -105,9 +106,11 @@
                     <label class="delivery"><input type="checkbox" class="input__checkboxAdress" required>доставкa: <span id="delivery">договорная</span></label>
                     <input type="text" name="adress" id="adress" placeholder="укажите адресс" required>
                     <label class="self-call"><input type="checkbox" name="input__checkboxMap" class="input__checkboxMap" required>самовызов: <span id="self-call">0</span></label>
-                    <div id="map__yandex"><script type="text/javascript" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1de37163293f4e550481d9ca14ec396e5a467508c7cd738b2b7f8c1037132ff8&amp;width=100%25&amp;height=200&amp;lang=ru_RU&amp;scroll=true"></script></div>
-                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
-                    <input type="tel" id="phone" name="tel" placeholder="Номер телефона" required>
+                    <!-- <div id="map__yandex"><script type="text/javascript" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1de37163293f4e550481d9ca14ec396e5a467508c7cd738b2b7f8c1037132ff8&amp;width=100%25&amp;height=200&amp;lang=ru_RU&amp;scroll=true"></script></div> -->
+                    <div class="blockOrder">
+                        <input type="text" id="nameOrder" name="name" placeholder="Ваше имя" required>
+                        <input type="tel" id="phone" name="tel" placeholder="Номер телефона" required>
+                    </div>
                     <button id="order">Оформить заказ</button>
                 </div>
             </form>
@@ -165,9 +168,9 @@
                 </div>
                 <div class="basement__col">
                     <h3>Кстати нас уже 1249 человек!</h3>
-                    <div class="log">
-                        <a href="" class="login">Войти</a>
-                        <a href="" class="register">Зарегистрироваться</a>
+                    <div class="logFooter">
+                        <a href="../login/login.html" class="login">Войти</a>
+                        <a href="../register/register.html" class="register">Зарегистрироваться</a>
                     </div>
                     <h3>Присоединяйся!</h3>
                 </div>

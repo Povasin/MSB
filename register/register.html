@@ -7,7 +7,7 @@
     <meta name="theme-color" content="white">
     <!-- придумать описание страницы -->
     <meta name="description" content="придумать описание страницы">
-    <title>IdsStore Контакты</title>
+    <title>MSB Регистрация</title>
     <link rel="stylesheet" href="../general.css" media="all">
     <link rel="stylesheet" href="../header/header.css" media="all">
     <link rel="stylesheet" href="./register.css" media="all" >
@@ -52,9 +52,9 @@
                <p>dir@ids76.ru</p> 
             </div>
             <div class="headerTop__log">
-                <a href="" class="login">Войти</a>
-                <a href="" class="register">Зарегистрироваться</a>
-                <a href="" class="log"> <img src="../header/log.svg" alt="вход"><p>вход</p></a>
+                <a href="../login/login.html" class="login">Войти</a>
+                <a href="../register/register.html" class="register">Зарегистрироваться</a>
+                <a href="../login/login.html" class="log"> <img src="../header/log.svg" alt="вход"><p>вход</p></a>
             </div>
         </div>
         <div class="services">
@@ -89,11 +89,13 @@
             <div class="register-row">
                 <input type="text" id="nameReg" placeholder="Имя профиля" maxlength="20" required>
                 <input type="email"id="email"placeholder="эл.почта" maxlength="40" required>
+                <input type="tel" id="phone"placeholder="Номер телефона" maxlength="40" required>
                 <input type="password" id="password" placeholder="пароль" maxlength="16" required>
                 <input type="password" id="passwordCheck" placeholder="подтвердите пароль" maxlength="16"required>
                 <p class="error"></p>
                 <label><input type="checkbox" id="accept" required>согласен на отправку данных</label>
                 <button id="register">подтвердить</button>
+                <p class="account">Есть аккунт? <a href="../login/login.html">выполните вход</a></p>
             </div>
         </div>  
     </main>
@@ -149,9 +151,9 @@
                 </div>
                 <div class="basement__col">
                     <h3>Кстати нас уже 1249 человек!</h3>
-                    <div class="log">
-                        <a href="" class="login">Войти</a>
-                        <a href="" class="register">Зарегистрироваться</a>
+                    <div class="logFooter">
+                        <a href="../login/login.html" class="login">Войти</a>
+                        <a href="../register/register.html" class="register">Зарегистрироваться</a>
                     </div>
                     <h3>Присоединяйся!</h3>
                 </div>

@@ -35,12 +35,12 @@ main {
   padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
 }
 
-.register-row, .register, main {
+.login-row, .login, main {
   display: flex;
   flex-direction: column;
 }
 
-.register-row #register {
+.login-row #login {
   padding: 10px calc( 0.0208333333 * 100vw + 3.3333333333px );
   color: white;
   font-size: calc( 0.003125 * 100vw + 14px );
@@ -51,7 +51,7 @@ main {
   font-weight: 100;
   transition: 0.3s;
 }
-.register-row #register:hover {
+.login-row #login:hover {
   transform: scale(1.02);
 }
 
@@ -59,14 +59,14 @@ main {
   margin-top: 90px;
 }
 
-.register {
+.login {
   padding: 0 calc( 0.245 * 100vw + -70.4px );
 }
-.register h1 {
+.login h1 {
   margin: 0 0 15px 0;
   font-size: calc( 0.009375 * 100vw + 17px );
 }
-.register-row input {
+.login-row input {
   padding: 15px 10px;
   margin: 5px 0;
   outline: none;
@@ -74,39 +74,18 @@ main {
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
   font-size: calc( 0.004375 * 100vw + 11.6px );
 }
-.register-row label {
-  font-size: calc( 0.00375 * 100vw + 8.8px );
-  margin: 20px 0;
-}
-.register-row label input[type=checkbox] {
-  margin: auto 10px auto 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 1.5em;
-  height: 1.5em;
-  border: 1px solid #adb5bd;
-  cursor: pointer;
-  vertical-align: bottom;
-}
-.register-row label input[type=checkbox]:checked {
-  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
-  -webkit-appearance: auto;
-     -moz-appearance: auto;
-          appearance: auto;
-}
-.register-row #register {
+.login-row #login {
   margin: 10px 0;
   text-align: center;
 }
-.register-row .error {
+.login-row .error {
   font-size: calc( 0.00375 * 100vw + 10.8px );
   color: red;
   margin: 10px 0 0 0;
 }
-.register .account {
+.login .account {
   font-size: calc( 0.0025 * 100vw + 11.2px );
 }
-.register .account a {
+.login .account a {
   text-decoration: none;
-}/*# sourceMappingURL=register.css.map */
+}/*# sourceMappingURL=login.css.map */

@@ -9,6 +9,10 @@ const map__yandex =document.getElementById("map__yandex")
 const adress = document.getElementById("adress")
 const selfCall = document.getElementById("self-call")
 const discount = document.getElementById("discount")
+const blockOrder = document.querySelector(".blockOrder")
+const promocode = document.querySelector(".promocode")
+const accept = document.querySelector(".accept")
+const acceptPromocode = document.getElementById("acceptPromocode")
 function renderBag(mass) {
     bag__items.innerHTML = ''
     sum(mass);
@@ -30,14 +34,14 @@ function renderBag(mass) {
                 <a name="NameOrder" href="${item.href}"> ${item.name}</a>
                 <div class="block__input">
                     <div class="quantity_inner">		
-                        <button class="bt_minus">-</button>
+                        <div class="bt_minus">-</div>
                         <label class="fd-col">количество<input type="text" name="kolOrder"  data-id="${item.inputkol}" value="${item.inputkol}" size="2" class="quantity"/></label>
-                        <button class="bt_plus">+</button>
+                        <div class="bt_plus">+</div>
                     </div>
                     <div class="quantity_inner">		
-                        <button class="bt_minusMonth">-</button>
+                        <div class="bt_minusMonth">-</div>
                         <label class="fd-col">месяцев<input type="text" name="monthOrder" data-id="${item.inputMonth}" value="${item.inputMonth}" size="2" class="quantity" /></label>
-                        <button class="bt_plusMonth">+</button>
+                        <div class="bt_plusMonth">+</div>
                     </div>
                     <div class="block-col">
                         <p class="block__discount">${(item.inputkol*item.discount)*item.inputMonth}</p>
@@ -49,6 +53,11 @@ function renderBag(mass) {
         });
     }
 }
+let promocodeShow = false
+acceptPromocode.addEventListener("click", ()=>{
+    promocodeShow = true
+    sum(JSON.parse(localStorage.getItem("bagMass")))
+})
 function sum (mass){
     let s = 0;
     mass.forEach(item=>{
@@ -56,6 +65,15 @@ function sum (mass){
     })
     price.innerText = s + "₽"
     selfCall.innerText = s + "₽"
+    if (promocode.value == "pivasin" && promocodeShow) {
+        accept.innerText = "промокод успешно применен"
+        price.innerText = s/ 100 * 90 + "₽"
+        selfCall.innerText = s / 100 * 90 + "₽"
+        return s / 100 * 90
+    }
+    else if(promocode.value != "pivasin" && promocodeShow){
+        accept.innerText = "такого промокода не существует"
+    }
     return s
 }
 function sumDiscount (mass){
@@ -66,6 +84,10 @@ function sumDiscount (mass){
     discount.innerText =  + s + "₽"
     return s
 }
+function promokod() {
+
+}
+
 sum(JSON.parse(localStorage.getItem("bagMass")))
 sumDiscount(JSON.parse(localStorage.getItem("bagMass")))
 bag__items.addEventListener("click", (e)=>{
@@ -143,3 +165,6 @@ bag__items.addEventListener("click", (e)=>{
         showBtnNext(e)
     }
 })
+if (jsonMass != {}) {
+    blockOrder.innerHTML = ``
+}

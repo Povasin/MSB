@@ -28,10 +28,10 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Inter-Regular", sans-serif;
+  font-family: "Inter-Regular";
 }
 
-header .services .sidebar__menu .sidebar__row a, header .services .sidebar__menu .sidebar__row, header .services a:nth-child(6), header .services a:nth-child(1), header .services, header .headerTop .log, header .headerTop__log, header .headerTop__search, header .headerTop {
+header .services .sidebar__menu .sidebar__row a, header .services .sidebar__menu .sidebar__row, header .services a:nth-child(6), header .services a:nth-child(1), header .services, header .headerTop .log, header .headerTop__log .loginUser, header .headerTop__log, header .headerTop__search, header .headerTop {
   display: flex;
   flex-direction: row;
 }
@@ -190,6 +190,28 @@ header .headerTop__log .register:hover {
 header .headerTop__log .login:hover {
   background-color: black;
   color: white;
+}
+header .headerTop__log .loginUser {
+  display: flex;
+  margin: auto 0 auto auto;
+  text-decoration: none;
+  color: black;
+  font-size: calc( 0.003125 * 100vw + 14px );
+}
+header .headerTop__log .loginUser p {
+  margin: auto 0;
+  width: 100%;
+}
+header .headerTop__log .loginUser img {
+  margin: auto 10px 0 0;
+  border: 2px solid gray;
+  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  border-image-slice: 1;
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 27%;
 }
 header .headerTop .log {
   display: none;
@@ -385,6 +407,9 @@ header .headerTop .register {
   header .headerTop .log img {
     margin: auto 10px 0 auto;
     width: 60%;
+  }
+  header .headerTop .headerTop__contacts {
+    display: none;
   }
   header .services a:nth-child(1) {
     margin: 10px 0;

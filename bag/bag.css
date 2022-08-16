@@ -28,7 +28,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Inter-Regular", sans-serif;
+  font-family: "Inter-Regular";
 }
 
 main {
@@ -36,7 +36,7 @@ main {
 }
 
 .bag__wrapper .bag .bag__price .delivery,
-.bag__wrapper .bag .bag__price .self-call, .bag__wrapper .bag .bag__price .input__discount, .bag__wrapper .bag .bag__price .input__price, .bag__wrapper .bag__items .bag__block .block__content .block__input, .bag__wrapper .bag__items .bag__block, .bag__wrapper .bag {
+.bag__wrapper .bag .bag__price .self-call, .bag__wrapper .bag .bag__price .input__discount, .bag__wrapper .bag .bag__price .input__price, .bag__wrapper .bag .bag__price .bag__promoCode, .bag__wrapper .bag__items .bag__block .block__content .block__input, .bag__wrapper .bag__items .bag__block, .bag__wrapper .bag {
   display: flex;
   flex-direction: row;
 }
@@ -206,20 +206,28 @@ main {
 .bag__wrapper .bag .bag__price {
   width: 24%;
 }
+.bag__wrapper .bag .bag__price .accept {
+  font-weight: 500;
+  color: black;
+  font-size: calc( 0.0035714286 * 100vw + 9.1428571429px );
+  margin: 18px 0 0 0;
+}
 .bag__wrapper .bag .bag__price .bag__promoCode input {
   font-size: calc( 0.0071428571 * 100vw + 6.2857142857px );
   font-weight: 100;
   padding: 7px;
   outline: none;
   border: 1px solid #58585e;
+  margin: auto 10px auto 0;
 }
-.bag__wrapper .bag .bag__price .bag__promoCode button {
+.bag__wrapper .bag .bag__price .bag__promoCode #acceptPromocode {
   background-color: #19103C;
   padding: 7px;
   font-size: calc( 0.00625 * 100vw + 8px );
   color: white;
   font-weight: 100;
   border: none;
+  cursor: pointer;
 }
 .bag__wrapper .bag .bag__price .input__price {
   margin: calc( 0.005 * 100vw + 10.4px ) 0 10px 0;
@@ -285,7 +293,7 @@ main {
 }
 .bag__wrapper .bag .bag__price input[type=tel],
 .bag__wrapper .bag .bag__price #adress,
-.bag__wrapper .bag .bag__price #name {
+.bag__wrapper .bag .bag__price #nameOrder {
   margin: 10px auto 0 0;
   padding: 5px 10px;
   outline: none;

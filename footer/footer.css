@@ -28,10 +28,10 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Inter-Regular", sans-serif;
+  font-family: "Inter-Regular";
 }
 
-.basement__content, .basement__block .basement__col .log, .basement__block, .answer__block .answer__question {
+.basement__content, .basement__block .basement__col .logFooter .loginUser, .basement__block .basement__col .logFooter, .basement__block, .answer__block .answer__question {
   display: flex;
   flex-direction: row;
 }
@@ -41,8 +41,8 @@ body {
   flex-direction: column;
 }
 
-.basement__block .basement__col .log .login,
-.basement__block .basement__col .log .register {
+.basement__block .basement__col .logFooter .login,
+.basement__block .basement__col .logFooter .register {
   text-decoration: none;
   color: black;
   padding: calc( 0.0033482143 * 100vw + 3.5714285714px ) 20px;
@@ -147,18 +147,34 @@ body {
   margin: 0;
   font-size: calc( 0.004375 * 100vw + 11.6px );
 }
-.basement__block .basement__col .log .login,
-.basement__block .basement__col .log .register {
+.basement__block .basement__col .logFooter .login,
+.basement__block .basement__col .logFooter .register {
   background-color: white;
   border: none;
 }
-.basement__block .basement__col .log .register {
+.basement__block .basement__col .logFooter .register {
   background: #19103C;
   color: white;
   width: 60%;
 }
-.basement__block .basement__col .log .login {
+.basement__block .basement__col .logFooter .login {
   width: 40%;
+}
+.basement__block .basement__col .logFooter .loginUser {
+  display: flex;
+  margin: auto 0;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: calc( 0.00375 * 100vw + 14.8px );
+}
+.basement__block .basement__col .logFooter .loginUser p {
+  margin: auto 0;
+  width: 100%;
+}
+.basement__block .basement__col .logFooter .loginUser img {
+  margin: auto 10px 0 0;
+  border: 2px solid rgb(255, 255, 255);
+  width: 29%;
 }
 .basement__block .basement__col h3 {
   font-size: calc( 0.003125 * 100vw + 14px );

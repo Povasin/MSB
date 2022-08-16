@@ -12,9 +12,26 @@ const services__media = document.querySelector(".services__media")
 const search__modal = document.querySelector(".search__modal")
 const search__close = document.querySelector(".search__close")
 const services__sum = document.querySelectorAll(".services__sum")
-const bagMass = []
+const headerTop__log = document.querySelector(".headerTop__log")
+const logFooter = document.querySelector(".logFooter")
+const bagMass = [];
+const user = {};
+if (!JSON.parse(localStorage.getItem("user"))) {
+    localStorage.setItem("user", JSON.stringify(user))    
+}
 if (!JSON.parse(localStorage.getItem("bagMass"))) {
     localStorage.setItem("bagMass", JSON.stringify(bagMass))    
+}
+let jsonMass = JSON.parse(localStorage.getItem("user")) || {}
+if (jsonMass.name != undefined){
+    headerTop__log.innerHTML = `<a href="../user/user.html" class="loginUser"> <img src="../header/log.svg" alt="пользователь"><p>${jsonMass.name}</p></a></a>`
+    logFooter.innerHTML = `<a href="#" class="loginUser"> <img src="../footer/userWhite.png" alt="пользователь"><p>${jsonMass.name}</p></a></a>`
+} else{
+    headerTop__log.innerHTML = `<a href="../login/login.html" class="login">Войти</a>
+    <a href="../register/register.html" class="register">Зарегистрироваться</a>
+    <a href="../login/login.html" class="log"> <img src="../header/log.svg" alt="вход"><p>вход</p></a>`
+    logFooter.innerHTML = `    <a href="../login/login.html" class="login">Войти</a>
+    <a href="../register/register.html" class="register">Зарегистрироваться</a>x`
 }
 services__sum[1].innerText  = JSON.parse(localStorage.getItem("bagMass")).length
 services__sum[0].innerText  = JSON.parse(localStorage.getItem("bagMass")).length

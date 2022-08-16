@@ -7,10 +7,10 @@
     <meta name="theme-color" content="white">
     <!-- придумать описание страницы -->
     <meta name="description" content="придумать описание страницы">
-    <title>MSB бытовки прорабские</title>
+    <title>MSB Вход</title>
     <link rel="stylesheet" href="../general.css" media="all">
     <link rel="stylesheet" href="../header/header.css" media="all">
-    <link rel="stylesheet" href="../cubinsfordress/cubinsfordress.css" media="all" >
+    <link rel="stylesheet" href="./login.css" media="all" >
     <link rel="stylesheet" href="../footer/footer.css"media="all">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../iconPWA/logo192x192.svg">
@@ -84,87 +84,16 @@
         </div>
     </header>
     <main>   
-        <div class="transportation_wrapper">
-            <span><a href="../index.html">главная </a>/<a href="../katalog/katalog.html"> каталог</a>/<a href="./cubinsForwork.html"> бытовка прорабская</a></span>      
-            <div class="transportation">
-                <div class="transportation__block">
-                    <div class="slider-wrapper">
-                        <p class="prev"><</p>
-                        <div class="slider">
-                            <div class="slider-line">
-                                <img class="slider__img active" src="../main/cubinsForWork.webp" alt="перевозка бытовок">
-                                <img class="slider__img" src="../main/cubinsForWork.webp" alt="перевозка бытовок">
-                                <img class="slider__img" src="../main/cubinsForWork.webp" alt="перевозка бытовок">
-                                <img class="slider__img" src="../main/cubinsForWork.webp" alt="перевозка бытовок">
-                                <img class="slider__img" src="../main/cubinsForWork.webp" alt="перевозка бытовок">
-                            </div>
-                        </div>
-                        <p class="next active">></p>
-                    </div>
-                    <div class="transportation__img">
-                        <div class="star">★★★★☆</div>
-                        <img class="main__img"  src="../main/cubinsForWork.webp" alt="перевозка бытовок">
-                        <a href="../gallary/gallary.html" class="chooseMore">выбрать формат</a>
-                        <a href="../cubinsForwork/cubinsForwork.html" class="HrefForJs"></a>
-                    </div>
-                </div>
-                <div class="transportation__contant">
-                    <h1>Бытовка прорабская</h1>
-                    <p>вместимость: <span>8 человек</span></p>
-                    <p>Габариты: <span>6000х2400х2500 </span></p>
-                    <p>Внутренняя отделка: <span>ДВП, вагонка ПВХ</span></p>
-                    <p>Состояние:<span> Любое</span></p>
-                    <p class="transportation__all">Все характеристки</p>
-                    <div class="transportation__row">
-                        <p class="price">7500</p> 
-                        <p class="discount">8000</p>
-                    </div>
-                    <div class="fd-row">
-                        <div class="fd-row">
-                            <div class="quantity_inner">		
-                                <button class="bt_minus">-</button>
-                                <label class="fd-col">количество<input type="text" value="1" size="2" class="quantity" /></label>
-                                <button class="bt_plus">+</button>
-                            </div>
-                            <div class="quantity_inner">		
-                                <button class="bt_minusMonth">-</button>
-                                <label class="fd-col">месяцев<input type="text" value="1" size="2" class="quantity" /></label>
-                                <button class="bt_plusMonth">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="more">добавить услугу</button>
-                </div>
+        <div class="login">
+            <h1>Вход</h1>
+            <div class="login-row">
+                <input type="email"id="email"placeholder="эл.почта" maxlength="40" required>
+                <input type="password" id="password" placeholder="пароль" maxlength="16" required>
+                <p class="error"></p>
+                <button id="login">подтвердить</button>
+                <p class="account">Нет аккунта? <a href="../register/register.html">Зарегистрируйтесь</a></p>
             </div>
-            <div class="transportation__info">
-                <h2>О товаре</h2>
-                <h3>описание</h3>
-                <p>Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.</p>
-                <h3>Преимущества хранения и перевозки от нашей компании:</h3>
-                <ul>
-                    <li>быстрая установка;</li>
-                    <li>окно и двери герметизированы, утепление по всему периметру;</li>
-                    <li>усиленная конструкция;</li>
-                    <li>высокая мобильность;</li>
-                    <li>долговечность;</li>
-                    <li>удобство.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="furniture">
-            <div class="content">
-                <h2>выберети мебель и оборудывание</h2>
-                <p>для создание комплекта вам нужно выбрать мебель</p>
-                <div class="fd-row">
-                    <button class="prevFurniture">←</button>
-                    <button class="nextFurniture next__active">→</button>
-                </div>
-            </div>
-            <div class="slider">
-                <div class="furniture-line">
-                </div>
-            </div>
-        </div>
+        </div>  
     </main>
     <footer>
         <div class="pd-100">
@@ -219,8 +148,8 @@
                 <div class="basement__col">
                     <h3>Кстати нас уже 1249 человек!</h3>
                     <div class="logFooter">
-                        <a href="../login/login.html" class="login">Войти</a>
-                        <a href="../register/register.html" class="register">Зарегистрироваться</a>
+                        <a href="" class="login">Войти</a>
+                        <a href="" class="register">Зарегистрироваться</a>
                     </div>
                     <h3>Присоединяйся!</h3>
                 </div>
@@ -259,8 +188,7 @@
             </div>
         </div>
     </footer>
+    <script src="./login.js"></script>
     <script src="../main.js"></script>
-    <script src="../sliderForcubins.js"></script>
-    <script src="../furnitureMass.js"></script>
 </body>
 </html>

@@ -4,19 +4,16 @@ const password = document.getElementById("password")
 const passwordCheck = document.getElementById("passwordCheck")
 const email = document.getElementById('email')
 const nameReg = document.getElementById("nameReg")
+const phone = document.getElementById("phone")
 const accept = document.getElementById("accept")
-let user = {
-    name: '',
-    email: '',
-    password: '',
-}
 function saveUser() {
     if (passwordCheck.value == password.value && email.value.indexOf('@') > -1 && password.value != '' && password.value != '' && nameReg.value  != '' && accept.checked) {
         console.log(1);
-        user = {
+        jsonMass = {
             name: nameReg.value,
             email: email.value,
             password: password.value,
+            phone: phone.value
         }
         error.textContent = ""
         return true
@@ -24,12 +21,13 @@ function saveUser() {
         error.textContent = "Пароли не совпадают или не заполнены"
     } else  if (email.value.indexOf('@') == -1) {
         error.textContent = "Введите коректную эл.почту"
-    } else  if (nameReg.value  == '' || password.value == '' || email.value == '') {
+    } else  if (nameReg.value  == '' || password.value == '' || email.value == ''|| phone.value == '') {
         error.textContent = "Заполните поля"
     } else if (!accept.checked) {
         error.textContent = "Заполните этот флажок для успешной регистрации"
     } 
 }
+
 register.addEventListener("click", ()=>{
     if (saveUser()) {
         fetch('/api/addOrder', {
@@ -39,13 +37,12 @@ register.addEventListener("click", ()=>{
             },
             body: JSON.stringify({
                 data:{
-                    order: user
+                    order: jsonMass
                 }
             })
         })
-        console.log(user);
-        alert("вы успешно зарегестрировались!");
-
+        localStorage.setItem("user", JSON.stringify(jsonMass));
+        document.location.href = "../index.html";
     }
 
 })

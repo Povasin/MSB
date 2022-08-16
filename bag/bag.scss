@@ -169,23 +169,31 @@ main {
         .bag__price {
             width: 24%;
             @extend %d-col;
-
+            .accept{
+                font-weight: 500;
+                color: black;
+                font-size: calcFluid(12, 16, 800, 1920);
+                margin: 18px 0 0 0;
+            }
             .bag__promoCode {
+                @extend %d-row;
                 input {
                     font-size: calcFluid(12, 20, 800, 1920);
                     font-weight: 100;
                     padding: 7px;
                     outline: none;
                     border: 1px solid #58585e;
+                    margin: auto 10px auto 0;
                 }
 
-                button {
+                #acceptPromocode {
                     background-color: #19103C;
                     padding: 7px;
                     font-size: calcFluid(10, 20, 320, 1920);
                     color: white;
                     font-weight: 100;
                     border: none;
+                    cursor: pointer;
                 }
             }
             .input__price {
@@ -257,7 +265,7 @@ main {
 
             input[type="tel"],
             #adress,
-            #name {
+            #nameOrder {
                 margin: 10px auto 0 0;
                 padding: 5px 10px;
                 outline: none;

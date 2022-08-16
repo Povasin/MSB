@@ -5,24 +5,24 @@ const app  = express()
 const http = require('http').Server(app);
 app.use(express.static(path.resolve(__dirname, './')));
 app.use(express.json())
-var Datastore = require('nedb');
-var db_orders = new Datastore({filename : './server/orders'});
+const Datastore = require('nedb');
+const db_orders = new Datastore({filename : './server/orders'});
 db_orders.loadDatabase();
 app.get('/', (req, res) => {  
     res.sendFile(path.resolve(__dirname, './index.html')); //Когда на сервер делается запрос, index.html файл обслуживается.
 });
 app.post('/api/addOrder', function(request){  
-    db_orders.insert(request.body.data.order); //получаем обьект user
-});
-
-// не понял
-app.post('/api/findDates', function(request, response){
-    db_orders.find({fullDate: request.body.data.data}, function (err, docs) {
-        response.json(docs);
+    db_orders.find({email: request.body.data.order.email}, function (err, docs) {
         console.log(docs);
+        if (request.body.data.order.email != docs) {
+            db_orders.insert(request.body.data.order); //пушим обьект user
+        } 
+        else{
+            //ЧТО ДЕЛАТЬ
+        }
     });
+
 });
-// не понял
 app.get('/api/getFull', function(request, response){
     db_orders.find({}, function (err, docs) {
         response.json(docs);

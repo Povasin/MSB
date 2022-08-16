@@ -1,0 +1,69 @@
+@import "../general.scss";
+main{
+    @extend %main;
+}
+.main_fixed{
+    margin-top: 90px
+}
+.user{
+    padding: 0 calcFluid(8, 200, 320, 1920);
+    @extend %d-col;
+    .userContent{
+        box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+        @extend %d-row;
+        padding: 10px;
+        &__photo{
+            width: 30%;
+            border-radius: calcFluid(20, 71, 320, 1920);
+            background: #D9D9D9;
+        }
+        .userContent__col{
+            @extend %d-col;
+            margin: 0 0 auto 20px;
+            .userContent__name{
+                font-size: calcFluid(16, 25, 320, 1920);
+                font-weight: 900;
+            }
+            p{
+                font-size: calcFluid(12, 19, 320, 1920);
+            }
+            .rename{
+                @extend %more;
+                margin: auto auto 0 0;
+            }
+        }
+    }
+    .orders{
+        h1{
+            font-size: calcFluid(18, 30, 320, 1920);
+        }
+        @extend %d-col;
+        .order__clear{
+            text-align: center;
+            margin: auto;
+            h2, p{
+                text-align: center;
+             }
+             h2{
+                 font-size: calcFluid(17, 30, 320, 1920);
+             }
+             p{
+                 font-size: calcFluid(12, 18, 320, 1920);
+             }
+        }
+    }
+}
+@media(max-width: 730px) {
+    .user .userContent{
+    display: flex;
+    flex-direction: column;
+        .userContent__photo{
+            width: 100%;
+            height: 200px;
+        }
+        .userContent__col{
+            @extend %d-col;
+            margin: 0;
+        }
+    }
+}

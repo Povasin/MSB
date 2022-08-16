@@ -99,7 +99,7 @@ let cubinsItem ={
         active: false
     }
 
-let jsonMass = JSON.parse(localStorage.getItem("bagMass")) || []
+let jsonBagMass = JSON.parse(localStorage.getItem("bagMass")) || []
 JSON.parse(localStorage.getItem("bagMass")).forEach(item=>{
         if (cubinsItem.name == item.name) {
             cubinsItem.active = true
@@ -111,10 +111,10 @@ JSON.parse(localStorage.getItem("bagMass")).forEach(item=>{
 
 more.addEventListener("click", ()=>{
     if (!cubinsItem.active) {
-        jsonMass.push(cubinsItem)
-        services__sum[1].innerText  = jsonMass.length
-        services__sum[0].innerText  = jsonMass.length
-        localStorage.setItem("bagMass", JSON.stringify(jsonMass));
+        jsonBagMass.push(cubinsItem)
+        services__sum[1].innerText  = jsonBagMass.length
+        services__sum[0].innerText  = jsonBagMass.length
+        localStorage.setItem("bagMass", JSON.stringify(jsonBagMass));
         more.classList.add("moreActive")
         more.innerText = "услуга добавлена"
     }

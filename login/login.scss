@@ -5,7 +5,7 @@ main{
 .main_fixed{
     margin-top: 90px
 }
-.register{
+.login{
     padding: 0 calcFluid(8, 400, 320, 1920);
     @extend %d-col;
     h1{
@@ -22,26 +22,7 @@ main{
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
             font-size:calcFluid(13, 20, 320, 1920);
         }
-        label{
-            font-size:calcFluid(10, 16, 320, 1920);
-            margin: 20px 0;
-            input[type='checkbox'] {
-                margin: auto 10px auto 0;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                width: 1.5em;
-                height:1.5em;
-                border: 1px solid #adb5bd;
-                cursor: pointer;
-                vertical-align:bottom;
-                &:checked{
-                    background: $gradient;
-                    appearance: auto;
-                }
-            }
-        }
-        #register{
+        #login{
             @extend %more;
             margin:10px 0;
             text-align: center;

@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "Inter-Light";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../fonts/Inter/Inter-Light.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "Inter-Regular";
+  font-weight: 500;
+  src: url("../../fonts/Inter/Inter-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "Inter-Bold";
+  font-weight: 900;
+  src: url("../../fonts/Inter/Inter-Bold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter-Regular";
+}
+
+main {
+  padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
+}
+
+.user .userContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.user .orders, .user .userContent .userContent__col, .user, main {
+  display: flex;
+  flex-direction: column;
+}
+
+.user .userContent .userContent__col .rename {
+  padding: 10px calc( 0.0208333333 * 100vw + 3.3333333333px );
+  color: white;
+  font-size: calc( 0.003125 * 100vw + 14px );
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  text-decoration: none;
+  margin: 20px 0 auto auto;
+  border: none;
+  font-weight: 100;
+  transition: 0.3s;
+}
+.user .userContent .userContent__col .rename:hover {
+  transform: scale(1.02);
+}
+
+.main_fixed {
+  margin-top: 90px;
+}
+
+.user {
+  padding: 0 calc( 0.12 * 100vw + -30.4px );
+}
+.user .userContent {
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+}
+.user .userContent__photo {
+  width: 30%;
+  border-radius: calc( 0.031875 * 100vw + 9.8px );
+  background: #D9D9D9;
+}
+.user .userContent .userContent__col {
+  margin: 0 0 auto 20px;
+}
+.user .userContent .userContent__col .userContent__name {
+  font-size: calc( 0.005625 * 100vw + 14.2px );
+  font-weight: 900;
+}
+.user .userContent .userContent__col p {
+  font-size: calc( 0.004375 * 100vw + 10.6px );
+}
+.user .userContent .userContent__col .rename {
+  margin: auto auto 0 0;
+}
+.user .orders h1 {
+  font-size: calc( 0.0075 * 100vw + 15.6px );
+}
+.user .orders .order__clear {
+  text-align: center;
+  margin: auto;
+}
+.user .orders .order__clear h2, .user .orders .order__clear p {
+  text-align: center;
+}
+.user .orders .order__clear h2 {
+  font-size: calc( 0.008125 * 100vw + 14.4px );
+}
+.user .orders .order__clear p {
+  font-size: calc( 0.00375 * 100vw + 10.8px );
+}
+
+@media (max-width: 730px) {
+  .user .userContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .user .userContent .userContent__photo {
+    width: 100%;
+    height: 200px;
+  }
+  .user .userContent .userContent__col {
+    margin: 0;
+  }
+}/*# sourceMappingURL=user.css.map */
