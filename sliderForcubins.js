@@ -99,7 +99,6 @@ let cubinsItem ={
         active: false
     }
 
-let jsonBagMass = JSON.parse(localStorage.getItem("bagMass")) || []
 JSON.parse(localStorage.getItem("bagMass")).forEach(item=>{
         if (cubinsItem.name == item.name) {
             cubinsItem.active = true

@@ -7,13 +7,14 @@ const nameReg = document.getElementById("nameReg")
 const phone = document.getElementById("phone")
 const accept = document.getElementById("accept")
 function saveUser() {
-    if (passwordCheck.value == password.value && email.value.indexOf('@') > -1 && password.value != '' && password.value != '' && nameReg.value  != '' && accept.checked) {
-        console.log(1);
+    if (passwordCheck.value == password.value && email.value.indexOf('@') > -1 && password.value != '' && passwordCheck.value != '' && nameReg.value  != '' && accept.checked) {
         jsonMass = {
             name: nameReg.value,
             email: email.value,
             password: password.value,
-            phone: phone.value
+            phone: phone.value,
+            desired: jsonBagMass,
+            orderMass: []
         }
         error.textContent = ""
         return true
@@ -30,19 +31,34 @@ function saveUser() {
 
 register.addEventListener("click", ()=>{
     if (saveUser()) {
-        fetch('/api/addOrder', {
+        fetch('/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 data:{
-                    order: jsonMass
+                    order: jsonMass,
                 }
             })
-        })
-        localStorage.setItem("user", JSON.stringify(jsonMass));
-        document.location.href = "../index.html";
+        }) 
+        .then(res => res.json())
+        .then(res => {
+            if (res == "Пользователь с таким email уже существует"){
+                error.innerText = "Пользователь с таким email уже существует"
+            } else{
+                jsonMass ={
+                    name: res.name,
+                    email: res.email,
+                    phone: res.phone,
+                    orderMass: res.orderMass
+                }
+                jsonBagMass = res.desired   
+                localStorage.setItem("user", JSON.stringify(jsonMass));
+                localStorage.setItem("bagMass", JSON.stringify(jsonBagMass));
+                document.location.href = "../index.html";
+            } 
+        });
     }
 
 })

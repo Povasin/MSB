@@ -84,21 +84,22 @@
         </div>
     </header>
     <main>   
-        <div class="user">
+        <div class="userHtml">
             <div class="userContent">
                 <div class="userContent__photo"></div>
                 <div class="userContent__col">
                     <p class="userContent__name"></p>
                     <p>Номер телефона: <span class="userContent__phone"></span></p>
                     <p>Email: <span class="userContent__email"></span></p>
-                    <button class="rename">изменить</button>
+                    <div class="userContent__row">
+                        <button class="rename">изменить</button>
+                        <button class="exit">выйти</button>
+                    </div>
                 </div>
             </div>
             <div class="orders">
                 <h1>Заказы</h1>
-                <div class="order__clear">
-                    <h2>заказов пока нет</h2>
-                    <p>вернитесь на <a href="../index.html">главную страницу</a> и закажите что то</p>
+                <div id="orders__render">
                 </div>
             </div>
         </div>  
@@ -200,3 +201,4 @@
     <script async src="./user.js"></script>
 </body>
 </html>
+

@@ -87,7 +87,7 @@
         <div class="bag__wrapper">
             <span><a href="../index.html">главная </a>/<a href="./bag.html"> корзина</a></span>      
             <h1>Корзина товаров</h1>
-            <form  class="bag" method="post" action="send.php">
+            <div  class="bag">
                 <div class="bag__items"></div>
                 <div class="bag__price">
                     <div class="bag__promoCode">
@@ -106,14 +106,10 @@
                     <label class="delivery"><input type="checkbox" class="input__checkboxAdress" required>доставкa: <span id="delivery">договорная</span></label>
                     <input type="text" name="adress" id="adress" placeholder="укажите адресс" required>
                     <label class="self-call"><input type="checkbox" name="input__checkboxMap" class="input__checkboxMap" required>самовызов: <span id="self-call">0</span></label>
-                    <!-- <div id="map__yandex"><script type="text/javascript" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1de37163293f4e550481d9ca14ec396e5a467508c7cd738b2b7f8c1037132ff8&amp;width=100%25&amp;height=200&amp;lang=ru_RU&amp;scroll=true"></script></div> -->
-                    <div class="blockOrder">
-                        <input type="text" id="nameOrder" name="name" placeholder="Ваше имя" required>
-                        <input type="tel" id="phone" name="tel" placeholder="Номер телефона" required>
-                    </div>
+                    <p id="error"></p>
                     <button id="order">Оформить заказ</button>
                 </div>
-            </form>
+            </div>
         </div>  
     </main>
     <footer>

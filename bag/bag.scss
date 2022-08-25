@@ -274,20 +274,12 @@ main {
                 font-size: calcFluid(12, 18, 800, 1920);
                 font-weight: 100;
             }
-            #adress,
-            #map__yandex{
+            #adress{
                 display: none;
             }
             #order {
                 @extend %more;
                 margin: 10px auto auto 0;
-            }
-            #map__yandex{
-                margin: 10px 0 ;
-                width: 100%;
-            }
-            [class*="copyrights-pane"]{
-                display: none !important;
             }
         }
     }

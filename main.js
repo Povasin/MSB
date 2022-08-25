@@ -22,10 +22,11 @@ if (!JSON.parse(localStorage.getItem("user"))) {
 if (!JSON.parse(localStorage.getItem("bagMass"))) {
     localStorage.setItem("bagMass", JSON.stringify(bagMass))    
 }
+let jsonBagMass = JSON.parse(localStorage.getItem("bagMass")) || []
 let jsonMass = JSON.parse(localStorage.getItem("user")) || {}
 if (jsonMass.name != undefined){
-    headerTop__log.innerHTML = `<a href="../user/user.html" class="loginUser"> <img src="../header/log.svg" alt="пользователь"><p>${jsonMass.name}</p></a></a>`
-    logFooter.innerHTML = `<a href="#" class="loginUser"> <img src="../footer/userWhite.png" alt="пользователь"><p>${jsonMass.name}</p></a></a>`
+    headerTop__log.innerHTML = `<a href="../user/user.html" name="userName"class="loginUser"> <img src="../header/log.svg" alt="пользователь"><p>${jsonMass.name}</p></a></a>`
+    logFooter.innerHTML = `<a href="../user/user.html" name="userName" class="loginUser"> <img  src="../footer/userWhite.png" alt="пользователь"><p>${jsonMass.name}</p></a></a>`
 } else{
     headerTop__log.innerHTML = `<a href="../login/login.html" class="login">Войти</a>
     <a href="../register/register.html" class="register">Зарегистрироваться</a>

@@ -81,15 +81,14 @@ const cubinsMass = [
 ]
 katalogLine.addEventListener("click", (e)=>{
     if (e.target.className == "card__bag") {
-        const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
         cubinsMass.forEach((tasks) =>{
            if (tasks.name == e.target.dataset.id) {
                 e.target.classList.add("card__bagActive")
                 e.target.src = "../header/bag.svg"
-                JsonMass.push(tasks)
-                services__sum[1].innerText  = JsonMass.length
-                services__sum[0].innerText  = JsonMass.length
-                localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+                jsonBagMass.push(tasks)
+                services__sum[1].innerText  = jsonBagMass.length
+                services__sum[0].innerText  = jsonBagMass.length
+                localStorage.setItem("bagMass", JSON.stringify(jsonBagMass))
            }
        })
     }

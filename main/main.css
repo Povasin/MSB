@@ -25,6 +25,11 @@
   src: url("../../fonts/fouore/Furore.otf");
   font-display: swap;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -231,18 +236,6 @@ main .line {
 }
 .fd-row .slider .slides .slide__button .more {
   margin: auto 0;
-}
-.fd-row .slider .slides .slide__button a:nth-child(2) {
-  margin: auto 10px;
-  padding: 10px;
-  border: 1px solid;
-  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
-  border-image-slice: 1;
-}
-.fd-row .slider .slides .slide__button a:nth-child(2) .block {
-  border: 10px solid transparent;
-  border-left: 20px solid;
-  margin: auto 0 auto 10px;
 }
 .fd-row .slider .slides .slide__radius {
   margin: 20px 0 20px calc( 0.078125 * 100vw + -100px );

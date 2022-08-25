@@ -5,9 +5,207 @@ main{
 .main_fixed{
     margin-top: 90px
 }
-.user{
+.userHtml{
     padding: 0 calcFluid(8, 200, 320, 1920);
     @extend %d-col;
+    h2{font-size: calcFluid(14, 27, 320, 1920);}
+    .orders__info {
+        width: 100%;
+        @extend %d-col;
+        .input__price,
+        .input__delivery {
+            @extend %d-row;
+            margin: calcFluid(12, 20, 320, 1920) 0 10px 0;
+            font-size: calcFluid(15, 20, 320, 1920);
+            font-weight: 900;
+            p {margin: 10px 5px 0 0;}
+            #price {
+                font-size: calcFluid(17, 30, 320, 1920);
+                font-weight: 900;
+            }                
+        }
+        span {
+            margin: 0 0 0 auto !important;
+            font-size: calcFluid(13, 20, 320, 1920);
+            font-weight: 900;
+        }
+        .input__delivery {
+            margin: 0;
+        }
+        .input__discount{
+            margin: 10px 0 calcFluid(12, 20, 320, 1920) 0;
+            @extend %d-row;
+            font-weight: 900;
+            p {margin: 5px 5px 0 0;}
+            #discount {
+                font-size: calcFluid(13, 22, 320, 1920);
+                color: #f91155;
+            }
+        }
+        .orders__track{
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            @extend %d-col;
+            padding: calcFluid(10, 18, 320, 1920) calcFluid(10, 18, 320, 1920) calcFluid(20, 30, 320, 1920) calcFluid(10, 18, 320, 1920) ;
+            .orders__trackInfo{
+                @extend %d-row;
+                justify-content: center;
+                .orders__trackInfoCol{
+                    margin: 0 auto;
+                    @extend %d-col;
+                    p{  
+                        text-align: center;
+                        margin: 0;
+                        font-weight: 900;
+                        font-size: calcFluid(12, 20, 320, 1920);
+                    }
+                    .date{
+                        margin: 5px 0 25px 0;
+                        font-weight: 500;
+                        color: #58585e;
+                    }
+                }
+            }
+            .orders__trackRadius{
+                @extend %d-row;
+                position: relative;
+                .borderRadius1,
+                .borderRadius2,
+                .borderRadius3,
+                .borderRadius4{
+                    position: absolute;
+                    border-radius: 50%;
+                    background: gray;
+                    width: calcFluid(20, 42, 320, 1920);
+                    height: calcFluid(20, 42, 320, 1920);
+                    margin: 0 auto;
+                    top: calcFluid(-10, -20, 320, 1920);
+                }
+                .borderRadius1{
+                    left: calcFluid(20, 135, 320, 1920);
+                }
+                .borderRadius2{
+                    left: calcFluid(100, 465, 320, 1920);
+                }
+                .borderRadius3{
+                    left:  calcFluid(175, 795, 320, 1920);
+                }
+                .borderRadius4{
+                    left: calcFluid(250, 1108, 320, 1920);
+                }
+                .active{
+                    background:$gradient; 
+                }
+                .borderActive{
+                    border: 2px solid gray !important;
+                    border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4) !important;
+                    border-image-slice: 1 !important;
+                    background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                .border1,
+                .border2,
+                .border3{
+                    border: 2px solid gray;
+                    width: 100%;
+                }
+                .border1{
+                    margin: 0 0 0 calcFluid(20, 150, 320, 1920);
+                }
+                .border3{
+                    margin: 0 calcFluid(20, 150, 320, 1920) 0 0;
+                }
+            }
+        }
+        .writeToShop{
+            @extend %more;
+            margin:15px calcFluid(0, 220, 320, 1920) 0 calcFluid(0, 220, 320, 1920);
+        }
+    }
+    .bag__block {
+        margin: 10px 0;
+        @extend %d-row;
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+        padding: 10px;
+        text-decoration: none;
+        .block__img, 
+        .block__imgJS {
+            max-width: 30%;
+            margin: auto;
+            img {
+                max-width: 90%;
+            }
+        }
+        .block__imgJS{
+            max-width: 25%;
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .block__content {
+            position: relative;
+            margin: 0 0 0 10px;
+            width: 70%;
+            @extend %d-col;
+            color: black;
+            .rent {
+                color: #58585e;
+                font-weight: 500;
+                margin: 0 0 calcFluid(10, 20, 320, 1920) 0;
+                font-size: calcFluid(12, 18, 320, 1920);
+                span{
+                    color: black;
+                    font-weight: 1000;
+                }
+            }
+
+            .orderNumber {
+                text-decoration: none;
+                color: black;
+                font-size: calcFluid(12, 20, 320, 1920);
+                font-weight: 900;
+                margin: 10px 0;
+            }
+            .track{
+                @extend %more;
+                padding: calcFluid(2, 10, 320, 1920)  calcFluid(20, 45, 320, 1920);
+                margin: auto auto 0 0;
+            }
+            .block__inputRow{ @extend %d-row;}
+            .block__input{
+                @extend %d-col;
+                .fd-col{
+                    margin: 0;
+                    font-weight: 500;
+                    color: #58585e;
+                    font-size: calcFluid(10, 16, 320, 1920);
+                    span{
+                        font-size: calcFluid(12, 20, 320, 1920);
+                        color: black;
+                    }
+                }
+                .fd-col:nth-child(1){
+                    margin: auto 0 10px 0;
+                }
+            }
+            .block-col {
+                margin: auto 0 0 auto;
+
+                .block__price,
+                .block__discount {
+                    margin: 5px 0 0 0;
+                }
+
+                .block__discount {
+                    font-size: calcFluid(10, 18, 320, 1920);
+                    text-decoration: line-through;
+                    color: #58585e;
+                }
+            }
+        }
+    }
     .userContent{
         box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
         @extend %d-row;
@@ -18,6 +216,7 @@ main{
             background: #D9D9D9;
         }
         .userContent__col{
+            width: 70%;
             @extend %d-col;
             margin: 0 0 auto 20px;
             .userContent__name{
@@ -27,17 +226,31 @@ main{
             p{
                 font-size: calcFluid(12, 19, 320, 1920);
             }
-            .rename{
-                @extend %more;
-                margin: auto auto 0 0;
+            .userContent__row{
+                @extend %d-row;
+                .rename, 
+                .exit{
+                    @extend %more;
+                    margin: 0;
+                }
+                .exit{
+                    margin: auto  auto 0 10px;
+                    color: black;
+                    border: 1.5px solid;
+                    border-image-source:$gradient;
+                    border-image-slice:1;
+                    background:$gradient; 
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                }
             }
         }
     }
     .orders{
+        @extend %d-col;
         h1{
             font-size: calcFluid(18, 30, 320, 1920);
         }
-        @extend %d-col;
         .order__clear{
             text-align: center;
             margin: auto;
@@ -54,16 +267,33 @@ main{
     }
 }
 @media(max-width: 730px) {
-    .user .userContent{
-    display: flex;
-    flex-direction: column;
-        .userContent__photo{
-            width: 100%;
-            height: 200px;
+    .userHtml {
+        .userContent{
+            display: flex;
+            flex-direction: column;
+            .userContent__photo{
+                width: 100%;
+                height: 200px;
+            }
+            .userContent__col{
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                width: 100%;
+                .userContent__row{
+                    .rename{
+                        margin: 0 ;
+                    }
+                }
+            }
         }
-        .userContent__col{
-            @extend %d-col;
-            margin: 0;
+        .bag__block{
+            display: flex;
+            flex-direction: column;
+            .block__img, 
+            .block__imgJS {
+                max-width: 50%;
+            }
         }
     }
 }

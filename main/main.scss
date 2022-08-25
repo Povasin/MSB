@@ -58,18 +58,6 @@ main {
                         @extend %more;
                         margin: auto 0;
                     }
-                    a:nth-child(2) {
-                        margin: auto 10px;
-                        padding: 10px;
-                        border: 1px solid;
-                        border-image-source:$gradient;
-                        border-image-slice:1;
-                        .block{
-                            border: 10px solid transparent;
-                            border-left: 20px solid;
-                            margin: auto 0 auto 10px;
-                        }
-                    }
                 }
 
                 &__radius {

@@ -13,6 +13,10 @@ const blockOrder = document.querySelector(".blockOrder")
 const promocode = document.querySelector(".promocode")
 const accept = document.querySelector(".accept")
 const acceptPromocode = document.getElementById("acceptPromocode")
+const order = document.getElementById("order")
+const error = document.getElementById("error")
+const nameOrder =document.getElementById("nameOrder")
+const phone = document.getElementById("phone")
 function renderBag(mass) {
     bag__items.innerHTML = ''
     sum(mass);
@@ -107,8 +111,8 @@ bag__items.addEventListener("click", (e)=>{
 renderBag(JSON.parse(localStorage.getItem("bagMass")))
 input__checkboxAdress.addEventListener("click", ()=>{
     if (input__checkboxAdress.checked) {
+        console.log(1);
         adress.style.display = "flex"
-        map__yandex.style.display = "none"
         input__checkboxMap.checked = false
         input__checkboxMap.required = false
         input__checkboxAdress.required = true
@@ -119,14 +123,67 @@ input__checkboxAdress.addEventListener("click", ()=>{
 input__checkboxMap.addEventListener("click", ()=>{
     if (input__checkboxMap.checked) {
         adress.style.display = "none"
-        map__yandex.style.display = "flex"
         input__checkboxAdress.checked = false
         input__checkboxMap.required = true
         input__checkboxAdress.required = false
-    } else{
-        map__yandex.style.display = "none"
     }
 })
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+const orderObj = {
+    price: price.textContent,
+    discount: discount.textContent,
+    number: getRandomInt(10000000),
+    orderAccepted:false,
+    orderCollect:false,
+    orderGo:false,
+    orderReceived:false,
+    mainImg: jsonBagMass[0].img,
+    jsonBagMass
+}
+function saveOrderLogin() {
+    if (input__checkboxMap.checked && jsonBagMass != 0) {
+        orderObj.delivery = "самовызов"
+        jsonMass.orderMass.push(orderObj)
+        return true
+    } else if (input__checkboxAdress.checked && adress.value != ''  && jsonBagMass != 0) {
+        orderObj.delivery = adress.value
+        jsonMass.orderMass.push(orderObj)
+        return true
+    } else if (jsonBagMass == 0){
+        error.textContent = "ваша корзина пуста"
+    } else if (adress.value == '' || !input__checkboxAdress.checked || !input__checkboxMap.checked ) {
+        error.textContent = 'заполните даные о заказе'
+    }
+}
+order.addEventListener("click", ()=>{
+    if (jsonMass.name != undefined) {
+        if (saveOrderLogin()) {
+            fetch('/api/getFullOrderLogin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    data:{
+                        order: jsonMass,
+                    }
+                })
+            })
+            .then(res => res.json())
+            .then(res => {
+                    jsonBagMass = []
+                    localStorage.setItem("user", JSON.stringify(jsonMass));
+                    localStorage.setItem("bagMass", JSON.stringify(jsonBagMass));
+                    document.location.href = "../user/user.html";
+            })
+        }
+    } else if (jsonMass.name == undefined) {
+        error.textContent = "для успешной отправки заказа вам нужно зарегестроваться"
+     }
+})
+
 
 const bt_minus = document.querySelectorAll(".bt_minus")
 const bt_plus = document.querySelectorAll(".bt_plus")
@@ -165,6 +222,4 @@ bag__items.addEventListener("click", (e)=>{
         showBtnNext(e)
     }
 })
-if (jsonMass != {}) {
-    blockOrder.innerHTML = ``
-}
+

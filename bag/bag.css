@@ -25,6 +25,11 @@
   src: url("../../fonts/fouore/Furore.otf");
   font-display: swap;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -302,19 +307,11 @@ main {
   font-size: calc( 0.0053571429 * 100vw + 7.7142857143px );
   font-weight: 100;
 }
-.bag__wrapper .bag .bag__price #adress,
-.bag__wrapper .bag .bag__price #map__yandex {
+.bag__wrapper .bag .bag__price #adress {
   display: none;
 }
 .bag__wrapper .bag .bag__price #order {
   margin: 10px auto auto 0;
-}
-.bag__wrapper .bag .bag__price #map__yandex {
-  margin: 10px 0;
-  width: 100%;
-}
-.bag__wrapper .bag .bag__price [class*=copyrights-pane] {
-  display: none !important;
 }
 
 @media (max-width: 1060px) {
