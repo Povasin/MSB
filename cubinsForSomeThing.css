@@ -36,10 +36,6 @@ body {
   font-family: "Inter-Regular";
 }
 
-main {
-  padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
-}
-
 .furniture .fd-row, .furniture, .transportation_wrapper .transportation__contant .transportation__row, .transportation_wrapper .transportation__block, .transportation_wrapper .transportation, .furniture .card .furniture__CardActive, .furniture .card .card__sale, .furniture .slider .furniture-line, .transportation_wrapper .transportation__block .slider-wrapper .slider .furniture-line,
 .furniture .slider .katalog-line,
 .transportation_wrapper .transportation__block .slider-wrapper .slider .katalog-line,
@@ -49,7 +45,7 @@ main {
   flex-direction: row;
 }
 
-.transportation_wrapper .transportation__contant .quantity_inner .fd-col, .transportation_wrapper .transportation__contant, .transportation_wrapper .transportation__block .transportation__img, .transportation_wrapper .transportation__block .slider-wrapper .slider .slider-line, .transportation_wrapper .transportation__block .slider-wrapper .slider, .transportation_wrapper .transportation__block .slider-wrapper, .transportation_wrapper, .furniture .card, main {
+.transportation_wrapper .transportation__contant .quantity_inner .fd-col, .transportation_wrapper .transportation__contant, .transportation_wrapper .transportation__block .transportation__img, .transportation_wrapper .transportation__block .slider-wrapper .slider .slider-line, .transportation_wrapper .transportation__block .slider-wrapper .slider, .transportation_wrapper .transportation__block .slider-wrapper, .transportation_wrapper, .furniture .card {
   display: flex;
   flex-direction: column;
 }
@@ -115,6 +111,7 @@ main {
   margin: 0;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 .furniture .card .card__bag {
   cursor: pointer;
@@ -133,6 +130,7 @@ main {
   color: black;
 }
 .furniture .card .card__img {
+  cursor: pointer;
   width: 100%;
   margin: auto 0 0 0;
 }
@@ -142,6 +140,7 @@ main {
   font-weight: 900;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 .furniture .card .fd-row .star {
   font-size: calc( 0.0049180328 * 100vw + 10.5573770492px );
@@ -183,10 +182,6 @@ main {
   margin: auto 0 auto auto;
   color: white;
   font-size: calc( 0.00375 * 100vw + 8.8px );
-}
-
-.main_fixed {
-  margin-top: 90px;
 }
 
 .transportation_wrapper {
@@ -514,4 +509,4 @@ main {
   .transportation_wrapper .transportation .transportation__block .slider-wrapper .slider .slider-line .slider__img {
     width: 83%;
   }
-}/*# sourceMappingURL=cubinsfordress.css.map */
+}/*# sourceMappingURL=cubinsForSomeThing.css.map */

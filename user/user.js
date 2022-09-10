@@ -10,7 +10,6 @@ document.querySelector('.exit').addEventListener("click", ()=>{
 userContent__name.textContent = jsonMass.name
 userContent__phone.textContent = jsonMass.phone
 userContent__email.textContent = jsonMass.email
-console.log(jsonMass.email);
 if (jsonMass.orderMass !== 0) {
     fetch('/api/overwriteMass', {
         method: 'POST',
@@ -44,8 +43,8 @@ function render() {
             </div>
             <div class="block__content"> 
             <p class="orderNumber">закаказ № ${item.number}</p>
-            ${item.delivery == "самовызов" ? ` <p class="rent">можно забрать: ${item.date == undefined ? `<span>не указано продавцом</span>` : `<span>${item.date}</span>`}</p>`: `<p class="rent">срок доставки: ${item.date == undefined ? `<span>не указано продавцом</span>` : `<span>${item.date}</span>`}</p>` }
-                <a name="track" data-id="${item.number}" class="track" href="#">отслеживать заказ</a>
+            ${item.delivery == "самовызов" ? ` <p class="rent">можно забрать: ${item.date == undefined && !item.orderReceived ? `<span>не указано продавцом</span>`: item.orderReceived ? `<span>заказ получен</span>`: `<span>${item.date}</span>`}</p>`: `<p class="rent">срок доставки: ${item.date == undefined && !item.orderReceived? `<span>не указано продавцом</span>`: item.orderReceived ? `<span>заказ получен</span>`: `<span>${item.date}</span>`}</p>` }
+            ${!item.orderReceived ? `<a name="track" data-id="${item.number}" class="track" href="#">отслеживать заказ</a>` : `<a name="track" data-id="${item.number}" class="track active" href="#">история заказа</a>`}    
             </div>
         </div>`)
         });
@@ -53,7 +52,7 @@ function render() {
 }
 render()
 orders__render.addEventListener("click", (e)=>{
-    if (e.target.className == "track") {
+    if (e.target.className == "track" || e.target.className == 'track active') {
         jsonMass.orderMass.forEach(item =>{
             if (e.target.dataset.id == item.number) {
                 userHtml.innerHTML = `
@@ -67,7 +66,7 @@ orders__render.addEventListener("click", (e)=>{
                     <p>Без скидки:</p>
                     <span id="discount">${item.discount}</span>
                 </div>
-                ${item.delivery == "самовызов" ? ` <div class="input__delivery"><p>можно забрать:</p>${item.date == undefined ? `<span>не указано продавцом</span>` : `<span>${item.date}</span>`}</div>`: `<div class="input__delivery"><p>cрок доставки:S</p>${item.date == undefined ? `<span>не указано продавцом</span>` : `<span>${item.date}</span>`}</div>` }
+                ${item.delivery == "самовызов" ? ` <div class="input__delivery"><p>можно забрать:</p>${item.date == undefined ? `<span>не указано продавцом</span>` : `<span>${item.date}</span>`}</div>`: `<div class="input__delivery"><p>cрок доставки:</p>${item.date == undefined ? `<span>не указано продавцом</span>` : `<span>${item.date}</span>`}</div>` }
                 <h2>Отслеживание заказа</h2>
                 <div class="orders__track">
                     <div class="orders__trackInfo">
@@ -89,13 +88,13 @@ orders__render.addEventListener("click", (e)=>{
                         </div>
                     </div>
                     <div class="orders__trackRadius">
-                    ${!item.orderAccepted ? `<div class="borderRadius1"></div>` : `<div class="borderRadius1 active"></div>`}
+                    ${!item.orderAccepted ? `<div class="borderRadius1"></div>` : `<div class="borderRadius1 active"><img src="../admin/tick.svg" alt="галочка"></div>`}
                     ${!item.orderAccepted ? ` <div class="border1"></div>` : ` <div class="border1 borderActive"></div>`}
-                    ${!item.orderCollect ? ` <div class="borderRadius2"></div>` : ` <div class="borderRadius2 active"></div>`}
+                    ${!item.orderCollect ? ` <div class="borderRadius2"></div>` : ` <div class="borderRadius2 active"><img src="../admin/tick.svg" alt="галочка"></div>`}
                     ${!item.orderCollect ? ` <div class="border2"></div>` : ` <div class="border2 borderActive"></div>`}
-                    ${!item.orderGo ? ` <div class="borderRadius3"></div>` : ` <div class="borderRadius3 active"></div>`}
+                    ${!item.orderGo ? ` <div class="borderRadius3"></div>` : ` <div class="borderRadius3 active"><img src="../admin/tick.svg" alt="галочка"></div>`}
                     ${!item.orderGo ? ` <div class="border3"></div>` : ` <div class="border3 borderActive"></div>`}
-                    ${!item.orderReceived ? ` <div class="borderRadius4"></div>` : ` <div class="borderRadius4 active"></div>`}
+                    ${!item.orderReceived ? ` <div class="borderRadius4"></div>` : ` <div class="borderRadius4 active"><img src="../admin/tick.svg" alt="галочка"></div>`}
                     </div>
                     </div>
                     <button class="writeToShop">написать продавцу</button>
@@ -123,22 +122,3 @@ orders__render.addEventListener("click", (e)=>{
         })
     }
 })
-
-function sum (mass){
-    let s = 0;
-    mass.forEach(item=>{
-        s+= (item.inputkol*item.price)*item.inputMonth 
-    })
-    price.innerText = s + "₽"
-    selfCall.innerText = s + "₽"
-    if (promocode.value == "pivasin" && promocodeShow) {
-        accept.innerText = "промокод успешно применен"
-        price.innerText = s/ 100 * 90 + "₽"
-        selfCall.innerText = s / 100 * 90 + "₽"
-        return s / 100 * 90
-    }
-    else if(promocode.value != "pivasin" && promocodeShow){
-        accept.innerText = "такого промокода не существует"
-    }
-    return s
-}

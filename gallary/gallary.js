@@ -5,11 +5,11 @@ function render(mass, number) {
         gallary__item[number].insertAdjacentHTML("beforeend", ` <div class="card">
         <div class="fd-row">
             <p class="star">${item.star}</p>
-            <a href="${item.href}" class="card__arrow">→</a>
+            <p data-id="${item.name}" class="card__arrow">→</p>
         </div>
-        <a href="${item.href}"><img class="card__img" src="${item.img}" alt="${item.name}"></a>
+        <img class="card__img" data-id="${item.name}"src="${item.img}" alt="${item.name}">
         <p class="rent">Аренда</p>
-        <a href="${item.href}" class="info">${item.name}</a>         
+        <p data-id="${item.name}" class="info">${item.name}</p>   
         <div class="card__sale">
             <div class="fd-col">
                 <p class="discount">${item.discount}</p>
@@ -35,11 +35,17 @@ function add(e,mass) {
        })
     }
 }
-gallary__item[0].addEventListener("click", (e)=>add(e,cubinsForLive))
-gallary__item[1].addEventListener("click", (e)=>add(e,cubinsForWork))
-gallary__item[2].addEventListener("click", (e)=>add(e,cubinsForDress))
-gallary__item[3].addEventListener("click", (e)=>add(e,cubinsForbath))
-gallary__item[4].addEventListener("click", (e)=>add(e,cubinsForWareHouse))
+gallary__item[0].addEventListener("click", (e)=>{add(e,cubinsForLive)
+    mainInnerHTML(e, cubinsForLive)})
+gallary__item[1].addEventListener("click", (e)=>{add(e,cubinsForWork)
+    mainInnerHTML(e, cubinsForWork)})
+gallary__item[2].addEventListener("click", (e)=>{add(e,cubinsForDress)
+    mainInnerHTML(e, cubinsForDress)
+})
+gallary__item[3].addEventListener("click", (e)=>{add(e,cubinsForbath)
+    mainInnerHTML(e, cubinsForbath)})
+gallary__item[4].addEventListener("click", (e)=>{add(e,cubinsForWareHouse)
+    mainInnerHTML(e, cubinsForWareHouse)})
 function showACtive(mass) {
     mass.forEach((item)=>{
         JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{

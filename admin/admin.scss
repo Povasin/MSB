@@ -5,43 +5,112 @@ main{
 .main_fixed{
     margin-top: 90px
 }
-.userHtml{
-    padding: 0 calcFluid(8, 200, 320, 1920);
+.headerTop__fixed{
+    border-bottom: 1px solid $gray;
+    position: fixed;
+    width: calcFluid(300, 1500, 320, 1920);
+    padding:0 calcFluid(10, 300, 320, 1920);
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 10;
+}
+.search__modal{
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    .search__header{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        .search{
+            width: 80%;
+            margin: 20px;
+        }
+        img{
+            right: calcFluid(110, 180, 320, 1024);
+            top: 27px;
+        }
+        p{
+            margin: auto 20px auto 0px;
+            font-size: calcFluid(18, 20, 1024, 1920);
+        }
+    }
+    .search__block{
+        box-shadow: none;
+        position:static;
+        margin: 0 12px;
+        a{
+            font-size: calcFluid(17, 20, 1024, 1920);
+        }
+    }
+    @extend %search;
+
+}
+
+header {
+    padding: 20px calcFluid(0, 100, 1024, 1920);
     @extend %d-col;
-    h2{font-size: calcFluid(14, 27, 320, 1920);}
-    .orders__info {
-        width: 100%;
-        @extend %d-col;
-        .input__price,
-        .input__delivery {
+    .headerTop {
+        @extend %d-row;
+        padding: 0 calcFluid(5, 200, 320, 1920) calcFluid(8, 15, 320, 1920);
+        border-bottom: 1px solid $gray;
+        &__logo {
+            @extend %general__logo;
+            color: black;
+            margin: auto 0;
+        }
+        &__search {
             @extend %d-row;
-            margin: calcFluid(12, 20, 320, 1920) 0 10px 0;
-            font-size: calcFluid(15, 20, 320, 1920);
-            font-weight: 900;
-            p {margin: 10px 5px 0 0;}
-            #price {
-                font-size: calcFluid(17, 30, 320, 1920);
-                font-weight: 900;
-            }                
+            position: relative;
+            margin: auto calcFluid(10, 40, 320, 1920);
+            @extend %search;
+            .search{
+                padding: 10px calcFluid(10, 600, 320, 1920) 10px 4px;
+            }  
         }
-        span {
-            margin: 0 0 0 auto !important;
-            font-size: calcFluid(13, 20, 320, 1920);
-            font-weight: 900;
+        .search__media{
+            display: none;
         }
-        .input__delivery {
-            margin: 0;
-        }
-        .input__discount{
-            margin: 10px 0 calcFluid(12, 20, 320, 1920) 0;
+        &__log {
             @extend %d-row;
-            font-weight: 900;
-            p {margin: 5px 5px 0 0;}
-            #discount {
-                font-size: calcFluid(13, 22, 320, 1920);
-                color: #f91155;
+            margin-left: auto;
+            .login,
+            .register {
+                @extend %general__log;
+            }
+            .register {
+                border: 1px solid;
+                border-image-source:  $gradient;
+                border-image-slice: 1;
+                &:hover {
+                    background: $gradient;
+                    color: white;
+                }
+            }
+            .exit{
+                cursor: pointer;
+                font-size:calcFluid(13, 18, 320, 1920);
+                font-weight: 100;
+                color: black;
+                border: 1.5px solid;
+                border-image-source:$gradient;
+                border-image-slice:1;
+                background:$gradient; 
+                -webkit-background-clip: text;
+                background-clip: text;
             }
         }
+    }
+}
+.adminHtml{
+    .orders__trackObert{
+        display: none;
+        flex-direction: column;
         .orders__track{
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
             @extend %d-col;
@@ -72,6 +141,7 @@ main{
                 .borderRadius2,
                 .borderRadius3,
                 .borderRadius4{
+                    cursor: pointer;
                     position: absolute;
                     border-radius: 50%;
                     background: gray;
@@ -122,9 +192,47 @@ main{
                 }
             }
         }
-        .writeToShop{
-            @extend %more;
-            margin:15px calcFluid(0, 220, 320, 1920) 0 calcFluid(0, 220, 320, 1920);
+        .buton__row{
+            @extend %d-row;
+            .writeToShop{
+                @extend %more;
+                margin:15px 10px 40px 0;
+                width: 30%;
+            }
+            .saveChanges{
+                margin:15px 0 40px 0;
+                width: 70%;
+                cursor: pointer;
+                font-size:calcFluid(13, 18, 320, 1920);
+                font-weight: 100;
+                color: black;
+                border: 1.5px solid;
+                border-image-source:$gradient;
+                border-image-slice:1;
+                background:$gradient; 
+                -webkit-background-clip: text;
+                background-clip: text;
+            }
+        }
+    }
+    padding: 0 calcFluid(8, 200, 320, 1920);
+    .orders{
+        @extend %d-col;
+        h1{
+            font-size: calcFluid(18, 30, 320, 1920);
+        }
+        .order__clear{
+            text-align: center;
+            margin: auto;
+            h2, p{
+                text-align: center;
+             }
+             h2{
+                 font-size: calcFluid(17, 30, 320, 1920);
+             }
+             p{
+                 font-size: calcFluid(12, 18, 320, 1920);
+             }
         }
     }
     .bag__block {
@@ -154,6 +262,20 @@ main{
             width: 70%;
             @extend %d-col;
             color: black;
+            .block__orderNew,
+            .block__orderTrack,
+            .block__orderAccept {
+                right: 0;
+                top: -15px;
+                cursor: pointer;
+                font-size: calcFluid(15, 20, 320, 1920);
+                font-weight: 900;
+                color: #58585e;
+                position: absolute;
+            }
+            .block__orderNew{color: red;}
+            .block__orderTrack{color: gray;}
+            .block__orderAccept{color: green;}
             .rent {
                 color: #58585e;
                 font-weight: 500;
@@ -176,10 +298,11 @@ main{
                 @extend %more;
                 padding: calcFluid(2, 10, 320, 1920)  calcFluid(20, 45, 320, 1920);
                 margin: auto auto 0 0;
+                cursor: pointer;
             }
             .active{
-              background: gray;
-            }
+                background: gray;
+              }
             .block__inputRow{ @extend %d-row;}
             .block__input{
                 @extend %d-col;
@@ -213,80 +336,51 @@ main{
             }
         }
     }
-    .userContent{
-        box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
-        @extend %d-row;
-        padding: 10px;
-        &__photo{
-            width: 30%;
-            border-radius: calcFluid(20, 71, 320, 1920);
-            background: #D9D9D9;
-        }
-        .userContent__col{
-            width: 70%;
-            @extend %d-col;
-            margin: 0 0 auto 20px;
-            .userContent__name{
-                font-size: calcFluid(16, 25, 320, 1920);
-                font-weight: 900;
-            }
-            p{
-                font-size: calcFluid(12, 19, 320, 1920);
-            }
-            .exit{
-                @extend %more;
-                margin: auto  auto 0 0;
-            }
-        }
-    }
-    .orders{
+    .orders__info {
+        width: 100%;
         @extend %d-col;
-        h1{
-            font-size: calcFluid(18, 30, 320, 1920);
+        .input__price,
+        .input__delivery,
+        .input__deliveryDate {
+            @extend %d-row;
+            margin: calcFluid(12, 20, 320, 1920) 0 10px 0;
+            font-size: calcFluid(15, 20, 320, 1920);
+            font-weight: 900;
+            p {margin: 10px 5px 0 0;}
+            #price {
+                font-size: calcFluid(17, 30, 320, 1920);
+                font-weight: 900;
+            }                
         }
-        .order__clear{
-            text-align: center;
-            margin: auto;
-            h2, p{
-                text-align: center;
-             }
-             h2{
-                 font-size: calcFluid(17, 30, 320, 1920);
-             }
-             p{
-                 font-size: calcFluid(12, 18, 320, 1920);
-             }
+        span, input {
+            margin: 0 0 0 auto !important;
+            font-size: calcFluid(13, 20, 320, 1920);
+            font-weight: 900;
         }
-    }
-}
-@media(max-width: 730px) {
-    .userHtml {
-        .userContent{
-            display: flex;
-            flex-direction: column;
-            .userContent__photo{
-                width: 100%;
-                height: 200px;
-            }
-            .userContent__col{
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-                width: 100%;
-                .userContent__row{
-                    .rename{
-                        margin: 0 ;
-                    }
-                }
-            }
+        input{font-weight: 100;}
+        .input__delivery {
+            margin: 0;
         }
-        .bag__block{
-            display: flex;
-            flex-direction: column;
-            .block__img, 
-            .block__imgJS {
-                max-width: 50%;
+        .input__discount{
+            margin: 10px 0 calcFluid(12, 20, 320, 1920) 0;
+            @extend %d-row;
+            font-weight: 900;
+            p {margin: 5px 5px 0 0;}
+            #discount {
+                font-size: calcFluid(13, 22, 320, 1920);
+                color: #f91155;
             }
         }
     }
 }
+//TODO: сделать поиск заказов
+// @media(max-width: 680px){
+//     header .headerTop {
+//         .headerTop__search{
+//             display: none;
+//         }
+//         .search__media{
+//         display: flex;
+//         }
+//     }
+// }

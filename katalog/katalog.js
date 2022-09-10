@@ -11,6 +11,11 @@ const katalogName = document.querySelector(".katalog-name")
 const clear = document.getElementById("clear")
 const firstFilter = document.getElementById("firstFilter")
 const kolOnPage = document.getElementById("kolOnPage")
+const katalog__Checkbox0 = document.querySelector('.katalog__Checkbox0')
+const katalog__Checkbox1 = document.querySelector('.katalog__Checkbox1')
+const katalog__Checkbox2 = document.querySelector('.katalog__Checkbox2')
+const katalog__Checkbox3 = document.querySelector('.katalog__Checkbox3')
+const katalog__Checkbox4 = document.querySelector('.katalog__Checkbox4')
 document.querySelector(".filter__open").addEventListener("click", () => { katalog__filter.style.right = 0 + "%" })
 document.querySelector(".filter__close").addEventListener("click", () => { katalog__filter.style.right = -90 + "%" })
 let minGap = 0;
@@ -50,16 +55,39 @@ const nameChecked ={
 function showMass(e,mass) {
     if (e.target.className == "katalog__Checkbox" ) {
         mass[e.target.value]=e.target.checked
+        if (!allCheckboxFalse(nameChecked)) {
+            if (nameChecked["Бытовки раздевалки"]) {renderKatalog(cubinsForDress)}
+            if (nameChecked["Бытовки для проживания"]) {renderKatalog(cubinsForLive)}
+            if (nameChecked["Бытовки c душем"]) {renderKatalog(cubinsForbath)}
+            if (nameChecked["Бытовки под склад"]) {renderKatalog(cubinsForWareHouse)}
+            if (nameChecked["Бытовки прорабские"]) {renderKatalog(cubinsForWork)}
+        } else{
+            renderKatalog(cubinsMass)
+        }
+    } else if (e.target.className == "katalog__Checkbox0" || e.target.className == "katalog__Checkbox1" || e.target.className == "katalog__Checkbox2"||e.target.className == "katalog__Checkbox3" ||e.target.className == "katalog__Checkbox4") {
+        mass[e.target.value]=e.target.checked
+      
+        if (!allCheckboxFalse(nameChecked) &&  e.target.checked) {
+            katalog__Checkbox0.checked = false
+            katalog__Checkbox1.checked = false
+            katalog__Checkbox2.checked = false
+            katalog__Checkbox3.checked = false
+            katalog__Checkbox4.checked = false
+            for (const key in nameChecked) {nameChecked[key] = false}
+            e.target.checked = true
+            mass[e.target.value]=e.target.checked
+            if (nameChecked["Бытовки раздевалки"]) {renderKatalog(cubinsForDress)}
+            if (nameChecked["Бытовки для проживания"]) {renderKatalog(cubinsForLive)}
+            if (nameChecked["Бытовки c душем"]) {renderKatalog(cubinsForbath)}
+            if (nameChecked["Бытовки под склад"]) {renderKatalog(cubinsForWareHouse)}
+            if (nameChecked["Бытовки прорабские"]) {renderKatalog(cubinsForWork)}
+        } else if (!e.target.checked) {
+            for (const key in nameChecked) {nameChecked[key] = false}
+            renderKatalog(cubinsMass)
+        }
     }
-    if (!allCheckboxFalse(nameChecked)) {
-        if (nameChecked["Бытовки раздевалки"]) {renderKatalog(cubinsForDress)}
-        if (nameChecked["Бытовки для проживания"]) {renderKatalog(cubinsForLive)}
-        if (nameChecked["Бытовки c душем"]) {renderKatalog(cubinsForbath)}
-        if (nameChecked["Бытовки под склад"]) {renderKatalog(cubinsForWareHouse)}
-        if (nameChecked["Бытовки прорабские"]) {renderKatalog(cubinsForWork)}
-    } else{
-        renderKatalog(cubinsMass)
-    }
+   
+   
 }
 katalogName.addEventListener("click", (e)=>showMass(e,nameChecked))
 katalogStar.addEventListener("click", (e)=>showMass(e,starsChecked))
@@ -79,11 +107,11 @@ function renderKatalog(mass) {
         katalogLine.insertAdjacentHTML("beforeend", `  <div class="card">
         <div class="fd-row">
             <p class="star">${item.star}</p>
-            <a href="${item.href}" class="card__arrow">→</a>
+            <p data-id="${item.name}" class="card__arrow">→</p>
         </div>
-        <a href="${item.href}"><img class="card__img" src="${item.img}" alt="${item.name}"></a>
+        <img class="card__img" data-id="${item.name}"src="${item.img}" alt="${item.name}">
         <p class="rent">Аренда</p>
-        <a href="${item.href}" class="info">${item.name}</a>         
+        <p data-id="${item.name}" class="info">${item.name}</p>         
         <div class="card__sale">
             <div class="fd-col">
                 <p class="discount">${item.discount}</p>
@@ -96,6 +124,19 @@ function renderKatalog(mass) {
     kolOnPage.innerText = filterMass.length
 }
 renderKatalog(cubinsMass)
+katalogLine.addEventListener('click', (e)=>{
+    if (e.target.className == "info" || e.target.className == 'card__img'|| e.target.className == 'card__arrow') {
+        if (!allCheckboxFalse(nameChecked)) {
+            if (nameChecked["Бытовки раздевалки"]) {mainInnerHTML(e, cubinsForDress)}
+            if (nameChecked["Бытовки для проживания"]) {mainInnerHTML(e, cubinsForLive)}
+            if (nameChecked["Бытовки c душем"]) {mainInnerHTML(e, cubinsForbath)}
+            if (nameChecked["Бытовки под склад"]) {mainInnerHTML(e, cubinsForWareHouse)}
+            if (nameChecked["Бытовки прорабские"]) {mainInnerHTML(e, cubinsForWork)}
+        } else{
+            mainInnerHTML(e,cubinsMass)
+        }
+    }
+})
 clear.addEventListener("click", ()=>{
     katalog__price[0].value = 1000
     katalog__price[1].value = 10000
@@ -181,29 +222,47 @@ function filter(mass) {
     })
 }
 
-firstFilter.addEventListener("click", () => {
+function extraFirstFilter (mass) {
     if (firstFilter.value == "cheap") {
-        cubinsMass.sort(function (a, b) {
+        mass.sort(function (a, b) {
             return a.price - b.price;
         });
     }
     if (firstFilter.value == "expencive") {
-        cubinsMass.sort(function (a, b) {
+        mass.sort(function (a, b) {
             return b.price - a.price;
         });
     }
     if (firstFilter.value == "popular") {
-        cubinsMass.sort(function (a, b) {
+        mass.sort(function (a, b) {
             return a.content - b.content;
         });
     }
+} 
+firstFilter.addEventListener("click", () => {
     if (!allCheckboxFalse(nameChecked)) {
-        if (nameChecked["Бытовки раздевалки"]) {renderKatalog(cubinsForDress)}
-        if (nameChecked["Бытовки для проживания"]) {renderKatalog(cubinsForLive)}
-        if (nameChecked["Бытовки c душем"]) {renderKatalog(cubinsForbath)}
-        if (nameChecked["Бытовки под склад"]) {renderKatalog(cubinsForWareHouse)}
-        if (nameChecked["Бытовки прорабские"]) {renderKatalog(cubinsForWork)}
+        if (nameChecked["Бытовки раздевалки"]) {
+            extraFirstFilter (cubinsForDress)
+            renderKatalog(cubinsForDress)
+        }
+        if (nameChecked["Бытовки для проживания"]) {
+            extraFirstFilter (cubinsForLive)
+            renderKatalog(cubinsForLive) 
+            }
+        if (nameChecked["Бытовки c душем"]) {
+            extraFirstFilter (cubinsForbath)
+            renderKatalog(cubinsForbath)
+        }
+        if (nameChecked["Бытовки под склад"]) {
+         extraFirstFilter (cubinsForWareHouse)
+         renderKatalog(cubinsForWareHouse)
+        }
+        if (nameChecked["Бытовки прорабские"]) {
+         extraFirstFilter (cubinsForWork)
+         renderKatalog(cubinsForWork)
+        }
     } else{
+        extraFirstFilter (cubinsMass)
         renderKatalog(cubinsMass)
     }
 })

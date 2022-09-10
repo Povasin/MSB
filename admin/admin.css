@@ -1,0 +1,490 @@
+@font-face {
+  font-family: "Inter-Light";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../fonts/Inter/Inter-Light.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "Inter-Regular";
+  font-weight: 500;
+  src: url("../../fonts/Inter/Inter-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "Inter-Bold";
+  font-weight: 900;
+  src: url("../../fonts/Inter/Inter-Bold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-family: "fouore";
+  src: url("../../fonts/fouore/Furore.otf");
+  font-display: swap;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter-Regular";
+}
+
+main {
+  padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
+}
+
+.adminHtml .orders__info .input__discount, .adminHtml .orders__info .input__price,
+.adminHtml .orders__info .input__delivery,
+.adminHtml .orders__info .input__deliveryDate, .adminHtml .bag__block .block__content .block__inputRow, .adminHtml .bag__block, .adminHtml .orders__trackObert .buton__row, .adminHtml .orders__trackObert .orders__track .orders__trackRadius, .adminHtml .orders__trackObert .orders__track .orders__trackInfo, header .headerTop__log, header .headerTop__search, header .headerTop {
+  display: flex;
+  flex-direction: row;
+}
+
+.adminHtml .orders__info, .adminHtml .bag__block .block__content .block__input, .adminHtml .bag__block .block__content, .adminHtml .orders, .adminHtml .orders__trackObert .orders__track .orders__trackInfo .orders__trackInfoCol, .adminHtml .orders__trackObert .orders__track, header, header .headerTop__search .search__block, .search__modal .search__block, header .headerTop__logo, main {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminHtml .bag__block .block__content .track, .adminHtml .orders__trackObert .buton__row .writeToShop {
+  padding: 10px calc( 0.0208333333 * 100vw + 3.3333333333px );
+  color: white;
+  font-size: calc( 0.003125 * 100vw + 14px );
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  text-decoration: none;
+  margin: 20px 0 auto auto;
+  border: none;
+  font-weight: 100;
+  transition: 0.3s;
+}
+.adminHtml .bag__block .block__content .track:hover, .adminHtml .orders__trackObert .buton__row .writeToShop:hover {
+  transform: scale(1.02);
+}
+
+header .headerTop__log .login,
+header .headerTop__log .register {
+  text-decoration: none;
+  color: black;
+  padding: calc( 0.0033482143 * 100vw + 3.5714285714px ) 20px;
+  font-size: calc( 0.003125 * 100vw + 14px );
+  text-align: center;
+  border: 1px solid black;
+  font-weight: 500;
+  margin: auto 4px;
+  transition: 0.4s;
+}
+
+header .headerTop__logo {
+  text-decoration: none;
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #5134c4;
+  font-family: "fouore";
+  font-size: calc( 0.00625 * 100vw + 28px );
+}
+
+header .headerTop__search .search, .search__modal .search {
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border: none;
+  padding: 10px calc( 0.0446428571 * 100vw + -35.7142857143px ) 10px 4px;
+  background-color: white;
+  color: #6d6d6d;
+  font-weight: 100;
+  font-size: 20px;
+  outline: none;
+  width: calc( 0.1116071429 * 100vw + 85.7142857143px );
+}
+header .headerTop__search .search__block, .search__modal .search__block {
+  display: none;
+  z-index: 20;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+}
+header .headerTop__search .search__block a, .search__modal .search__block a {
+  text-decoration: none;
+  color: black;
+  font-size: calc( 0.0022321429 * 100vw + 10.7142857143px );
+  padding: 7px 10px;
+  font-weight: 100;
+  background-color: white;
+}
+header .headerTop__search .search__block a:hover, .search__modal .search__block a:hover {
+  background-color: #eeeeee;
+}
+header .headerTop__search img, .search__modal img {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.main_fixed {
+  margin-top: 90px;
+}
+
+.headerTop__fixed {
+  border-bottom: 1px solid #ececec;
+  position: fixed;
+  width: calc( 0.75 * 100vw + 60px );
+  padding: 0 calc( 0.18125 * 100vw + -48px );
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+.search__modal {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+}
+.search__modal .search__header {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.search__modal .search__header .search {
+  width: 80%;
+  margin: 20px;
+}
+.search__modal .search__header img {
+  right: calc( 0.0994318182 * 100vw + 78.1818181818px );
+  top: 27px;
+}
+.search__modal .search__header p {
+  margin: auto 20px auto 0px;
+  font-size: calc( 0.0022321429 * 100vw + 15.7142857143px );
+}
+.search__modal .search__block {
+  box-shadow: none;
+  position: static;
+  margin: 0 12px;
+}
+.search__modal .search__block a {
+  font-size: calc( 0.0033482143 * 100vw + 13.5714285714px );
+}
+
+header {
+  padding: 20px calc( 0.1116071429 * 100vw + -114.2857142857px );
+}
+header .headerTop {
+  padding: 0 calc( 0.121875 * 100vw + -34px ) calc( 0.004375 * 100vw + 6.6px );
+  border-bottom: 1px solid #ececec;
+}
+header .headerTop__logo {
+  color: black;
+  margin: auto 0;
+}
+header .headerTop__search {
+  position: relative;
+  margin: auto calc( 0.01875 * 100vw + 4px );
+}
+header .headerTop__search .search {
+  padding: 10px calc( 0.36875 * 100vw + -108px ) 10px 4px;
+}
+header .headerTop .search__media {
+  display: none;
+}
+header .headerTop__log {
+  margin-left: auto;
+}
+header .headerTop__log .register {
+  border: 1px solid;
+  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  border-image-slice: 1;
+}
+header .headerTop__log .register:hover {
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  color: white;
+}
+header .headerTop__log .exit {
+  cursor: pointer;
+  font-size: calc( 0.003125 * 100vw + 12px );
+  font-weight: 100;
+  color: black;
+  border: 1.5px solid;
+  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  border-image-slice: 1;
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.adminHtml {
+  padding: 0 calc( 0.12 * 100vw + -30.4px );
+}
+.adminHtml .orders__trackObert {
+  display: none;
+  flex-direction: column;
+}
+.adminHtml .orders__trackObert .orders__track {
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  padding: calc( 0.005 * 100vw + 8.4px ) calc( 0.005 * 100vw + 8.4px ) calc( 0.00625 * 100vw + 18px ) calc( 0.005 * 100vw + 8.4px );
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackInfo {
+  justify-content: center;
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackInfo .orders__trackInfoCol {
+  margin: 0 auto;
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackInfo .orders__trackInfoCol p {
+  text-align: center;
+  margin: 0;
+  font-weight: 900;
+  font-size: calc( 0.005 * 100vw + 10.4px );
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackInfo .orders__trackInfoCol .date {
+  margin: 5px 0 25px 0;
+  font-weight: 500;
+  color: #58585e;
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius {
+  position: relative;
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius1,
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius2,
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius3,
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius4 {
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  background: gray;
+  width: calc( 0.01375 * 100vw + 15.6px );
+  height: calc( 0.01375 * 100vw + 15.6px );
+  margin: 0 auto;
+  top: calc( -0.00625 * 100vw + -8px );
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius1 img,
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius2 img,
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius3 img,
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius4 img {
+  margin: calc( 0.0025 * 100vw + 3.2px );
+  width: 60%;
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius1 {
+  left: calc( 0.071875 * 100vw + -3px );
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius2 {
+  left: calc( 0.228125 * 100vw + 27px );
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius3 {
+  left: calc( 0.3875 * 100vw + 51px );
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderRadius4 {
+  left: calc( 0.53625 * 100vw + 78.4px );
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .active {
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .borderActive {
+  border: 2px solid gray !important;
+  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4) !important;
+  border-image-slice: 1 !important;
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .border1,
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .border2,
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .border3 {
+  border: 2px solid gray;
+  width: 100%;
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .border1 {
+  margin: 0 0 0 calc( 0.08125 * 100vw + -6px );
+}
+.adminHtml .orders__trackObert .orders__track .orders__trackRadius .border3 {
+  margin: 0 calc( 0.08125 * 100vw + -6px ) 0 0;
+}
+.adminHtml .orders__trackObert .buton__row .writeToShop {
+  margin: 15px 10px 40px 0;
+  width: 30%;
+}
+.adminHtml .orders__trackObert .buton__row .saveChanges {
+  margin: 15px 0 40px 0;
+  width: 70%;
+  cursor: pointer;
+  font-size: calc( 0.003125 * 100vw + 12px );
+  font-weight: 100;
+  color: black;
+  border: 1.5px solid;
+  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  border-image-slice: 1;
+  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.adminHtml .orders h1 {
+  font-size: calc( 0.0075 * 100vw + 15.6px );
+}
+.adminHtml .orders .order__clear {
+  text-align: center;
+  margin: auto;
+}
+.adminHtml .orders .order__clear h2, .adminHtml .orders .order__clear p {
+  text-align: center;
+}
+.adminHtml .orders .order__clear h2 {
+  font-size: calc( 0.008125 * 100vw + 14.4px );
+}
+.adminHtml .orders .order__clear p {
+  font-size: calc( 0.00375 * 100vw + 10.8px );
+}
+.adminHtml .bag__block {
+  margin: 10px 0;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  text-decoration: none;
+}
+.adminHtml .bag__block .block__img,
+.adminHtml .bag__block .block__imgJS {
+  max-width: 30%;
+  margin: auto;
+}
+.adminHtml .bag__block .block__img img,
+.adminHtml .bag__block .block__imgJS img {
+  max-width: 90%;
+}
+.adminHtml .bag__block .block__imgJS {
+  max-width: 25%;
+}
+.adminHtml .bag__block .block__imgJS img {
+  max-width: 100%;
+}
+.adminHtml .bag__block .block__content {
+  position: relative;
+  margin: 0 0 0 10px;
+  width: 70%;
+  color: black;
+}
+.adminHtml .bag__block .block__content .block__orderNew,
+.adminHtml .bag__block .block__content .block__orderTrack,
+.adminHtml .bag__block .block__content .block__orderAccept {
+  right: 0;
+  top: -15px;
+  cursor: pointer;
+  font-size: calc( 0.003125 * 100vw + 14px );
+  font-weight: 900;
+  color: #58585e;
+  position: absolute;
+}
+.adminHtml .bag__block .block__content .block__orderNew {
+  color: red;
+}
+.adminHtml .bag__block .block__content .block__orderTrack {
+  color: gray;
+}
+.adminHtml .bag__block .block__content .block__orderAccept {
+  color: green;
+}
+.adminHtml .bag__block .block__content .rent {
+  color: #58585e;
+  font-weight: 500;
+  margin: 0 0 calc( 0.00625 * 100vw + 8px ) 0;
+  font-size: calc( 0.00375 * 100vw + 10.8px );
+}
+.adminHtml .bag__block .block__content .rent span {
+  color: black;
+  font-weight: 1000;
+}
+.adminHtml .bag__block .block__content .orderNumber {
+  text-decoration: none;
+  color: black;
+  font-size: calc( 0.005 * 100vw + 10.4px );
+  font-weight: 900;
+  margin: 10px 0;
+}
+.adminHtml .bag__block .block__content .track {
+  padding: calc( 0.005 * 100vw + 0.4px ) calc( 0.015625 * 100vw + 15px );
+  margin: auto auto 0 0;
+  cursor: pointer;
+}
+.adminHtml .bag__block .block__content .active {
+  background: gray;
+}
+.adminHtml .bag__block .block__content .block__input .fd-col {
+  margin: 0;
+  font-weight: 500;
+  color: #58585e;
+  font-size: calc( 0.00375 * 100vw + 8.8px );
+}
+.adminHtml .bag__block .block__content .block__input .fd-col span {
+  font-size: calc( 0.005 * 100vw + 10.4px );
+  color: black;
+}
+.adminHtml .bag__block .block__content .block__input .fd-col:nth-child(1) {
+  margin: auto 0 10px 0;
+}
+.adminHtml .bag__block .block__content .block-col {
+  margin: auto 0 0 auto;
+}
+.adminHtml .bag__block .block__content .block-col .block__price,
+.adminHtml .bag__block .block__content .block-col .block__discount {
+  margin: 5px 0 0 0;
+}
+.adminHtml .bag__block .block__content .block-col .block__discount {
+  font-size: calc( 0.005 * 100vw + 8.4px );
+  text-decoration: line-through;
+  color: #58585e;
+}
+.adminHtml .orders__info {
+  width: 100%;
+}
+.adminHtml .orders__info .input__price,
+.adminHtml .orders__info .input__delivery,
+.adminHtml .orders__info .input__deliveryDate {
+  margin: calc( 0.005 * 100vw + 10.4px ) 0 10px 0;
+  font-size: calc( 0.003125 * 100vw + 14px );
+  font-weight: 900;
+}
+.adminHtml .orders__info .input__price p,
+.adminHtml .orders__info .input__delivery p,
+.adminHtml .orders__info .input__deliveryDate p {
+  margin: 10px 5px 0 0;
+}
+.adminHtml .orders__info .input__price #price,
+.adminHtml .orders__info .input__delivery #price,
+.adminHtml .orders__info .input__deliveryDate #price {
+  font-size: calc( 0.008125 * 100vw + 14.4px );
+  font-weight: 900;
+}
+.adminHtml .orders__info span, .adminHtml .orders__info input {
+  margin: 0 0 0 auto !important;
+  font-size: calc( 0.004375 * 100vw + 11.6px );
+  font-weight: 900;
+}
+.adminHtml .orders__info input {
+  font-weight: 100;
+}
+.adminHtml .orders__info .input__delivery {
+  margin: 0;
+}
+.adminHtml .orders__info .input__discount {
+  margin: 10px 0 calc( 0.005 * 100vw + 10.4px ) 0;
+  font-weight: 900;
+}
+.adminHtml .orders__info .input__discount p {
+  margin: 5px 5px 0 0;
+}
+.adminHtml .orders__info .input__discount #discount {
+  font-size: calc( 0.005625 * 100vw + 11.2px );
+  color: #f91155;
+}/*# sourceMappingURL=admin.css.map */

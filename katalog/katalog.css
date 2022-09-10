@@ -87,6 +87,7 @@ main {
   margin: 0;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 .katalog-row .katalog-line .card .card__bag {
   cursor: pointer;
@@ -105,6 +106,7 @@ main {
   color: black;
 }
 .katalog-row .katalog-line .card .card__img {
+  cursor: pointer;
   width: 100%;
   margin: auto 0 0 0;
 }
@@ -114,6 +116,7 @@ main {
   font-weight: 900;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 .katalog-row .katalog-line .card .fd-row .star {
   font-size: calc( 0.0049180328 * 100vw + 10.5573770492px );

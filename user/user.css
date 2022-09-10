@@ -40,7 +40,7 @@ main {
   padding: 0 calc( 0.1116071429 * 100vw + -114.2857142857px );
 }
 
-.userHtml .userContent .userContent__col .userContent__row, .userHtml .userContent, .userHtml .bag__block .block__content .block__inputRow, .userHtml .bag__block, .userHtml .orders__info .orders__track .orders__trackRadius, .userHtml .orders__info .orders__track .orders__trackInfo, .userHtml .orders__info .input__discount, .userHtml .orders__info .input__price,
+.userHtml .userContent, .userHtml .bag__block .block__content .block__inputRow, .userHtml .bag__block, .userHtml .orders__info .orders__track .orders__trackRadius, .userHtml .orders__info .orders__track .orders__trackInfo, .userHtml .orders__info .input__discount, .userHtml .orders__info .input__price,
 .userHtml .orders__info .input__delivery {
   display: flex;
   flex-direction: row;
@@ -51,8 +51,7 @@ main {
   flex-direction: column;
 }
 
-.userHtml .userContent .userContent__col .userContent__row .rename,
-.userHtml .userContent .userContent__col .userContent__row .exit, .userHtml .bag__block .block__content .track, .userHtml .orders__info .writeToShop {
+.userHtml .userContent .userContent__col .exit, .userHtml .bag__block .block__content .track, .userHtml .orders__info .writeToShop {
   padding: 10px calc( 0.0208333333 * 100vw + 3.3333333333px );
   color: white;
   font-size: calc( 0.003125 * 100vw + 14px );
@@ -63,8 +62,7 @@ main {
   font-weight: 100;
   transition: 0.3s;
 }
-.userHtml .userContent .userContent__col .userContent__row .rename:hover,
-.userHtml .userContent .userContent__col .userContent__row .exit:hover, .userHtml .bag__block .block__content .track:hover, .userHtml .orders__info .writeToShop:hover {
+.userHtml .userContent .userContent__col .exit:hover, .userHtml .bag__block .block__content .track:hover, .userHtml .orders__info .writeToShop:hover {
   transform: scale(1.02);
 }
 
@@ -150,6 +148,13 @@ main {
   height: calc( 0.01375 * 100vw + 15.6px );
   margin: 0 auto;
   top: calc( -0.00625 * 100vw + -8px );
+}
+.userHtml .orders__info .orders__track .orders__trackRadius .borderRadius1 img,
+.userHtml .orders__info .orders__track .orders__trackRadius .borderRadius2 img,
+.userHtml .orders__info .orders__track .orders__trackRadius .borderRadius3 img,
+.userHtml .orders__info .orders__track .orders__trackRadius .borderRadius4 img {
+  margin: calc( 0.0025 * 100vw + 3.2px );
+  width: 60%;
 }
 .userHtml .orders__info .orders__track .orders__trackRadius .borderRadius1 {
   left: calc( 0.071875 * 100vw + -3px );
@@ -238,6 +243,9 @@ main {
   padding: calc( 0.005 * 100vw + 0.4px ) calc( 0.015625 * 100vw + 15px );
   margin: auto auto 0 0;
 }
+.userHtml .bag__block .block__content .active {
+  background: gray;
+}
 .userHtml .bag__block .block__content .block__input .fd-col {
   margin: 0;
   font-weight: 500;
@@ -283,19 +291,8 @@ main {
 .userHtml .userContent .userContent__col p {
   font-size: calc( 0.004375 * 100vw + 10.6px );
 }
-.userHtml .userContent .userContent__col .userContent__row .rename,
-.userHtml .userContent .userContent__col .userContent__row .exit {
-  margin: 0;
-}
-.userHtml .userContent .userContent__col .userContent__row .exit {
-  margin: auto auto 0 10px;
-  color: black;
-  border: 1.5px solid;
-  border-image-source: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
-  border-image-slice: 1;
-  background: linear-gradient(90deg, #5134c4, #773cbc, #b856d4);
-  -webkit-background-clip: text;
-  background-clip: text;
+.userHtml .userContent .userContent__col .exit {
+  margin: auto auto 0 0;
 }
 .userHtml .orders h1 {
   font-size: calc( 0.0075 * 100vw + 15.6px );

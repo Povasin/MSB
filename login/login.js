@@ -19,7 +19,7 @@ function saveUser() {
 }
 
 login.addEventListener("click", ()=>{
-    if (saveUser()) {
+    if (saveUser() && email.value != 'AdminMSB@gmail.com') {
         fetch('/api/login', {
             method: 'POST',
             headers: {
@@ -48,6 +48,35 @@ login.addEventListener("click", ()=>{
                 localStorage.setItem("user", JSON.stringify(jsonMass));
                 localStorage.setItem("bagMass", JSON.stringify(jsonBagMass));
                 document.location.href = "../index.html";
+            }
+
+        })
+    } else if (email.value == 'AdminMSB@gmail.com') {
+        fetch('/api/adminLogin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                data:{
+                    order: {
+                    password:password.value,
+                    email: email.value
+                    }
+                }
+            })
+        })
+        .then(res => res.json())
+        .then(res => {
+        if (res == "Введен неверный пароль") {
+                error.innerText = "Введен неверный пароль"
+            } else {
+                localStorage.clear()
+                jsonMass ={
+                    email: res
+                } 
+                localStorage.setItem("user", JSON.stringify(jsonMass));
+                document.location.href = "../admin/admin.html";
             }
 
         })

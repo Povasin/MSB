@@ -1,10 +1,4 @@
-@import "../general.scss";
-main{
-    @extend %main;
-}
-.main_fixed{
-    margin-top: 90px
-}
+@import "./general.scss";
 
 .transportation_wrapper{
     .line{
@@ -358,4 +352,3 @@ main{
         }
     }
 }
-

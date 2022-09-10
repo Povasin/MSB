@@ -34,6 +34,9 @@ if (jsonMass.name != undefined){
     logFooter.innerHTML = `    <a href="../login/login.html" class="login">Войти</a>
     <a href="../register/register.html" class="register">Зарегистрироваться</a>x`
 }
+if (jsonMass.email == 'AdminMSB@gmail.com') {
+    document.location.href = "../admin/admin.html";
+}
 services__sum[1].innerText  = JSON.parse(localStorage.getItem("bagMass")).length
 services__sum[0].innerText  = JSON.parse(localStorage.getItem("bagMass")).length
 sidebar__open.addEventListener("click",()=>{ sidebar.style.right = 0 + "%"})

@@ -16,7 +16,6 @@ app.post('/api/register', function(request, response){
     const {email, password, name, phone, desired, orderMass} = request.body.data.order;
     users.findOne({email: email}, function(err, doc) { 
         if (doc) {
-            console.log(doc);
             return response.status(400).json("Пользователь с таким email уже существует")
         } else{
             const hashPassword = bcrypt.hashSync(password, 7);
@@ -40,30 +39,57 @@ app.post('/api/login', (request, response)=>{
         }
     }); 
 })
+app.post('/api/adminLogin', (request, response)=>{
+    const {email, password} = request.body.data.order;
+    users.findOne({email: email},function(err, doc) { 
+        if (doc) {
+            const validPassword = bcrypt.compareSync(password, doc.password)
+            if (!validPassword) {
+                return response.status(400).json(`Введен неверный пароль`)
+            } else{
+                response.json(doc.email)
+            }
+        }
+    }); 
+})
 app.post('/api/getFullOrderLogin', (request, response)=>{
     const {email,orderMass } = request.body.data.order;
     users.findOne({email: email},function(err, doc) { 
         if (doc) {
             doc.orderMass = orderMass 
-            console.log(doc);
             response.json({doc})
             users.update({email: email}, {email: email, password: doc.password, name: doc.name, phone: doc.phone, desired: [], orderMass: orderMass}, {});
             users.loadDatabase();
         }
     }); 
 })
-app.post('/api/overwriteMass', (request, response)=>{
-    users.findOne({email:request.body.data.order},function(err, doc) { 
+app.post('/api/getFullOrderLoginAdmin', (request, response)=>{
+    users.findOne({email: request.body.data.email},function(err, doc) { 
         if (doc) {
-            console.log(doc);
+            response.json('ok')
+            users.update({email: request.body.data.email}, {email: request.body.data.email, password: doc.password, name: doc.name, phone: doc.phone, desired: doc.desired, orderMass: request.body.data.order}, {});
+            users.loadDatabase();
+        }
+    }); 
+})
+app.post('/api/overwriteMassAdmin', (request, response)=>{
+    users.find({},function(err, doc) { 
+        if (doc) {
             response.json({doc})
         }
     }); 
 })
+app.post('/api/overwriteMass', (request, response)=>{
+    users.findOne({email:request.body.data.order},function(err, doc) { 
+        if (doc) {
+            response.json({doc})
+        }
+    }); 
+})
+
 app.get('/api/getFull', function(request, response){
     users.find({}, function (err, docs) {
         response.json(docs);
-        console.log(docs);
     });
 });
 const start = async ()=>{
