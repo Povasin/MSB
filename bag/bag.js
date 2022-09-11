@@ -29,23 +29,21 @@ function renderBag(mass) {
     } else{
         mass.forEach(item => {
             bag__items.insertAdjacentHTML("afterbegin", `<div class="bag__block">
-            <a href="${item.href}" class="block__img">
-                <img src="${item.img}" alt="${item.name}">
-            </a>
+                <img src="${item.img}"data-id="${item.name}" class="block__img"alt="${item.name}">
             <div class="block__content">
                 <p class="block__close" data-id="${item.name}">x</p>
                 <p class="rent">Аренда</p>
-                <a name="NameOrder" href="${item.href}"> ${item.name}</a>
+                <p class="info"data-id="${item.name}">${item.name}</p>
                 <div class="block__input">
                     <div class="quantity_inner">		
-                        <div class="bt_minus">-</div>
-                        <label class="fd-col">количество<input type="text" name="kolOrder"  data-id="${item.inputkol}" value="${item.inputkol}" size="2" class="quantity"/></label>
-                        <div class="bt_plus">+</div>
+                        <p data-id="${item.name}" class="bt_minus">-</p>
+                        <label class="fd-col">количество<p class="quantity">${item.inputkol}</p></label>
+                        <p class="bt_plus" data-id="${item.name}">+</p>
                     </div>
                     <div class="quantity_inner">		
-                        <div class="bt_minusMonth">-</div>
-                        <label class="fd-col">месяцев<input type="text" name="monthOrder" data-id="${item.inputMonth}" value="${item.inputMonth}" size="2" class="quantity" /></label>
-                        <div class="bt_plusMonth">+</div>
+                        <p data-id="${item.name}" class="bt_minusMonth">-</p>
+                        <label class="fd-col">месяцев<p class="quantity">${item.inputMonth}</p></label>
+                        <p data-id="${item.name}" class="bt_plusMonth">+</p>
                     </div>
                     <div class="block-col">
                         <p class="block__discount">${(item.inputkol*item.discount)*item.inputMonth}</p>
@@ -184,42 +182,25 @@ order.addEventListener("click", ()=>{
      }
 })
 
-
-const bt_minus = document.querySelectorAll(".bt_minus")
-const bt_plus = document.querySelectorAll(".bt_plus")
-function showBtnPrev(e) {
-    const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
-    JsonMass.forEach((tasks) =>{
-        // TODO: e.target.dataset.id undefind
-        console.log(e.target.dataset.id);
-        if (tasks.inputkol == e.target.dataset.id) {
-            e.target.dataset.id.value = +e.target.dataset.id.value - 1 < 1 ? 1 : +e.target.dataset.id.value - 1
-            localStorage.setItem("bagMass", JSON.stringify(JsonMass))
-            renderBag(JSON.parse(localStorage.getItem("bagMass")))
-        }
-    })
-}
-function showBtnNext(e) {
-    const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
-    JsonMass.forEach((tasks) =>{
-        if (tasks.inputkol == e.target.dataset.id) {
-            e.target.dataset.id.value = +e.target.dataset.id.value + 1
-            localStorage.setItem("bagMass", JSON.stringify(JsonMass))
-            renderBag(JSON.parse(localStorage.getItem("bagMass")))
-        }
-    })
-}
-
 bag__items.addEventListener("click", (e)=>{
-    if (e.target.className =="bt_minus") {
-        showBtnPrev(e)
-    } else if (e.target.className =="bt_plus"){
-        showBtnNext(e)
-    }    
-    if (e.target.className =="bt_minusMonth") {
-        showBtnPrev(e)
-    } else if (e.target.className =="bt_plusMonth"){
-        showBtnNext(e)
+    if (e.target.className == "bt_plus" || e.target.className == "bt_plusMonth" ) {
+        const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
+        JsonMass.forEach((tasks) =>{
+            if (tasks.name == e.target.dataset.id) { 
+                e.target.className == "bt_plusMonth" ? tasks.inputMonth += 1 : tasks.inputkol += 1
+                localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+                renderBag(JSON.parse(localStorage.getItem("bagMass")))
+            }
+        })
+    } else if (e.target.className == "bt_minus" || e.target.className == "bt_minusMonth") {
+        const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
+        JsonMass.forEach((tasks) =>{
+            if (tasks.name == e.target.dataset.id) { 
+                console.log(1);
+                e.target.className == "bt_minusMonth" ? tasks.inputMonth = +tasks.inputMonth - 1 < 1 ? 1 : +tasks.inputMonth - 1 : tasks.inputkol = +tasks.inputkol - 1 < 1 ? 1 : +tasks.inputkol - 1
+                localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+                renderBag(JSON.parse(localStorage.getItem("bagMass")))
+            }
+        })
     }
 })
-

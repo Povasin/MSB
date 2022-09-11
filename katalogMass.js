@@ -98,25 +98,42 @@ const cubinsMass = [
         text: 'Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.'
     },          
 ]
-katalogLine.addEventListener("click", (e)=>{
-    if (e.target.className == "card__bag") {
-        cubinsMass.forEach((tasks) =>{
-           if (tasks.name == e.target.dataset.id) {
-                e.target.classList.add("card__bagActive")
-                e.target.src = "../header/bag.svg"
-                jsonBagMass.push(tasks)
-                services__sum[1].innerText  = jsonBagMass.length
-                services__sum[0].innerText  = jsonBagMass.length
-                localStorage.setItem("bagMass", JSON.stringify(jsonBagMass))
-           }
-       })
-    }
-})
-
-cubinsMass.forEach((item)=>{
-    JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{
-        if (item.name == bagItem.name) {
-            item.active = true
+function add(e,mass) {
+    mass.forEach((tasks) =>{
+        if (tasks.name == e.target.dataset.id) {
+             e.target.classList.add("card__bagActive")
+             e.target.src = "../header/bag.svg"
+             jsonBagMass.push(tasks)
+             services__sum[1].innerText  = jsonBagMass.length
+             services__sum[0].innerText  = jsonBagMass.length
+             localStorage.setItem("bagMass", JSON.stringify(jsonBagMass))
         }
     })
+}
+katalogLine.addEventListener("click", (e)=>{
+    if (e.target.className == "card__bag") {
+        add(e,cubinsForDress)
+        add(e,cubinsMass)
+        add(e,cubinsForLive)
+        add(e,cubinsForbath)
+        add(e,cubinsForWareHouse)
+        add(e,cubinsForWareHouse)
+    }
 })
+function showACtive(mass) {
+    mass.forEach((item)=>{
+        JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{
+            if (item.name == bagItem.name) {
+                item.active = true
+            }
+        })
+    })
+}
+
+showACtive(cubinsForLive)
+showACtive(cubinsForWork)
+showACtive(cubinsForDress)
+showACtive(cubinsForbath)
+showACtive(cubinsForWareHouse)
+showACtive(cubinsMass)
+

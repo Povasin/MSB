@@ -1,5 +1,4 @@
 <?php
-require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 $mail->isSMTP();                                      // Set mailer to use SMTP

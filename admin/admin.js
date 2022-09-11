@@ -120,7 +120,9 @@ orders__render.addEventListener("click", function showtrack(e){
                         ${itemOrderMass.delivery != "самовызов" ? `<div class="input__deliveryDate"><p>дата доставки:</p>${itemOrderMass.date == undefined ? `<input type="date" class='input__date'>` : `<span>${itemOrderMass.date}</span>`}</div>` : ''}
                     </div>`
                     orders__trackObert.style.display = 'flex'
-                    document.querySelector('.input__date').addEventListener("input", ()=>{itemOrderMass.date = document.querySelector('.input__date').value})
+                    if ( document.querySelector('.input__date') != null) {
+                        document.querySelector('.input__date').addEventListener("input", ()=>{itemOrderMass.date = document.querySelector('.input__date').value})
+                    }
                     if (!itemOrderMass.orderAccepted) {
                         borderRadius1.addEventListener('click',()=>{
                             if (!itemOrderMass.orderAccepted) {
@@ -235,33 +237,3 @@ orders__render.addEventListener("click", function showtrack(e){
         })
     }
 })
-
-{/* <div class="orders__track">
-<div class="orders__trackInfo">
-    <div class="orders__trackInfoCol">
-        <p>заказ принят</p>
-        ${!itemOrderMass.orderAccepted ? `<p class="date">x</p>` : `<p class="date">${itemOrderMass.orderAccepted}</p>`}
-    </div>
-    <div class="orders__trackInfoCol">
-        <p>заказ собирается</p>
-        ${!itemOrderMass.orderCollect ? `<p class="date">x</p>` : `<p class="date">${itemOrderMass.orderCollect}</p>`}
-    </div>
-    <div class="orders__trackInfoCol">
-        <p>заказ в пути</p>
-        ${!itemOrderMass.orderGo ? `<p class="date">x</p>` : `<p class="date">${itemOrderMass.orderGo}</p>`}
-    </div>
-    <div class="orders__trackInfoCol">
-        <p>заказ получен</p>
-        ${!itemOrderMass.orderReceived ? `<p class="date">x</p>` : `<p class="date">${itemOrderMass.orderReceived}</p>`}
-    </div>
-</div>
-<div class="orders__trackRadius">
-${!itemOrderMass.orderAccepted ? `<div class="borderRadius1"></div>` : `<div class="borderRadius1 active"></div>`}
-${!itemOrderMass.orderAccepted ? ` <div class="border1"></div>` : ` <div class="border1 borderActive"></div>`}
-${!itemOrderMass.orderCollect ? ` <div class="borderRadius2"></div>` : ` <div class="borderRadius2 active"></div>`}
-${!itemOrderMass.orderCollect ? ` <div class="border2"></div>` : ` <div class="border2 borderActive"></div>`}
-${!itemOrderMass.orderGo ? ` <div class="borderRadius3"></div>` : ` <div class="borderRadius3 active"></div>`}
-${!itemOrderMass.orderGo ? ` <div class="border3"></div>` : ` <div class="border3 borderActive"></div>`}
-${!itemOrderMass.orderReceived ? ` <div class="borderRadius4"></div>` : ` <div class="borderRadius4 active"></div>`}
-</div>
-</div> */}

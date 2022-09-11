@@ -98,4 +98,3 @@ services__media.addEventListener("click", ()=>{
 search__close.addEventListener("click",()=>{
     search__modal.style.display = "none"
 })
-
