@@ -35,17 +35,34 @@ function add(e,mass) {
        })
     }
 }
-gallary__item[0].addEventListener("click", (e)=>{add(e,cubinsForLive)
-    mainInnerHTML(e, cubinsForLive)})
-gallary__item[1].addEventListener("click", (e)=>{add(e,cubinsForWork)
-    mainInnerHTML(e, cubinsForWork)})
-gallary__item[2].addEventListener("click", (e)=>{add(e,cubinsForDress)
-    mainInnerHTML(e, cubinsForDress)
+gallary__item[0].addEventListener("click", (e)=>{ 
+    if (e.target.className == "info" || e.target.className == 'card__img'|| e.target.className == 'card__arrow') {
+        mainInnerHTML(e, cubinsForLive)
+    } 
+    if (e.target.className == "card__bag") {
+        add(e,cubinsForLive)
+    }
+   })
+gallary__item[1].addEventListener("click", (e)=>{  
+    if (e.target.className == "info" || e.target.className == 'card__img'|| e.target.className == 'card__arrow') {
+        mainInnerHTML(e, cubinsForWork)
+    }
+    if (e.target.className == "card__bag") {
+        add(e,cubinsForWork)
+    }
 })
-gallary__item[3].addEventListener("click", (e)=>{add(e,cubinsForbath)
-    mainInnerHTML(e, cubinsForbath)})
-gallary__item[4].addEventListener("click", (e)=>{add(e,cubinsForWareHouse)
-    mainInnerHTML(e, cubinsForWareHouse)})
+gallary__item[2].addEventListener("click", (e)=>{  if (e.target.className == "info" || e.target.className == 'card__img'|| e.target.className == 'card__arrow') {
+    mainInnerHTML(e, cubinsForDress)}if (e.target.className == "card__bag") {add(e,cubinsForDress)}})
+gallary__item[3].addEventListener("click", (e)=>{ 
+    if (e.target.className == "info" || e.target.className == 'card__img'|| e.target.className == 'card__arrow') {
+        mainInnerHTML(e, cubinsForbath)
+    }
+    if (e.target.className == "card__bag") {
+        add(e,cubinsForbath)
+    }
+})
+gallary__item[4].addEventListener("click", (e)=>{  if (e.target.className == "info" || e.target.className == 'card__img'|| e.target.className == 'card__arrow') {
+    mainInnerHTML(e, cubinsForWareHouse)}if (e.target.className == "card__bag") {add(e,cubinsForWareHouse)}})
 function showACtive(mass) {
     mass.forEach((item)=>{
         JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{

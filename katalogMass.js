@@ -1,7 +1,6 @@
 const katalogLine = document.querySelector(".katalog-line")
 const cubinsMass = [
     {
-        href: "../cubinsfordress/cubinsfordress.html",
         img: "../main/cubinsForDress.webp",
         name: "Бытовка раздевалка",
         discount: 9000,
@@ -17,7 +16,6 @@ const cubinsMass = [
         text: 'Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.'
     },
     {
-        href: "../cubinsForlive/cubinsForlive.html",
         img: "../main/cubinsForLive.webp",
         name: "Бытовка для проживания",
         discount: 9000,
@@ -33,7 +31,6 @@ const cubinsMass = [
         text: 'Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.'
     },
     {
-        href: "../cubinsForbath/cubinsForbath.html",
         img: "../main/cubinsForBath.webp",
         name: "Бытовка c душем",
         discount: 9000,
@@ -49,7 +46,6 @@ const cubinsMass = [
         text: 'Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.'
     },
     {
-        href: "../cubinsForwork/cubinsForwork.html",
         img: "../main/cubinsForWork.webp",
         name: "Бытовки прорабские",
         discount: 10000,
@@ -65,7 +61,6 @@ const cubinsMass = [
         text: 'Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.'
     },
     {
-        href: "../cubinsForwarehouse/cubinsForwarehouse.html",
         img: "../main/cubinsForwareHouse.webp",
         name: "Бытовка под склад",
         discount: 10000,
@@ -82,7 +77,6 @@ const cubinsMass = [
         
     },
     {
-        href: "../cubinsfordress/cubinsfordress.html",
         img: "../main/cubinsForDress.webp",
         name: "Бытовка пост охраны",
         discount: 9000,
@@ -112,8 +106,8 @@ function add(e,mass) {
 }
 katalogLine.addEventListener("click", (e)=>{
     if (e.target.className == "card__bag") {
-        add(e,cubinsForDress)
         add(e,cubinsMass)
+        add(e,cubinsForDress)
         add(e,cubinsForLive)
         add(e,cubinsForbath)
         add(e,cubinsForWareHouse)
@@ -129,7 +123,11 @@ function showACtive(mass) {
         })
     })
 }
-
+katalogLine.addEventListener('click', (e)=>{
+    if (e.target.className == "info" || e.target.className == 'card__img'|| e.target.className == 'card__arrow') {
+        mainInnerHTML(e,cubinsMass)
+    }
+})
 showACtive(cubinsForLive)
 showACtive(cubinsForWork)
 showACtive(cubinsForDress)

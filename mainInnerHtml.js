@@ -1,4 +1,5 @@
 function mainInnerHTML(e, mass) {
+    window.scrollTo(window.pageYOffset, 0)
     mass.forEach(item=>{
         if (e.target.dataset.id == item.name) {
             main.innerHTML = `        <div class="transportation_wrapper">
@@ -20,12 +21,12 @@ function mainInnerHTML(e, mass) {
                     </div>
                     <div class="transportation__img">
                         <div class="star">★★★★☆</div>
-                        <img class="main__img"  src="${item.img}" alt="бытовка с душем">
+                        <img class="main__img"  src="${item.img}" alt="${item.img}">
                         <a href="../gallary/gallary.html" class="chooseMore">выбрать формат</a>
                     </div>
                 </div>
                 <div class="transportation__contant">
-                    <h1>Бытовка с тамбуром</h1>
+                    <h1>${item.name}</h1>
                     <p>вместимость: <span>${item.content} человек</span></p>
                     <p>Габариты: <span>${item.size}</span></p>
                     <p>Внутренняя отделка: <span>${item.finishing}</span></p>
@@ -39,12 +40,12 @@ function mainInnerHTML(e, mass) {
                         <div class="fd-row">
                             <div class="quantity_inner">		
                                 <button class="bt_minus">-</button>
-                                <label class="fd-col">количество<input type="text" value="1" size="2" class="quantity" /></label>
+                                <label class="fd-col">количество<input type="text" value=${item.inputkol} size="2" class="quantity" /></label>
                                 <button class="bt_plus">+</button>
                             </div>
                             <div class="quantity_inner">		
                                 <button class="bt_minusMonth">-</button>
-                                <label class="fd-col">месяцев<input type="text" value="1" size="2" class="quantity" /></label>
+                                <label class="fd-col">месяцев<input type="text" value=${item.inputMonth} size="2" class="quantity" /></label>
                                 <button class="bt_plusMonth">+</button>
                             </div>
                         </div>
@@ -321,11 +322,11 @@ function mainInnerHTML(e, mass) {
 
     function bt_minusFunc(number) {
         input[number].value = +input[number].value - 1 < 1 ? 1 : +input[number].value - 1;
-        number == 0 ?  cubinsItem.inputkol = input[number].value : cubinsItem.inputMonth = input[number].value
+        number == 0 ?  cubinsItem.inputkol = +input[number].value : cubinsItem.inputMonth = +input[number].value
     }
     function bt_plusFunc(number) {
         input[number].value = +input[number].value + 1;
-        number == 0 ?  cubinsItem.inputkol = input[number].value : cubinsItem.inputMonth = input[number].value
+        number == 0 ?  cubinsItem.inputkol = +input[number].value : cubinsItem.inputMonth = +input[number].value
     }
     bt_minus.addEventListener("click", ()=>bt_minusFunc(0))
     bt_plus.addEventListener("click", ()=>bt_plusFunc(0))
@@ -337,7 +338,7 @@ function mainInnerHTML(e, mass) {
             if (cubinsItem.name == item.name) {
                 cubinsItem.active = true
                 more.classList.add("moreActive")
-                more.innerText = "услуга добавлена"
+                more.innerText = "товар добавлен"
             }
     })
 
@@ -349,7 +350,7 @@ function mainInnerHTML(e, mass) {
             services__sum[0].innerText  = jsonBagMass.length
             localStorage.setItem("bagMass", JSON.stringify(jsonBagMass));
             more.classList.add("moreActive")
-            more.innerText = "услуга добавлена"
+            more.innerText = "товар добавлен"
         }
         cubinsItem.active = true
     })

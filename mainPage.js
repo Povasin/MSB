@@ -79,37 +79,37 @@ function render(mass) {
         if (index == 0) {
             one__card.insertAdjacentHTML("beforeend", ` <div class="card">
             <div class="fd-row">
-            <p class="star">${item.star}</p>
-            <a href="**/${item.href}" class="card__arrow">→</a>
+                <p class="star">${item.star}</p>
+                <p data-id="${item.name}" class="card__arrow">→</p>
             </div>
-            <a href="**/${item.href}"><img class="card__img" src="**/${item.img}" alt="${item.name}"></a>
+            <img class="card__img" data-id="${item.name}"src="${item.img}" alt="${item.name}">
             <p class="rent">Аренда</p>
-            <a href="**/${item.href}" class="info">${item.name}</a>          
+            <p data-id="${item.name}" class="info">${item.name}</p>         
             <div class="card__sale">
-            <div class="fd-col">
-            <p class="discount">${item.discount}</p>
-            <p class="card__price">${item.price}₽</p> 
-            </div>
-            ${item.active ? `<input type="image" class="card__bag card__bagActive" data-id="${item.name}" alt="${item.name}"src="**/../header/bag.svg" />` :  `<input type="image"  class="card__bag" data-id="${item.name}" alt="${item.name}" src="**/../main/bag.svg" />` }
+                <div class="fd-col">
+                    <p class="discount">${item.discount}</p>
+                    <p class="card__price">От ${item.price}₽</p> 
+                </div>
+                ${item.active ? `<input type="image"  class="card__bag card__bagActive" data-id="${item.name}" src="../header/bag.svg"  alt="${item.name}"/>` :  `<input type="image"  class="card__bag" data-id="${item.name}" src="../main/bag.svg" alt="${item.name}" />` }
             </div> 
-            </div> `)
+        </div> `)
         }
         katalogLine.insertAdjacentHTML("beforeend", ` <div class="card">
         <div class="fd-row">
-        <p class="star">${item.star}</p>
-        <a href="**/${item.href}" class="card__arrow">→</a>
+            <p class="star">${item.star}</p>
+            <p data-id="${item.name}" class="card__arrow">→</p>
         </div>
-        <a href="**/${item.href}"><img class="card__img" src="**/${item.img}" alt="${item.name}"></a>
+        <img class="card__img" data-id="${item.name}"src="${item.img}" alt="${item.name}">
         <p class="rent">Аренда</p>
-        <a href="**/${item.href}" class="info">${item.name}</a>          
+        <p data-id="${item.name}" class="info">${item.name}</p>         
         <div class="card__sale">
-        <div class="fd-col">
-        <p class="discount">${item.discount}</p>
-        <p class="card__price">${item.price}₽</p> 
-        </div>
-        ${item.active ? `<input type="image"  class="card__bag card__bagActive" data-id="${item.name}" alt="${item.name}" src="./header/bag.svg" />` :  `<input type="image"  class="card__bag" alt="${item.name}" data-id="${item.name}" src="./main/bag.svg" />` }
+            <div class="fd-col">
+                <p class="discount">${item.discount}</p>
+                <p class="card__price">От ${item.price}₽</p> 
+            </div>
+            ${item.active ? `<input type="image"  class="card__bag card__bagActive" data-id="${item.name}" src="../header/bag.svg"  alt="${item.name}"/>` :  `<input type="image"  class="card__bag" data-id="${item.name}" src="../main/bag.svg" alt="${item.name}" />` }
         </div> 
-        </div> `)
+    </div> `)
     });
 }
 render(cubinsMass)
