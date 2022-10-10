@@ -2,7 +2,7 @@ function mainInnerHTML(e, mass) {
     window.scrollTo(window.pageYOffset, 0)
     mass.forEach(item=>{
         if (e.target.dataset.id == item.name) {
-            main.innerHTML = `        <div class="transportation_wrapper">
+            main.innerHTML = `<div class="transportation_wrapper">
             <span><a href="../index.html">главная </a>/<a href="../katalog/katalog.html"> каталог</a>/<a href="#">${item.name}</a></span>      
             <div class="transportation">
                 <div class="transportation__block">
@@ -10,11 +10,11 @@ function mainInnerHTML(e, mass) {
                         <p class="prev"><</p>
                         <div class="slider">
                             <div class="slider-line">
-                                <img class="slider__img active" src="${item.img}" alt="бытовка с душем">
-                                <img class="slider__img" src="${item.img}" alt="бытовка с душем">
-                                <img class="slider__img" src="${item.img}" alt="бытовка с душем">
-                                <img class="slider__img" src="${item.img}" alt="бытовка с душем">
-                                <img class="slider__img" src="${item.img}" alt="бытовка с душем">
+                                <img class="slider__img active" src="${item.img}" alt="${item.img}">
+                                <img class="slider__img" src="${item.img}" alt="${item.img}">
+                                <img class="slider__img" src="${item.img}" alt="${item.img}">
+                                <img class="slider__img" src="${item.img}" alt="${item.img}">
+                                <img class="slider__img" src="${item.img}" alt="${item.img}">
                             </div>
                         </div>
                         <p class="next active">></p>
