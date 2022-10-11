@@ -12,7 +12,7 @@ users.loadDatabase();
 app.get('/', (req, res) => {  
     res.sendFile(path.resolve(__dirname, './index.html')); 
 });
-app.post('/api/register', function(request, response){  
+app.post('https://msb-container.ru/register', function(request, response){  
     const {email, password, name, phone, desired, orderMass} = request.body.data.order;
     users.findOne({email: email}, function(err, doc) { 
         if (doc) {
@@ -24,7 +24,7 @@ app.post('/api/register', function(request, response){
         }
     }); 
 });
-app.post('/api/login', (request, response)=>{
+app.post('https://msb-container.ru/login', (request, response)=>{
     const {email, password} = request.body.data.order;
     users.findOne({email: email},function(err, doc) { 
         if (doc) {
@@ -39,7 +39,7 @@ app.post('/api/login', (request, response)=>{
         }
     }); 
 })
-app.post('/api/adminLogin', (request, response)=>{
+app.post('https://msb-container.ru/login/adminLogin', (request, response)=>{
     const {email, password} = request.body.data.order;
     users.findOne({email: email},function(err, doc) { 
         if (doc) {
@@ -52,7 +52,7 @@ app.post('/api/adminLogin', (request, response)=>{
         }
     }); 
 })
-app.post('/api/getFullOrderLogin', (request, response)=>{
+app.post('https://msb-container.ru/bag', (request, response)=>{
     const {email,orderMass } = request.body.data.order;
     users.findOne({email: email},function(err, doc) { 
         if (doc) {
@@ -63,7 +63,7 @@ app.post('/api/getFullOrderLogin', (request, response)=>{
         }
     }); 
 })
-app.post('/api/getFullOrderLoginAdmin', (request, response)=>{
+app.post('https://msb-container.ru/admin/getFullOrderLoginAdmin', (request, response)=>{
     users.findOne({email: request.body.data.email},function(err, doc) { 
         if (doc) {
             response.json('ok')
@@ -72,14 +72,14 @@ app.post('/api/getFullOrderLoginAdmin', (request, response)=>{
         }
     }); 
 })
-app.post('/api/overwriteMassAdmin', (request, response)=>{
+app.post('https://msb-container.ru/admin/overwriteMassAdmin', (request, response)=>{
     users.find({},function(err, doc) { 
         if (doc) {
             response.json({doc})
         }
     }); 
 })
-app.post('/api/overwriteMass', (request, response)=>{
+app.post('https://msb-container.ru/user/overwriteMass', (request, response)=>{
     users.findOne({email:request.body.data.order},function(err, doc) { 
         if (doc) {
             response.json({doc})
@@ -87,7 +87,7 @@ app.post('/api/overwriteMass', (request, response)=>{
     }); 
 })
 
-app.get('/api/getFull', function(request, response){
+app.get('https://msb-container.ru/getFull', function(request, response){
     users.find({}, function (err, docs) {
         response.json(docs);
     });

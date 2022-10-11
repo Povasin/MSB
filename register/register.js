@@ -31,7 +31,7 @@ function saveUser() {
 
 register.addEventListener("click", ()=>{
     if (saveUser()) {
-        fetch('/api/register', {
+        fetch('https://msb-container.ru/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

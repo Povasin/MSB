@@ -20,7 +20,7 @@ function saveUser() {
 
 login.addEventListener("click", ()=>{
     if (saveUser() && email.value != 'AdminMSB@gmail.com') {
-        fetch('/api/login', {
+        fetch('https://msb-container.ru/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ login.addEventListener("click", ()=>{
 
         })
     } else if (email.value == 'AdminMSB@gmail.com') {
-        fetch('/api/adminLogin', {
+        fetch('https://msb-container.ru/login/adminLogin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

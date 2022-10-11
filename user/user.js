@@ -11,7 +11,7 @@ userContent__name.textContent = jsonMass.name
 userContent__phone.textContent = jsonMass.phone
 userContent__email.textContent = jsonMass.email
 if (jsonMass.orderMass !== 0) {
-    fetch('/api/overwriteMass', {
+    fetch('https://msb-container.ru/user/overwriteMass', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
