@@ -1,8 +1,8 @@
-const express = require('express')
+const express = require('express');
 const path = require('path');
-const PORT = process.env.PORT || 5000
-const app  = express()
-const http = require('http').Server(app);
+const fs = require('fs');
+const app = express();
+const https = require('https');
 const bcrypt = require('bcrypt');
 app.use(express.static(path.resolve(__dirname, './')));
 app.use(express.json())
@@ -12,7 +12,7 @@ users.loadDatabase();
 app.get('/', (req, res) => {  
     res.sendFile(path.resolve(__dirname, './index.html')); 
 });
-app.post('https://msb-container.ru/register', function(request, response){  
+app.post('/register', function(request, response){  
     const {email, password, name, phone, desired, orderMass} = request.body.data.order;
     users.findOne({email: email}, function(err, doc) { 
         if (doc) {
@@ -24,7 +24,7 @@ app.post('https://msb-container.ru/register', function(request, response){
         }
     }); 
 });
-app.post('https://msb-container.ru/login', (request, response)=>{
+app.post('/login', (request, response)=>{
     const {email, password} = request.body.data.order;
     users.findOne({email: email},function(err, doc) { 
         if (doc) {
@@ -39,7 +39,7 @@ app.post('https://msb-container.ru/login', (request, response)=>{
         }
     }); 
 })
-app.post('https://msb-container.ru/login/adminLogin', (request, response)=>{
+app.post('/adminLogin', (request, response)=>{
     const {email, password} = request.body.data.order;
     users.findOne({email: email},function(err, doc) { 
         if (doc) {
@@ -52,7 +52,7 @@ app.post('https://msb-container.ru/login/adminLogin', (request, response)=>{
         }
     }); 
 })
-app.post('https://msb-container.ru/bag', (request, response)=>{
+app.post('/bag', (request, response)=>{
     const {email,orderMass } = request.body.data.order;
     users.findOne({email: email},function(err, doc) { 
         if (doc) {
@@ -63,7 +63,7 @@ app.post('https://msb-container.ru/bag', (request, response)=>{
         }
     }); 
 })
-app.post('https://msb-container.ru/admin/getFullOrderLoginAdmin', (request, response)=>{
+app.post('/getFullOrderLoginAdmin', (request, response)=>{
     users.findOne({email: request.body.data.email},function(err, doc) { 
         if (doc) {
             response.json('ok')
@@ -72,14 +72,14 @@ app.post('https://msb-container.ru/admin/getFullOrderLoginAdmin', (request, resp
         }
     }); 
 })
-app.post('https://msb-container.ru/admin/overwriteMassAdmin', (request, response)=>{
+app.post('/overwriteMassAdmin', (request, response)=>{
     users.find({},function(err, doc) { 
         if (doc) {
             response.json({doc})
         }
     }); 
 })
-app.post('https://msb-container.ru/user/overwriteMass', (request, response)=>{
+app.post('/overwriteMass', (request, response)=>{
     users.findOne({email:request.body.data.order},function(err, doc) { 
         if (doc) {
             response.json({doc})
@@ -87,16 +87,21 @@ app.post('https://msb-container.ru/user/overwriteMass', (request, response)=>{
     }); 
 })
 
-app.get('https://msb-container.ru/getFull', function(request, response){
+app.get('/getFull', function(request, response){
     users.find({}, function (err, docs) {
         response.json(docs);
     });
 });
-const start = async ()=>{
-    try{
-        app.listen(PORT, ()=>{console.log(`server started on PORT ${PORT}`);})
-    } catch(e){
-        console.log(e);
-    }
-}
-start()
+https
+  .createServer(
+    {
+      key: fs.readFileSync("./sslcert/privkey.pem"),
+      cert: fs.readFileSync("./sslcert/fullchain.pem"),
+    },
+    app
+  )
+  .listen(5000, function () {
+    console.log(
+      "Example app listening on port 5000! Go to https://localhost:5000/"
+    );
+  });

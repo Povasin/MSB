@@ -1,4 +1,4 @@
-const cubinsForLive = [
+export const cubinsForLive = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
@@ -48,7 +48,7 @@ const cubinsForLive = [
         text: 'Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.'
     }
 ]
-const cubinsForWork = [
+export const cubinsForWork = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
@@ -98,7 +98,7 @@ const cubinsForWork = [
         text: 'Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.'
     }
 ]
-const cubinsForbath = [
+export const cubinsForbath = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
@@ -147,7 +147,7 @@ const cubinsForbath = [
         text: 'Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.'
     }
 ]
-const cubinsForDress = [
+export const cubinsForDress = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
@@ -197,7 +197,7 @@ const cubinsForDress = [
         text: 'Выездные мероприятия и строительные работы сопровождаются массовым скоплением людей, организовать их переодевание в увеселительную или рабочую одежду без специальных сооружений не получиться. Аренда бытовки раздевалки – выход. С ними можно обустроить условия для переодевания и хранения вещей посетителей и персонала в любом месте.'
     }
 ]
-const cubinsForWareHouse = [
+export const cubinsForWareHouse = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",

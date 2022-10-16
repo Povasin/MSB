@@ -2,7 +2,6 @@ const furnitureLine = document.querySelector(".furniture-line")
 const nextFurniture = document.querySelector(".nextFurniture")
 const prevFurniture = document.querySelector(".prevFurniture")
 let furnitureSlider = 0
-console.log(furnitureLine);
 const furnitureMass= [
     {   
         hreF: "#",

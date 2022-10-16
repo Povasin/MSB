@@ -1,5 +1,6 @@
+import {cubinsForLive, cubinsForWork, cubinsForbath, cubinsForDress, cubinsForWareHouse} from '../cubinsMoreMass.js'
 const katalogLine = document.querySelector(".katalog-line")
-const cubinsMass = [
+export const cubinsMass = [
     {
         img: "../main/cubinsForDress.webp",
         name: "Бытовка раздевалка",

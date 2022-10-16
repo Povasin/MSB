@@ -28,7 +28,7 @@ document.querySelector('.exit').addEventListener("click", ()=>{
     document.location.href = "../index.html";
 })
 let jsonBagMass = JSON.parse(localStorage.getItem("bagMassAdmin")) || []
-fetch('https://msb-container.ru/admin/overwriteMassAdmin', {
+fetch('/overwriteMassAdmin', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -192,7 +192,7 @@ orders__render.addEventListener("click", function showtrack(e){
                     !itemOrderMass.orderGo ? date[2].innerText = 'x' : date[2].innerText = itemOrderMass.orderGo
                     !itemOrderMass.orderReceived ? date[3].innerText = 'x' : date[3].innerText = itemOrderMass.orderReceived
                     saveChanges.addEventListener("click", ()=>{
-                                fetch('https://msb-container.ru/admin/getFullOrderLoginAdmin', {
+                                fetch('/getFullOrderLoginAdmin', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json'

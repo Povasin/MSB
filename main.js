@@ -1,3 +1,5 @@
+import {cubinsMass} from '../katalogMass.js'
+import {cubinsForLive, cubinsForWork, cubinsForbath, cubinsForDress, cubinsForWareHouse} from '../cubinsMoreMass.js'
 const services = document.querySelector(".services")
 const main = document.querySelector("main")
 const body = document.querySelector("body")
@@ -7,7 +9,6 @@ const sidebar = document.querySelector(".sidebar")
 const answer__question = document.querySelectorAll(".answer__question")
 const searchHTML = document.querySelectorAll(".search")
 const search__block = document.querySelectorAll(".search__block")
-let search__blockHref = document.querySelectorAll(".search__blockHref")
 const services__media = document.querySelector(".services__media")
 const search__modal = document.querySelector(".search__modal")
 const search__close = document.querySelector(".search__close")
@@ -76,8 +77,23 @@ answer__question.forEach(item=>{
     })
 })
 function search(number) {
-    search__blockHref.forEach(item=>{
-        item.innerHTML.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1?  item.style.display = "" : item.style.display = "none"
+    cubinsMass.forEach(item=>{
+        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>`  : search__block[number].innerHTML = ''
+    })
+    cubinsForLive.forEach(item=>{
+        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
+    })
+    cubinsForWork.forEach(item=>{
+        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1?search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
+    })
+    cubinsForbath.forEach(item=>{
+        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
+    })
+    cubinsForDress.forEach(item=>{
+        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
+    })
+    cubinsForWareHouse.forEach(item=>{
+        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
     })
 }
 

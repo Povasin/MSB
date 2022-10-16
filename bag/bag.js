@@ -158,7 +158,7 @@ function saveOrderLogin() {
 order.addEventListener("click", ()=>{
     if (jsonMass.name != undefined) {
         if (saveOrderLogin()) {
-            fetch('https://msb-container.ru/bag', {
+            fetch('/bag', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

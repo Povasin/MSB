@@ -1,8 +1,10 @@
+import {cubinsMass} from '../katalogMass.js'
 const choose__img = document.querySelector(".choose__img")
 const choose__more = document.querySelectorAll(".choose__more")
 const next= document.querySelector(".next")
 const prev = document.querySelector(".prev")
 const one__card = document.querySelector(".one__card")
+const katalogLine = document.querySelector('.katalog-line')
 
 let katalogSlider = 0;
 next.addEventListener("click", ()=>{
