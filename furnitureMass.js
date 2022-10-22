@@ -1,3 +1,4 @@
+import { jsonBagMass, services__sum } from './main.js'
 const furnitureLine = document.querySelector(".furniture-line")
 const nextFurniture = document.querySelector(".nextFurniture")
 const prevFurniture = document.querySelector(".prevFurniture")
@@ -94,7 +95,7 @@ function render() {
 }
 
 furnitureMass.forEach((item)=>{
-    JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{
+    jsonBagMass.forEach(bagItem=>{
         if (item.name == bagItem.name) {
             item.active = true
         }
@@ -102,14 +103,13 @@ furnitureMass.forEach((item)=>{
 })
 furnitureLine.addEventListener("click", (e)=>{
     if (e.target.className == "card__bag") {
-        const JsonMass = JSON.parse(localStorage.getItem("bagMass")) 
         furnitureMass.forEach((tasks) =>{
             if (tasks.name == e.target.dataset.id) {
                 tasks.active = true
-                JsonMass.push(tasks)
-                services__sum[1].innerText  = JsonMass.length
-                services__sum[0].innerText  = JsonMass.length
-                localStorage.setItem("bagMass", JSON.stringify(JsonMass))
+                jsonBagMass.push(tasks)
+                services__sum[1].innerText  = jsonBagMass.length
+                services__sum[0].innerText  = jsonBagMass.length
+                localStorage.setItem("bagMass", JSON.stringify(jsonBagMass))
             }
         })
     }

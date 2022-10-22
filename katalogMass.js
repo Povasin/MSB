@@ -1,5 +1,7 @@
 import {cubinsForLive, cubinsForWork, cubinsForbath, cubinsForDress, cubinsForWareHouse} from '../cubinsMoreMass.js'
-const katalogLine = document.querySelector(".katalog-line")
+import {services__sum, jsonBagMass } from './main.js'
+import {mainInnerHTML} from './mainInnerHtml.js'
+export const katalogLine = document.querySelector(".katalog-line")
 export const cubinsMass = [
     {
         img: "../main/cubinsForDress.webp",
@@ -117,7 +119,7 @@ katalogLine.addEventListener("click", (e)=>{
 })
 function showACtive(mass) {
     mass.forEach((item)=>{
-        JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{
+        jsonBagMass.forEach(bagItem=>{
             if (item.name == bagItem.name) {
                 item.active = true
             }

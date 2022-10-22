@@ -118,7 +118,12 @@ body{
     -webkit-text-fill-color: transparent;
     color: #5134c4;
     font-family: "fouore";
-    font-size:calcFluid(30, 40, 320, 1920);
+    font-size:calcFluid(30, 45, 320, 1920);
+    span{
+        -webkit-text-fill-color: black;
+        color: black;
+        font-size: calcFluid(12, 18, 320, 1920);;
+    }
 }
 
 %iconMenu{

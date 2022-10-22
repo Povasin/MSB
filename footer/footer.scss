@@ -90,6 +90,7 @@
         .basement__col{
             .logFooter{
                 @extend %d-row;
+                color: transparent;
                 .login,
                 .register{
                     @extend %general__log;
@@ -143,6 +144,9 @@
                 @extend %general__logo; 
                 font-size:calcFluid(30, 40, 320, 1920);
                 -webkit-text-fill-color: white;
+                span{
+                    -webkit-text-fill-color: white;
+                }
             }
             .block{
                 @extend %d-col;

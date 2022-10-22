@@ -1,3 +1,6 @@
+import {cubinsForLive, cubinsForWork, cubinsForbath, cubinsForDress, cubinsForWareHouse} from '../cubinsMoreMass.js'
+import {mainInnerHTML} from '../mainInnerHtml.js'
+import {services__sum} from '../main.js'
 const gallary = document.querySelector(".gallary")
 const gallary__item = document.querySelectorAll(".gallary__item")
 function render(mass, number) {

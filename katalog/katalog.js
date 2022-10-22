@@ -1,3 +1,6 @@
+import {cubinsForLive, cubinsForWork, cubinsForbath, cubinsForDress, cubinsForWareHouse} from '../cubinsMoreMass.js'
+import {mainInnerHTML} from '../mainInnerHtml.js'
+import {cubinsMass, katalogLine} from '../katalogMass.js'
 const katalog__filter = document.querySelector(".katalog__filter")
 const katalog__price = document.querySelectorAll(".katalog__price")
 const katalogStar = document.querySelector(".katalog-star")
@@ -203,8 +206,8 @@ sliderTwo.addEventListener("input", ()=>{
 })
 fillColor();
     function fillColor() {
-    percent1 = (sliderOne.value / sliderMaxValue) * 100;
-    percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+    let percent1 = (sliderOne.value / sliderMaxValue) * 100;
+    let percent2 = (sliderTwo.value / sliderMaxValue) * 100;
     sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% ,#5134c4 ${percent1}% ,#b856d4 ${percent2}%, #dadae5 ${percent2}%)`;
 }
 function filter(mass) {

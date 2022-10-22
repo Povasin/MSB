@@ -95,8 +95,8 @@ app.get('/getFull', function(request, response){
 https
   .createServer(
     {
-      key: fs.readFileSync("./sslcert/privkey.pem"),
-      cert: fs.readFileSync("./sslcert/fullchain.pem"),
+      key: fs.readFileSync("./sslcert/privkey.key"),
+      cert: fs.readFileSync("./sslcert/fullchain.crt"),
     },
     app
   )

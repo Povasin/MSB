@@ -1,7 +1,6 @@
-import {cubinsMass} from '../katalogMass.js'
-import {cubinsForLive, cubinsForWork, cubinsForbath, cubinsForDress, cubinsForWareHouse} from '../cubinsMoreMass.js'
+import {search} from './search.js'
 const services = document.querySelector(".services")
-const main = document.querySelector("main")
+export const main = document.querySelector("main")
 const body = document.querySelector("body")
 const sidebar__open = document.querySelector(".sidebar__open")
 const sidebar__close = document.querySelector(".sidebar__close")
@@ -12,7 +11,7 @@ const search__block = document.querySelectorAll(".search__block")
 const services__media = document.querySelector(".services__media")
 const search__modal = document.querySelector(".search__modal")
 const search__close = document.querySelector(".search__close")
-const services__sum = document.querySelectorAll(".services__sum")
+export const services__sum = document.querySelectorAll(".services__sum")
 const headerTop__log = document.querySelector(".headerTop__log")
 const logFooter = document.querySelector(".logFooter")
 const bagMass = [];
@@ -23,8 +22,8 @@ if (!JSON.parse(localStorage.getItem("user"))) {
 if (!JSON.parse(localStorage.getItem("bagMass"))) {
     localStorage.setItem("bagMass", JSON.stringify(bagMass))    
 }
-let jsonBagMass = JSON.parse(localStorage.getItem("bagMass")) || []
-let jsonMass = JSON.parse(localStorage.getItem("user")) || {}
+export let jsonBagMass = JSON.parse(localStorage.getItem("bagMass")) || []
+export let jsonMass = JSON.parse(localStorage.getItem("user")) || {}
 if (jsonMass.name != undefined){
     headerTop__log.innerHTML = `<a href="../user/user.html" name="userName"class="loginUser"> <img src="../header/log.svg" alt="пользователь"><p>${jsonMass.name}</p></a></a>`
     logFooter.innerHTML = `<a href="../user/user.html" name="userName" class="loginUser"> <img  src="../footer/userWhite.png" alt="пользователь"><p>${jsonMass.name}</p></a></a>`
@@ -76,26 +75,7 @@ answer__question.forEach(item=>{
         }
     })
 })
-function search(number) {
-    cubinsMass.forEach(item=>{
-        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>`  : search__block[number].innerHTML = ''
-    })
-    cubinsForLive.forEach(item=>{
-        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
-    })
-    cubinsForWork.forEach(item=>{
-        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1?search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
-    })
-    cubinsForbath.forEach(item=>{
-        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
-    })
-    cubinsForDress.forEach(item=>{
-        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
-    })
-    cubinsForWareHouse.forEach(item=>{
-        item.name.toUpperCase().indexOf(searchHTML[number].value.toUpperCase()) > -1? search__block[number].innerHTML =  `<a class="search__blockHref" href="./cubinsForlive/cubinsForlive.html">${item.name}</a>` : search__block[number].innerHTML = ''
-    })
-}
+
 
 searchHTML[0].addEventListener('input', ()=>{
     search__block[0].style.display = "flex"

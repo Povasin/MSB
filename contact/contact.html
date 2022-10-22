@@ -63,7 +63,10 @@
     </div>
     <header>
         <div class="headerTop">
-            <a href="../index.html" class="headerTop__logo">MSB</a>
+            <div class="headerTop__logotip" itemscope itemtype="http://schema.org/ImageObject">
+                <img   src="../iconPWA/logo96x96.svg" itemprop="contentUrl" />
+            </div>
+            <a href="../index.html" class="headerTop__logo">MSB<span>container</span></a>
             <div class="headerTop__search">
                 <input type="text" placeholder="Поиск" maxlength="30" class="search">
                 <img src="../header/search.svg" alt="поиск">
@@ -130,7 +133,7 @@
                 </div>
             </div>
             <div id="map__yandex">
-                <script type="text/javascript" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1de37163293f4e550481d9ca14ec396e5a467508c7cd738b2b7f8c1037132ff8&amp;width=100%25&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A975b459ad04e6f23bdc600c9da5bb050f132b186bfdc0cb84237e85aeda192e0&amp;width=100%25&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
             </div>
         </div>
         
@@ -196,7 +199,7 @@
             </div>
             <div class="basement__content">
                 <div class="d-col">
-                    <a href="./index.html" class="basement__logo">MSB</a>
+                    <a href="../index.html" class="basement__logo">MSB <span>container</span></a>
                     <div class="block">
                         <a href="#" class="prava">2022 все права защищены</a>
                         <a href="#" class="prava">пользовательское соглашение</a>
@@ -228,6 +231,6 @@
             </div>
         </div>
     </footer>
-    <script src="../main.js"></script>
+    <script  type="module" src="../main.js"></script>
 </body>
 </html>

@@ -44,6 +44,17 @@ header {
         @extend %d-row;
         padding: 0 calcFluid(5, 200, 320, 1920) calcFluid(8, 15, 320, 1920);
         border-bottom: 1px solid $gray;
+        &__logotip{
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            width:calcFluid(45, 60, 320, 1920);
+            img{
+                width: 100%;
+                max-height: 100%;
+            }
+            margin: calcFluid(6, 10, 320, 1920) 15px 0 0;
+        }
         &__logo {
             @extend %general__logo;
             color: black;
@@ -283,7 +294,7 @@ header {
         }
     }
 }
-@media(max-width: 1024px){
+@media(max-width: 1180px){
     header{
         .headerTop{
             &__search{
@@ -293,6 +304,10 @@ header {
                 margin-left: auto;
             }
         }
+    }
+}
+@media(max-width: 1024px){
+    header{
         .services {
             a:nth-child(2),
             a:nth-child(3),

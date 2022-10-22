@@ -88,7 +88,15 @@ header .headerTop__logo {
   -webkit-text-fill-color: transparent;
   color: #5134c4;
   font-family: "fouore";
-  font-size: calc( 0.00625 * 100vw + 28px );
+  font-size: calc( 0.009375 * 100vw + 27px );
+}
+header .headerTop__logo span {
+  -webkit-text-fill-color: black;
+  color: black;
+  font-size: calc( 0.00375 * 100vw + 10.8px );
+}
+header .headerTop__logo img {
+  width: 20%;
 }
 
 header .headerTop__search .search, .search__modal .search {

@@ -50,10 +50,11 @@ prev.addEventListener("click", ()=>{
             next.style.background = "#5134c4"
         }
     } else if (document.documentElement.clientWidth < 851 && document.documentElement.clientWidth > 440) {
-        if (katalogSlider < 200 ) {
+        console.log(katalogSlider);
+        if (katalogSlider <= 200 && katalogSlider > 0  ) {
             katalogSlider-=100
             katalogLine.style.left = -katalogSlider + '%' 
-            if (katalogSlider == 200) {
+            if (katalogSlider == 200 || katalogSlider == 0) {
                 prev.style.background = "#cacaca"
                 next.style.background = "#5134c4"
             }else if (katalogSlider == 100) {
@@ -62,10 +63,10 @@ prev.addEventListener("click", ()=>{
             }
         }
     } else if (document.documentElement.clientWidth < 440) {
-        if (katalogSlider < 500 ) {
+        if (katalogSlider <= 500 && katalogSlider > 0 ) {
             katalogSlider-=100
             katalogLine.style.left = -katalogSlider + '%' 
-            if (katalogSlider == 500) {
+            if (katalogSlider == 500 || katalogSlider == 0 ) {
                 prev.style.background = "#cacaca"
                 next.style.background = "#5134c4"
             }else if (katalogSlider == 100 || katalogSlider == 200 || katalogSlider == 300 || katalogSlider == 400 || katalogSlider == 500) {

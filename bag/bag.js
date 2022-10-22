@@ -1,3 +1,4 @@
+import {services__sum, jsonBagMass, jsonMass} from '../main.js'
 const bag__items = document.querySelector(".bag__items")
 const bt_minusMonth = document.querySelector(".bt_minusMonth")
 const bt_plusMonth = document.querySelector(".bt_plusMonth")

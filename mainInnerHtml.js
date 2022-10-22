@@ -1,4 +1,5 @@
-function mainInnerHTML(e, mass) {
+import {main, services__sum, jsonBagMass} from './main.js'
+export function mainInnerHTML(e, mass) {
     window.scrollTo(window.pageYOffset, 0)
     mass.forEach(item=>{
         if (e.target.dataset.id == item.name) {
@@ -165,7 +166,6 @@ function mainInnerHTML(e, mass) {
             furnitureLine.insertAdjacentHTML("beforeend", ` <div class="card">
             <div class="fd-row">
             <p class="star">${item.star}</p>
-            <p class="card__arrow">→</p>
             </div>
             <img class="card__img" src="${item.img}" alt="${item.name}">
             <p class="rent">Аренда</p>
@@ -195,6 +195,7 @@ function mainInnerHTML(e, mass) {
                 if (tasks.name == e.target.dataset.id) {
                     tasks.active = true
                     JsonMass.push(tasks)
+                  
                     services__sum[1].innerText  = JsonMass.length
                     services__sum[0].innerText  = JsonMass.length
                     localStorage.setItem("bagMass", JSON.stringify(JsonMass))

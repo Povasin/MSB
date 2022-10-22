@@ -1,7 +1,9 @@
+import {jsonBagMass} from '../main.js'
 const login = document.getElementById("login")
 const error = document.querySelector(".error")
 const password = document.getElementById("password")
 const email = document.getElementById('email')
+let jsonMass = {}
 function saveUser() {
     if (email.value.indexOf('@') > -1 && password.value != '') {
         jsonMass = {

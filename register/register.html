@@ -63,7 +63,10 @@
     </div>
     <header>
         <div class="headerTop">
-            <a href="../index.html" class="headerTop__logo">MSB</a>
+            <div class="headerTop__logotip" itemscope itemtype="http://schema.org/ImageObject">
+                <img   src="../iconPWA/logo96x96.svg" itemprop="contentUrl" />
+            </div>
+            <a href="../index.html" class="headerTop__logo">MSB<span>container</span></a>
             <div class="headerTop__search">
                 <input type="text" placeholder="Поиск" maxlength="30" class="search">
                 <img src="../header/search.svg" alt="поиск">
@@ -189,7 +192,7 @@
             </div>
             <div class="basement__content">
                 <div class="d-col">
-                    <a href="./index.html" class="basement__logo">MSB</a>
+                    <a href="../index.html" class="basement__logo">MSB <span>container</span></a>
                     <div class="block">
                         <a href="#" class="prava">2022 все права защищены</a>
                         <a href="#" class="prava">пользовательское соглашение</a>
@@ -221,7 +224,7 @@
             </div>
         </div>
     </footer>
-    <script src="./register.js"></script>
-    <script src="../main.js"></script>
+    <script  type="module" src="./register.js"></script>
+    <script  type="module" src="../main.js"></script>
 </body>
 </html>
