@@ -106,25 +106,33 @@ function renderKatalog(mass) {
     mass.forEach((item)=>{JSON.parse(localStorage.getItem("bagMass")).forEach(bagItem=>{if (item.name == bagItem.name) {item.active = true}})})
     const filterMass = filter(mass)
     katalogLine.innerHTML = ''
-    filterMass.forEach(item => {
-        katalogLine.insertAdjacentHTML("beforeend", `  <div class="card">
-        <div class="fd-row">
-            <p class="star">${item.star}</p>
-            <p data-id="${item.name}" class="card__arrow">→</p>
-        </div>
-        <img class="card__img" data-id="${item.name}"src="${item.img}" alt="${item.name}">
-        <p class="rent">Аренда</p>
-        <p data-id="${item.name}" class="info">${item.name}</p>         
-        <div class="card__sale">
-            <div class="fd-col">
-                <p class="discount">${item.discount}</p>
-                <p class="card__price">От ${item.price}₽</p> 
-            </div>
-            ${item.active ? `<input type="image"  class="card__bag card__bagActive" data-id="${item.name}" src="../header/bag.svg"  alt="${item.name}"/>` :  `<input type="image"  class="card__bag" data-id="${item.name}" src="../main/bag.svg" alt="${item.name}" />` }
-        </div> 
+    if (filterMass == 0) {
+        katalogLine.insertAdjacentHTML("beforeend", `<div class="bag__clear">
+        <h2>По вашему запросу ничего не найдено</h2>
     </div>`)
-    });
-    kolOnPage.innerText = filterMass.length
+        kolOnPage.innerText = filterMass.length
+    } else {
+        filterMass.forEach(item => {
+            katalogLine.insertAdjacentHTML("beforeend", `  <div class="card">
+            <div class="fd-row">
+                <p class="star">${item.star}</p>
+                <p data-id="${item.name}" class="card__arrow">→</p>
+            </div>
+            <img class="card__img" data-id="${item.name}"src="${item.img}" alt="${item.name}">
+            <p class="rent">Аренда</p>
+            <p data-id="${item.name}" class="info">${item.name}</p>         
+            <div class="card__sale">
+                <div class="fd-col">
+                    <p class="discount">${item.discount}</p>
+                    <p class="card__price">От ${item.price}₽</p> 
+                </div>
+                ${item.active ? `<input type="image"  class="card__bag card__bagActive" data-id="${item.name}" src="../header/bag.svg"  alt="${item.name}"/>` :  `<input type="image"  class="card__bag" data-id="${item.name}" src="../main/bag.svg" alt="${item.name}" />` }
+            </div> 
+        </div>`)
+        });
+        kolOnPage.innerText = filterMass.length
+    }
+
 }
 renderKatalog(cubinsMass)
 katalogLine.addEventListener('click', (e)=>{

@@ -19,28 +19,15 @@ const border2 = document.querySelector('.border2')
 const border3 = document.querySelector('.border3')
 const date = document.querySelectorAll('.date')
 const saveChanges =  document.querySelector('.saveChanges')
-const bagMassAdmin = [];
-if (!JSON.parse(localStorage.getItem("bagMassAdmin"))) {
-    localStorage.setItem("bagMassAdmin", JSON.stringify(bagMassAdmin))    
-}
 document.querySelector('.exit').addEventListener("click", ()=>{
     localStorage.clear() 
     document.location.href = "../index.html";
 })
-let jsonBagMass = JSON.parse(localStorage.getItem("bagMassAdmin")) || []
-fetch('/overwriteMassAdmin', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        data:{}
-    })
-})
+let jsonBagMass = []
+fetch('/overwriteMassAdmin')
 .then(res => res.json())
 .then(res => {
         jsonBagMass = res.doc
-        localStorage.setItem("bagMassAdmin", JSON.stringify(jsonBagMass));
         if (jsonBagMass == 0) {
             orders__render.insertAdjacentHTML("beforeend", `<div class="order__clear">
             <h2>заказов пока нет</h2>
@@ -206,7 +193,6 @@ orders__render.addEventListener("click", function showtrack(e){
                                 })
                                 .then(res => res.json())
                                 .then(res => {
-                                        localStorage.setItem("bagMass", JSON.stringify(jsonBagMass));
                                         saveChanges.innerText = 'сохранено'
                                 })
                     })

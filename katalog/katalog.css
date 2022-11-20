@@ -167,6 +167,13 @@ main {
 .katalog {
   padding: 0 calc( 0.12 * 100vw + -30.4px );
 }
+.katalog .bag__clear {
+  margin: calc( 0.08125 * 100vw + -6px ) auto auto auto;
+}
+.katalog .bag__clear h2 {
+  text-align: center;
+  font-size: calc( 0.008125 * 100vw + 14.4px );
+}
 .katalog span a {
   text-decoration: none;
   color: black;

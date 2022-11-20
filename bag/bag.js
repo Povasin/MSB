@@ -1,23 +1,16 @@
 import {services__sum, jsonBagMass, jsonMass} from '../main.js'
 const bag__items = document.querySelector(".bag__items")
-const bt_minusMonth = document.querySelector(".bt_minusMonth")
-const bt_plusMonth = document.querySelector(".bt_plusMonth")
-const input = document.querySelectorAll(".quantity")
 const price = document.getElementById("price")
 const input__checkboxMap = document.querySelector(".input__checkboxMap")
 const input__checkboxAdress = document.querySelector(".input__checkboxAdress")
-const map__yandex =document.getElementById("map__yandex")
 const adress = document.getElementById("adress")
 const selfCall = document.getElementById("self-call")
 const discount = document.getElementById("discount")
-const blockOrder = document.querySelector(".blockOrder")
 const promocode = document.querySelector(".promocode")
 const accept = document.querySelector(".accept")
 const acceptPromocode = document.getElementById("acceptPromocode")
 const order = document.getElementById("order")
 const error = document.getElementById("error")
-const nameOrder =document.getElementById("nameOrder")
-const phone = document.getElementById("phone")
 function renderBag(mass) {
     bag__items.innerHTML = ''
     sum(mass);
@@ -86,9 +79,6 @@ function sumDiscount (mass){
     })
     discount.innerText =  + s + "₽"
     return s
-}
-function promokod() {
-
 }
 
 sum(JSON.parse(localStorage.getItem("bagMass")))
@@ -172,9 +162,8 @@ order.addEventListener("click", ()=>{
             })
             .then(res => res.json())
             .then(res => {
-                    jsonBagMass = []
                     localStorage.setItem("user", JSON.stringify(jsonMass));
-                    localStorage.setItem("bagMass", JSON.stringify(jsonBagMass));
+                    localStorage.setItem("bagMass", JSON.stringify([]));
                     document.location.href = "../user/user.html";
             })
         }

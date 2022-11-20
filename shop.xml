@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2022-10-24T18:37:38+03:00">
+    <shop>
+        <name>msb-container</name>
+        <company>msb-container</company>
+        <url>https://msb-container.ru/</url>
+        <currencies>
+            <currency id="RUR" rate="1"/>
+        </currencies>
+        <categories>
+            <category id="1" parentId="3">Аренда бытовок</category>
+            <category id="2" parentId="4"> аренда строительный вагончик</category>
+            <category id="3"> бытовка</category>
+            <category id="4">строительный вагончик</category>
+            <category id="8">контейнеры</category>
+            <category id="5" parentId="8">аренда контейнеров</category>
+            <category id="6">модульное здания</category>
+            <category id="7">Быстровозводимые здания</category>
+        </categories>
+        <delivery-options>
+            <option cost="2000" days="10"/>
+        </delivery-options>
+        <offers>
+            <offer id="1">
+                <name>Бытовка раздевалка</name>
+                <url>https://msb-container.ru/katalog/katalog.html</url>
+                <price>8000</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>2</categoryId>
+                <pickup>true</pickup>
+                <delivery>true</delivery>
+                <delivery-options>
+                    <option cost="300" days="1" order-before="18"/>
+                </delivery-options>
+                <param name="Цвет">белый</param>
+                <weight>6х2,4х2,50м</weight>
+                <dimensions>20.1/20.551/22.5</dimensions>
+            </offer>
+        </offers>
+        <gifts>
+            <!-- подарки не из прайс‑листа -->
+        </gifts>
+        <promos>
+            <!-- промоакции -->
+        </promos>
+    </shop>
+</yml_catalog>

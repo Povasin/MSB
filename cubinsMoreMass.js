@@ -2,7 +2,7 @@ export const cubinsForLive = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с тамбуром1",
+        name: "бытовка с тамбуром187",
         discount:9000,
         price:8000,
         star: "★★★★☆",
@@ -18,7 +18,7 @@ export const cubinsForLive = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с перегародками1",
+        name: "бытовка с перегародками159",
         discount:9000,
         price:7500,
         star: "★★★★★",
@@ -34,7 +34,7 @@ export const cubinsForLive = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с прихожей в центре1",
+        name: "бытовка с прихожей в центре17",
         discount:1000,
         price:9000,
         star: "★★★★☆",
@@ -52,7 +52,7 @@ export const cubinsForWork = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с тамбуром2",
+        name: "бытовка с тамбуром26",
         discount:9000,
         price:8000,
         star: "★★★★☆",
@@ -68,7 +68,7 @@ export const cubinsForWork = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с перегародками2",
+        name: "бытовка с перегародками27",
         discount:9000,
         price:7500,
         star: "★★★★★",
@@ -84,7 +84,7 @@ export const cubinsForWork = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с прихожей в центре2",
+        name: "бытовка с прихожей в центре28",
         discount:1000,
         price:9000,
         star: "★★★★☆",
@@ -102,7 +102,7 @@ export const cubinsForbath = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с прихожей в центре3",
+        name: "бытовка с прихожей в центре36",
         discount:9000,
         price:8000,
         star: "★★★★☆",
@@ -118,7 +118,7 @@ export const cubinsForbath = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с перегародками3",
+        name: "бытовка с перегародками35",
         discount:9000,
         price:7500,
         star: "★★★★★",
@@ -134,7 +134,7 @@ export const cubinsForbath = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с прихожей в центре3",
+        name: "бытовка с прихожей в центре317",
         discount:1000,
         price:9000,
         star: "★★★★☆",
@@ -151,7 +151,7 @@ export const cubinsForDress = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с перегародками4",
+        name: "бытовка с перегародками42",
         discount:9000,
         price:8000,
         star: "★★★★☆",
@@ -167,7 +167,7 @@ export const cubinsForDress = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с прихожей в центре4",
+        name: "бытовка с прихожей в центре43",
         discount:9000,
         price:7500,
         star: "★★★★★",
@@ -183,7 +183,7 @@ export const cubinsForDress = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с тамбуром4",
+        name: "бытовка с тамбуром44",
         discount:1000,
         price:9000,
         star: "★★★★☆",
@@ -201,7 +201,7 @@ export const cubinsForWareHouse = [
     {
         href: "../cubinsForbathWithtambur/cubinsForbathWithtambur.html",
         img: "../gallary/image 30.svg",
-        name: "бытовка с перегародками5",
+        name: "бытовка с перегародками51",
         discount:9000,
         price:8000,
         star: "★★★★☆",

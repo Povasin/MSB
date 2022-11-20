@@ -3,7 +3,7 @@ import {services__sum, jsonBagMass } from './main.js'
 import {mainInnerHTML} from './mainInnerHtml.js'
 export const katalogLine = document.querySelector(".katalog-line")
 export const cubinsMass = [
-    {
+    {   
         img: "../main/cubinsForDress.webp",
         name: "Бытовка раздевалка",
         discount: 9000,

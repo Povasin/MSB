@@ -1,8 +1,8 @@
-import {jsonBagMass} from '../main.js'
 const login = document.getElementById("login")
 const error = document.querySelector(".error")
 const password = document.getElementById("password")
 const email = document.getElementById('email')
+let jsonBagMass = []
 let jsonMass = {}
 function saveUser() {
     if (email.value.indexOf('@') > -1 && password.value != '') {
@@ -22,7 +22,7 @@ function saveUser() {
 
 login.addEventListener("click", ()=>{
     if (saveUser() && email.value != 'AdminMSB@gmail.com') {
-        fetch('/login', {
+        fetch('https://msb-container.back.ru/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

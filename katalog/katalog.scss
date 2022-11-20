@@ -9,6 +9,13 @@ main{
 .katalog{
     padding: 0 calcFluid(8, 200, 320, 1920);
     @extend %d-col;
+    .bag__clear{
+        margin:calcFluid(20, 150, 320, 1920) auto auto auto;
+        h2{
+           text-align: center;
+           font-size: calcFluid(17, 30, 320, 1920);
+        }
+    }
     span a{
         text-decoration: none;
         color: black;
