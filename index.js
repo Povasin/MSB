@@ -3,15 +3,22 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000
 const http = require('http');
+const cors = require('cors')
 const bcrypt = require('bcrypt');
+var bodyParser = require('body-parser');
 app.use(express.static(path.resolve(__dirname, './')));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.get('/', (req, res) => {  
+    res.sendFile(path.resolve(__dirname, './index.html')); 
+});
+app.use(bodyParser.json());
+app.use(cors())
 app.use(express.json()) 
 const Datastore = require('nedb');
 const users = new Datastore({filename : './server/orders', autoload: true });
 users.loadDatabase();
-app.get('/', (req, res) => {  
-    res.sendFile(path.resolve(__dirname, './index.html')); 
-});
 app.post('/register', function(request, response){  
      try {
         const {email, password, name, phone, desired, orderMass} = request.body.data.order;
@@ -23,9 +30,11 @@ app.post('/register', function(request, response){
                 users.insert({email, password: hashPassword, name, phone, desired, orderMass});
                 response.json({email, password: hashPassword, name, phone, desired , orderMass});
             }
+            return response.status(500).json({err: "ОШИБКА", server: request.body.data})
         }); 
     } catch (e) {
         console.log(e);
+        return response.status(500).json({err: "ОШИБКА в catch", server: request.body.data})
     }
 });
 app.post('/login', (request, response)=>{
@@ -42,9 +51,11 @@ app.post('/login', (request, response)=>{
             } else if (!doc){
                 return response.status(400).json("Пользователь с таким email не существует")
             }
+            return response.status(500).json({err: "ОШИБКА", server: request.body.data})
         }); 
     } catch (e) {
         console.log(e);
+        return response.status(500).json({err: "ОШИБКА в catch", server: request.body.data})
     }
 })
 app.post('/adminLogin', (request, response)=>{
@@ -59,9 +70,11 @@ app.post('/adminLogin', (request, response)=>{
                     response.json(doc.email)
                 }
             }
+            return response.status(500).json({err: "ОШИБКА", server: request.body.data})
         });  
     } catch (e) {
         console.log(e);
+        return response.status(500).json({err: "ОШИБКА в catch", server: request.body.data})
     }
 })
 app.post('/bag', (request, response)=>{
@@ -74,9 +87,11 @@ app.post('/bag', (request, response)=>{
                 users.update({email: email}, {email: email, password: doc.password, name: doc.name, phone: doc.phone, desired: [], orderMass: orderMass}, {});
                 users.loadDatabase();
             }
+            return response.status(500).json({err: "ОШИБКА", server: request.body.data})
         }); 
     } catch (e) {
         console.log(e);
+        return response.status(500).json({err: "ОШИБКА в catch", server: request.body.data})
     }
 
 })
@@ -88,9 +103,11 @@ app.post('/getFullOrderLoginAdmin', (request, response)=>{
                 users.update({email: request.body.data.email}, {email: request.body.data.email, password: doc.password, name: doc.name, phone: doc.phone, desired: doc.desired, orderMass: request.body.data.order}, {});
                 users.loadDatabase();
             }
+            return response.status(500).json({err: "ОШИБКА", server: request.body.data})
         }); 
     } catch (e) {
         console.log(e);
+        return response.status(500).json({err: "ОШИБКА в catch", server: request.body.data})
     }
 
 })
@@ -100,9 +117,11 @@ app.get('/overwriteMassAdmin', (request, response)=>{
             if (doc) {
                 response.json({doc})
             }
+            return response.status(500).json({err: "ОШИБКА", server: request.body.data})
         }); 
     } catch (e) {
         console.log(e);
+        return response.status(500).json({err: "ОШИБКА в catch", server: request.body.data})
     }
 
 })
@@ -112,26 +131,15 @@ app.post('/overwriteMass', (request, response)=>{
             if (doc) {
                 response.json({doc})
             }
+            return response.status(500).json({err: "ОШИБКА", server: request.body.data})
         }); 
     } catch (e) {
         console.log(e);
+        return response.status(500).json({err: "ОШИБКА в catch", server: request.body.data})
     }
 
 })
 
-// https    
-//   .createServer(
-//     {
-//       key: fs.readFileSync("./sslcert/key.pem"),
-//       cert: fs.readFileSync("./sslcert/cert.pem"),
-//     },
-//     app
-//   )
-//   .listen(5000, function () {
-//     console.log(
-//       "Example app listening on port 5000! Go to https://localhost:5000/"
-//     );
-//   });
 const start = async ()=>{
 try {
     app.listen(PORT, ()=>{

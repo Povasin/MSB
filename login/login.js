@@ -4,12 +4,12 @@ const password = document.getElementById("password")
 const email = document.getElementById('email')
 let jsonBagMass = []
 let jsonMass = {}
+let PORT = 'https://msb-container.onrender.com'
 function saveUser() {
     if (email.value.indexOf('@') > -1 && password.value != '') {
         jsonMass = {
             email: email.value,
-            password: password.value,
-            desired: jsonBagMass
+            password: password.value
         }
         error.textContent = ""
         return true
@@ -21,8 +21,9 @@ function saveUser() {
 }
 
 login.addEventListener("click", ()=>{
-    if (saveUser() && email.value != 'AdminMSB@gmail.com') {
-        fetch('https://msb-container.back.ru/login', {
+    if (saveUser() && email.value != 'AdminMSB@gmail.com') {  
+        fetch(`${PORT}/login`, {
+            mode: 'no-cors',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -54,7 +55,7 @@ login.addEventListener("click", ()=>{
 
         })
     } else if (email.value == 'AdminMSB@gmail.com') {
-        fetch('/adminLogin', {
+        fetch(`${PORT}/adminLogin`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
