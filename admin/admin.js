@@ -1,3 +1,4 @@
+import { PORT } from "../main"
 const headerTop = document.querySelector(".headerTop")
 const main = document.querySelector("main")
 const body = document.querySelector("body")
@@ -24,7 +25,7 @@ document.querySelector('.exit').addEventListener("click", ()=>{
     document.location.href = "../index.html";
 })
 let jsonBagMass = []
-fetch('/overwriteMassAdmin')
+fetch(`${PORT}/overwriteMassAdmin`)
 .then(res => res.json())
 .then(res => {
         jsonBagMass = res.doc
@@ -179,16 +180,15 @@ orders__render.addEventListener("click", function showtrack(e){
                     !itemOrderMass.orderGo ? date[2].innerText = 'x' : date[2].innerText = itemOrderMass.orderGo
                     !itemOrderMass.orderReceived ? date[3].innerText = 'x' : date[3].innerText = itemOrderMass.orderReceived
                     saveChanges.addEventListener("click", ()=>{
-                                fetch('/getFullOrderLoginAdmin', {
+                                fetch(`${PORT}/getFullOrderLoginAdmin`, {
                                     method: 'POST',
+                                    mode: 'cors',
                                     headers: {
                                         'Content-Type': 'application/json'
                                     },
                                     body: JSON.stringify({
-                                        data:{
-                                            order: item.orderMass,
-                                            email: item.email 
-                                        }
+                                        order: item.orderMass,
+                                        email: item.email 
                                     })
                                 })
                                 .then(res => res.json())

@@ -1,10 +1,8 @@
+import { PORT, jsonMass, jsonBagMass } from "../main"
 const login = document.getElementById("login")
 const error = document.querySelector(".error")
 const password = document.getElementById("password")
 const email = document.getElementById('email')
-let jsonBagMass = []
-let jsonMass = {}
-let PORT = 'https://msb-container.onrender.com'
 function saveUser() {
     if (email.value.indexOf('@') > -1 && password.value != '') {
         jsonMass = {
@@ -22,25 +20,23 @@ function saveUser() {
 
 login.addEventListener("click", ()=>{
     if (saveUser() && email.value != 'AdminMSB@gmail.com') {  
+        console.log(jsonMass);
         fetch(`${PORT}/login`, {
-            mode: 'no-cors',
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                data:{
-                    order: jsonMass,
-                }
-            })
+            body: JSON.stringify({...jsonMass})
         })
         .then(res => res.json())
         .then(res => {
-            if (res == "Пользователь с таким email не существует"){
+            if (res.message == "Пользователь с таким email не существует"){
                 error.innerText = "Пользователь с таким email не существует"
-            } else if (res == "Введен неверный пароль") {
+            } else if (res.message == "Введен неверный пароль") {
                 error.innerText = "Введен неверный пароль"
             } else {
+                console.log(res);
                 jsonMass ={
                     email: res.doc.email,
                     name: res.doc.name,
@@ -57,17 +53,11 @@ login.addEventListener("click", ()=>{
     } else if (email.value == 'AdminMSB@gmail.com') {
         fetch(`${PORT}/adminLogin`, {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                data:{
-                    order: {
-                    password:password.value,
-                    email: email.value
-                    }
-                }
-            })
+            body: JSON.stringify({...jsonMass})
         })
         .then(res => res.json())
         .then(res => {

@@ -1,4 +1,4 @@
-import {jsonBagMass} from '../main.js'
+import {jsonBagMass, PORT, jsonMass} from '../main.js'
 const register = document.getElementById("register")
 const error = document.querySelector(".error")
 const password = document.getElementById("password")
@@ -33,20 +33,17 @@ function saveUser() {
 
 register.addEventListener("click", ()=>{
     if (saveUser()) {
-        fetch('/register', {
+        fetch(`${PORT}/register`, {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                data:{
-                    order: jsonMass,
-                }
-            })
+            body: JSON.stringify({...jsonMass})
         }) 
         .then(res => res.json())
         .then(res => {
-            if (res == "Пользователь с таким email уже существует"){
+            if (res.message == "Пользователь с таким email уже существует"){
                 error.innerText = "Пользователь с таким email уже существует"
             } else{
                 jsonMass ={

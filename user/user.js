@@ -1,4 +1,4 @@
-import {jsonMass} from '../main.js'
+import { PORT, jsonMass } from "../main"
 const userContent__name =document.querySelector(".userContent__name")
 const userContent__phone =document.querySelector(".userContent__phone")
 const userContent__email =document.querySelector(".userContent__email")
@@ -12,16 +12,13 @@ userContent__name.textContent = jsonMass.name
 userContent__phone.textContent = jsonMass.phone
 userContent__email.textContent = jsonMass.email
 if (jsonMass.orderMass !== 0) {
-    fetch('/overwriteMass', {
+    fetch(`${PORT}/overwriteMass`, {
         method: 'POST',
+        mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            data:{
-                order: jsonMass.email
-            }
-        })
+        body: JSON.stringify({email: jsonMass.email})
     })
     .then(res => res.json())
     .then(res => {

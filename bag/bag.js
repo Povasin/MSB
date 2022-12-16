@@ -1,4 +1,5 @@
 import {services__sum, jsonBagMass, jsonMass} from '../main.js'
+import { PORT } from "../main"
 const bag__items = document.querySelector(".bag__items")
 const price = document.getElementById("price")
 const input__checkboxMap = document.querySelector(".input__checkboxMap")
@@ -149,16 +150,13 @@ function saveOrderLogin() {
 order.addEventListener("click", ()=>{
     if (jsonMass.name != undefined) {
         if (saveOrderLogin()) {
-            fetch('/bag', {
+            fetch(`${PORT}/bag`, {
                 method: 'POST',
+                mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    data:{
-                        order: jsonMass,
-                    }
-                })
+                body: JSON.stringify({...jsonMass})
             })
             .then(res => res.json())
             .then(res => {
@@ -169,7 +167,7 @@ order.addEventListener("click", ()=>{
         }
     } else if (jsonMass.name == undefined) {
         error.textContent = "для успешной отправки заказа вам нужно зарегестроваться"
-     }
+    }
 })
 
 bag__items.addEventListener("click", (e)=>{
