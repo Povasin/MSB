@@ -1,5 +1,4 @@
-import {services__sum, jsonBagMass, jsonMass} from '../main.js'
-import { PORT } from "../main"
+import {services__sum, jsonBagMass, jsonMass, PORT} from '../main.js'
 const bag__items = document.querySelector(".bag__items")
 const price = document.getElementById("price")
 const input__checkboxMap = document.querySelector(".input__checkboxMap")

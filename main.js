@@ -1,4 +1,3 @@
-import {search} from './search.js'
 export let PORT = 'https://msb-container.onrender.com'
 const services = document.querySelector(".services")
 export const main = document.querySelector("main")

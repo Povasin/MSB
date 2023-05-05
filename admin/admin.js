@@ -1,4 +1,4 @@
-import { PORT } from "../main"
+import { PORT } from "../main.js"
 const headerTop = document.querySelector(".headerTop")
 const main = document.querySelector("main")
 const body = document.querySelector("body")

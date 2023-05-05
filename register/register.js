@@ -1,4 +1,4 @@
-import {jsonBagMass, PORT, jsonMass} from '../main.js'
+import {jsonBagMass, PORT} from '../main.js'
 const register = document.getElementById("register")
 const error = document.querySelector(".error")
 const password = document.getElementById("password")
@@ -15,7 +15,6 @@ function saveUser() {
             email: email.value,
             password: password.value,
             phone: phone.value,
-            desired: jsonBagMass,
             orderMass: []
         }
         error.textContent = ""
@@ -52,9 +51,7 @@ register.addEventListener("click", ()=>{
                     phone: res.phone,
                     orderMass: res.orderMass
                 }
-                jsonBagMass = res.desired   
                 localStorage.setItem("user", JSON.stringify(jsonMass));
-                localStorage.setItem("bagMass", JSON.stringify(jsonBagMass));
                 document.location.href = "../index.html";
             } 
         });

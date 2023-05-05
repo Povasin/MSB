@@ -1,8 +1,9 @@
-import { PORT, jsonMass, jsonBagMass } from "../main"
+import { PORT } from "../main.js"
 const login = document.getElementById("login")
 const error = document.querySelector(".error")
 const password = document.getElementById("password")
 const email = document.getElementById('email')
+let jsonMass = {}
 function saveUser() {
     if (email.value.indexOf('@') > -1 && password.value != '') {
         jsonMass = {
@@ -37,15 +38,7 @@ login.addEventListener("click", ()=>{
                 error.innerText = "Введен неверный пароль"
             } else {
                 console.log(res);
-                jsonMass ={
-                    email: res.doc.email,
-                    name: res.doc.name,
-                    phone: res.doc.phone,
-                    orderMass: res.doc.orderMass
-                }
-                jsonBagMass = res.doc.desired 
-                localStorage.setItem("user", JSON.stringify(jsonMass));
-                localStorage.setItem("bagMass", JSON.stringify(jsonBagMass));
+                localStorage.setItem("user", JSON.stringify(res));
                 document.location.href = "../index.html";
             }
 
@@ -65,10 +58,7 @@ login.addEventListener("click", ()=>{
                 error.innerText = "Введен неверный пароль"
             } else {
                 localStorage.clear()
-                jsonMass ={
-                    email: res
-                } 
-                localStorage.setItem("user", JSON.stringify(jsonMass));
+                localStorage.setItem("user", JSON.stringify(res));
                 document.location.href = "../admin/admin.html";
             }
 

@@ -1,4 +1,4 @@
-import { PORT, jsonMass } from "../main"
+import { PORT, jsonMass } from "../main.js"
 const userContent__name =document.querySelector(".userContent__name")
 const userContent__phone =document.querySelector(".userContent__phone")
 const userContent__email =document.querySelector(".userContent__email")
@@ -22,8 +22,7 @@ if (jsonMass.orderMass !== 0) {
     })
     .then(res => res.json())
     .then(res => {
-            jsonMass.orderMass = res.doc.orderMass
-            localStorage.setItem("user", JSON.stringify(jsonMass));
+            localStorage.setItem("user", JSON.stringify({...jsonMass, orderMass: res}));
     })
 }
 function render() {
